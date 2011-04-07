@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScoreBarSettings version="2">
+  <BoardX>592</BoardX>
+  <BoardY>878</BoardY>
+  <ReplayX>1377</ReplayX>
+  <ReplayY>60</ReplayY>
+  <BugX>1508</BugX>
+  <BugY>910</BugY>
+  <ControlScreen>0</ControlScreen>
+  <DisplayScreen>1</DisplayScreen>
+  <GameType>2</GameType>
+  <ShowInfoText>False</ShowInfoText>
+  <ShowScores>True</ShowScores>
+  <ShowTimeouts>False</ShowTimeouts>
+  <ShowBug>True</ShowBug>
+  <CreditsFile></CreditsFile>
+</ScoreBarSettings>
