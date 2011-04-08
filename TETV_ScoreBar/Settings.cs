@@ -45,7 +45,7 @@ namespace TETV_ScoreBar {
         }
 
         void HandleValueChange() {
-            display.showStats = pStatPosition.Enabled = cGameType.SelectedItem.Equals("Basketball");
+            display.showStats = pStatPosition.Enabled = cGameType.SelectedItem.Equals("Basketball") || cGameType.SelectedItem.Equals("Wrestling");
             if (display != null)
                 display.UpdateDisplay();
             this.Focus();

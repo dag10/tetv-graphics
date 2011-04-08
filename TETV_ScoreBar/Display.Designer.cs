@@ -30,6 +30,14 @@
             this.pInnerCredits = new System.Windows.Forms.Panel();
             this.tCredits = new System.Windows.Forms.RichTextBox();
             this.pStat = new System.Windows.Forms.Panel();
+            this.lPlyFouls = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lPlyPoints = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lPlyName = new System.Windows.Forms.Label();
+            this.lPlyNumber = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pBug = new System.Windows.Forms.Panel();
             this.pReplay = new System.Windows.Forms.Panel();
             this.pMain = new System.Windows.Forms.Panel();
@@ -41,14 +49,10 @@
             this.lScore2 = new System.Windows.Forms.Label();
             this.pLeftScore = new System.Windows.Forms.Panel();
             this.lScore1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lPlyNumber = new System.Windows.Forms.Label();
-            this.lPlyName = new System.Windows.Forms.Label();
-            this.lPlyPoints = new System.Windows.Forms.Label();
-            this.lPlyFouls = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lAltScore1 = new System.Windows.Forms.Label();
+            this.lAltScore2 = new System.Windows.Forms.Label();
             this.pBar.SuspendLayout();
             this.pCredits.SuspendLayout();
             this.pInnerCredits.SuspendLayout();
@@ -56,6 +60,8 @@
             this.pMain.SuspendLayout();
             this.pRightScore.SuspendLayout();
             this.pLeftScore.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bOtherSide
@@ -72,12 +78,14 @@
             // 
             // pBar
             // 
+            this.pBar.Controls.Add(this.panel1);
+            this.pBar.Controls.Add(this.panel2);
             this.pBar.Controls.Add(this.pMain);
-            this.pBar.Controls.Add(this.pRightScore);
             this.pBar.Controls.Add(this.pLeftScore);
-            this.pBar.Location = new System.Drawing.Point(41, 610);
+            this.pBar.Controls.Add(this.pRightScore);
+            this.pBar.Location = new System.Drawing.Point(190, 594);
             this.pBar.Name = "pBar";
-            this.pBar.Size = new System.Drawing.Size(496, 112);
+            this.pBar.Size = new System.Drawing.Size(757, 112);
             this.pBar.TabIndex = 4;
             this.pBar.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
             this.pBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
@@ -158,11 +166,189 @@
             this.pStat.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.pStat.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
+            // lPlyFouls
+            // 
+            this.lPlyFouls.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lPlyFouls.AutoSize = true;
+            this.lPlyFouls.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPlyFouls.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lPlyFouls.Location = new System.Drawing.Point(677, 55);
+            this.lPlyFouls.Margin = new System.Windows.Forms.Padding(0);
+            this.lPlyFouls.MinimumSize = new System.Drawing.Size(10, 0);
+            this.lPlyFouls.Name = "lPlyFouls";
+            this.lPlyFouls.Size = new System.Drawing.Size(71, 34);
+            this.lPlyFouls.TabIndex = 5;
+            this.lPlyFouls.Text = "Fouls";
+            this.lPlyFouls.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lPlyFouls.UseCompatibleTextRendering = true;
+            this.lPlyFouls.Visible = false;
+            this.lPlyFouls.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lPlyFouls.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lPlyFouls.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.lPlyFouls.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lPlyFouls.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(677, 8);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.MinimumSize = new System.Drawing.Size(10, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 34);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Fouls";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.UseCompatibleTextRendering = true;
+            this.label4.Visible = false;
+            this.label4.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.label4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.label4.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // lPlyPoints
+            // 
+            this.lPlyPoints.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lPlyPoints.AutoSize = true;
+            this.lPlyPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPlyPoints.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lPlyPoints.Location = new System.Drawing.Point(565, 55);
+            this.lPlyPoints.Margin = new System.Windows.Forms.Padding(0);
+            this.lPlyPoints.MinimumSize = new System.Drawing.Size(10, 0);
+            this.lPlyPoints.Name = "lPlyPoints";
+            this.lPlyPoints.Size = new System.Drawing.Size(160, 34);
+            this.lPlyPoints.TabIndex = 5;
+            this.lPlyPoints.Text = "Weight Class";
+            this.lPlyPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lPlyPoints.UseCompatibleTextRendering = true;
+            this.lPlyPoints.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lPlyPoints.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lPlyPoints.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.lPlyPoints.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lPlyPoints.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(565, 8);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.MinimumSize = new System.Drawing.Size(10, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 34);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Weight Class";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.UseCompatibleTextRendering = true;
+            this.label3.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.label3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.label3.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // lPlyName
+            // 
+            this.lPlyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lPlyName.AutoSize = true;
+            this.lPlyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPlyName.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lPlyName.Location = new System.Drawing.Point(126, 55);
+            this.lPlyName.Margin = new System.Windows.Forms.Padding(0);
+            this.lPlyName.MinimumSize = new System.Drawing.Size(10, 0);
+            this.lPlyName.Name = "lPlyName";
+            this.lPlyName.Size = new System.Drawing.Size(76, 34);
+            this.lPlyName.TabIndex = 5;
+            this.lPlyName.Text = "Name";
+            this.lPlyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lPlyName.UseCompatibleTextRendering = true;
+            this.lPlyName.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lPlyName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lPlyName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.lPlyName.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lPlyName.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // lPlyNumber
+            // 
+            this.lPlyNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lPlyNumber.AutoSize = true;
+            this.lPlyNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPlyNumber.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lPlyNumber.Location = new System.Drawing.Point(74, 55);
+            this.lPlyNumber.Margin = new System.Windows.Forms.Padding(0);
+            this.lPlyNumber.MinimumSize = new System.Drawing.Size(10, 0);
+            this.lPlyNumber.Name = "lPlyNumber";
+            this.lPlyNumber.Size = new System.Drawing.Size(23, 34);
+            this.lPlyNumber.TabIndex = 5;
+            this.lPlyNumber.Text = "#";
+            this.lPlyNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lPlyNumber.UseCompatibleTextRendering = true;
+            this.lPlyNumber.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lPlyNumber.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lPlyNumber.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.lPlyNumber.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lPlyNumber.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(126, 8);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.MinimumSize = new System.Drawing.Size(10, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 34);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Name";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.UseCompatibleTextRendering = true;
+            this.label2.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.label2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.label2.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(74, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.MinimumSize = new System.Drawing.Size(10, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 34);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "#";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.UseCompatibleTextRendering = true;
+            this.label1.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.label1.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
             // pBug
             // 
             this.pBug.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.bug;
             this.pBug.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBug.Location = new System.Drawing.Point(912, 610);
+            this.pBug.Location = new System.Drawing.Point(406, 158);
             this.pBug.Name = "pBug";
             this.pBug.Size = new System.Drawing.Size(112, 80);
             this.pBug.TabIndex = 6;
@@ -189,14 +375,13 @@
             // 
             // pMain
             // 
-            this.pMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pMain.BackgroundImage")));
             this.pMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pMain.Controls.Add(this.lQuarter);
             this.pMain.Controls.Add(this.lInfoText);
             this.pMain.Controls.Add(this.lAbbr2);
             this.pMain.Controls.Add(this.lAbbr1);
-            this.pMain.Location = new System.Drawing.Point(89, 0);
+            this.pMain.Location = new System.Drawing.Point(197, 0);
             this.pMain.Margin = new System.Windows.Forms.Padding(0);
             this.pMain.Name = "pMain";
             this.pMain.Size = new System.Drawing.Size(318, 112);
@@ -283,11 +468,10 @@
             // 
             // pRightScore
             // 
-            this.pRightScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pRightScore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pRightScore.BackgroundImage")));
             this.pRightScore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pRightScore.Controls.Add(this.lScore2);
-            this.pRightScore.Location = new System.Drawing.Point(407, 0);
+            this.pRightScore.Location = new System.Drawing.Point(515, 0);
             this.pRightScore.Margin = new System.Windows.Forms.Padding(0);
             this.pRightScore.Name = "pRightScore";
             this.pRightScore.Size = new System.Drawing.Size(89, 79);
@@ -321,7 +505,7 @@
             this.pLeftScore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pLeftScore.BackgroundImage")));
             this.pLeftScore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pLeftScore.Controls.Add(this.lScore1);
-            this.pLeftScore.Location = new System.Drawing.Point(0, 0);
+            this.pLeftScore.Location = new System.Drawing.Point(108, 0);
             this.pLeftScore.Margin = new System.Windows.Forms.Padding(0);
             this.pLeftScore.Name = "pLeftScore";
             this.pLeftScore.Size = new System.Drawing.Size(89, 79);
@@ -350,181 +534,63 @@
             this.lScore1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.lScore1.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
-            // label1
+            // panel1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(74, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.MinimumSize = new System.Drawing.Size(10, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 34);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "#";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.UseCompatibleTextRendering = true;
-            this.label1.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.label1.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            this.panel1.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.altscore_l;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.lAltScore1);
+            this.panel1.Location = new System.Drawing.Point(3, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(95, 87);
+            this.panel1.TabIndex = 7;
             // 
-            // label2
+            // panel2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(126, 8);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.MinimumSize = new System.Drawing.Size(10, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 34);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Name";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.UseCompatibleTextRendering = true;
-            this.label2.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.label2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.label2.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            this.panel2.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.altscore_r;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.lAltScore2);
+            this.panel2.Location = new System.Drawing.Point(614, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(95, 87);
+            this.panel2.TabIndex = 8;
             // 
-            // label3
+            // lAltScore1
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(565, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.MinimumSize = new System.Drawing.Size(10, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 34);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Points";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.UseCompatibleTextRendering = true;
-            this.label3.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.label3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.label3.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            this.lAltScore1.AutoSize = true;
+            this.lAltScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAltScore1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lAltScore1.Location = new System.Drawing.Point(15, 25);
+            this.lAltScore1.MinimumSize = new System.Drawing.Size(50, 0);
+            this.lAltScore1.Name = "lAltScore1";
+            this.lAltScore1.Size = new System.Drawing.Size(50, 37);
+            this.lAltScore1.TabIndex = 5;
+            this.lAltScore1.Text = "0";
+            this.lAltScore1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lAltScore1.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lAltScore1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lAltScore1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.lAltScore1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lAltScore1.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
-            // label4
+            // lAltScore2
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(677, 8);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.MinimumSize = new System.Drawing.Size(10, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 34);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Fouls";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.UseCompatibleTextRendering = true;
-            this.label4.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.label4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.label4.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
-            // 
-            // lPlyNumber
-            // 
-            this.lPlyNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lPlyNumber.AutoSize = true;
-            this.lPlyNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPlyNumber.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lPlyNumber.Location = new System.Drawing.Point(74, 55);
-            this.lPlyNumber.Margin = new System.Windows.Forms.Padding(0);
-            this.lPlyNumber.MinimumSize = new System.Drawing.Size(10, 0);
-            this.lPlyNumber.Name = "lPlyNumber";
-            this.lPlyNumber.Size = new System.Drawing.Size(23, 34);
-            this.lPlyNumber.TabIndex = 5;
-            this.lPlyNumber.Text = "#";
-            this.lPlyNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lPlyNumber.UseCompatibleTextRendering = true;
-            this.lPlyNumber.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.lPlyNumber.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.lPlyNumber.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.lPlyNumber.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.lPlyNumber.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
-            // 
-            // lPlyName
-            // 
-            this.lPlyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lPlyName.AutoSize = true;
-            this.lPlyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPlyName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lPlyName.Location = new System.Drawing.Point(126, 55);
-            this.lPlyName.Margin = new System.Windows.Forms.Padding(0);
-            this.lPlyName.MinimumSize = new System.Drawing.Size(10, 0);
-            this.lPlyName.Name = "lPlyName";
-            this.lPlyName.Size = new System.Drawing.Size(76, 34);
-            this.lPlyName.TabIndex = 5;
-            this.lPlyName.Text = "Name";
-            this.lPlyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lPlyName.UseCompatibleTextRendering = true;
-            this.lPlyName.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.lPlyName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.lPlyName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.lPlyName.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.lPlyName.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
-            // 
-            // lPlyPoints
-            // 
-            this.lPlyPoints.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lPlyPoints.AutoSize = true;
-            this.lPlyPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPlyPoints.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lPlyPoints.Location = new System.Drawing.Point(565, 55);
-            this.lPlyPoints.Margin = new System.Windows.Forms.Padding(0);
-            this.lPlyPoints.MinimumSize = new System.Drawing.Size(10, 0);
-            this.lPlyPoints.Name = "lPlyPoints";
-            this.lPlyPoints.Size = new System.Drawing.Size(80, 34);
-            this.lPlyPoints.TabIndex = 5;
-            this.lPlyPoints.Text = "Points";
-            this.lPlyPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lPlyPoints.UseCompatibleTextRendering = true;
-            this.lPlyPoints.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.lPlyPoints.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.lPlyPoints.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.lPlyPoints.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.lPlyPoints.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
-            // 
-            // lPlyFouls
-            // 
-            this.lPlyFouls.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lPlyFouls.AutoSize = true;
-            this.lPlyFouls.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPlyFouls.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lPlyFouls.Location = new System.Drawing.Point(677, 55);
-            this.lPlyFouls.Margin = new System.Windows.Forms.Padding(0);
-            this.lPlyFouls.MinimumSize = new System.Drawing.Size(10, 0);
-            this.lPlyFouls.Name = "lPlyFouls";
-            this.lPlyFouls.Size = new System.Drawing.Size(71, 34);
-            this.lPlyFouls.TabIndex = 5;
-            this.lPlyFouls.Text = "Fouls";
-            this.lPlyFouls.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lPlyFouls.UseCompatibleTextRendering = true;
-            this.lPlyFouls.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.lPlyFouls.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.lPlyFouls.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.lPlyFouls.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.lPlyFouls.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            this.lAltScore2.AutoSize = true;
+            this.lAltScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAltScore2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lAltScore2.Location = new System.Drawing.Point(27, 25);
+            this.lAltScore2.MinimumSize = new System.Drawing.Size(50, 0);
+            this.lAltScore2.Name = "lAltScore2";
+            this.lAltScore2.Size = new System.Drawing.Size(50, 37);
+            this.lAltScore2.TabIndex = 5;
+            this.lAltScore2.Text = "0";
+            this.lAltScore2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lAltScore2.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lAltScore2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lAltScore2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.lAltScore2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lAltScore2.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
             // Display
             // 
@@ -556,6 +622,10 @@
             this.pRightScore.PerformLayout();
             this.pLeftScore.ResumeLayout(false);
             this.pLeftScore.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -587,5 +657,9 @@
         private System.Windows.Forms.Label lPlyPoints;
         private System.Windows.Forms.Label lPlyName;
         private System.Windows.Forms.Label lPlyNumber;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lAltScore1;
+        private System.Windows.Forms.Label lAltScore2;
     }
 }

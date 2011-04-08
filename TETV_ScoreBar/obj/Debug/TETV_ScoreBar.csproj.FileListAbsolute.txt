@@ -17,3 +17,4 @@ C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Debug\TETV_Graphics
 C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe
 C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Debug\TETV_Graphics.pdb
 C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Debug\ConestogaPlayers.sdf
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Stats.resources

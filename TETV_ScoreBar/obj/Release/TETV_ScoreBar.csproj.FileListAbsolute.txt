@@ -10,3 +10,4 @@ C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_Graphi
 C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_Graphics.pdb
 C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\TETV_Graphics.exe.config
 C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\ConestogaPlayers.sdf
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Stats.resources

@@ -11,6 +11,7 @@ namespace TETV_ScoreBar {
         //Soccer,
         Basketball,
         Hockey,
+        Wrestling,
         //Volleyball,
         //Baseball
     }
@@ -19,6 +20,7 @@ namespace TETV_ScoreBar {
         public string[] TeamName;
         public string[] TeamAbbr;
         public int[] TeamScore;
+        public int[] AltScore;
         public int[] Timeouts;
         public int Quarter = 1;
         public int BallPossession = 0;
@@ -36,6 +38,7 @@ namespace TETV_ScoreBar {
             TeamName = new string[2] { "Team1", "Team2" };
             TeamAbbr = new string[2] { "Abbr1", "Abbr2" };
             TeamScore = new int[2] { 0, 0 };
+            AltScore = new int[2] { 0, 0 };
             Timeouts = new int[2] { 3, 3 };
             ScoreBoardPosition = new Point(Config.GetInt(ConfigKey.BoardX), Config.GetInt(ConfigKey.BoardY));
             ReplayPosition = new Point(Config.GetInt(ConfigKey.ReplayX), Config.GetInt(ConfigKey.ReplayY));
@@ -48,6 +51,7 @@ namespace TETV_ScoreBar {
             TeamName = new string[2] { Name1, Name2 };
             TeamAbbr = new string[2] { Abbr1, Abbr2 };
             TeamScore = new int[2] { 0, 0 };
+            AltScore = new int[2] { 0, 0 };
             Timeouts = new int[2] { 3, 3 };
             ScoreBoardPosition = new Point(Config.GetInt(ConfigKey.BoardX), Config.GetInt(ConfigKey.BoardY));
             ReplayPosition = new Point(Config.GetInt(ConfigKey.ReplayX), Config.GetInt(ConfigKey.ReplayY));

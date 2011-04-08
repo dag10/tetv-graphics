@@ -120,6 +120,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Stats.resx">
+      <DependentUpon>Stats.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -135,6 +138,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stats.Designer.cs">
+      <DependentUpon>Stats.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
   </ItemGroup>
@@ -196,6 +205,8 @@
     <Content Include="ConestogaPlayers.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="resources\altscore_l.bmp" />
+    <None Include="resources\altscore_r.bmp" />
     <Content Include="resources\bug.bmp" />
     <Content Include="resources\halftime_L.bmp" />
     <Content Include="resources\halftime_R.bmp" />
@@ -211,6 +222,7 @@
     <Content Include="resources\main_S.bmp" />
     <Content Include="resources\main_SL.bmp" />
     <Content Include="resources\main_SR.bmp" />
+    <None Include="resources\matchscore.bmp" />
     <Content Include="resources\replay_L.bmp" />
     <Content Include="resources\replay_R.bmp" />
     <Content Include="resources\score_left.bmp" />

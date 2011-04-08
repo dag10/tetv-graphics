@@ -60,6 +60,20 @@ namespace TETV_ScoreBar.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap altscore_l {
+            get {
+                object obj = ResourceManager.GetObject("altscore_l", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap altscore_r {
+            get {
+                object obj = ResourceManager.GetObject("altscore_r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap bug {
             get {
                 object obj = ResourceManager.GetObject("bug", resourceCulture);
@@ -161,6 +175,13 @@ namespace TETV_ScoreBar.Properties {
         internal static System.Drawing.Bitmap main_SR {
             get {
                 object obj = ResourceManager.GetObject("main_SR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap matchscore {
+            get {
+                object obj = ResourceManager.GetObject("matchscore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

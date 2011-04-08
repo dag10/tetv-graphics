@@ -60,6 +60,8 @@ namespace TETV_ScoreBar {
             lAbbr2.BackColor = Color.Transparent;
             lScore1.BackColor = Color.Transparent;
             lScore2.BackColor = Color.Transparent;
+            lAltScore1.BackColor = Color.Transparent;
+            lAltScore2.BackColor = Color.Transparent;
             pReplay.BackColor = Color.Transparent;
 
             // Set label colors
@@ -69,6 +71,8 @@ namespace TETV_ScoreBar {
             lAbbr2.ForeColor = Color.FromArgb(10, 10, 10);
             lScore1.ForeColor = Color.FromArgb(10, 10, 10);
             lScore2.ForeColor = Color.FromArgb(10, 10, 10);
+            lAltScore1.ForeColor = Color.FromArgb(10, 10, 10);
+            lAltScore2.ForeColor = Color.FromArgb(10, 10, 10);
         }
 
         #endregion
@@ -132,8 +136,10 @@ namespace TETV_ScoreBar {
             this.lAbbr2.Text = game.TeamAbbr[1];
             this.lScore1.Text = game.TeamScore[0].ToString();
             this.lScore2.Text = game.TeamScore[1].ToString();
+            this.lAltScore1.Text = game.AltScore[0].ToString();
+            this.lAltScore2.Text = game.AltScore[1].ToString();
             this.lQuarter.Text = game.Quarter.ToString();
-            this.lInfoText.Text = game.infoText.Replace("&", "&&"); ;
+            this.lInfoText.Text = game.infoText.Replace("&", "&&");
             if (game.Quarter == -1)
                 this.lQuarter.Text = "OT";
             else

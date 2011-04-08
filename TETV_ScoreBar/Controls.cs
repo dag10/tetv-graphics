@@ -13,6 +13,7 @@ namespace TETV_ScoreBar {
         GraphicsMode _mode;
         Game game;
         Display display;
+        Stats stats;
         Screen[] screens;
         int screen;
         
@@ -32,10 +33,14 @@ namespace TETV_ScoreBar {
             showGraphics = true;
 
             // Hide stats stuff if needed
-            bUseStats.Enabled = game.gameType == GameType.Basketball;
+            bUseStats.Enabled = game.gameType == GameType.Basketball || game.gameType == GameType.Wrestling;
 
-            // Init gridview for player db
-            conestogaPlayerGrid.DataSource = conestogaPlayersDataSet.Tables["Conestoga"].DefaultView;
+            // Show stats window if needed
+            if (game.gameType == GameType.Basketball || game.gameType == GameType.Wrestling) {
+                stats = new Stats(game, display, this);
+                stats.Show();
+            }
+            tabPage.TabPages.Remove(tStats);
             
             // Set version label
             lVersion.Text = "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
@@ -44,6 +49,13 @@ namespace TETV_ScoreBar {
             tCustomInfoText.Text = game.infoText;
             DeselectInfoTextPresets();
             bUpdateInfoText.BackColor = Color.LightGreen;
+
+            // Highlight quarter buttons
+            bQuarter1.BackColor = Color.LightGreen;
+            bQuarter2.BackColor = Color.FromName("Control");
+            bQuarter3.BackColor = Color.FromName("Control");
+            bQuarter4.BackColor = Color.FromName("Control");
+            bQuarterOT.BackColor = Color.FromName("Control");
 
             // Set scorebar appearance
             showInfoText = Config.GetBool(ConfigKey.ShowInfoText);
@@ -67,7 +79,7 @@ namespace TETV_ScoreBar {
             switch (game.gameType) {
                 case GameType.Hockey:
                     lQuarter.Text = "Period";
-                    cOT.Visible = false;
+                    bQuarterOT.Visible = false;
                     bToggleTimeouts.Visible = false;
                     showTimeouts = false;
                     RemoveGroup(tabScores, gTimeouts);
@@ -84,7 +96,7 @@ namespace TETV_ScoreBar {
                     gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     break;
                 case GameType.Basketball:
-                    cOT.Visible = false;
+                    bQuarterOT.Visible = false;
                     bToggleTimeouts.Visible = false;
                     showTimeouts = false;
                     RemoveGroup(tabScores, gTimeouts);
@@ -94,6 +106,19 @@ namespace TETV_ScoreBar {
                     bInfoPreset2.Text = "Timeout";
                     bInfoPreset3.Text = "Free Throw";
                     bInfoPreset4.Text = "3 Points";
+                    bInfoPreset5.Visible = false;
+                    gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
+                    break;
+                case GameType.Wrestling:
+                    bToggleTimeouts.Visible = false;
+                    showTimeouts = false;
+                    RemoveGroup(tabScores, gTimeouts);
+                    RemoveGroup(tabScores, gPossession);
+                    pDownYards.Visible = false;
+                    bInfoPreset1.Text = "Timeout";
+                    bInfoPreset2.Text = "Injury Timeout";
+                    bInfoPreset3.Text = "Forfeit";
+                    bInfoPreset4.Text = "Pin";
                     bInfoPreset5.Visible = false;
                     gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     break;
@@ -338,6 +363,49 @@ namespace TETV_ScoreBar {
             bUpdateScores.Enabled = true;
         }
 
+        private void incConestogaScore(object sender, EventArgs e) {
+            game.TeamScore[0] += Int16.Parse(((Button)sender).Text.Substring(1));
+            display.UpdateDisplay();
+            nHomeScore.Value = game.TeamScore[0];
+            bUpdateScores.Enabled = false;
+        }
+
+        private void incVisitingScore(object sender, EventArgs e) {
+            game.TeamScore[1] += Int16.Parse(((Button)sender).Text.Substring(1));
+            display.UpdateDisplay();
+            nVisitingScore.Value = game.TeamScore[1];
+            bUpdateScores.Enabled = false;
+        }
+
+        private void bUpdateAltScores_Click(object sender, EventArgs e) {
+            game.AltScore[0] = (int)nHomeAltScore.Value;
+            game.AltScore[1] = (int)nVisitingAltScore.Value;
+            display.UpdateDisplay();
+            bUpdateAltScores.Enabled = false;
+        }
+
+        private void nVisitingAltScore_ValueChanged(object sender, EventArgs e) {
+            bUpdateAltScores.Enabled = true;
+        }
+
+        private void nHomeAltScore_ValueChanged(object sender, EventArgs e) {
+            bUpdateAltScores.Enabled = true;
+        }
+
+        private void incConestogaAltScore(object sender, EventArgs e) {
+            game.AltScore[0] += Int16.Parse(((Button)sender).Text.Substring(1));
+            display.UpdateDisplay();
+            nHomeAltScore.Value = game.AltScore[0];
+            bUpdateAltScores.Enabled = false;
+        }
+
+        private void incVisitingAltScore(object sender, EventArgs e) {
+            game.AltScore[1] += Int16.Parse(((Button)sender).Text.Substring(1));
+            display.UpdateDisplay();
+            nVisitingAltScore.Value = game.AltScore[1];
+            bUpdateAltScores.Enabled = false;
+        }
+
         #endregion
 
         #region Timeouts
@@ -421,21 +489,19 @@ namespace TETV_ScoreBar {
 
         #region Game info
 
-        private void nQuarter_ValueChanged(object sender, EventArgs e) {
-            bUpdateGameInfo.Enabled = true;
-        }
+        private void bQuarter_Click(object sender, EventArgs e) {
+            Button btn = (Button)sender;
+            string qtVal = btn.Text;
+            game.Quarter = qtVal == "Overtime" ? -1 : Int16.Parse(qtVal);
 
-        private void cOT_CheckedChanged(object sender, EventArgs e) {
-            nQuarter.Enabled = !cOT.Checked;
-            bUpdateGameInfo.Enabled = true;
-        }
+            bQuarter1.BackColor = Color.FromName("Control");
+            bQuarter2.BackColor = Color.FromName("Control");
+            bQuarter3.BackColor = Color.FromName("Control");
+            bQuarter4.BackColor = Color.FromName("Control");
+            bQuarterOT.BackColor = Color.FromName("Control");
+            btn.BackColor = Color.LightGreen;
 
-        private void bUpdateGameInfo_Click(object sender, EventArgs e) {
-            game.Quarter = (int)nQuarter.Value;
-            if (cOT.Checked)
-                game.Quarter = -1;
             display.UpdateDisplay();
-            bUpdateGameInfo.Enabled = false;
         }
 
         #endregion
@@ -605,14 +671,6 @@ namespace TETV_ScoreBar {
         }
 
         #endregion
-
-        private void playerGrid_SelectionChanged(object sender, EventArgs e) {
-            display.plyNumber = ((DataGridView)sender).CurrentRow.Cells[0].Value.ToString();
-            display.plyName = ((DataGridView)sender).CurrentRow.Cells[1].Value.ToString();
-            display.plyPoints = ((DataGridView)sender).CurrentRow.Cells[2].Value.ToString();
-            display.plyFouls = ((DataGridView)sender).CurrentRow.Cells[3].Value.ToString();
-            display.UpdateDisplay();
-        }
     }
 
     public enum GraphicsMode {
