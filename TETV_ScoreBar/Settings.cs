@@ -29,6 +29,7 @@ namespace TETV_ScoreBar {
                 // Create and show display
                 display = new Display(game, this);
                 display.Show();
+                HandleValueChange();
 
             } catch (Exception e) {
                 MessageBox.Show(e.ToString(), "Unhandled Exception in Settings");
@@ -44,6 +45,7 @@ namespace TETV_ScoreBar {
         }
 
         void HandleValueChange() {
+            display.showStats = pStatPosition.Enabled = cGameType.SelectedItem.Equals("Basketball");
             if (display != null)
                 display.UpdateDisplay();
             this.Focus();
@@ -99,6 +101,8 @@ namespace TETV_ScoreBar {
             nReplayY.Value = game.ReplayPosition.Y;
             nBugX.Value = game.BugPosition.X;
             nBugY.Value = game.BugPosition.Y;
+            nStatX.Value = game.StatPosition.X;
+            nStatY.Value = game.StatPosition.Y;
             tName1.Text = game.TeamName[0];
             tName2.Text = game.TeamName[1];
             tAbbr1.Text = game.TeamAbbr[0];
@@ -120,6 +124,8 @@ namespace TETV_ScoreBar {
             nReplayY.Value = game.ReplayPosition.Y;
             nBugX.Value = game.BugPosition.X;
             nBugY.Value = game.BugPosition.Y;
+            nStatX.Value = game.StatPosition.X;
+            nStatY.Value = game.StatPosition.Y;
             hasLoaded = true;
         }
 
@@ -130,6 +136,8 @@ namespace TETV_ScoreBar {
             Config.SetValue(ConfigKey.ReplayY, game.ReplayPosition.Y);
             Config.SetValue(ConfigKey.BugX, game.BugPosition.X);
             Config.SetValue(ConfigKey.BugY, game.BugPosition.Y);
+            Config.SetValue(ConfigKey.StatX, game.StatPosition.X);
+            Config.SetValue(ConfigKey.StatY, game.StatPosition.Y);
             Config.SetValue(ConfigKey.ControlScreen, screen);
             Config.SetValue(ConfigKey.DisplayScreen, display.screen);
             Config.SetValue(ConfigKey.GameType, (int)game.gameType);
@@ -263,6 +271,32 @@ namespace TETV_ScoreBar {
 
         private void BugRight(object sender, EventArgs e) {
             nBugX.Value = display.Width - (display.BugSize.X + Display.ScreenPadding);
+            HandleValueChange();
+        }
+
+        #endregion
+
+        #region Player Stat Position
+
+        private void StatPositionValueChanged(object sender, EventArgs e) {
+            if (!hasLoaded) return;
+            game.StatPosition.X = (int)nStatX.Value;
+            game.StatPosition.Y = (int)nStatY.Value;
+            HandleValueChange();
+        }
+
+        private void StatTop(object sender, EventArgs e) {
+            nStatY.Value = Display.ScreenPadding;
+            HandleValueChange();
+        }
+
+        private void StatBottom(object sender, EventArgs e) {
+            nStatY.Value = display.Height - (display.StatSize.Y + Display.ScreenPadding);
+            HandleValueChange();
+        }
+
+        private void StatCenter(object sender, EventArgs e) {
+            nStatX.Value = (display.Width / 2) - (display.StatSize.X / 2);
             HandleValueChange();
         }
 

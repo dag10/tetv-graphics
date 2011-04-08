@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ScoreBarSettings version="2">
-  <BoardX>387</BoardX>
-  <BoardY>456</BoardY>
-  <ReplayX>1256</ReplayX>
-  <ReplayY>105</ReplayY>
-  <BugX>242</BugX>
-  <BugY>667</BugY>
+  <BoardX>592</BoardX>
+  <BoardY>60</BoardY>
+  <ReplayX>1377</ReplayX>
+  <ReplayY>60</ReplayY>
+  <BugX>60</BugX>
+  <BugY>60</BugY>
+  <StatX>418</StatX>
+  <StatY>890</StatY>
   <ControlScreen>0</ControlScreen>
   <DisplayScreen>1</DisplayScreen>
   <GameType>2</GameType>

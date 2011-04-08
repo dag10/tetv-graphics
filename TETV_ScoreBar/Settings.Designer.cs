@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.bStatBottom = new System.Windows.Forms.Button();
             this.bBugBottom = new System.Windows.Forms.Button();
             this.bPresetBottom = new System.Windows.Forms.Button();
             this.bPresetCenter = new System.Windows.Forms.Button();
@@ -34,15 +35,19 @@
             this.bReplayLeft = new System.Windows.Forms.Button();
             this.bBugLeft = new System.Windows.Forms.Button();
             this.bPresetLeft = new System.Windows.Forms.Button();
+            this.bStatTop = new System.Windows.Forms.Button();
             this.bBugTop = new System.Windows.Forms.Button();
             this.bPresetTop = new System.Windows.Forms.Button();
             this.nReplayY = new System.Windows.Forms.NumericUpDown();
+            this.nStatY = new System.Windows.Forms.NumericUpDown();
             this.nBugY = new System.Windows.Forms.NumericUpDown();
             this.nBoardY = new System.Windows.Forms.NumericUpDown();
             this.nReplayX = new System.Windows.Forms.NumericUpDown();
+            this.nStatX = new System.Windows.Forms.NumericUpDown();
             this.nBugX = new System.Windows.Forms.NumericUpDown();
             this.nBoardX = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,20 +63,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.bAbout = new System.Windows.Forms.Button();
+            this.bStatCenter = new System.Windows.Forms.Button();
+            this.pStatPosition = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nReplayY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nStatY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBugY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBoardY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReplayX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nStatX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBugX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBoardX)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.pStatPosition.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.pStatPosition);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.bBugBottom);
             this.groupBox1.Controls.Add(this.bPresetBottom);
@@ -95,7 +106,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(518, 122);
+            this.groupBox1.Size = new System.Drawing.Size(518, 146);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Appearance";
@@ -103,11 +114,21 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(126, 98);
+            this.label8.Location = new System.Drawing.Point(124, 125);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(266, 13);
             this.label8.TabIndex = 5;
             this.label8.Text = "(You can also drag the elements around on the screen)";
+            // 
+            // bStatBottom
+            // 
+            this.bStatBottom.Location = new System.Drawing.Point(250, 1);
+            this.bStatBottom.Name = "bStatBottom";
+            this.bStatBottom.Size = new System.Drawing.Size(57, 22);
+            this.bStatBottom.TabIndex = 4;
+            this.bStatBottom.Text = "Bottom";
+            this.bStatBottom.UseVisualStyleBackColor = true;
+            this.bStatBottom.Click += new System.EventHandler(this.StatBottom);
             // 
             // bBugBottom
             // 
@@ -199,6 +220,16 @@
             this.bPresetLeft.UseVisualStyleBackColor = true;
             this.bPresetLeft.Click += new System.EventHandler(this.bPresetLeft_Click);
             // 
+            // bStatTop
+            // 
+            this.bStatTop.Location = new System.Drawing.Point(199, 1);
+            this.bStatTop.Name = "bStatTop";
+            this.bStatTop.Size = new System.Drawing.Size(45, 22);
+            this.bStatTop.TabIndex = 3;
+            this.bStatTop.Text = "Top";
+            this.bStatTop.UseVisualStyleBackColor = true;
+            this.bStatTop.Click += new System.EventHandler(this.StatTop);
+            // 
             // bBugTop
             // 
             this.bBugTop.Location = new System.Drawing.Point(221, 70);
@@ -231,6 +262,19 @@
             this.nReplayY.Size = new System.Drawing.Size(43, 20);
             this.nReplayY.TabIndex = 2;
             this.nReplayY.ValueChanged += new System.EventHandler(this.nReplay_ValueChanged);
+            // 
+            // nStatY
+            // 
+            this.nStatY.Location = new System.Drawing.Point(141, 1);
+            this.nStatY.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nStatY.Name = "nStatY";
+            this.nStatY.Size = new System.Drawing.Size(43, 20);
+            this.nStatY.TabIndex = 2;
+            this.nStatY.ValueChanged += new System.EventHandler(this.StatPositionValueChanged);
             // 
             // nBugY
             // 
@@ -271,6 +315,19 @@
             this.nReplayX.TabIndex = 2;
             this.nReplayX.ValueChanged += new System.EventHandler(this.nReplay_ValueChanged);
             // 
+            // nStatX
+            // 
+            this.nStatX.Location = new System.Drawing.Point(92, 1);
+            this.nStatX.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nStatX.Name = "nStatX";
+            this.nStatX.Size = new System.Drawing.Size(43, 20);
+            this.nStatX.TabIndex = 2;
+            this.nStatX.ValueChanged += new System.EventHandler(this.StatPositionValueChanged);
+            // 
             // nBugX
             // 
             this.nBugX.Location = new System.Drawing.Point(114, 70);
@@ -305,6 +362,15 @@
             this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "Replay Position";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Player Stat Bar";
             // 
             // label7
             // 
@@ -379,7 +445,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cGameType);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 156);
+            this.groupBox2.Location = new System.Drawing.Point(12, 180);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(518, 107);
             this.groupBox2.TabIndex = 4;
@@ -461,6 +527,29 @@
             this.bAbout.UseVisualStyleBackColor = true;
             this.bAbout.Click += new System.EventHandler(this.bAbout_Click);
             // 
+            // bStatCenter
+            // 
+            this.bStatCenter.Location = new System.Drawing.Point(370, 1);
+            this.bStatCenter.Name = "bStatCenter";
+            this.bStatCenter.Size = new System.Drawing.Size(57, 22);
+            this.bStatCenter.TabIndex = 3;
+            this.bStatCenter.Text = "Center";
+            this.bStatCenter.UseVisualStyleBackColor = true;
+            this.bStatCenter.Click += new System.EventHandler(this.StatCenter);
+            // 
+            // pStatPosition
+            // 
+            this.pStatPosition.Controls.Add(this.label9);
+            this.pStatPosition.Controls.Add(this.nStatX);
+            this.pStatPosition.Controls.Add(this.bStatBottom);
+            this.pStatPosition.Controls.Add(this.nStatY);
+            this.pStatPosition.Controls.Add(this.bStatTop);
+            this.pStatPosition.Controls.Add(this.bStatCenter);
+            this.pStatPosition.Location = new System.Drawing.Point(22, 96);
+            this.pStatPosition.Name = "pStatPosition";
+            this.pStatPosition.Size = new System.Drawing.Size(450, 26);
+            this.pStatPosition.TabIndex = 6;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,13 +567,17 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nReplayY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nStatY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBugY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBoardY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReplayX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nStatX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBugX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBoardX)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.pStatPosition.ResumeLayout(false);
+            this.pStatPosition.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,5 +620,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button bAbout;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button bStatBottom;
+        private System.Windows.Forms.Button bStatTop;
+        private System.Windows.Forms.NumericUpDown nStatY;
+        private System.Windows.Forms.NumericUpDown nStatX;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button bStatCenter;
+        private System.Windows.Forms.Panel pStatPosition;
     }
 }

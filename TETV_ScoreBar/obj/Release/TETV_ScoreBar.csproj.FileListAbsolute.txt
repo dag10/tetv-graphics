@@ -1,0 +1,12 @@
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\ResolveAssemblyReference.cache
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Controls.resources
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Display.resources
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Properties.Resources.resources
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.csproj.GenerateResource.Cache
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Settings.resources
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\TETV_Graphics.exe
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\TETV_Graphics.pdb
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_Graphics.exe
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_Graphics.pdb
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\TETV_Graphics.exe.config
+C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\ConestogaPlayers.sdf

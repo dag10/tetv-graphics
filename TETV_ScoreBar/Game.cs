@@ -9,7 +9,7 @@ namespace TETV_ScoreBar {
         Generic,
         Football,
         //Soccer,
-        //Basketball,
+        Basketball,
         Hockey,
         //Volleyball,
         //Baseball
@@ -29,6 +29,7 @@ namespace TETV_ScoreBar {
         public Point ScoreBoardPosition;
         public Point ReplayPosition;
         public Point BugPosition;
+        public Point StatPosition;
 
         public Game() {
             this.gameType = (GameType)Config.GetInt(ConfigKey.GameType);
@@ -39,6 +40,7 @@ namespace TETV_ScoreBar {
             ScoreBoardPosition = new Point(Config.GetInt(ConfigKey.BoardX), Config.GetInt(ConfigKey.BoardY));
             ReplayPosition = new Point(Config.GetInt(ConfigKey.ReplayX), Config.GetInt(ConfigKey.ReplayY));
             BugPosition = new Point(Config.GetInt(ConfigKey.BugX), Config.GetInt(ConfigKey.BugY));
+            StatPosition = new Point(Config.GetInt(ConfigKey.StatX), Config.GetInt(ConfigKey.StatY));
         }
 
         public Game(GameType type, string Name1, string Name2, string Abbr1, string Abbr2) {
@@ -50,6 +52,7 @@ namespace TETV_ScoreBar {
             ScoreBoardPosition = new Point(Config.GetInt(ConfigKey.BoardX), Config.GetInt(ConfigKey.BoardY));
             ReplayPosition = new Point(Config.GetInt(ConfigKey.ReplayX), Config.GetInt(ConfigKey.ReplayY));
             BugPosition = new Point(Config.GetInt(ConfigKey.BugX), Config.GetInt(ConfigKey.BugY));
+            StatPosition = new Point(Config.GetInt(ConfigKey.StatX), Config.GetInt(ConfigKey.StatY));
         }
     }
 }

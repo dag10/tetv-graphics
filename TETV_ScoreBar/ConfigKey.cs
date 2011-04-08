@@ -9,6 +9,8 @@
         ReplayY,
         BugX,
         BugY,
+        StatX,
+        StatY,
         ShowInfoText,
         ShowScores,
         ShowTimeouts,

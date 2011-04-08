@@ -27,6 +27,8 @@ namespace TETV_ScoreBar {
             settings[ConfigKey.ReplayY] = Display.ScreenPadding.ToString();
             settings[ConfigKey.BugX] = (Display.ScreenPadding + 160).ToString();
             settings[ConfigKey.BugY] = (Display.ScreenPadding + 460).ToString();
+            settings[ConfigKey.StatX] = (Display.ScreenPadding + 60).ToString();
+            settings[ConfigKey.StatY] = (Display.ScreenPadding + 460).ToString();
             settings[ConfigKey.ControlScreen] = "0";
             settings[ConfigKey.DisplayScreen] = "1";
             settings[ConfigKey.GameType] = ((int)GameType.Football).ToString();
@@ -109,6 +111,8 @@ namespace TETV_ScoreBar {
                 case ConfigKey.ReplayY:
                 case ConfigKey.BugX:
                 case ConfigKey.BugY:
+                case ConfigKey.StatX:
+                case ConfigKey.StatY:
                     return ValidateInt(key, value, 0, 5000);
                 case ConfigKey.ShowInfoText:
                 case ConfigKey.ShowScores:

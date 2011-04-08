@@ -20,12 +20,18 @@ namespace TETV_ScoreBar {
         public bool showScores = true;
         public bool showTimeouts = true;
         public bool showBug = true;
+        public bool showStats = false;
         public bool halftime = false;
         public const int ScreenPadding = 60;
         public string creditsRTF = "";
         string replayImage = "";
         string boardImage = "";
         bool screenSet = false;
+        // THE BELOW IS TEMPORARY
+        public string plyNumber = "0";
+        public string plyName = "Name";
+        public string plyPoints = "0";
+        public string plyFouls = "0";
 
         #region Constructors
 
@@ -34,6 +40,7 @@ namespace TETV_ScoreBar {
             this.controls = controls;
             InitializeComponent();
             editMode = true;
+            showStats = game.gameType == GameType.Basketball;
 
             // Get screen from config
             screen = Config.GetInt(ConfigKey.DisplayScreen);
@@ -76,14 +83,16 @@ namespace TETV_ScoreBar {
             set {
                 _editMode = value;
                 if (value) {
-                    pReplay.BorderStyle = BorderStyle.Fixed3D;
+                    pReplay.BorderStyle = BorderStyle.Fixed3D; 
                     pBar.BorderStyle = BorderStyle.Fixed3D;
                     pBug.BorderStyle = BorderStyle.Fixed3D;
+                    pStat.BorderStyle = BorderStyle.Fixed3D;
                     halftime = true;
                 } else {
                     pReplay.BorderStyle = BorderStyle.None;
                     pBar.BorderStyle = BorderStyle.None;
                     pBug.BorderStyle = BorderStyle.None;
+                    pStat.BorderStyle = BorderStyle.None;
                 }
             }
         }
@@ -112,6 +121,12 @@ namespace TETV_ScoreBar {
             if (!screenSet)
                 SetScreen();
 
+            // Set stat bar elements
+            lPlyNumber.Text = plyNumber;
+            lPlyName.Text = plyName;
+            lPlyPoints.Text = plyPoints;
+            lPlyFouls.Text = plyFouls;
+
             // Set ScoreBar elements
             this.lAbbr1.Text = game.TeamAbbr[0];
             this.lAbbr2.Text = game.TeamAbbr[1];
@@ -128,6 +143,7 @@ namespace TETV_ScoreBar {
             // Set positions
             this.pReplay.Location = game.ReplayPosition;
             this.pBug.Location = game.BugPosition;
+            this.pStat.Location = game.StatPosition;
             this.pCredits.Location = new Point((this.Width / 2) - (this.pCredits.Width / 2),
                                                (this.Height / 2) - (this.pCredits.Height / 2));
 
@@ -138,40 +154,41 @@ namespace TETV_ScoreBar {
             if (game.BallPossession == 1) imgStr += "L";
             if (game.BallPossession == 2) imgStr += "R";
             if (imgStr.Length > 0)
-                imgStr = "resources/main_" + imgStr + ".bmp";
+                imgStr = "main_" + imgStr;
             else
-                imgStr = "resources/main.bmp";
+                imgStr = "main";
             if (!boardImage.Equals(imgStr))
-                pMain.BackgroundImage = Utils.GetImage(imgStr);
+                pMain.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject(imgStr);
             boardImage = string.Copy(imgStr);
 
             pLeftScore.Visible = showScores;
             pRightScore.Visible = showScores;
             pBug.Visible = showBug;
+            pStat.Visible = showStats;
 
             if (showTimeouts)
-                pLeftScore.BackgroundImage = Utils.GetImage("resources/score_left_" + game.Timeouts[0] + ".bmp");
+                pLeftScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_left_" + game.Timeouts[0]);
             else
-                pLeftScore.BackgroundImage = Utils.GetImage("resources/score_left.bmp");
+                pLeftScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_left");
 
             if (showTimeouts)
-                pRightScore.BackgroundImage = Utils.GetImage("resources/score_right_" + game.Timeouts[1] + ".bmp");
+                pRightScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_right_" + game.Timeouts[1]);
             else
-                pRightScore.BackgroundImage = Utils.GetImage("resources/score_right.bmp");
+                pRightScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_right");
 
             if (halftime)
                 if (game.ReplayPosition.X < (this.Width / 2) - (pReplay.Width / 2))
-                    imgStr = "resources/halftime_L.bmp";
+                    imgStr = "halftime_L";
                 else
-                    imgStr = "resources/halftime_R.bmp";
+                    imgStr = "halftime_R";
             else
                 if (game.ReplayPosition.X < (this.Width / 2) - (pReplay.Width / 2))
-                    imgStr = "resources/replay_L.bmp";
+                    imgStr = "replay_L";
                 else
-                    imgStr = "resources/replay_R.bmp";
+                    imgStr = "replay_R";
 
             if (!replayImage.Equals(imgStr))
-                pReplay.BackgroundImage = Utils.GetImage(imgStr);
+                pReplay.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject(imgStr);
             replayImage = string.Copy(imgStr);
 
 
@@ -198,6 +215,10 @@ namespace TETV_ScoreBar {
 
         public Point BugSize {
             get { return new Point(pBug.Size.Width, pBug.Size.Height); }
+        }
+
+        public Point StatSize {
+            get { return new Point(pStat.Size.Width, pStat.Size.Height); }
         }
 
         #endregion
@@ -236,6 +257,14 @@ namespace TETV_ScoreBar {
             UpdateDisplay();
         }
 
+        public void ShowStats() {
+            pStat.Visible = true;
+        }
+
+        public void HideStats() {
+            pStat.Visible = false;
+        }
+
         public void ShowCredits() {
             if (creditsTimer == null) {
                 creditsTimer = new Timer();
@@ -258,6 +287,7 @@ namespace TETV_ScoreBar {
             pReplay.Visible = false;
             pCredits.Visible = false;
             pBug.Visible = false;
+            pStat.Visible = false;
 
             if (creditsTimer != null)
                 creditsTimer.Enabled = false;
@@ -302,6 +332,15 @@ namespace TETV_ScoreBar {
             dragTarget = pBug;
         }
 
+        void DragStat(object sender, MouseEventArgs e) {
+            if (!editMode) return;
+
+            Point p = PointToClient(Cursor.Position);
+
+            dragOffset = new Point(p.X - pStat.Location.X, p.Y - pStat.Location.Y);
+            dragTarget = pStat;
+        }
+
         void DragStop(object sender, MouseEventArgs e) {
             dragTarget = null;
 
@@ -326,6 +365,9 @@ namespace TETV_ScoreBar {
             } else if (dragTarget == pBug) {
                 game.BugPosition.X = p.X - dragOffset.X;
                 game.BugPosition.Y = p.Y - dragOffset.Y;
+            } else if (dragTarget == pStat) {
+                game.StatPosition.X = p.X - dragOffset.X;
+                game.StatPosition.Y = p.Y - dragOffset.Y;
             } else return;
 
             UpdateDisplay();

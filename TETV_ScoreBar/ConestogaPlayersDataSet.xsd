@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ConestogaPlayersDataSet" targetNamespace="http://tempuri.org/ConestogaPlayersDataSet.xsd" xmlns:mstns="http://tempuri.org/ConestogaPlayersDataSet.xsd" xmlns="http://tempuri.org/ConestogaPlayersDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConestogaPlayersConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConestogaPlayersConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TETV_ScoreBar.Properties.Settings.GlobalReference.Default.ConestogaPlayersConnectionString" Provider="Microsoft.SqlServerCe.Client.3.5" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ConestogaPlayersDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ConestogaPlayersDataSet" msprop:Generator_DataSetName="ConestogaPlayersDataSet" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Conestoga" msprop:Generator_UserTableName="Conestoga" msprop:Generator_RowDeletedName="ConestogaRowDeleted" msprop:Generator_TableClassName="ConestogaDataTable" msprop:Generator_RowChangedName="ConestogaRowChanged" msprop:Generator_RowClassName="ConestogaRow" msprop:Generator_RowChangingName="ConestogaRowChanging" msprop:Generator_RowEvArgName="ConestogaRowChangeEvent" msprop:Generator_RowEvHandlerName="ConestogaRowChangeEventHandler" msprop:Generator_TablePropName="Conestoga" msprop:Generator_TableVarName="tableConestoga" msprop:Generator_RowDeletingName="ConestogaRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:string" />
+              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInTable="nameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="points" msprop:Generator_UserColumnName="points" msprop:Generator_ColumnPropNameInRow="points" msprop:Generator_ColumnVarNameInTable="columnpoints" msprop:Generator_ColumnPropNameInTable="pointsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="fouls" msprop:Generator_UserColumnName="fouls" msprop:Generator_ColumnPropNameInRow="fouls" msprop:Generator_ColumnVarNameInTable="columnfouls" msprop:Generator_ColumnPropNameInTable="foulsColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Visiting" msprop:Generator_UserTableName="Visiting" msprop:Generator_RowDeletedName="VisitingRowDeleted" msprop:Generator_TableClassName="VisitingDataTable" msprop:Generator_RowChangedName="VisitingRowChanged" msprop:Generator_RowClassName="VisitingRow" msprop:Generator_RowChangingName="VisitingRowChanging" msprop:Generator_RowEvArgName="VisitingRowChangeEvent" msprop:Generator_RowEvHandlerName="VisitingRowChangeEventHandler" msprop:Generator_TablePropName="Visiting" msprop:Generator_TableVarName="tableVisiting" msprop:Generator_RowDeletingName="VisitingRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:string" />
+              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInTable="nameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="points" msprop:Generator_UserColumnName="points" msprop:Generator_ColumnPropNameInRow="points" msprop:Generator_ColumnVarNameInTable="columnpoints" msprop:Generator_ColumnPropNameInTable="pointsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="fouls" msprop:Generator_UserColumnName="fouls" msprop:Generator_ColumnPropNameInRow="fouls" msprop:Generator_ColumnVarNameInTable="columnfouls" msprop:Generator_ColumnPropNameInTable="foulsColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="ConestogaKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Conestoga" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="Visiting_ConestogaKey1" msdata:ConstraintName="ConestogaKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Visiting" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

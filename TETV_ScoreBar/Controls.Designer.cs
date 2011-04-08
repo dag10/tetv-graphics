@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Controls));
             this.bUseScoreBar = new System.Windows.Forms.Button();
             this.bUseReplay = new System.Windows.Forms.Button();
@@ -35,7 +36,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lVersion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nHomeScore = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,18 +51,19 @@
             this.tabPage = new System.Windows.Forms.TabControl();
             this.tabScores = new System.Windows.Forms.TabPage();
             this.gInfoText = new System.Windows.Forms.GroupBox();
+            this.pDownYards = new System.Windows.Forms.Panel();
+            this.bDisplayDownYards = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.bResetDownYards = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
+            this.nDown = new System.Windows.Forms.NumericUpDown();
+            this.nYards = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.tCustomInfoText = new System.Windows.Forms.TextBox();
-            this.nYards = new System.Windows.Forms.NumericUpDown();
-            this.nDown = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.bInfoPreset5 = new System.Windows.Forms.Button();
             this.bInfoPreset4 = new System.Windows.Forms.Button();
             this.bInfoPreset3 = new System.Windows.Forms.Button();
-            this.bResetDownYards = new System.Windows.Forms.Button();
-            this.bDisplayDownYards = new System.Windows.Forms.Button();
             this.bUpdateInfoText = new System.Windows.Forms.Button();
             this.bInfoPreset2 = new System.Windows.Forms.Button();
             this.bInfoPreset1 = new System.Windows.Forms.Button();
@@ -113,13 +115,28 @@
             this.CreditName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreditRole = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ScrollSpace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tStats = new System.Windows.Forms.TabPage();
+            this.visitingPlayerGrid = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pointsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foulsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visitingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.conestogaPlayersDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.conestogaPlayersDataSet = new TETV_ScoreBar.ConestogaPlayersDataSet();
+            this.conestogaPlayerGrid = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pointsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.foulsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conestogaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.bUseCredits = new System.Windows.Forms.Button();
             this.bToggleBug = new System.Windows.Forms.Button();
             this.dImageBrowser = new System.Windows.Forms.OpenFileDialog();
             this.dSaveCredits = new System.Windows.Forms.SaveFileDialog();
             this.dOpenCredits = new System.Windows.Forms.OpenFileDialog();
-            this.pDownYards = new System.Windows.Forms.Panel();
+            this.bUseStats = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).BeginInit();
@@ -131,8 +148,9 @@
             this.tabPage.SuspendLayout();
             this.tabScores.SuspendLayout();
             this.gInfoText.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nYards)).BeginInit();
+            this.pDownYards.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nYards)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nQuarter)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -144,7 +162,13 @@
             this.tabPage4.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dRoles)).BeginInit();
-            this.pDownYards.SuspendLayout();
+            this.tStats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.visitingPlayerGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conestogaPlayersDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conestogaPlayersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conestogaPlayerGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conestogaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bUseScoreBar
@@ -262,14 +286,15 @@
             this.label6.Text = "No Settings Available";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // lVersion
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(514, 582);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Version 0.1.4";
+            this.lVersion.AutoSize = true;
+            this.lVersion.Location = new System.Drawing.Point(509, 582);
+            this.lVersion.Name = "lVersion";
+            this.lVersion.Size = new System.Drawing.Size(74, 13);
+            this.lVersion.TabIndex = 3;
+            this.lVersion.Text = "Version x.x.x.x";
+            this.lVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
@@ -393,6 +418,7 @@
             this.tabPage.Controls.Add(this.tabPage2);
             this.tabPage.Controls.Add(this.tabPage5);
             this.tabPage.Controls.Add(this.tabPage4);
+            this.tabPage.Controls.Add(this.tStats);
             this.tabPage.Location = new System.Drawing.Point(12, 41);
             this.tabPage.Name = "tabPage";
             this.tabPage.SelectedIndex = 0;
@@ -434,6 +460,29 @@
             this.gInfoText.TabStop = false;
             this.gInfoText.Text = "Text Bar";
             // 
+            // pDownYards
+            // 
+            this.pDownYards.Controls.Add(this.bDisplayDownYards);
+            this.pDownYards.Controls.Add(this.label16);
+            this.pDownYards.Controls.Add(this.bResetDownYards);
+            this.pDownYards.Controls.Add(this.label15);
+            this.pDownYards.Controls.Add(this.nDown);
+            this.pDownYards.Controls.Add(this.nYards);
+            this.pDownYards.Location = new System.Drawing.Point(307, 91);
+            this.pDownYards.Name = "pDownYards";
+            this.pDownYards.Size = new System.Drawing.Size(242, 71);
+            this.pDownYards.TabIndex = 6;
+            // 
+            // bDisplayDownYards
+            // 
+            this.bDisplayDownYards.Location = new System.Drawing.Point(69, 39);
+            this.bDisplayDownYards.Name = "bDisplayDownYards";
+            this.bDisplayDownYards.Size = new System.Drawing.Size(159, 23);
+            this.bDisplayDownYards.TabIndex = 2;
+            this.bDisplayDownYards.Text = "Display Down and Yards";
+            this.bDisplayDownYards.UseVisualStyleBackColor = true;
+            this.bDisplayDownYards.Click += new System.EventHandler(this.bDisplayDownYards_Click);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -443,6 +492,16 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Yards Remaining";
             // 
+            // bResetDownYards
+            // 
+            this.bResetDownYards.Location = new System.Drawing.Point(12, 39);
+            this.bResetDownYards.Name = "bResetDownYards";
+            this.bResetDownYards.Size = new System.Drawing.Size(51, 23);
+            this.bResetDownYards.TabIndex = 2;
+            this.bResetDownYards.Text = "Reset";
+            this.bResetDownYards.UseVisualStyleBackColor = true;
+            this.bResetDownYards.Click += new System.EventHandler(this.bResetDownYards_Click);
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -451,39 +510,6 @@
             this.label15.Size = new System.Drawing.Size(35, 13);
             this.label15.TabIndex = 5;
             this.label15.Text = "Down";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(269, 24);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 13);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Custom Text";
-            // 
-            // tCustomInfoText
-            // 
-            this.tCustomInfoText.Location = new System.Drawing.Point(341, 22);
-            this.tCustomInfoText.Name = "tCustomInfoText";
-            this.tCustomInfoText.Size = new System.Drawing.Size(192, 20);
-            this.tCustomInfoText.TabIndex = 3;
-            // 
-            // nYards
-            // 
-            this.nYards.Location = new System.Drawing.Point(193, 13);
-            this.nYards.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.nYards.Name = "nYards";
-            this.nYards.Size = new System.Drawing.Size(35, 20);
-            this.nYards.TabIndex = 1;
-            this.nYards.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             // 
             // nDown
             // 
@@ -502,6 +528,39 @@
             0,
             0});
             // 
+            // nYards
+            // 
+            this.nYards.Location = new System.Drawing.Point(193, 13);
+            this.nYards.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.nYards.Name = "nYards";
+            this.nYards.Size = new System.Drawing.Size(35, 20);
+            this.nYards.TabIndex = 1;
+            this.nYards.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(269, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 13);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Custom Text";
+            // 
+            // tCustomInfoText
+            // 
+            this.tCustomInfoText.Location = new System.Drawing.Point(341, 22);
+            this.tCustomInfoText.Name = "tCustomInfoText";
+            this.tCustomInfoText.Size = new System.Drawing.Size(192, 20);
+            this.tCustomInfoText.TabIndex = 3;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -510,55 +569,35 @@
             this.label14.Size = new System.Drawing.Size(0, 13);
             this.label14.TabIndex = 0;
             // 
-            // bInfoTimeout
+            // bInfoPreset5
             // 
             this.bInfoPreset5.Location = new System.Drawing.Point(9, 135);
-            this.bInfoPreset5.Name = "bInfoTimeout";
+            this.bInfoPreset5.Name = "bInfoPreset5";
             this.bInfoPreset5.Size = new System.Drawing.Size(202, 23);
             this.bInfoPreset5.TabIndex = 2;
             this.bInfoPreset5.Text = "Timeout";
             this.bInfoPreset5.UseVisualStyleBackColor = true;
             this.bInfoPreset5.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
-            // bInfoFieldGoal
+            // bInfoPreset4
             // 
             this.bInfoPreset4.Location = new System.Drawing.Point(9, 106);
-            this.bInfoPreset4.Name = "bInfoFieldGoal";
+            this.bInfoPreset4.Name = "bInfoPreset4";
             this.bInfoPreset4.Size = new System.Drawing.Size(202, 23);
             this.bInfoPreset4.TabIndex = 2;
             this.bInfoPreset4.Text = "Field Goal";
             this.bInfoPreset4.UseVisualStyleBackColor = true;
             this.bInfoPreset4.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
-            // bInfoKickoff
+            // bInfoPreset3
             // 
             this.bInfoPreset3.Location = new System.Drawing.Point(8, 77);
-            this.bInfoPreset3.Name = "bInfoKickoff";
+            this.bInfoPreset3.Name = "bInfoPreset3";
             this.bInfoPreset3.Size = new System.Drawing.Size(202, 23);
             this.bInfoPreset3.TabIndex = 2;
             this.bInfoPreset3.Text = "Kickoff";
             this.bInfoPreset3.UseVisualStyleBackColor = true;
             this.bInfoPreset3.Click += new System.EventHandler(this.bInfoPreset_Click);
-            // 
-            // bResetDownYards
-            // 
-            this.bResetDownYards.Location = new System.Drawing.Point(12, 39);
-            this.bResetDownYards.Name = "bResetDownYards";
-            this.bResetDownYards.Size = new System.Drawing.Size(51, 23);
-            this.bResetDownYards.TabIndex = 2;
-            this.bResetDownYards.Text = "Reset";
-            this.bResetDownYards.UseVisualStyleBackColor = true;
-            this.bResetDownYards.Click += new System.EventHandler(this.bResetDownYards_Click);
-            // 
-            // bDisplayDownYards
-            // 
-            this.bDisplayDownYards.Location = new System.Drawing.Point(69, 39);
-            this.bDisplayDownYards.Name = "bDisplayDownYards";
-            this.bDisplayDownYards.Size = new System.Drawing.Size(159, 23);
-            this.bDisplayDownYards.TabIndex = 2;
-            this.bDisplayDownYards.Text = "Display Down and Yards";
-            this.bDisplayDownYards.UseVisualStyleBackColor = true;
-            this.bDisplayDownYards.Click += new System.EventHandler(this.bDisplayDownYards_Click);
             // 
             // bUpdateInfoText
             // 
@@ -570,20 +609,20 @@
             this.bUpdateInfoText.UseVisualStyleBackColor = true;
             this.bUpdateInfoText.Click += new System.EventHandler(this.bUpdateInfoText_Click);
             // 
-            // bInfoTouchdown
+            // bInfoPreset2
             // 
             this.bInfoPreset2.Location = new System.Drawing.Point(9, 48);
-            this.bInfoPreset2.Name = "bInfoTouchdown";
+            this.bInfoPreset2.Name = "bInfoPreset2";
             this.bInfoPreset2.Size = new System.Drawing.Size(202, 23);
             this.bInfoPreset2.TabIndex = 2;
             this.bInfoPreset2.Text = "Touchdown";
             this.bInfoPreset2.UseVisualStyleBackColor = true;
             this.bInfoPreset2.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
-            // bInfoFlag
+            // bInfoPreset1
             // 
             this.bInfoPreset1.Location = new System.Drawing.Point(9, 19);
-            this.bInfoPreset1.Name = "bInfoFlag";
+            this.bInfoPreset1.Name = "bInfoPreset1";
             this.bInfoPreset1.Size = new System.Drawing.Size(202, 23);
             this.bInfoPreset1.TabIndex = 2;
             this.bInfoPreset1.Text = "Flag";
@@ -1131,6 +1170,132 @@
             this.ScrollSpace.ReadOnly = true;
             this.ScrollSpace.Width = 18;
             // 
+            // tStats
+            // 
+            this.tStats.Controls.Add(this.visitingPlayerGrid);
+            this.tStats.Controls.Add(this.conestogaPlayerGrid);
+            this.tStats.Location = new System.Drawing.Point(4, 22);
+            this.tStats.Name = "tStats";
+            this.tStats.Padding = new System.Windows.Forms.Padding(3);
+            this.tStats.Size = new System.Drawing.Size(567, 504);
+            this.tStats.TabIndex = 9;
+            this.tStats.Text = "Stats";
+            this.tStats.UseVisualStyleBackColor = true;
+            // 
+            // visitingPlayerGrid
+            // 
+            this.visitingPlayerGrid.AutoGenerateColumns = false;
+            this.visitingPlayerGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.visitingPlayerGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.pointsDataGridViewTextBoxColumn1,
+            this.foulsDataGridViewTextBoxColumn1});
+            this.visitingPlayerGrid.DataSource = this.visitingBindingSource;
+            this.visitingPlayerGrid.Location = new System.Drawing.Point(0, 266);
+            this.visitingPlayerGrid.Name = "visitingPlayerGrid";
+            this.visitingPlayerGrid.Size = new System.Drawing.Size(567, 238);
+            this.visitingPlayerGrid.TabIndex = 0;
+            this.visitingPlayerGrid.SelectionChanged += new System.EventHandler(this.playerGrid_SelectionChanged);
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.FillWeight = 1F;
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.Width = 25;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.Width = 345;
+            // 
+            // pointsDataGridViewTextBoxColumn1
+            // 
+            this.pointsDataGridViewTextBoxColumn1.DataPropertyName = "points";
+            this.pointsDataGridViewTextBoxColumn1.FillWeight = 1F;
+            this.pointsDataGridViewTextBoxColumn1.HeaderText = "points";
+            this.pointsDataGridViewTextBoxColumn1.Name = "pointsDataGridViewTextBoxColumn1";
+            this.pointsDataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // foulsDataGridViewTextBoxColumn1
+            // 
+            this.foulsDataGridViewTextBoxColumn1.DataPropertyName = "fouls";
+            this.foulsDataGridViewTextBoxColumn1.FillWeight = 1F;
+            this.foulsDataGridViewTextBoxColumn1.HeaderText = "fouls";
+            this.foulsDataGridViewTextBoxColumn1.Name = "foulsDataGridViewTextBoxColumn1";
+            this.foulsDataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // visitingBindingSource
+            // 
+            this.visitingBindingSource.DataMember = "Visiting";
+            this.visitingBindingSource.DataSource = this.conestogaPlayersDataSetBindingSource;
+            // 
+            // conestogaPlayersDataSetBindingSource
+            // 
+            this.conestogaPlayersDataSetBindingSource.DataSource = this.conestogaPlayersDataSet;
+            this.conestogaPlayersDataSetBindingSource.Position = 0;
+            // 
+            // conestogaPlayersDataSet
+            // 
+            this.conestogaPlayersDataSet.DataSetName = "ConestogaPlayersDataSet";
+            this.conestogaPlayersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // conestogaPlayerGrid
+            // 
+            this.conestogaPlayerGrid.AutoGenerateColumns = false;
+            this.conestogaPlayerGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.conestogaPlayerGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.pointsDataGridViewTextBoxColumn,
+            this.foulsDataGridViewTextBoxColumn});
+            this.conestogaPlayerGrid.DataSource = this.conestogaBindingSource;
+            this.conestogaPlayerGrid.Location = new System.Drawing.Point(0, 0);
+            this.conestogaPlayerGrid.Name = "conestogaPlayerGrid";
+            this.conestogaPlayerGrid.Size = new System.Drawing.Size(567, 260);
+            this.conestogaPlayerGrid.TabIndex = 0;
+            this.conestogaPlayerGrid.SelectionChanged += new System.EventHandler(this.playerGrid_SelectionChanged);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 1F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 25;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 345;
+            // 
+            // pointsDataGridViewTextBoxColumn
+            // 
+            this.pointsDataGridViewTextBoxColumn.DataPropertyName = "points";
+            this.pointsDataGridViewTextBoxColumn.FillWeight = 1F;
+            this.pointsDataGridViewTextBoxColumn.HeaderText = "points";
+            this.pointsDataGridViewTextBoxColumn.Name = "pointsDataGridViewTextBoxColumn";
+            this.pointsDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // foulsDataGridViewTextBoxColumn
+            // 
+            this.foulsDataGridViewTextBoxColumn.DataPropertyName = "fouls";
+            this.foulsDataGridViewTextBoxColumn.FillWeight = 1F;
+            this.foulsDataGridViewTextBoxColumn.HeaderText = "fouls";
+            this.foulsDataGridViewTextBoxColumn.Name = "foulsDataGridViewTextBoxColumn";
+            this.foulsDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // conestogaBindingSource
+            // 
+            this.conestogaBindingSource.DataMember = "Conestoga";
+            this.conestogaBindingSource.DataSource = this.conestogaPlayersDataSetBindingSource;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1185,31 +1350,29 @@
             this.dOpenCredits.RestoreDirectory = true;
             this.dOpenCredits.Title = "Open Credits";
             // 
-            // pDownYards
+            // bUseStats
             // 
-            this.pDownYards.Controls.Add(this.bDisplayDownYards);
-            this.pDownYards.Controls.Add(this.label16);
-            this.pDownYards.Controls.Add(this.bResetDownYards);
-            this.pDownYards.Controls.Add(this.label15);
-            this.pDownYards.Controls.Add(this.nDown);
-            this.pDownYards.Controls.Add(this.nYards);
-            this.pDownYards.Location = new System.Drawing.Point(307, 91);
-            this.pDownYards.Name = "pDownYards";
-            this.pDownYards.Size = new System.Drawing.Size(242, 71);
-            this.pDownYards.TabIndex = 6;
+            this.bUseStats.Location = new System.Drawing.Point(225, 12);
+            this.bUseStats.Name = "bUseStats";
+            this.bUseStats.Size = new System.Drawing.Size(31, 23);
+            this.bUseStats.TabIndex = 1;
+            this.bUseStats.Text = "   ";
+            this.bUseStats.UseVisualStyleBackColor = true;
+            this.bUseStats.Click += new System.EventHandler(this.bUseStats_Click);
             // 
             // Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(599, 607);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lVersion);
             this.Controls.Add(this.bToggleBug);
             this.Controls.Add(this.bToggleGraphics);
             this.Controls.Add(this.bUseCredits);
             this.Controls.Add(this.bUseCustomShow);
             this.Controls.Add(this.bUseHalfTime);
             this.Controls.Add(this.bUseEndOfGame);
+            this.Controls.Add(this.bUseStats);
             this.Controls.Add(this.bUseBeforeGame);
             this.Controls.Add(this.bUseReplay);
             this.Controls.Add(this.bUseScoreBar);
@@ -1233,8 +1396,10 @@
             this.tabScores.ResumeLayout(false);
             this.gInfoText.ResumeLayout(false);
             this.gInfoText.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nYards)).EndInit();
+            this.pDownYards.ResumeLayout(false);
+            this.pDownYards.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nYards)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nQuarter)).EndInit();
@@ -1253,8 +1418,13 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dRoles)).EndInit();
-            this.pDownYards.ResumeLayout(false);
-            this.pDownYards.PerformLayout();
+            this.tStats.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.visitingPlayerGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conestogaPlayersDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conestogaPlayersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conestogaPlayerGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conestogaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1273,7 +1443,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lVersion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nHomeScore;
         private System.Windows.Forms.Label label2;
@@ -1358,6 +1528,22 @@
         private System.Windows.Forms.SaveFileDialog dSaveCredits;
         private System.Windows.Forms.OpenFileDialog dOpenCredits;
         private System.Windows.Forms.Panel pDownYards;
+        private System.Windows.Forms.TabPage tStats;
+        private System.Windows.Forms.Button bUseStats;
+        private System.Windows.Forms.DataGridView conestogaPlayerGrid;
+        private System.Windows.Forms.BindingSource conestogaPlayersDataSetBindingSource;
+        private ConestogaPlayersDataSet conestogaPlayersDataSet;
+        private System.Windows.Forms.BindingSource conestogaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pointsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn foulsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView visitingPlayerGrid;
+        private System.Windows.Forms.BindingSource visitingBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pointsDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn foulsDataGridViewTextBoxColumn1;
 
 
 

@@ -15,7 +15,7 @@ namespace TETV_ScoreBar {
         Display display;
         Screen[] screens;
         int screen;
-
+        
         #region Constructors
 
         public Controls(Game game, Display display) {
@@ -30,6 +30,15 @@ namespace TETV_ScoreBar {
             // Set mode
             mode = GraphicsMode.ScoreBar;
             showGraphics = true;
+
+            // Hide stats stuff if needed
+            bUseStats.Enabled = game.gameType == GameType.Basketball;
+
+            // Init gridview for player db
+            conestogaPlayerGrid.DataSource = conestogaPlayersDataSet.Tables["Conestoga"].DefaultView;
+            
+            // Set version label
+            lVersion.Text = "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 
             // Set default info text
             tCustomInfoText.Text = game.infoText;
@@ -71,6 +80,20 @@ namespace TETV_ScoreBar {
                     bInfoPreset2.Text = "Goal";
                     bInfoPreset3.Text = "Face Off";
                     bInfoPreset4.Text = "Timeout";
+                    bInfoPreset5.Visible = false;
+                    gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
+                    break;
+                case GameType.Basketball:
+                    cOT.Visible = false;
+                    bToggleTimeouts.Visible = false;
+                    showTimeouts = false;
+                    RemoveGroup(tabScores, gTimeouts);
+                    RemoveGroup(tabScores, gPossession);
+                    pDownYards.Visible = false;
+                    bInfoPreset1.Text = "Foul";
+                    bInfoPreset2.Text = "Timeout";
+                    bInfoPreset3.Text = "Free Throw";
+                    bInfoPreset4.Text = "3 Points";
                     bInfoPreset5.Visible = false;
                     gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     break;
@@ -276,6 +299,12 @@ namespace TETV_ScoreBar {
 
         public void bUseCredits_Click(object sender, EventArgs e) {
             mode = GraphicsMode.Credits;
+        }
+
+        private void bUseStats_Click(object sender, EventArgs e) {
+            display.showStats = !display.showStats;
+            display.UpdateDisplay();
+            bUseStats.BackColor = display.showStats ? Color.Cyan : Color.FromName("Control");
         }
 
         #endregion
@@ -576,6 +605,14 @@ namespace TETV_ScoreBar {
         }
 
         #endregion
+
+        private void playerGrid_SelectionChanged(object sender, EventArgs e) {
+            display.plyNumber = ((DataGridView)sender).CurrentRow.Cells[0].Value.ToString();
+            display.plyName = ((DataGridView)sender).CurrentRow.Cells[1].Value.ToString();
+            display.plyPoints = ((DataGridView)sender).CurrentRow.Cells[2].Value.ToString();
+            display.plyFouls = ((DataGridView)sender).CurrentRow.Cells[3].Value.ToString();
+            display.UpdateDisplay();
+        }
     }
 
     public enum GraphicsMode {
