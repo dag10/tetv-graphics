@@ -79,62 +79,6 @@
             this.bToggleScores = new System.Windows.Forms.Button();
             this.bToggleInfoBar = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.gScores = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tCredits = new System.Windows.Forms.RichTextBox();
-            this.dRoles = new System.Windows.Forms.DataGridView();
-            this.CreditName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreditRole = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ScrollSpace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tStats = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.bUseCredits = new System.Windows.Forms.Button();
-            this.bToggleBug = new System.Windows.Forms.Button();
-            this.dImageBrowser = new System.Windows.Forms.OpenFileDialog();
-            this.dSaveCredits = new System.Windows.Forms.SaveFileDialog();
-            this.dOpenCredits = new System.Windows.Forms.OpenFileDialog();
-            this.bUseStats = new System.Windows.Forms.Button();
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.nHomeTimeouts = new System.Windows.Forms.NumericUpDown();
-            this.nVisitingTimeouts = new System.Windows.Forms.NumericUpDown();
-            this.bUpdateTimeouts = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.bResetTimeouts = new System.Windows.Forms.Button();
-            this.gTimeouts = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.gMatchScores = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -151,11 +95,73 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
+            this.gScores = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.bIncVisiting4 = new System.Windows.Forms.Button();
+            this.bIncHome4 = new System.Windows.Forms.Button();
+            this.bIncVisiting3 = new System.Windows.Forms.Button();
+            this.bIncHome3 = new System.Windows.Forms.Button();
+            this.bIncVisiting2 = new System.Windows.Forms.Button();
+            this.bIncHome2 = new System.Windows.Forms.Button();
+            this.bIncVisiting1 = new System.Windows.Forms.Button();
+            this.bIncHome1 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.tCredits = new System.Windows.Forms.RichTextBox();
+            this.dRoles = new System.Windows.Forms.DataGridView();
+            this.CreditName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreditRole = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ScrollSpace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tStats = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.bUseCredits = new System.Windows.Forms.Button();
+            this.bToggleBug = new System.Windows.Forms.Button();
+            this.dImageBrowser = new System.Windows.Forms.OpenFileDialog();
+            this.dSaveCredits = new System.Windows.Forms.SaveFileDialog();
+            this.dOpenCredits = new System.Windows.Forms.OpenFileDialog();
+            this.bUseStats = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.nHomeTimeouts = new System.Windows.Forms.NumericUpDown();
+            this.nVisitingTimeouts = new System.Windows.Forms.NumericUpDown();
+            this.bUpdateTimeouts = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.bResetTimeouts = new System.Windows.Forms.Button();
             this.gPossession = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
             this.bNobodysBall = new System.Windows.Forms.Button();
             this.bVisitingBall = new System.Windows.Forms.Button();
             this.bConestogaBall = new System.Windows.Forms.Button();
+            this.gTimeouts = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.bHomeTimeouts0 = new System.Windows.Forms.Button();
+            this.bHomeTimeouts1 = new System.Windows.Forms.Button();
+            this.bHomeTimeouts2 = new System.Windows.Forms.Button();
+            this.bHomeTimeouts3 = new System.Windows.Forms.Button();
+            this.bVisitingTimeouts2 = new System.Windows.Forms.Button();
+            this.bVisitingTimeouts1 = new System.Windows.Forms.Button();
+            this.bVisitingTimeouts0 = new System.Windows.Forms.Button();
+            this.bVisitingTimeouts3 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).BeginInit();
@@ -172,20 +178,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nYards)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.gMatchScores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nHomeAltScore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nVisitingAltScore)).BeginInit();
             this.gScores.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dRoles)).BeginInit();
-            this.tStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).BeginInit();
+            this.gPossession.SuspendLayout();
             this.gTimeouts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            this.gMatchScores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nHomeAltScore)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nVisitingAltScore)).BeginInit();
-            this.gPossession.SuspendLayout();
             this.SuspendLayout();
             // 
             // bUseScoreBar
@@ -439,11 +444,14 @@
             this.tabPage.Location = new System.Drawing.Point(12, 41);
             this.tabPage.Name = "tabPage";
             this.tabPage.SelectedIndex = 0;
-            this.tabPage.Size = new System.Drawing.Size(575, 530);
+            this.tabPage.Size = new System.Drawing.Size(596, 530);
             this.tabPage.TabIndex = 0;
             // 
             // tabScores
             // 
+            this.tabScores.AutoScroll = true;
+            this.tabScores.Controls.Add(this.gPossession);
+            this.tabScores.Controls.Add(this.gTimeouts);
             this.tabScores.Controls.Add(this.gInfoText);
             this.tabScores.Controls.Add(this.groupBox2);
             this.tabScores.Controls.Add(this.groupBox4);
@@ -452,7 +460,7 @@
             this.tabScores.Location = new System.Drawing.Point(4, 22);
             this.tabScores.Name = "tabScores";
             this.tabScores.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScores.Size = new System.Drawing.Size(567, 504);
+            this.tabScores.Size = new System.Drawing.Size(588, 504);
             this.tabScores.TabIndex = 0;
             this.tabScores.Text = "Score Bar";
             this.tabScores.UseVisualStyleBackColor = true;
@@ -469,7 +477,7 @@
             this.gInfoText.Controls.Add(this.bUpdateInfoText);
             this.gInfoText.Controls.Add(this.bInfoPreset2);
             this.gInfoText.Controls.Add(this.bInfoPreset1);
-            this.gInfoText.Location = new System.Drawing.Point(6, 307);
+            this.gInfoText.Location = new System.Drawing.Point(6, 478);
             this.gInfoText.Name = "gInfoText";
             this.gInfoText.Size = new System.Drawing.Size(555, 168);
             this.gInfoText.TabIndex = 1;
@@ -779,610 +787,6 @@
             this.label19.Size = new System.Drawing.Size(0, 13);
             this.label19.TabIndex = 0;
             // 
-            // gScores
-            // 
-            this.gScores.Controls.Add(this.label12);
-            this.gScores.Controls.Add(this.label11);
-            this.gScores.Controls.Add(this.nHomeScore);
-            this.gScores.Controls.Add(this.nVisitingScore);
-            this.gScores.Controls.Add(this.bUpdateScores);
-            this.gScores.Controls.Add(this.label1);
-            this.gScores.Controls.Add(this.button10);
-            this.gScores.Controls.Add(this.button6);
-            this.gScores.Controls.Add(this.button9);
-            this.gScores.Controls.Add(this.button5);
-            this.gScores.Controls.Add(this.button8);
-            this.gScores.Controls.Add(this.button4);
-            this.gScores.Controls.Add(this.button7);
-            this.gScores.Controls.Add(this.button3);
-            this.gScores.Controls.Add(this.label2);
-            this.gScores.Location = new System.Drawing.Point(6, 70);
-            this.gScores.Name = "gScores";
-            this.gScores.Size = new System.Drawing.Size(555, 84);
-            this.gScores.TabIndex = 0;
-            this.gScores.TabStop = false;
-            this.gScores.Text = "Team Score";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 27);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Conestoga Score";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(219, 27);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Visiting Score";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.toolStrip1);
-            this.tabPage4.Controls.Add(this.tCredits);
-            this.tabPage4.Controls.Add(this.dRoles);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(567, 504);
-            this.tabPage4.TabIndex = 8;
-            this.tabPage4.Text = "Credits";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.toolStripSeparator,
-            this.cutToolStripButton,
-            this.copyToolStripButton,
-            this.pasteToolStripButton,
-            this.toolStripSeparator1,
-            this.toolStripButton2,
-            this.toolStripSeparator2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.MinimumSize = new System.Drawing.Size(567, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(567, 25);
-            this.toolStrip1.Stretch = true;
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tCredits
-            // 
-            this.tCredits.AcceptsTab = true;
-            this.tCredits.AutoWordSelection = true;
-            this.tCredits.BackColor = System.Drawing.Color.LightGray;
-            this.tCredits.DetectUrls = false;
-            this.tCredits.EnableAutoDragDrop = true;
-            this.tCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tCredits.ForeColor = System.Drawing.Color.Green;
-            this.tCredits.Location = new System.Drawing.Point(0, 25);
-            this.tCredits.Margin = new System.Windows.Forms.Padding(0);
-            this.tCredits.Name = "tCredits";
-            this.tCredits.Size = new System.Drawing.Size(567, 479);
-            this.tCredits.TabIndex = 1;
-            this.tCredits.Text = "";
-            this.tCredits.TextChanged += new System.EventHandler(this.tCredits_TextChanged);
-            // 
-            // dRoles
-            // 
-            this.dRoles.AllowUserToResizeColumns = false;
-            this.dRoles.AllowUserToResizeRows = false;
-            this.dRoles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dRoles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CreditName,
-            this.CreditRole,
-            this.ScrollSpace});
-            this.dRoles.Location = new System.Drawing.Point(121, 84);
-            this.dRoles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.dRoles.Name = "dRoles";
-            this.dRoles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dRoles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dRoles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dRoles.Size = new System.Drawing.Size(228, 126);
-            this.dRoles.TabIndex = 0;
-            // 
-            // CreditName
-            // 
-            this.CreditName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CreditName.Frozen = true;
-            this.CreditName.HeaderText = "Name";
-            this.CreditName.Name = "CreditName";
-            this.CreditName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CreditName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CreditName.Width = 300;
-            // 
-            // CreditRole
-            // 
-            this.CreditRole.Frozen = true;
-            this.CreditRole.HeaderText = "Role";
-            this.CreditRole.Items.AddRange(new object[] {
-            "Producer",
-            "Director",
-            "Tech Director",
-            "Graphics",
-            "Audio",
-            "Replay",
-            "Tape Jammer",
-            "Camera",
-            "Camera 1",
-            "Camera 2",
-            "Camera 3",
-            "Camera 4",
-            "Camera 5",
-            "Jib Operator",
-            "Commentator",
-            "Reporter",
-            "Special Thanks"});
-            this.CreditRole.Name = "CreditRole";
-            this.CreditRole.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CreditRole.Width = 200;
-            // 
-            // ScrollSpace
-            // 
-            this.ScrollSpace.Frozen = true;
-            this.ScrollSpace.HeaderText = "   ";
-            this.ScrollSpace.MinimumWidth = 18;
-            this.ScrollSpace.Name = "ScrollSpace";
-            this.ScrollSpace.ReadOnly = true;
-            this.ScrollSpace.Width = 18;
-            // 
-            // tStats
-            // 
-            this.tStats.Controls.Add(this.gPossession);
-            this.tStats.Controls.Add(this.gTimeouts);
-            this.tStats.Location = new System.Drawing.Point(4, 22);
-            this.tStats.Name = "tStats";
-            this.tStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tStats.Size = new System.Drawing.Size(567, 504);
-            this.tStats.TabIndex = 9;
-            this.tStats.Text = "Stats";
-            this.tStats.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(240, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
-            this.label4.TabIndex = 0;
-            // 
-            // bUseCredits
-            // 
-            this.bUseCredits.Location = new System.Drawing.Point(181, 12);
-            this.bUseCredits.Name = "bUseCredits";
-            this.bUseCredits.Size = new System.Drawing.Size(31, 23);
-            this.bUseCredits.TabIndex = 1;
-            this.bUseCredits.Text = "   ";
-            this.bUseCredits.UseVisualStyleBackColor = true;
-            this.bUseCredits.Click += new System.EventHandler(this.bUseCredits_Click);
-            // 
-            // bToggleBug
-            // 
-            this.bToggleBug.Location = new System.Drawing.Point(152, 577);
-            this.bToggleBug.Name = "bToggleBug";
-            this.bToggleBug.Size = new System.Drawing.Size(134, 23);
-            this.bToggleBug.TabIndex = 2;
-            this.bToggleBug.Text = "Hide Bug";
-            this.bToggleBug.UseVisualStyleBackColor = true;
-            this.bToggleBug.Click += new System.EventHandler(this.bToggleBug_Click);
-            // 
-            // dImageBrowser
-            // 
-            this.dImageBrowser.FileName = "dImageBrowser";
-            this.dImageBrowser.Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif";
-            this.dImageBrowser.FilterIndex = 0;
-            this.dImageBrowser.RestoreDirectory = true;
-            this.dImageBrowser.ShowReadOnly = true;
-            this.dImageBrowser.Title = "Insert an Image";
-            // 
-            // dSaveCredits
-            // 
-            this.dSaveCredits.DefaultExt = "credits";
-            this.dSaveCredits.Filter = "Rich Text File|*.rtf|All Files|*.*";
-            this.dSaveCredits.FilterIndex = 0;
-            this.dSaveCredits.RestoreDirectory = true;
-            this.dSaveCredits.Title = "Save Credits";
-            // 
-            // dOpenCredits
-            // 
-            this.dOpenCredits.DefaultExt = "credits";
-            this.dOpenCredits.FileName = "openFileDialog1";
-            this.dOpenCredits.Filter = "Rich Text File|*.rtf|All Files|*.*";
-            this.dOpenCredits.FilterIndex = 0;
-            this.dOpenCredits.RestoreDirectory = true;
-            this.dOpenCredits.Title = "Open Credits";
-            // 
-            // bUseStats
-            // 
-            this.bUseStats.Location = new System.Drawing.Point(292, 577);
-            this.bUseStats.Name = "bUseStats";
-            this.bUseStats.Size = new System.Drawing.Size(134, 23);
-            this.bUseStats.TabIndex = 1;
-            this.bUseStats.Text = "Toggle Stats";
-            this.bUseStats.UseVisualStyleBackColor = true;
-            this.bUseStats.Click += new System.EventHandler(this.bUseStats_Click);
-            // 
-            // newToolStripButton
-            // 
-            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
-            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(35, 22);
-            this.newToolStripButton.Text = "&New";
-            this.newToolStripButton.Click += new System.EventHandler(this.newToolStripButton_Click);
-            // 
-            // openToolStripButton
-            // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(40, 22);
-            this.openToolStripButton.Text = "&Open";
-            this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
-            // 
-            // saveToolStripButton
-            // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(35, 22);
-            this.saveToolStripButton.Text = "&Save";
-            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
-            // 
-            // cutToolStripButton
-            // 
-            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.cutToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripButton.Image")));
-            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cutToolStripButton.Name = "cutToolStripButton";
-            this.cutToolStripButton.Size = new System.Drawing.Size(30, 22);
-            this.cutToolStripButton.Text = "C&ut";
-            this.cutToolStripButton.Click += new System.EventHandler(this.cutToolStripButton_Click);
-            // 
-            // copyToolStripButton
-            // 
-            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
-            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copyToolStripButton.Name = "copyToolStripButton";
-            this.copyToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.copyToolStripButton.Text = "&Copy";
-            this.copyToolStripButton.Click += new System.EventHandler(this.copyToolStripButton_Click);
-            // 
-            // pasteToolStripButton
-            // 
-            this.pasteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.pasteToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripButton.Image")));
-            this.pasteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pasteToolStripButton.Name = "pasteToolStripButton";
-            this.pasteToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.pasteToolStripButton.Text = "&Paste";
-            this.pasteToolStripButton.Click += new System.EventHandler(this.pasteToolStripButton_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(76, 22);
-            this.toolStripButton2.Text = "Insert &Image";
-            this.toolStripButton2.Click += new System.EventHandler(this.InsertImage);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(31, 22);
-            this.toolStripButton3.Text = "&Left";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(46, 22);
-            this.toolStripButton4.Text = "C&enter";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(39, 22);
-            this.toolStripButton5.Text = "&Right";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(11, 27);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(104, 13);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "Conestoga Timeouts";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(204, 27);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(86, 13);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Visiting Timeouts";
-            // 
-            // nHomeTimeouts
-            // 
-            this.nHomeTimeouts.Location = new System.Drawing.Point(121, 25);
-            this.nHomeTimeouts.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.nHomeTimeouts.Name = "nHomeTimeouts";
-            this.nHomeTimeouts.Size = new System.Drawing.Size(58, 20);
-            this.nHomeTimeouts.TabIndex = 0;
-            // 
-            // nVisitingTimeouts
-            // 
-            this.nVisitingTimeouts.Location = new System.Drawing.Point(296, 25);
-            this.nVisitingTimeouts.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.nVisitingTimeouts.Name = "nVisitingTimeouts";
-            this.nVisitingTimeouts.Size = new System.Drawing.Size(58, 20);
-            this.nVisitingTimeouts.TabIndex = 2;
-            // 
-            // bUpdateTimeouts
-            // 
-            this.bUpdateTimeouts.Enabled = false;
-            this.bUpdateTimeouts.Location = new System.Drawing.Point(436, 22);
-            this.bUpdateTimeouts.Name = "bUpdateTimeouts";
-            this.bUpdateTimeouts.Size = new System.Drawing.Size(98, 23);
-            this.bUpdateTimeouts.TabIndex = 3;
-            this.bUpdateTimeouts.Text = "Update";
-            this.bUpdateTimeouts.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 27);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(0, 13);
-            this.label20.TabIndex = 0;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(211, 27);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(0, 13);
-            this.label21.TabIndex = 0;
-            // 
-            // bResetTimeouts
-            // 
-            this.bResetTimeouts.Location = new System.Drawing.Point(379, 22);
-            this.bResetTimeouts.Name = "bResetTimeouts";
-            this.bResetTimeouts.Size = new System.Drawing.Size(51, 23);
-            this.bResetTimeouts.TabIndex = 2;
-            this.bResetTimeouts.Text = "Reset";
-            this.bResetTimeouts.UseVisualStyleBackColor = true;
-            // 
-            // gTimeouts
-            // 
-            this.gTimeouts.Controls.Add(this.label9);
-            this.gTimeouts.Controls.Add(this.label10);
-            this.gTimeouts.Controls.Add(this.numericUpDown1);
-            this.gTimeouts.Controls.Add(this.numericUpDown2);
-            this.gTimeouts.Controls.Add(this.button1);
-            this.gTimeouts.Controls.Add(this.label22);
-            this.gTimeouts.Controls.Add(this.label23);
-            this.gTimeouts.Controls.Add(this.button2);
-            this.gTimeouts.Location = new System.Drawing.Point(3, 438);
-            this.gTimeouts.Name = "gTimeouts";
-            this.gTimeouts.Size = new System.Drawing.Size(555, 67);
-            this.gTimeouts.TabIndex = 1;
-            this.gTimeouts.TabStop = false;
-            this.gTimeouts.Text = "Timeouts Remaining";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Conestoga Timeouts";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(204, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Visiting Timeouts";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(121, 25);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(58, 20);
-            this.numericUpDown1.TabIndex = 0;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(296, 25);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(58, 20);
-            this.numericUpDown2.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(436, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 27);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(0, 13);
-            this.label22.TabIndex = 0;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(211, 27);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(0, 13);
-            this.label23.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(379, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(51, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(9, 55);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(31, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "+3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.incConestogaScore);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(46, 55);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "+4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.incConestogaScore);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(83, 55);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(31, 23);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "+5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.incConestogaScore);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(120, 55);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(31, 23);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "+6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.incConestogaScore);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(214, 55);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(31, 23);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "+3";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.incVisitingScore);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(251, 55);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(31, 23);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "+4";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.incVisitingScore);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(288, 55);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(31, 23);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "+5";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.incVisitingScore);
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(325, 55);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(31, 23);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "+6";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.incVisitingScore);
-            // 
             // gMatchScores
             // 
             this.gMatchScores.Controls.Add(this.label25);
@@ -1476,7 +880,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(31, 23);
             this.button12.TabIndex = 1;
-            this.button12.Text = "+6";
+            this.button12.Text = "+4";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.incVisitingAltScore);
             // 
@@ -1486,7 +890,7 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(31, 23);
             this.button13.TabIndex = 1;
-            this.button13.Text = "+6";
+            this.button13.Text = "+4";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.incConestogaAltScore);
             // 
@@ -1496,7 +900,7 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(31, 23);
             this.button14.TabIndex = 1;
-            this.button14.Text = "+5";
+            this.button14.Text = "+3";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.incVisitingAltScore);
             // 
@@ -1506,7 +910,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(31, 23);
             this.button15.TabIndex = 1;
-            this.button15.Text = "+5";
+            this.button15.Text = "+3";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.incConestogaAltScore);
             // 
@@ -1516,7 +920,7 @@
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(31, 23);
             this.button16.TabIndex = 1;
-            this.button16.Text = "+4";
+            this.button16.Text = "+2";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.incVisitingAltScore);
             // 
@@ -1526,7 +930,7 @@
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(31, 23);
             this.button17.TabIndex = 1;
-            this.button17.Text = "+4";
+            this.button17.Text = "+2";
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.incConestogaAltScore);
             // 
@@ -1536,7 +940,7 @@
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(31, 23);
             this.button18.TabIndex = 1;
-            this.button18.Text = "+3";
+            this.button18.Text = "+1";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.incVisitingAltScore);
             // 
@@ -1546,7 +950,7 @@
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(31, 23);
             this.button19.TabIndex = 1;
-            this.button19.Text = "+3";
+            this.button19.Text = "+1";
             this.button19.UseVisualStyleBackColor = true;
             this.button19.Click += new System.EventHandler(this.incConestogaAltScore);
             // 
@@ -1558,16 +962,524 @@
             this.label28.Size = new System.Drawing.Size(0, 13);
             this.label28.TabIndex = 0;
             // 
+            // gScores
+            // 
+            this.gScores.Controls.Add(this.label12);
+            this.gScores.Controls.Add(this.label11);
+            this.gScores.Controls.Add(this.nHomeScore);
+            this.gScores.Controls.Add(this.nVisitingScore);
+            this.gScores.Controls.Add(this.bUpdateScores);
+            this.gScores.Controls.Add(this.label1);
+            this.gScores.Controls.Add(this.bIncVisiting4);
+            this.gScores.Controls.Add(this.bIncHome4);
+            this.gScores.Controls.Add(this.bIncVisiting3);
+            this.gScores.Controls.Add(this.bIncHome3);
+            this.gScores.Controls.Add(this.bIncVisiting2);
+            this.gScores.Controls.Add(this.bIncHome2);
+            this.gScores.Controls.Add(this.bIncVisiting1);
+            this.gScores.Controls.Add(this.bIncHome1);
+            this.gScores.Controls.Add(this.label2);
+            this.gScores.Location = new System.Drawing.Point(6, 70);
+            this.gScores.Name = "gScores";
+            this.gScores.Size = new System.Drawing.Size(555, 84);
+            this.gScores.TabIndex = 0;
+            this.gScores.TabStop = false;
+            this.gScores.Text = "Score";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(11, 27);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Conestoga Score";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(219, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Visiting Score";
+            // 
+            // bIncVisiting4
+            // 
+            this.bIncVisiting4.Location = new System.Drawing.Point(325, 55);
+            this.bIncVisiting4.Name = "bIncVisiting4";
+            this.bIncVisiting4.Size = new System.Drawing.Size(31, 23);
+            this.bIncVisiting4.TabIndex = 1;
+            this.bIncVisiting4.Text = "+4";
+            this.bIncVisiting4.UseVisualStyleBackColor = true;
+            this.bIncVisiting4.Click += new System.EventHandler(this.incVisitingScore);
+            // 
+            // bIncHome4
+            // 
+            this.bIncHome4.Location = new System.Drawing.Point(120, 55);
+            this.bIncHome4.Name = "bIncHome4";
+            this.bIncHome4.Size = new System.Drawing.Size(31, 23);
+            this.bIncHome4.TabIndex = 1;
+            this.bIncHome4.Text = "+4";
+            this.bIncHome4.UseVisualStyleBackColor = true;
+            this.bIncHome4.Click += new System.EventHandler(this.incConestogaScore);
+            // 
+            // bIncVisiting3
+            // 
+            this.bIncVisiting3.Location = new System.Drawing.Point(288, 55);
+            this.bIncVisiting3.Name = "bIncVisiting3";
+            this.bIncVisiting3.Size = new System.Drawing.Size(31, 23);
+            this.bIncVisiting3.TabIndex = 1;
+            this.bIncVisiting3.Text = "+3";
+            this.bIncVisiting3.UseVisualStyleBackColor = true;
+            this.bIncVisiting3.Click += new System.EventHandler(this.incVisitingScore);
+            // 
+            // bIncHome3
+            // 
+            this.bIncHome3.Location = new System.Drawing.Point(83, 55);
+            this.bIncHome3.Name = "bIncHome3";
+            this.bIncHome3.Size = new System.Drawing.Size(31, 23);
+            this.bIncHome3.TabIndex = 1;
+            this.bIncHome3.Text = "+3";
+            this.bIncHome3.UseVisualStyleBackColor = true;
+            this.bIncHome3.Click += new System.EventHandler(this.incConestogaScore);
+            // 
+            // bIncVisiting2
+            // 
+            this.bIncVisiting2.Location = new System.Drawing.Point(251, 55);
+            this.bIncVisiting2.Name = "bIncVisiting2";
+            this.bIncVisiting2.Size = new System.Drawing.Size(31, 23);
+            this.bIncVisiting2.TabIndex = 1;
+            this.bIncVisiting2.Text = "+2";
+            this.bIncVisiting2.UseVisualStyleBackColor = true;
+            this.bIncVisiting2.Click += new System.EventHandler(this.incVisitingScore);
+            // 
+            // bIncHome2
+            // 
+            this.bIncHome2.Location = new System.Drawing.Point(46, 55);
+            this.bIncHome2.Name = "bIncHome2";
+            this.bIncHome2.Size = new System.Drawing.Size(31, 23);
+            this.bIncHome2.TabIndex = 1;
+            this.bIncHome2.Text = "+2";
+            this.bIncHome2.UseVisualStyleBackColor = true;
+            this.bIncHome2.Click += new System.EventHandler(this.incConestogaScore);
+            // 
+            // bIncVisiting1
+            // 
+            this.bIncVisiting1.Location = new System.Drawing.Point(214, 55);
+            this.bIncVisiting1.Name = "bIncVisiting1";
+            this.bIncVisiting1.Size = new System.Drawing.Size(31, 23);
+            this.bIncVisiting1.TabIndex = 1;
+            this.bIncVisiting1.Text = "+1";
+            this.bIncVisiting1.UseVisualStyleBackColor = true;
+            this.bIncVisiting1.Click += new System.EventHandler(this.incVisitingScore);
+            // 
+            // bIncHome1
+            // 
+            this.bIncHome1.Location = new System.Drawing.Point(9, 55);
+            this.bIncHome1.Name = "bIncHome1";
+            this.bIncHome1.Size = new System.Drawing.Size(31, 23);
+            this.bIncHome1.TabIndex = 1;
+            this.bIncHome1.Text = "+1";
+            this.bIncHome1.UseVisualStyleBackColor = true;
+            this.bIncHome1.Click += new System.EventHandler(this.incConestogaScore);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.toolStrip1);
+            this.tabPage4.Controls.Add(this.tCredits);
+            this.tabPage4.Controls.Add(this.dRoles);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(567, 504);
+            this.tabPage4.TabIndex = 8;
+            this.tabPage4.Text = "Credits";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripButton,
+            this.openToolStripButton,
+            this.saveToolStripButton,
+            this.toolStripSeparator,
+            this.cutToolStripButton,
+            this.copyToolStripButton,
+            this.pasteToolStripButton,
+            this.toolStripSeparator1,
+            this.toolStripButton2,
+            this.toolStripSeparator2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripButton5});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.MinimumSize = new System.Drawing.Size(567, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(567, 25);
+            this.toolStrip1.Stretch = true;
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // newToolStripButton
+            // 
+            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
+            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripButton.Name = "newToolStripButton";
+            this.newToolStripButton.Size = new System.Drawing.Size(35, 22);
+            this.newToolStripButton.Text = "&New";
+            this.newToolStripButton.Click += new System.EventHandler(this.newToolStripButton_Click);
+            // 
+            // openToolStripButton
+            // 
+            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
+            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripButton.Name = "openToolStripButton";
+            this.openToolStripButton.Size = new System.Drawing.Size(40, 22);
+            this.openToolStripButton.Text = "&Open";
+            this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(35, 22);
+            this.saveToolStripButton.Text = "&Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // cutToolStripButton
+            // 
+            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.cutToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripButton.Image")));
+            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cutToolStripButton.Name = "cutToolStripButton";
+            this.cutToolStripButton.Size = new System.Drawing.Size(30, 22);
+            this.cutToolStripButton.Text = "C&ut";
+            this.cutToolStripButton.Click += new System.EventHandler(this.cutToolStripButton_Click);
+            // 
+            // copyToolStripButton
+            // 
+            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
+            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copyToolStripButton.Name = "copyToolStripButton";
+            this.copyToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.copyToolStripButton.Text = "&Copy";
+            this.copyToolStripButton.Click += new System.EventHandler(this.copyToolStripButton_Click);
+            // 
+            // pasteToolStripButton
+            // 
+            this.pasteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.pasteToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripButton.Image")));
+            this.pasteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pasteToolStripButton.Name = "pasteToolStripButton";
+            this.pasteToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.pasteToolStripButton.Text = "&Paste";
+            this.pasteToolStripButton.Click += new System.EventHandler(this.pasteToolStripButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton2.Text = "Insert &Image";
+            this.toolStripButton2.Click += new System.EventHandler(this.InsertImage);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(31, 22);
+            this.toolStripButton3.Text = "&Left";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(46, 22);
+            this.toolStripButton4.Text = "C&enter";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(39, 22);
+            this.toolStripButton5.Text = "&Right";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // tCredits
+            // 
+            this.tCredits.AcceptsTab = true;
+            this.tCredits.AutoWordSelection = true;
+            this.tCredits.BackColor = System.Drawing.Color.LightGray;
+            this.tCredits.DetectUrls = false;
+            this.tCredits.EnableAutoDragDrop = true;
+            this.tCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tCredits.ForeColor = System.Drawing.Color.Green;
+            this.tCredits.Location = new System.Drawing.Point(0, 25);
+            this.tCredits.Margin = new System.Windows.Forms.Padding(0);
+            this.tCredits.Name = "tCredits";
+            this.tCredits.Size = new System.Drawing.Size(567, 479);
+            this.tCredits.TabIndex = 1;
+            this.tCredits.Text = "";
+            this.tCredits.TextChanged += new System.EventHandler(this.tCredits_TextChanged);
+            // 
+            // dRoles
+            // 
+            this.dRoles.AllowUserToResizeColumns = false;
+            this.dRoles.AllowUserToResizeRows = false;
+            this.dRoles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dRoles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CreditName,
+            this.CreditRole,
+            this.ScrollSpace});
+            this.dRoles.Location = new System.Drawing.Point(121, 84);
+            this.dRoles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.dRoles.Name = "dRoles";
+            this.dRoles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dRoles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dRoles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dRoles.Size = new System.Drawing.Size(228, 126);
+            this.dRoles.TabIndex = 0;
+            // 
+            // CreditName
+            // 
+            this.CreditName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CreditName.Frozen = true;
+            this.CreditName.HeaderText = "Name";
+            this.CreditName.Name = "CreditName";
+            this.CreditName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CreditName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CreditName.Width = 300;
+            // 
+            // CreditRole
+            // 
+            this.CreditRole.Frozen = true;
+            this.CreditRole.HeaderText = "Role";
+            this.CreditRole.Items.AddRange(new object[] {
+            "Producer",
+            "Director",
+            "Tech Director",
+            "Graphics",
+            "Audio",
+            "Replay",
+            "Tape Jammer",
+            "Camera",
+            "Camera 1",
+            "Camera 2",
+            "Camera 3",
+            "Camera 4",
+            "Camera 5",
+            "Jib Operator",
+            "Commentator",
+            "Reporter",
+            "Special Thanks"});
+            this.CreditRole.Name = "CreditRole";
+            this.CreditRole.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CreditRole.Width = 200;
+            // 
+            // ScrollSpace
+            // 
+            this.ScrollSpace.Frozen = true;
+            this.ScrollSpace.HeaderText = "   ";
+            this.ScrollSpace.MinimumWidth = 18;
+            this.ScrollSpace.Name = "ScrollSpace";
+            this.ScrollSpace.ReadOnly = true;
+            this.ScrollSpace.Width = 18;
+            // 
+            // tStats
+            // 
+            this.tStats.Location = new System.Drawing.Point(4, 22);
+            this.tStats.Name = "tStats";
+            this.tStats.Padding = new System.Windows.Forms.Padding(3);
+            this.tStats.Size = new System.Drawing.Size(567, 504);
+            this.tStats.TabIndex = 9;
+            this.tStats.Text = "Stats";
+            this.tStats.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(240, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.TabIndex = 0;
+            // 
+            // bUseCredits
+            // 
+            this.bUseCredits.Location = new System.Drawing.Point(181, 12);
+            this.bUseCredits.Name = "bUseCredits";
+            this.bUseCredits.Size = new System.Drawing.Size(31, 23);
+            this.bUseCredits.TabIndex = 1;
+            this.bUseCredits.Text = "   ";
+            this.bUseCredits.UseVisualStyleBackColor = true;
+            this.bUseCredits.Click += new System.EventHandler(this.bUseCredits_Click);
+            // 
+            // bToggleBug
+            // 
+            this.bToggleBug.Location = new System.Drawing.Point(152, 577);
+            this.bToggleBug.Name = "bToggleBug";
+            this.bToggleBug.Size = new System.Drawing.Size(134, 23);
+            this.bToggleBug.TabIndex = 2;
+            this.bToggleBug.Text = "Hide Bug";
+            this.bToggleBug.UseVisualStyleBackColor = true;
+            this.bToggleBug.Click += new System.EventHandler(this.bToggleBug_Click);
+            // 
+            // dImageBrowser
+            // 
+            this.dImageBrowser.FileName = "dImageBrowser";
+            this.dImageBrowser.Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif";
+            this.dImageBrowser.FilterIndex = 0;
+            this.dImageBrowser.RestoreDirectory = true;
+            this.dImageBrowser.ShowReadOnly = true;
+            this.dImageBrowser.Title = "Insert an Image";
+            // 
+            // dSaveCredits
+            // 
+            this.dSaveCredits.DefaultExt = "credits";
+            this.dSaveCredits.Filter = "Rich Text File|*.rtf|All Files|*.*";
+            this.dSaveCredits.FilterIndex = 0;
+            this.dSaveCredits.RestoreDirectory = true;
+            this.dSaveCredits.Title = "Save Credits";
+            // 
+            // dOpenCredits
+            // 
+            this.dOpenCredits.DefaultExt = "credits";
+            this.dOpenCredits.FileName = "openFileDialog1";
+            this.dOpenCredits.Filter = "Rich Text File|*.rtf|All Files|*.*";
+            this.dOpenCredits.FilterIndex = 0;
+            this.dOpenCredits.RestoreDirectory = true;
+            this.dOpenCredits.Title = "Open Credits";
+            // 
+            // bUseStats
+            // 
+            this.bUseStats.Location = new System.Drawing.Point(292, 577);
+            this.bUseStats.Name = "bUseStats";
+            this.bUseStats.Size = new System.Drawing.Size(134, 23);
+            this.bUseStats.TabIndex = 1;
+            this.bUseStats.Text = "Toggle Stats";
+            this.bUseStats.UseVisualStyleBackColor = true;
+            this.bUseStats.Click += new System.EventHandler(this.bUseStats_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(11, 27);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(104, 13);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Conestoga Timeouts";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(204, 27);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(86, 13);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Visiting Timeouts";
+            // 
+            // nHomeTimeouts
+            // 
+            this.nHomeTimeouts.Location = new System.Drawing.Point(121, 25);
+            this.nHomeTimeouts.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nHomeTimeouts.Name = "nHomeTimeouts";
+            this.nHomeTimeouts.Size = new System.Drawing.Size(58, 20);
+            this.nHomeTimeouts.TabIndex = 0;
+            // 
+            // nVisitingTimeouts
+            // 
+            this.nVisitingTimeouts.Location = new System.Drawing.Point(296, 25);
+            this.nVisitingTimeouts.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nVisitingTimeouts.Name = "nVisitingTimeouts";
+            this.nVisitingTimeouts.Size = new System.Drawing.Size(58, 20);
+            this.nVisitingTimeouts.TabIndex = 2;
+            // 
+            // bUpdateTimeouts
+            // 
+            this.bUpdateTimeouts.Enabled = false;
+            this.bUpdateTimeouts.Location = new System.Drawing.Point(436, 22);
+            this.bUpdateTimeouts.Name = "bUpdateTimeouts";
+            this.bUpdateTimeouts.Size = new System.Drawing.Size(98, 23);
+            this.bUpdateTimeouts.TabIndex = 3;
+            this.bUpdateTimeouts.Text = "Update";
+            this.bUpdateTimeouts.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 27);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(0, 13);
+            this.label20.TabIndex = 0;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(211, 27);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(0, 13);
+            this.label21.TabIndex = 0;
+            // 
+            // bResetTimeouts
+            // 
+            this.bResetTimeouts.Location = new System.Drawing.Point(379, 22);
+            this.bResetTimeouts.Name = "bResetTimeouts";
+            this.bResetTimeouts.Size = new System.Drawing.Size(51, 23);
+            this.bResetTimeouts.TabIndex = 2;
+            this.bResetTimeouts.Text = "Reset";
+            this.bResetTimeouts.UseVisualStyleBackColor = true;
+            // 
             // gPossession
             // 
             this.gPossession.Controls.Add(this.label24);
             this.gPossession.Controls.Add(this.bNobodysBall);
             this.gPossession.Controls.Add(this.bVisitingBall);
             this.gPossession.Controls.Add(this.bConestogaBall);
-            this.gPossession.Location = new System.Drawing.Point(3, 381);
+            this.gPossession.Location = new System.Drawing.Point(6, 307);
             this.gPossession.Name = "gPossession";
             this.gPossession.Size = new System.Drawing.Size(555, 51);
-            this.gPossession.TabIndex = 2;
+            this.gPossession.TabIndex = 8;
             this.gPossession.TabStop = false;
             this.gPossession.Text = "Ball Possession";
             // 
@@ -1587,6 +1499,7 @@
             this.bNobodysBall.TabIndex = 1;
             this.bNobodysBall.Text = "Nobody\'s Ball";
             this.bNobodysBall.UseVisualStyleBackColor = true;
+            this.bNobodysBall.Click += new System.EventHandler(this.bNobodysBall_Click);
             // 
             // bVisitingBall
             // 
@@ -1596,6 +1509,7 @@
             this.bVisitingBall.TabIndex = 1;
             this.bVisitingBall.Text = "Visitor\'s Ball";
             this.bVisitingBall.UseVisualStyleBackColor = true;
+            this.bVisitingBall.Click += new System.EventHandler(this.bVisitingBall_Click);
             // 
             // bConestogaBall
             // 
@@ -1605,12 +1519,176 @@
             this.bConestogaBall.TabIndex = 1;
             this.bConestogaBall.Text = "Conestoga\'s Ball";
             this.bConestogaBall.UseVisualStyleBackColor = true;
+            this.bConestogaBall.Click += new System.EventHandler(this.bConestogaBall_Click);
+            // 
+            // gTimeouts
+            // 
+            this.gTimeouts.Controls.Add(this.label9);
+            this.gTimeouts.Controls.Add(this.label10);
+            this.gTimeouts.Controls.Add(this.numericUpDown1);
+            this.gTimeouts.Controls.Add(this.numericUpDown2);
+            this.gTimeouts.Controls.Add(this.label22);
+            this.gTimeouts.Controls.Add(this.label23);
+            this.gTimeouts.Controls.Add(this.bVisitingTimeouts3);
+            this.gTimeouts.Controls.Add(this.bHomeTimeouts3);
+            this.gTimeouts.Controls.Add(this.bVisitingTimeouts0);
+            this.gTimeouts.Controls.Add(this.bVisitingTimeouts1);
+            this.gTimeouts.Controls.Add(this.bHomeTimeouts0);
+            this.gTimeouts.Controls.Add(this.bVisitingTimeouts2);
+            this.gTimeouts.Controls.Add(this.bHomeTimeouts1);
+            this.gTimeouts.Controls.Add(this.bHomeTimeouts2);
+            this.gTimeouts.Location = new System.Drawing.Point(6, 364);
+            this.gTimeouts.Name = "gTimeouts";
+            this.gTimeouts.Size = new System.Drawing.Size(555, 108);
+            this.gTimeouts.TabIndex = 7;
+            this.gTimeouts.TabStop = false;
+            this.gTimeouts.Text = "Timeouts Used";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(11, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Conestoga Timeouts";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(204, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Visiting Timeouts";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(121, 25);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(58, 20);
+            this.numericUpDown1.TabIndex = 0;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.nHomeTimeouts_ValueChanged);
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(296, 25);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(58, 20);
+            this.numericUpDown2.TabIndex = 2;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.nVisitingTimeouts_ValueChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 27);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(0, 13);
+            this.label22.TabIndex = 0;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(211, 27);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(0, 13);
+            this.label23.TabIndex = 0;
+            // 
+            // bHomeTimeouts0
+            // 
+            this.bHomeTimeouts0.Location = new System.Drawing.Point(19, 51);
+            this.bHomeTimeouts0.Name = "bHomeTimeouts0";
+            this.bHomeTimeouts0.Size = new System.Drawing.Size(31, 23);
+            this.bHomeTimeouts0.TabIndex = 1;
+            this.bHomeTimeouts0.Text = "0";
+            this.bHomeTimeouts0.UseVisualStyleBackColor = true;
+            this.bHomeTimeouts0.Click += new System.EventHandler(this.setHomeTimeouts);
+            // 
+            // bHomeTimeouts1
+            // 
+            this.bHomeTimeouts1.Location = new System.Drawing.Point(56, 51);
+            this.bHomeTimeouts1.Name = "bHomeTimeouts1";
+            this.bHomeTimeouts1.Size = new System.Drawing.Size(31, 23);
+            this.bHomeTimeouts1.TabIndex = 1;
+            this.bHomeTimeouts1.Text = "1";
+            this.bHomeTimeouts1.UseVisualStyleBackColor = true;
+            this.bHomeTimeouts1.Click += new System.EventHandler(this.setHomeTimeouts);
+            // 
+            // bHomeTimeouts2
+            // 
+            this.bHomeTimeouts2.Location = new System.Drawing.Point(93, 51);
+            this.bHomeTimeouts2.Name = "bHomeTimeouts2";
+            this.bHomeTimeouts2.Size = new System.Drawing.Size(31, 23);
+            this.bHomeTimeouts2.TabIndex = 1;
+            this.bHomeTimeouts2.Text = "2";
+            this.bHomeTimeouts2.UseVisualStyleBackColor = true;
+            this.bHomeTimeouts2.Click += new System.EventHandler(this.setHomeTimeouts);
+            // 
+            // bHomeTimeouts3
+            // 
+            this.bHomeTimeouts3.Location = new System.Drawing.Point(130, 51);
+            this.bHomeTimeouts3.Name = "bHomeTimeouts3";
+            this.bHomeTimeouts3.Size = new System.Drawing.Size(31, 23);
+            this.bHomeTimeouts3.TabIndex = 1;
+            this.bHomeTimeouts3.Text = "3";
+            this.bHomeTimeouts3.UseVisualStyleBackColor = true;
+            this.bHomeTimeouts3.Click += new System.EventHandler(this.setHomeTimeouts);
+            // 
+            // bVisitingTimeouts2
+            // 
+            this.bVisitingTimeouts2.Location = new System.Drawing.Point(288, 51);
+            this.bVisitingTimeouts2.Name = "bVisitingTimeouts2";
+            this.bVisitingTimeouts2.Size = new System.Drawing.Size(31, 23);
+            this.bVisitingTimeouts2.TabIndex = 1;
+            this.bVisitingTimeouts2.Text = "2";
+            this.bVisitingTimeouts2.UseVisualStyleBackColor = true;
+            this.bVisitingTimeouts2.Click += new System.EventHandler(this.setVisitingTimeouts);
+            // 
+            // bVisitingTimeouts1
+            // 
+            this.bVisitingTimeouts1.Location = new System.Drawing.Point(251, 51);
+            this.bVisitingTimeouts1.Name = "bVisitingTimeouts1";
+            this.bVisitingTimeouts1.Size = new System.Drawing.Size(31, 23);
+            this.bVisitingTimeouts1.TabIndex = 1;
+            this.bVisitingTimeouts1.Text = "1";
+            this.bVisitingTimeouts1.UseVisualStyleBackColor = true;
+            this.bVisitingTimeouts1.Click += new System.EventHandler(this.setVisitingTimeouts);
+            // 
+            // bVisitingTimeouts0
+            // 
+            this.bVisitingTimeouts0.Location = new System.Drawing.Point(214, 51);
+            this.bVisitingTimeouts0.Name = "bVisitingTimeouts0";
+            this.bVisitingTimeouts0.Size = new System.Drawing.Size(31, 23);
+            this.bVisitingTimeouts0.TabIndex = 1;
+            this.bVisitingTimeouts0.Text = "0";
+            this.bVisitingTimeouts0.UseVisualStyleBackColor = true;
+            this.bVisitingTimeouts0.Click += new System.EventHandler(this.setVisitingTimeouts);
+            // 
+            // bVisitingTimeouts3
+            // 
+            this.bVisitingTimeouts3.Location = new System.Drawing.Point(325, 51);
+            this.bVisitingTimeouts3.Name = "bVisitingTimeouts3";
+            this.bVisitingTimeouts3.Size = new System.Drawing.Size(31, 23);
+            this.bVisitingTimeouts3.TabIndex = 1;
+            this.bVisitingTimeouts3.Text = "3";
+            this.bVisitingTimeouts3.UseVisualStyleBackColor = true;
+            this.bVisitingTimeouts3.Click += new System.EventHandler(this.setVisitingTimeouts);
             // 
             // Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 607);
+            this.ClientSize = new System.Drawing.Size(616, 607);
             this.Controls.Add(this.lVersion);
             this.Controls.Add(this.bToggleBug);
             this.Controls.Add(this.bToggleGraphics);
@@ -1650,6 +1728,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.gMatchScores.ResumeLayout(false);
+            this.gMatchScores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nHomeAltScore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nVisitingAltScore)).EndInit();
             this.gScores.ResumeLayout(false);
             this.gScores.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -1657,19 +1739,14 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dRoles)).EndInit();
-            this.tStats.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).EndInit();
+            this.gPossession.ResumeLayout(false);
+            this.gPossession.PerformLayout();
             this.gTimeouts.ResumeLayout(false);
             this.gTimeouts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            this.gMatchScores.ResumeLayout(false);
-            this.gMatchScores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nHomeAltScore)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nVisitingAltScore)).EndInit();
-            this.gPossession.ResumeLayout(false);
-            this.gPossession.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1763,15 +1840,6 @@
         private System.Windows.Forms.Button bQuarter4;
         private System.Windows.Forms.Button bQuarter3;
         private System.Windows.Forms.Button bQuarterOT;
-        private System.Windows.Forms.GroupBox gTimeouts;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.NumericUpDown nHomeTimeouts;
@@ -1780,14 +1848,14 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button bResetTimeouts;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button bIncHome1;
+        private System.Windows.Forms.Button bIncHome2;
+        private System.Windows.Forms.Button bIncHome4;
+        private System.Windows.Forms.Button bIncHome3;
+        private System.Windows.Forms.Button bIncVisiting4;
+        private System.Windows.Forms.Button bIncVisiting3;
+        private System.Windows.Forms.Button bIncVisiting2;
+        private System.Windows.Forms.Button bIncVisiting1;
         private System.Windows.Forms.GroupBox gMatchScores;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -1809,6 +1877,21 @@
         private System.Windows.Forms.Button bNobodysBall;
         private System.Windows.Forms.Button bVisitingBall;
         private System.Windows.Forms.Button bConestogaBall;
+        private System.Windows.Forms.GroupBox gTimeouts;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button bHomeTimeouts3;
+        private System.Windows.Forms.Button bHomeTimeouts0;
+        private System.Windows.Forms.Button bHomeTimeouts1;
+        private System.Windows.Forms.Button bHomeTimeouts2;
+        private System.Windows.Forms.Button bVisitingTimeouts3;
+        private System.Windows.Forms.Button bVisitingTimeouts0;
+        private System.Windows.Forms.Button bVisitingTimeouts1;
+        private System.Windows.Forms.Button bVisitingTimeouts2;
 
 
 

@@ -33,7 +33,7 @@ namespace TETV_ScoreBar {
             showGraphics = true;
 
             // Hide stats stuff if needed
-            bUseStats.Enabled = game.gameType == GameType.Basketball || game.gameType == GameType.Wrestling;
+            bUseStats.Visible = game.gameType == GameType.Basketball || game.gameType == GameType.Wrestling;
 
             // Show stats window if needed
             if (game.gameType == GameType.Basketball || game.gameType == GameType.Wrestling) {
@@ -75,14 +75,25 @@ namespace TETV_ScoreBar {
                 creditsLocation = creditsFile;
             }
 
+            // Set timeout's default value
+            setHomeTimeouts(bHomeTimeouts0, null);
+            setVisitingTimeouts(bVisitingTimeouts0, null);
+
             // Alter controls for game type
             switch (game.gameType) {
+                case GameType.Football:
+                    RemoveGroup(tabScores, gMatchScores);
+                    break;
+                case GameType.Generic:
+                    RemoveGroup(tabScores, gMatchScores);
+                    break;
                 case GameType.Hockey:
                     lQuarter.Text = "Period";
-                    bQuarterOT.Visible = false;
+                    //bQuarterOT.Visible = false;
                     bToggleTimeouts.Visible = false;
                     showTimeouts = false;
                     RemoveGroup(tabScores, gTimeouts);
+                    RemoveGroup(tabScores, gMatchScores);
                     gPossession.Text = "Power Play";
                     bConestogaBall.Text = "Conestoga Power Play";
                     bVisitingBall.Text = "Visitor Power Play";
@@ -96,11 +107,12 @@ namespace TETV_ScoreBar {
                     gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     break;
                 case GameType.Basketball:
-                    bQuarterOT.Visible = false;
+                    //bQuarterOT.Visible = false;
                     bToggleTimeouts.Visible = false;
                     showTimeouts = false;
                     RemoveGroup(tabScores, gTimeouts);
                     RemoveGroup(tabScores, gPossession);
+                    RemoveGroup(tabScores, gMatchScores);
                     pDownYards.Visible = false;
                     bInfoPreset1.Text = "Foul";
                     bInfoPreset2.Text = "Timeout";
@@ -110,6 +122,7 @@ namespace TETV_ScoreBar {
                     gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     break;
                 case GameType.Wrestling:
+                    gScores.Text = "Team Score";
                     bToggleTimeouts.Visible = false;
                     showTimeouts = false;
                     RemoveGroup(tabScores, gTimeouts);
@@ -121,6 +134,14 @@ namespace TETV_ScoreBar {
                     bInfoPreset4.Text = "Pin";
                     bInfoPreset5.Visible = false;
                     gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
+                    bIncHome1.Text = "+3";
+                    bIncHome2.Text = "+4";
+                    bIncHome3.Text = "+5";
+                    bIncHome4.Text = "+6";
+                    bIncVisiting1.Text = "+3";
+                    bIncVisiting2.Text = "+4";
+                    bIncVisiting3.Text = "+5";
+                    bIncVisiting4.Text = "+6";
                     break;
                 default:
                     break;
@@ -393,14 +414,14 @@ namespace TETV_ScoreBar {
         }
 
         private void incConestogaAltScore(object sender, EventArgs e) {
-            game.AltScore[0] += Int16.Parse(((Button)sender).Text.Substring(1));
+            game.AltScore[0] += Int32.Parse(((Button)sender).Text.Substring(1));
             display.UpdateDisplay();
             nHomeAltScore.Value = game.AltScore[0];
             bUpdateAltScores.Enabled = false;
         }
 
         private void incVisitingAltScore(object sender, EventArgs e) {
-            game.AltScore[1] += Int16.Parse(((Button)sender).Text.Substring(1));
+            game.AltScore[1] += Int32.Parse(((Button)sender).Text.Substring(1));
             display.UpdateDisplay();
             nVisitingAltScore.Value = game.AltScore[1];
             bUpdateAltScores.Enabled = false;
@@ -431,6 +452,26 @@ namespace TETV_ScoreBar {
 
         private void nVisitingTimeouts_ValueChanged(object sender, EventArgs e) {
             bUpdateTimeouts.Enabled = true;
+        }
+
+        private void setHomeTimeouts(object sender, EventArgs e) {
+            game.Timeouts[0] = Int32.Parse(((Button)sender).Text);
+            bHomeTimeouts0.BackColor = Color.FromName("Control");
+            bHomeTimeouts1.BackColor = Color.FromName("Control");
+            bHomeTimeouts2.BackColor = Color.FromName("Control");
+            bHomeTimeouts3.BackColor = Color.FromName("Control");
+            ((Button)sender).BackColor = Color.LightGreen;
+            display.UpdateDisplay();
+        }
+
+        private void setVisitingTimeouts(object sender, EventArgs e) {
+            game.Timeouts[1] = Int32.Parse(((Button)sender).Text);
+            bVisitingTimeouts0.BackColor = Color.FromName("Control");
+            bVisitingTimeouts1.BackColor = Color.FromName("Control");
+            bVisitingTimeouts2.BackColor = Color.FromName("Control");
+            bVisitingTimeouts3.BackColor = Color.FromName("Control");
+            ((Button)sender).BackColor = Color.LightGreen;
+            display.UpdateDisplay();
         }
 
         #endregion

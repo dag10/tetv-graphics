@@ -10,10 +10,10 @@
   <StatY>767</StatY>
   <ControlScreen>0</ControlScreen>
   <DisplayScreen>1</DisplayScreen>
-  <GameType>4</GameType>
-  <ShowInfoText>False</ShowInfoText>
+  <GameType>0</GameType>
+  <ShowInfoText>True</ShowInfoText>
   <ShowScores>True</ShowScores>
-  <ShowTimeouts>False</ShowTimeouts>
+  <ShowTimeouts>True</ShowTimeouts>
   <ShowBug>True</ShowBug>
   <CreditsFile></CreditsFile>
 </ScoreBarSettings>

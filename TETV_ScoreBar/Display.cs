@@ -27,11 +27,8 @@ namespace TETV_ScoreBar {
         string replayImage = "";
         string boardImage = "";
         bool screenSet = false;
-        // THE BELOW IS TEMPORARY
-        public string plyNumber = "0";
-        public string plyName = "Name";
-        public string plyPoints = "0";
-        public string plyFouls = "0";
+        public string[] statFields = { " ", " ", " ", " " };
+        public string[] statValues = { " ", " ", " ", " " };
 
         #region Constructors
 
@@ -44,6 +41,9 @@ namespace TETV_ScoreBar {
 
             // Get screen from config
             screen = Config.GetInt(ConfigKey.DisplayScreen);
+
+            // Hide match (alt) scores if needed
+            pAltScoreLeft.Visible = pAltScoreRight.Visible = game.gameType == GameType.Wrestling;
 
             // Update display
             UpdateDisplay();
@@ -126,10 +126,14 @@ namespace TETV_ScoreBar {
                 SetScreen();
 
             // Set stat bar elements
-            lPlyNumber.Text = plyNumber;
-            lPlyName.Text = plyName;
-            lPlyPoints.Text = plyPoints;
-            lPlyFouls.Text = plyFouls;
+            lStatValue0.Text = statValues[0];
+            lStatValue1.Text = statValues[1];
+            lStatValue2.Text = statValues[2];
+            lStatValue3.Text = statValues[3];
+            lStatField0.Text = statFields[0];
+            lStatField1.Text = statFields[1];
+            lStatField2.Text = statFields[2];
+            lStatField3.Text = statFields[3];
 
             // Set ScoreBar elements
             this.lAbbr1.Text = game.TeamAbbr[0];
