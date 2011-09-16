@@ -18,6 +18,7 @@ namespace TETV_ScoreBar {
         Point dragOffset = new Point();
         public bool showInfoText = true;
         public bool showScores = true;
+        private bool wasShowingTimeouts = false;
         public bool showTimeouts = true;
         public bool showBug = true;
         public bool showStats = false;
@@ -25,7 +26,9 @@ namespace TETV_ScoreBar {
         public const int ScreenPadding = 60;
         public string creditsRTF = "";
         string replayImage = "";
-        string boardImage = "";
+        //string boardImage = "";
+        string leftTipImage = "";
+        string rightTipImage = "";
         bool screenSet = false;
         public string[] statFields = { " ", " ", " ", " " };
         public string[] statValues = { " ", " ", " ", " " };
@@ -65,12 +68,12 @@ namespace TETV_ScoreBar {
             pReplay.BackColor = Color.Transparent;
 
             // Set label colors
-            lQuarter.ForeColor = Color.Gold;
-            lInfoText.ForeColor = Color.FromArgb(10, 10, 10);
-            lAbbr1.ForeColor = Color.FromArgb(10, 10, 10);
-            lAbbr2.ForeColor = Color.FromArgb(10, 10, 10);
-            lScore1.ForeColor = Color.FromArgb(10, 10, 10);
-            lScore2.ForeColor = Color.FromArgb(10, 10, 10);
+            lQuarter.ForeColor = Color.FromArgb(102, 0, 0);
+            lInfoText.ForeColor = Color.FromArgb(102, 0, 0);
+            lAbbr1.ForeColor = Color.FromArgb(102, 0, 0);
+            lAbbr2.ForeColor = Color.FromArgb(102, 0, 0);
+            lScore1.ForeColor = Color.FromArgb(51, 51, 51);
+            lScore2.ForeColor = Color.FromArgb(51, 51, 51);
             lAltScore1.ForeColor = Color.FromArgb(10, 10, 10);
             lAltScore2.ForeColor = Color.FromArgb(10, 10, 10);
         }
@@ -159,6 +162,7 @@ namespace TETV_ScoreBar {
 
             // Set images
             string imgStr = "";
+            /*
             if (showInfoText) imgStr += "B";
             if (showScores) imgStr += "S";
             if (game.BallPossession == 1) imgStr += "L";
@@ -170,12 +174,25 @@ namespace TETV_ScoreBar {
             if (!boardImage.Equals(imgStr))
                 pMain.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject(imgStr);
             boardImage = string.Copy(imgStr);
+            */
+
+            imgStr = "tip_l" + (game.BallPossession == 1 ? "p" : "");
+            if (!leftTipImage.Equals(imgStr))
+                pLeftTip.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject(imgStr);
+            leftTipImage = string.Copy(imgStr);
+
+            imgStr = "tip_r" + (game.BallPossession == 2 ? "p" : "");
+            if (!rightTipImage.Equals(imgStr))
+                pRightTip.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject(imgStr);
+            rightTipImage = string.Copy(imgStr);
+
 
             pLeftScore.Visible = showScores;
             pRightScore.Visible = showScores;
             pBug.Visible = showBug;
             pStat.Visible = showStats;
 
+            /*
             if (showTimeouts)
                 pLeftScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_left_" + game.Timeouts[0]);
             else
@@ -185,6 +202,34 @@ namespace TETV_ScoreBar {
                 pRightScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_right_" + game.Timeouts[1]);
             else
                 pRightScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_right");
+            */
+
+            if (showTimeouts != wasShowingTimeouts) {
+                pLT1.Visible = showTimeouts;
+                pLT2.Visible = showTimeouts;
+                pLT3.Visible = showTimeouts;
+                pRT1.Visible = showTimeouts;
+                pRT2.Visible = showTimeouts;
+                pRT3.Visible = showTimeouts;
+
+                if (showTimeouts) {
+                    lAbbr1.Location = new Point(lAbbr1.Location.X, 5);
+                    lAbbr2.Location = new Point(lAbbr2.Location.X, 5);
+                } else {
+                    lAbbr1.Location = new Point(lAbbr1.Location.X, 9);
+                    lAbbr2.Location = new Point(lAbbr2.Location.X, 9);
+                }
+
+                wasShowingTimeouts = showTimeouts;
+            }
+
+            pLT1.BackColor = game.Timeouts[0] > 0 ? Color.Red : Color.Lime;
+            pLT2.BackColor = game.Timeouts[0] > 1 ? Color.Red : Color.Lime;
+            pLT3.BackColor = game.Timeouts[0] > 2 ? Color.Red : Color.Lime;
+
+            pRT1.BackColor = game.Timeouts[1] > 0 ? Color.Red : Color.Lime;
+            pRT2.BackColor = game.Timeouts[1] > 1 ? Color.Red : Color.Lime;
+            pRT3.BackColor = game.Timeouts[1] > 2 ? Color.Red : Color.Lime;
 
             if (halftime)
                 if (game.ReplayPosition.X < (this.Width / 2) - (pReplay.Width / 2))
@@ -313,7 +358,7 @@ namespace TETV_ScoreBar {
 
         #endregion
 
-        #region Draw and Drop
+        #region Drag and Drop
 
         void DragBoard(object sender, MouseEventArgs e) {
             if (!editMode) return;
@@ -352,6 +397,9 @@ namespace TETV_ScoreBar {
         }
 
         void DragStop(object sender, MouseEventArgs e) {
+            if (((Control)dragTarget).Location.X < 0) ((Control)dragTarget).Location = new Point(0, ((Control)dragTarget).Location.Y);
+            if (((Control)dragTarget).Location.Y < 0) ((Control)dragTarget).Location = new Point(((Control)dragTarget).Location.X, 0);
+
             dragTarget = null;
 
             controls.ReloadValues();
@@ -365,6 +413,9 @@ namespace TETV_ScoreBar {
             }
 
             Point p = PointToClient(Cursor.Position);
+
+            if (p.X - dragOffset.X < 0) p.X = dragOffset.X;
+            if (p.Y - dragOffset.Y < 0) p.Y = dragOffset.Y;
 
             if (dragTarget == pBar) {
                 game.ScoreBoardPosition.X = p.X - dragOffset.X;

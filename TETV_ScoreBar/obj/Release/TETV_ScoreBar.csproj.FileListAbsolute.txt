@@ -1,13 +1,18 @@
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\ResolveAssemblyReference.cache
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Controls.resources
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Display.resources
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Properties.Resources.resources
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.csproj.GenerateResource.Cache
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Settings.resources
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\TETV_Graphics.exe
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\TETV_Graphics.pdb
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_Graphics.exe
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_Graphics.pdb
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\TETV_Graphics.exe.config
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\bin\Release\ConestogaPlayers.sdf
-C:\My Projects\TETV ScoreBar\TETV_ScoreBar\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Stats.resources
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Release\TETV_Graphics.exe.config
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Release\ConestogaPlayers.sdf
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Release\TETV_Graphics.exe
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Release\TETV_Graphics.pdb
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Controls.resources
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Settings.resources
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Display.resources
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Properties.Resources.resources
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_ScoreBar.Stats.resources
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_ScoreBar.csproj.GenerateResource.Cache
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_Graphics.exe
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_Graphics.pdb
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Release\TETV_Graphics.exe.manifest
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Release\TETV_Graphics.application
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_Graphics.TrustInfo.xml
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_Graphics.exe.manifest
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Release\TETV_Graphics.application

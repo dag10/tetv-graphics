@@ -35,7 +35,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.lVersion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nHomeScore = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +48,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage = new System.Windows.Forms.TabControl();
             this.tabScores = new System.Windows.Forms.TabPage();
+            this.gPossession = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.bNobodysBall = new System.Windows.Forms.Button();
+            this.bVisitingBall = new System.Windows.Forms.Button();
+            this.bConestogaBall = new System.Windows.Forms.Button();
+            this.gTimeouts = new System.Windows.Forms.GroupBox();
+            this.bToggleTimeouts = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.bVisitingTimeouts3 = new System.Windows.Forms.Button();
+            this.bHomeTimeouts3 = new System.Windows.Forms.Button();
+            this.bVisitingTimeouts0 = new System.Windows.Forms.Button();
+            this.bVisitingTimeouts1 = new System.Windows.Forms.Button();
+            this.bHomeTimeouts0 = new System.Windows.Forms.Button();
+            this.bVisitingTimeouts2 = new System.Windows.Forms.Button();
+            this.bHomeTimeouts1 = new System.Windows.Forms.Button();
+            this.bHomeTimeouts2 = new System.Windows.Forms.Button();
             this.gInfoText = new System.Windows.Forms.GroupBox();
             this.pDownYards = new System.Windows.Forms.Panel();
             this.bDisplayDownYards = new System.Windows.Forms.Button();
@@ -74,11 +92,6 @@
             this.bQuarter2 = new System.Windows.Forms.Button();
             this.bQuarter3 = new System.Windows.Forms.Button();
             this.bQuarter1 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.bToggleTimeouts = new System.Windows.Forms.Button();
-            this.bToggleScores = new System.Windows.Forms.Button();
-            this.bToggleInfoBar = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
             this.gMatchScores = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -142,26 +155,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.bResetTimeouts = new System.Windows.Forms.Button();
-            this.gPossession = new System.Windows.Forms.GroupBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.bNobodysBall = new System.Windows.Forms.Button();
-            this.bVisitingBall = new System.Windows.Forms.Button();
-            this.bConestogaBall = new System.Windows.Forms.Button();
-            this.gTimeouts = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.bHomeTimeouts0 = new System.Windows.Forms.Button();
-            this.bHomeTimeouts1 = new System.Windows.Forms.Button();
-            this.bHomeTimeouts2 = new System.Windows.Forms.Button();
-            this.bHomeTimeouts3 = new System.Windows.Forms.Button();
-            this.bVisitingTimeouts2 = new System.Windows.Forms.Button();
-            this.bVisitingTimeouts1 = new System.Windows.Forms.Button();
-            this.bVisitingTimeouts0 = new System.Windows.Forms.Button();
-            this.bVisitingTimeouts3 = new System.Windows.Forms.Button();
+            this.bVersion = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).BeginInit();
@@ -172,12 +166,13 @@
             this.panel1.SuspendLayout();
             this.tabPage.SuspendLayout();
             this.tabScores.SuspendLayout();
+            this.gPossession.SuspendLayout();
+            this.gTimeouts.SuspendLayout();
             this.gInfoText.SuspendLayout();
             this.pDownYards.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nYards)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.gMatchScores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeAltScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingAltScore)).BeginInit();
@@ -187,10 +182,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dRoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).BeginInit();
-            this.gPossession.SuspendLayout();
-            this.gTimeouts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // bUseScoreBar
@@ -308,16 +299,6 @@
             this.label6.Text = "No Settings Available";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lVersion
-            // 
-            this.lVersion.AutoSize = true;
-            this.lVersion.Location = new System.Drawing.Point(509, 582);
-            this.lVersion.Name = "lVersion";
-            this.lVersion.Size = new System.Drawing.Size(74, 13);
-            this.lVersion.TabIndex = 3;
-            this.lVersion.Text = "Version x.x.x.x";
-            this.lVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -376,7 +357,7 @@
             this.tabPage5.Controls.Add(this.panel5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(567, 504);
+            this.tabPage5.Size = new System.Drawing.Size(588, 504);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Half-Time";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -408,7 +389,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(567, 504);
+            this.tabPage2.Size = new System.Drawing.Size(588, 504);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Replay";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -454,7 +435,6 @@
             this.tabScores.Controls.Add(this.gTimeouts);
             this.tabScores.Controls.Add(this.gInfoText);
             this.tabScores.Controls.Add(this.groupBox2);
-            this.tabScores.Controls.Add(this.groupBox4);
             this.tabScores.Controls.Add(this.gMatchScores);
             this.tabScores.Controls.Add(this.gScores);
             this.tabScores.Location = new System.Drawing.Point(4, 22);
@@ -464,6 +444,203 @@
             this.tabScores.TabIndex = 0;
             this.tabScores.Text = "Score Bar";
             this.tabScores.UseVisualStyleBackColor = true;
+            // 
+            // gPossession
+            // 
+            this.gPossession.Controls.Add(this.label24);
+            this.gPossession.Controls.Add(this.bNobodysBall);
+            this.gPossession.Controls.Add(this.bVisitingBall);
+            this.gPossession.Controls.Add(this.bConestogaBall);
+            this.gPossession.Location = new System.Drawing.Point(6, 186);
+            this.gPossession.Name = "gPossession";
+            this.gPossession.Size = new System.Drawing.Size(267, 51);
+            this.gPossession.TabIndex = 8;
+            this.gPossession.TabStop = false;
+            this.gPossession.Text = "Ball Possession";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 27);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(0, 13);
+            this.label24.TabIndex = 0;
+            // 
+            // bNobodysBall
+            // 
+            this.bNobodysBall.Location = new System.Drawing.Point(165, 22);
+            this.bNobodysBall.Name = "bNobodysBall";
+            this.bNobodysBall.Size = new System.Drawing.Size(70, 23);
+            this.bNobodysBall.TabIndex = 1;
+            this.bNobodysBall.Text = "Nobody";
+            this.bNobodysBall.UseVisualStyleBackColor = true;
+            this.bNobodysBall.Click += new System.EventHandler(this.bNobodysBall_Click);
+            // 
+            // bVisitingBall
+            // 
+            this.bVisitingBall.Location = new System.Drawing.Point(87, 22);
+            this.bVisitingBall.Name = "bVisitingBall";
+            this.bVisitingBall.Size = new System.Drawing.Size(70, 23);
+            this.bVisitingBall.TabIndex = 1;
+            this.bVisitingBall.Text = "Visitor";
+            this.bVisitingBall.UseVisualStyleBackColor = true;
+            this.bVisitingBall.Click += new System.EventHandler(this.bVisitingBall_Click);
+            // 
+            // bConestogaBall
+            // 
+            this.bConestogaBall.Location = new System.Drawing.Point(9, 22);
+            this.bConestogaBall.Name = "bConestogaBall";
+            this.bConestogaBall.Size = new System.Drawing.Size(70, 23);
+            this.bConestogaBall.TabIndex = 1;
+            this.bConestogaBall.Text = "Conestoga";
+            this.bConestogaBall.UseVisualStyleBackColor = true;
+            this.bConestogaBall.Click += new System.EventHandler(this.bConestogaBall_Click);
+            // 
+            // gTimeouts
+            // 
+            this.gTimeouts.Controls.Add(this.bToggleTimeouts);
+            this.gTimeouts.Controls.Add(this.label9);
+            this.gTimeouts.Controls.Add(this.label10);
+            this.gTimeouts.Controls.Add(this.label22);
+            this.gTimeouts.Controls.Add(this.label23);
+            this.gTimeouts.Controls.Add(this.bVisitingTimeouts3);
+            this.gTimeouts.Controls.Add(this.bHomeTimeouts3);
+            this.gTimeouts.Controls.Add(this.bVisitingTimeouts0);
+            this.gTimeouts.Controls.Add(this.bVisitingTimeouts1);
+            this.gTimeouts.Controls.Add(this.bHomeTimeouts0);
+            this.gTimeouts.Controls.Add(this.bVisitingTimeouts2);
+            this.gTimeouts.Controls.Add(this.bHomeTimeouts1);
+            this.gTimeouts.Controls.Add(this.bHomeTimeouts2);
+            this.gTimeouts.Location = new System.Drawing.Point(6, 243);
+            this.gTimeouts.Name = "gTimeouts";
+            this.gTimeouts.Size = new System.Drawing.Size(555, 81);
+            this.gTimeouts.TabIndex = 7;
+            this.gTimeouts.TabStop = false;
+            this.gTimeouts.Text = "Timeouts Used";
+            // 
+            // bToggleTimeouts
+            // 
+            this.bToggleTimeouts.Location = new System.Drawing.Point(386, 47);
+            this.bToggleTimeouts.Name = "bToggleTimeouts";
+            this.bToggleTimeouts.Size = new System.Drawing.Size(147, 23);
+            this.bToggleTimeouts.TabIndex = 2;
+            this.bToggleTimeouts.Text = "Show Timeouts";
+            this.bToggleTimeouts.UseVisualStyleBackColor = true;
+            this.bToggleTimeouts.Click += new System.EventHandler(this.bToggleTimeouts_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Conestoga Timeouts";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(203, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Visiting Timeouts";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 27);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(0, 13);
+            this.label22.TabIndex = 0;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(210, 22);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(0, 13);
+            this.label23.TabIndex = 0;
+            // 
+            // bVisitingTimeouts3
+            // 
+            this.bVisitingTimeouts3.Location = new System.Drawing.Point(314, 47);
+            this.bVisitingTimeouts3.Name = "bVisitingTimeouts3";
+            this.bVisitingTimeouts3.Size = new System.Drawing.Size(31, 23);
+            this.bVisitingTimeouts3.TabIndex = 1;
+            this.bVisitingTimeouts3.Text = "3";
+            this.bVisitingTimeouts3.UseVisualStyleBackColor = true;
+            this.bVisitingTimeouts3.Click += new System.EventHandler(this.setVisitingTimeouts);
+            // 
+            // bHomeTimeouts3
+            // 
+            this.bHomeTimeouts3.Location = new System.Drawing.Point(119, 47);
+            this.bHomeTimeouts3.Name = "bHomeTimeouts3";
+            this.bHomeTimeouts3.Size = new System.Drawing.Size(31, 23);
+            this.bHomeTimeouts3.TabIndex = 1;
+            this.bHomeTimeouts3.Text = "3";
+            this.bHomeTimeouts3.UseVisualStyleBackColor = true;
+            this.bHomeTimeouts3.Click += new System.EventHandler(this.setHomeTimeouts);
+            // 
+            // bVisitingTimeouts0
+            // 
+            this.bVisitingTimeouts0.Location = new System.Drawing.Point(203, 47);
+            this.bVisitingTimeouts0.Name = "bVisitingTimeouts0";
+            this.bVisitingTimeouts0.Size = new System.Drawing.Size(31, 23);
+            this.bVisitingTimeouts0.TabIndex = 1;
+            this.bVisitingTimeouts0.Text = "0";
+            this.bVisitingTimeouts0.UseVisualStyleBackColor = true;
+            this.bVisitingTimeouts0.Click += new System.EventHandler(this.setVisitingTimeouts);
+            // 
+            // bVisitingTimeouts1
+            // 
+            this.bVisitingTimeouts1.Location = new System.Drawing.Point(240, 47);
+            this.bVisitingTimeouts1.Name = "bVisitingTimeouts1";
+            this.bVisitingTimeouts1.Size = new System.Drawing.Size(31, 23);
+            this.bVisitingTimeouts1.TabIndex = 1;
+            this.bVisitingTimeouts1.Text = "1";
+            this.bVisitingTimeouts1.UseVisualStyleBackColor = true;
+            this.bVisitingTimeouts1.Click += new System.EventHandler(this.setVisitingTimeouts);
+            // 
+            // bHomeTimeouts0
+            // 
+            this.bHomeTimeouts0.Location = new System.Drawing.Point(8, 47);
+            this.bHomeTimeouts0.Name = "bHomeTimeouts0";
+            this.bHomeTimeouts0.Size = new System.Drawing.Size(31, 23);
+            this.bHomeTimeouts0.TabIndex = 1;
+            this.bHomeTimeouts0.Text = "0";
+            this.bHomeTimeouts0.UseVisualStyleBackColor = true;
+            this.bHomeTimeouts0.Click += new System.EventHandler(this.setHomeTimeouts);
+            // 
+            // bVisitingTimeouts2
+            // 
+            this.bVisitingTimeouts2.Location = new System.Drawing.Point(277, 47);
+            this.bVisitingTimeouts2.Name = "bVisitingTimeouts2";
+            this.bVisitingTimeouts2.Size = new System.Drawing.Size(31, 23);
+            this.bVisitingTimeouts2.TabIndex = 1;
+            this.bVisitingTimeouts2.Text = "2";
+            this.bVisitingTimeouts2.UseVisualStyleBackColor = true;
+            this.bVisitingTimeouts2.Click += new System.EventHandler(this.setVisitingTimeouts);
+            // 
+            // bHomeTimeouts1
+            // 
+            this.bHomeTimeouts1.Location = new System.Drawing.Point(45, 47);
+            this.bHomeTimeouts1.Name = "bHomeTimeouts1";
+            this.bHomeTimeouts1.Size = new System.Drawing.Size(31, 23);
+            this.bHomeTimeouts1.TabIndex = 1;
+            this.bHomeTimeouts1.Text = "1";
+            this.bHomeTimeouts1.UseVisualStyleBackColor = true;
+            this.bHomeTimeouts1.Click += new System.EventHandler(this.setHomeTimeouts);
+            // 
+            // bHomeTimeouts2
+            // 
+            this.bHomeTimeouts2.Location = new System.Drawing.Point(82, 47);
+            this.bHomeTimeouts2.Name = "bHomeTimeouts2";
+            this.bHomeTimeouts2.Size = new System.Drawing.Size(31, 23);
+            this.bHomeTimeouts2.TabIndex = 1;
+            this.bHomeTimeouts2.Text = "2";
+            this.bHomeTimeouts2.UseVisualStyleBackColor = true;
+            this.bHomeTimeouts2.Click += new System.EventHandler(this.setHomeTimeouts);
             // 
             // gInfoText
             // 
@@ -477,22 +654,23 @@
             this.gInfoText.Controls.Add(this.bUpdateInfoText);
             this.gInfoText.Controls.Add(this.bInfoPreset2);
             this.gInfoText.Controls.Add(this.bInfoPreset1);
-            this.gInfoText.Location = new System.Drawing.Point(6, 478);
+            this.gInfoText.Location = new System.Drawing.Point(3, 330);
             this.gInfoText.Name = "gInfoText";
-            this.gInfoText.Size = new System.Drawing.Size(555, 168);
+            this.gInfoText.Size = new System.Drawing.Size(555, 147);
             this.gInfoText.TabIndex = 1;
             this.gInfoText.TabStop = false;
             this.gInfoText.Text = "Text Bar";
             // 
             // pDownYards
             // 
+            this.pDownYards.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pDownYards.Controls.Add(this.bDisplayDownYards);
             this.pDownYards.Controls.Add(this.label16);
             this.pDownYards.Controls.Add(this.bResetDownYards);
             this.pDownYards.Controls.Add(this.label15);
             this.pDownYards.Controls.Add(this.nDown);
             this.pDownYards.Controls.Add(this.nYards);
-            this.pDownYards.Location = new System.Drawing.Point(307, 91);
+            this.pDownYards.Location = new System.Drawing.Point(303, 19);
             this.pDownYards.Name = "pDownYards";
             this.pDownYards.Size = new System.Drawing.Size(242, 71);
             this.pDownYards.TabIndex = 6;
@@ -572,7 +750,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(269, 24);
+            this.label13.Location = new System.Drawing.Point(6, 111);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 13);
             this.label13.TabIndex = 4;
@@ -580,9 +758,9 @@
             // 
             // tCustomInfoText
             // 
-            this.tCustomInfoText.Location = new System.Drawing.Point(341, 22);
+            this.tCustomInfoText.Location = new System.Drawing.Point(78, 109);
             this.tCustomInfoText.Name = "tCustomInfoText";
-            this.tCustomInfoText.Size = new System.Drawing.Size(192, 20);
+            this.tCustomInfoText.Size = new System.Drawing.Size(297, 20);
             this.tCustomInfoText.TabIndex = 3;
             // 
             // label14
@@ -595,9 +773,9 @@
             // 
             // bInfoPreset5
             // 
-            this.bInfoPreset5.Location = new System.Drawing.Point(9, 135);
+            this.bInfoPreset5.Location = new System.Drawing.Point(8, 77);
             this.bInfoPreset5.Name = "bInfoPreset5";
-            this.bInfoPreset5.Size = new System.Drawing.Size(202, 23);
+            this.bInfoPreset5.Size = new System.Drawing.Size(141, 23);
             this.bInfoPreset5.TabIndex = 2;
             this.bInfoPreset5.Text = "Timeout";
             this.bInfoPreset5.UseVisualStyleBackColor = true;
@@ -605,9 +783,9 @@
             // 
             // bInfoPreset4
             // 
-            this.bInfoPreset4.Location = new System.Drawing.Point(9, 106);
+            this.bInfoPreset4.Location = new System.Drawing.Point(155, 48);
             this.bInfoPreset4.Name = "bInfoPreset4";
-            this.bInfoPreset4.Size = new System.Drawing.Size(202, 23);
+            this.bInfoPreset4.Size = new System.Drawing.Size(141, 23);
             this.bInfoPreset4.TabIndex = 2;
             this.bInfoPreset4.Text = "Field Goal";
             this.bInfoPreset4.UseVisualStyleBackColor = true;
@@ -615,9 +793,9 @@
             // 
             // bInfoPreset3
             // 
-            this.bInfoPreset3.Location = new System.Drawing.Point(8, 77);
+            this.bInfoPreset3.Location = new System.Drawing.Point(8, 48);
             this.bInfoPreset3.Name = "bInfoPreset3";
-            this.bInfoPreset3.Size = new System.Drawing.Size(202, 23);
+            this.bInfoPreset3.Size = new System.Drawing.Size(141, 23);
             this.bInfoPreset3.TabIndex = 2;
             this.bInfoPreset3.Text = "Kickoff";
             this.bInfoPreset3.UseVisualStyleBackColor = true;
@@ -625,7 +803,7 @@
             // 
             // bUpdateInfoText
             // 
-            this.bUpdateInfoText.Location = new System.Drawing.Point(373, 48);
+            this.bUpdateInfoText.Location = new System.Drawing.Point(381, 107);
             this.bUpdateInfoText.Name = "bUpdateInfoText";
             this.bUpdateInfoText.Size = new System.Drawing.Size(160, 23);
             this.bUpdateInfoText.TabIndex = 2;
@@ -635,9 +813,9 @@
             // 
             // bInfoPreset2
             // 
-            this.bInfoPreset2.Location = new System.Drawing.Point(9, 48);
+            this.bInfoPreset2.Location = new System.Drawing.Point(156, 19);
             this.bInfoPreset2.Name = "bInfoPreset2";
-            this.bInfoPreset2.Size = new System.Drawing.Size(202, 23);
+            this.bInfoPreset2.Size = new System.Drawing.Size(141, 23);
             this.bInfoPreset2.TabIndex = 2;
             this.bInfoPreset2.Text = "Touchdown";
             this.bInfoPreset2.UseVisualStyleBackColor = true;
@@ -647,7 +825,7 @@
             // 
             this.bInfoPreset1.Location = new System.Drawing.Point(9, 19);
             this.bInfoPreset1.Name = "bInfoPreset1";
-            this.bInfoPreset1.Size = new System.Drawing.Size(202, 23);
+            this.bInfoPreset1.Size = new System.Drawing.Size(141, 23);
             this.bInfoPreset1.TabIndex = 2;
             this.bInfoPreset1.Text = "Flag";
             this.bInfoPreset1.UseVisualStyleBackColor = true;
@@ -662,9 +840,9 @@
             this.groupBox2.Controls.Add(this.bQuarter2);
             this.groupBox2.Controls.Add(this.bQuarter3);
             this.groupBox2.Controls.Add(this.bQuarter1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 250);
+            this.groupBox2.Location = new System.Drawing.Point(279, 186);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(555, 51);
+            this.groupBox2.Size = new System.Drawing.Size(282, 51);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game Info";
@@ -672,7 +850,7 @@
             // lQuarter
             // 
             this.lQuarter.AutoSize = true;
-            this.lQuarter.Location = new System.Drawing.Point(268, 22);
+            this.lQuarter.Location = new System.Drawing.Point(10, 27);
             this.lQuarter.Name = "lQuarter";
             this.lQuarter.Size = new System.Drawing.Size(42, 13);
             this.lQuarter.TabIndex = 4;
@@ -688,7 +866,7 @@
             // 
             // bQuarterOT
             // 
-            this.bQuarterOT.Location = new System.Drawing.Point(464, 17);
+            this.bQuarterOT.Location = new System.Drawing.Point(206, 22);
             this.bQuarterOT.Name = "bQuarterOT";
             this.bQuarterOT.Size = new System.Drawing.Size(69, 23);
             this.bQuarterOT.TabIndex = 1;
@@ -698,7 +876,7 @@
             // 
             // bQuarter4
             // 
-            this.bQuarter4.Location = new System.Drawing.Point(427, 17);
+            this.bQuarter4.Location = new System.Drawing.Point(169, 22);
             this.bQuarter4.Name = "bQuarter4";
             this.bQuarter4.Size = new System.Drawing.Size(31, 23);
             this.bQuarter4.TabIndex = 1;
@@ -708,7 +886,7 @@
             // 
             // bQuarter2
             // 
-            this.bQuarter2.Location = new System.Drawing.Point(353, 17);
+            this.bQuarter2.Location = new System.Drawing.Point(95, 22);
             this.bQuarter2.Name = "bQuarter2";
             this.bQuarter2.Size = new System.Drawing.Size(31, 23);
             this.bQuarter2.TabIndex = 1;
@@ -718,7 +896,7 @@
             // 
             // bQuarter3
             // 
-            this.bQuarter3.Location = new System.Drawing.Point(390, 17);
+            this.bQuarter3.Location = new System.Drawing.Point(132, 22);
             this.bQuarter3.Name = "bQuarter3";
             this.bQuarter3.Size = new System.Drawing.Size(31, 23);
             this.bQuarter3.TabIndex = 1;
@@ -728,64 +906,13 @@
             // 
             // bQuarter1
             // 
-            this.bQuarter1.Location = new System.Drawing.Point(316, 17);
+            this.bQuarter1.Location = new System.Drawing.Point(58, 22);
             this.bQuarter1.Name = "bQuarter1";
             this.bQuarter1.Size = new System.Drawing.Size(31, 23);
             this.bQuarter1.TabIndex = 1;
             this.bQuarter1.Text = "1";
             this.bQuarter1.UseVisualStyleBackColor = true;
             this.bQuarter1.Click += new System.EventHandler(this.bQuarter_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.bToggleTimeouts);
-            this.groupBox4.Controls.Add(this.bToggleScores);
-            this.groupBox4.Controls.Add(this.bToggleInfoBar);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Location = new System.Drawing.Point(6, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(555, 58);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Appearance";
-            // 
-            // bToggleTimeouts
-            // 
-            this.bToggleTimeouts.Location = new System.Drawing.Point(386, 22);
-            this.bToggleTimeouts.Name = "bToggleTimeouts";
-            this.bToggleTimeouts.Size = new System.Drawing.Size(147, 23);
-            this.bToggleTimeouts.TabIndex = 2;
-            this.bToggleTimeouts.Text = "Show Timeouts";
-            this.bToggleTimeouts.UseVisualStyleBackColor = true;
-            this.bToggleTimeouts.Click += new System.EventHandler(this.bToggleTimeouts_Click);
-            // 
-            // bToggleScores
-            // 
-            this.bToggleScores.Location = new System.Drawing.Point(200, 22);
-            this.bToggleScores.Name = "bToggleScores";
-            this.bToggleScores.Size = new System.Drawing.Size(147, 23);
-            this.bToggleScores.TabIndex = 1;
-            this.bToggleScores.Text = "Show Scores";
-            this.bToggleScores.UseVisualStyleBackColor = true;
-            this.bToggleScores.Click += new System.EventHandler(this.bToggleScores_Click);
-            // 
-            // bToggleInfoBar
-            // 
-            this.bToggleInfoBar.Location = new System.Drawing.Point(14, 22);
-            this.bToggleInfoBar.Name = "bToggleInfoBar";
-            this.bToggleInfoBar.Size = new System.Drawing.Size(147, 23);
-            this.bToggleInfoBar.TabIndex = 0;
-            this.bToggleInfoBar.Text = "Show Text Bar";
-            this.bToggleInfoBar.UseVisualStyleBackColor = true;
-            this.bToggleInfoBar.Click += new System.EventHandler(this.bToggleInfoBar_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 27);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(0, 13);
-            this.label19.TabIndex = 0;
             // 
             // gMatchScores
             // 
@@ -804,7 +931,7 @@
             this.gMatchScores.Controls.Add(this.button18);
             this.gMatchScores.Controls.Add(this.button19);
             this.gMatchScores.Controls.Add(this.label28);
-            this.gMatchScores.Location = new System.Drawing.Point(6, 160);
+            this.gMatchScores.Location = new System.Drawing.Point(6, 96);
             this.gMatchScores.Name = "gMatchScores";
             this.gMatchScores.Size = new System.Drawing.Size(555, 84);
             this.gMatchScores.TabIndex = 0;
@@ -979,7 +1106,7 @@
             this.gScores.Controls.Add(this.bIncVisiting1);
             this.gScores.Controls.Add(this.bIncHome1);
             this.gScores.Controls.Add(this.label2);
-            this.gScores.Location = new System.Drawing.Point(6, 70);
+            this.gScores.Location = new System.Drawing.Point(6, 6);
             this.gScores.Name = "gScores";
             this.gScores.Size = new System.Drawing.Size(555, 84);
             this.gScores.TabIndex = 0;
@@ -1091,7 +1218,7 @@
             this.tabPage4.Controls.Add(this.dRoles);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(567, 504);
+            this.tabPage4.Size = new System.Drawing.Size(588, 504);
             this.tabPage4.TabIndex = 8;
             this.tabPage4.Text = "Credits";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1324,7 +1451,7 @@
             this.tStats.Location = new System.Drawing.Point(4, 22);
             this.tStats.Name = "tStats";
             this.tStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tStats.Size = new System.Drawing.Size(567, 504);
+            this.tStats.Size = new System.Drawing.Size(588, 504);
             this.tStats.TabIndex = 9;
             this.tStats.Text = "Stats";
             this.tStats.UseVisualStyleBackColor = true;
@@ -1470,226 +1597,23 @@
             this.bResetTimeouts.Text = "Reset";
             this.bResetTimeouts.UseVisualStyleBackColor = true;
             // 
-            // gPossession
+            // bVersion
             // 
-            this.gPossession.Controls.Add(this.label24);
-            this.gPossession.Controls.Add(this.bNobodysBall);
-            this.gPossession.Controls.Add(this.bVisitingBall);
-            this.gPossession.Controls.Add(this.bConestogaBall);
-            this.gPossession.Location = new System.Drawing.Point(6, 307);
-            this.gPossession.Name = "gPossession";
-            this.gPossession.Size = new System.Drawing.Size(555, 51);
-            this.gPossession.TabIndex = 8;
-            this.gPossession.TabStop = false;
-            this.gPossession.Text = "Ball Possession";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 27);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(0, 13);
-            this.label24.TabIndex = 0;
-            // 
-            // bNobodysBall
-            // 
-            this.bNobodysBall.Location = new System.Drawing.Point(378, 17);
-            this.bNobodysBall.Name = "bNobodysBall";
-            this.bNobodysBall.Size = new System.Drawing.Size(155, 23);
-            this.bNobodysBall.TabIndex = 1;
-            this.bNobodysBall.Text = "Nobody\'s Ball";
-            this.bNobodysBall.UseVisualStyleBackColor = true;
-            this.bNobodysBall.Click += new System.EventHandler(this.bNobodysBall_Click);
-            // 
-            // bVisitingBall
-            // 
-            this.bVisitingBall.Location = new System.Drawing.Point(196, 17);
-            this.bVisitingBall.Name = "bVisitingBall";
-            this.bVisitingBall.Size = new System.Drawing.Size(155, 23);
-            this.bVisitingBall.TabIndex = 1;
-            this.bVisitingBall.Text = "Visitor\'s Ball";
-            this.bVisitingBall.UseVisualStyleBackColor = true;
-            this.bVisitingBall.Click += new System.EventHandler(this.bVisitingBall_Click);
-            // 
-            // bConestogaBall
-            // 
-            this.bConestogaBall.Location = new System.Drawing.Point(14, 17);
-            this.bConestogaBall.Name = "bConestogaBall";
-            this.bConestogaBall.Size = new System.Drawing.Size(155, 23);
-            this.bConestogaBall.TabIndex = 1;
-            this.bConestogaBall.Text = "Conestoga\'s Ball";
-            this.bConestogaBall.UseVisualStyleBackColor = true;
-            this.bConestogaBall.Click += new System.EventHandler(this.bConestogaBall_Click);
-            // 
-            // gTimeouts
-            // 
-            this.gTimeouts.Controls.Add(this.label9);
-            this.gTimeouts.Controls.Add(this.label10);
-            this.gTimeouts.Controls.Add(this.numericUpDown1);
-            this.gTimeouts.Controls.Add(this.numericUpDown2);
-            this.gTimeouts.Controls.Add(this.label22);
-            this.gTimeouts.Controls.Add(this.label23);
-            this.gTimeouts.Controls.Add(this.bVisitingTimeouts3);
-            this.gTimeouts.Controls.Add(this.bHomeTimeouts3);
-            this.gTimeouts.Controls.Add(this.bVisitingTimeouts0);
-            this.gTimeouts.Controls.Add(this.bVisitingTimeouts1);
-            this.gTimeouts.Controls.Add(this.bHomeTimeouts0);
-            this.gTimeouts.Controls.Add(this.bVisitingTimeouts2);
-            this.gTimeouts.Controls.Add(this.bHomeTimeouts1);
-            this.gTimeouts.Controls.Add(this.bHomeTimeouts2);
-            this.gTimeouts.Location = new System.Drawing.Point(6, 364);
-            this.gTimeouts.Name = "gTimeouts";
-            this.gTimeouts.Size = new System.Drawing.Size(555, 108);
-            this.gTimeouts.TabIndex = 7;
-            this.gTimeouts.TabStop = false;
-            this.gTimeouts.Text = "Timeouts Used";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Conestoga Timeouts";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(204, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Visiting Timeouts";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(121, 25);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(58, 20);
-            this.numericUpDown1.TabIndex = 0;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.nHomeTimeouts_ValueChanged);
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(296, 25);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(58, 20);
-            this.numericUpDown2.TabIndex = 2;
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.nVisitingTimeouts_ValueChanged);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 27);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(0, 13);
-            this.label22.TabIndex = 0;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(211, 27);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(0, 13);
-            this.label23.TabIndex = 0;
-            // 
-            // bHomeTimeouts0
-            // 
-            this.bHomeTimeouts0.Location = new System.Drawing.Point(19, 51);
-            this.bHomeTimeouts0.Name = "bHomeTimeouts0";
-            this.bHomeTimeouts0.Size = new System.Drawing.Size(31, 23);
-            this.bHomeTimeouts0.TabIndex = 1;
-            this.bHomeTimeouts0.Text = "0";
-            this.bHomeTimeouts0.UseVisualStyleBackColor = true;
-            this.bHomeTimeouts0.Click += new System.EventHandler(this.setHomeTimeouts);
-            // 
-            // bHomeTimeouts1
-            // 
-            this.bHomeTimeouts1.Location = new System.Drawing.Point(56, 51);
-            this.bHomeTimeouts1.Name = "bHomeTimeouts1";
-            this.bHomeTimeouts1.Size = new System.Drawing.Size(31, 23);
-            this.bHomeTimeouts1.TabIndex = 1;
-            this.bHomeTimeouts1.Text = "1";
-            this.bHomeTimeouts1.UseVisualStyleBackColor = true;
-            this.bHomeTimeouts1.Click += new System.EventHandler(this.setHomeTimeouts);
-            // 
-            // bHomeTimeouts2
-            // 
-            this.bHomeTimeouts2.Location = new System.Drawing.Point(93, 51);
-            this.bHomeTimeouts2.Name = "bHomeTimeouts2";
-            this.bHomeTimeouts2.Size = new System.Drawing.Size(31, 23);
-            this.bHomeTimeouts2.TabIndex = 1;
-            this.bHomeTimeouts2.Text = "2";
-            this.bHomeTimeouts2.UseVisualStyleBackColor = true;
-            this.bHomeTimeouts2.Click += new System.EventHandler(this.setHomeTimeouts);
-            // 
-            // bHomeTimeouts3
-            // 
-            this.bHomeTimeouts3.Location = new System.Drawing.Point(130, 51);
-            this.bHomeTimeouts3.Name = "bHomeTimeouts3";
-            this.bHomeTimeouts3.Size = new System.Drawing.Size(31, 23);
-            this.bHomeTimeouts3.TabIndex = 1;
-            this.bHomeTimeouts3.Text = "3";
-            this.bHomeTimeouts3.UseVisualStyleBackColor = true;
-            this.bHomeTimeouts3.Click += new System.EventHandler(this.setHomeTimeouts);
-            // 
-            // bVisitingTimeouts2
-            // 
-            this.bVisitingTimeouts2.Location = new System.Drawing.Point(288, 51);
-            this.bVisitingTimeouts2.Name = "bVisitingTimeouts2";
-            this.bVisitingTimeouts2.Size = new System.Drawing.Size(31, 23);
-            this.bVisitingTimeouts2.TabIndex = 1;
-            this.bVisitingTimeouts2.Text = "2";
-            this.bVisitingTimeouts2.UseVisualStyleBackColor = true;
-            this.bVisitingTimeouts2.Click += new System.EventHandler(this.setVisitingTimeouts);
-            // 
-            // bVisitingTimeouts1
-            // 
-            this.bVisitingTimeouts1.Location = new System.Drawing.Point(251, 51);
-            this.bVisitingTimeouts1.Name = "bVisitingTimeouts1";
-            this.bVisitingTimeouts1.Size = new System.Drawing.Size(31, 23);
-            this.bVisitingTimeouts1.TabIndex = 1;
-            this.bVisitingTimeouts1.Text = "1";
-            this.bVisitingTimeouts1.UseVisualStyleBackColor = true;
-            this.bVisitingTimeouts1.Click += new System.EventHandler(this.setVisitingTimeouts);
-            // 
-            // bVisitingTimeouts0
-            // 
-            this.bVisitingTimeouts0.Location = new System.Drawing.Point(214, 51);
-            this.bVisitingTimeouts0.Name = "bVisitingTimeouts0";
-            this.bVisitingTimeouts0.Size = new System.Drawing.Size(31, 23);
-            this.bVisitingTimeouts0.TabIndex = 1;
-            this.bVisitingTimeouts0.Text = "0";
-            this.bVisitingTimeouts0.UseVisualStyleBackColor = true;
-            this.bVisitingTimeouts0.Click += new System.EventHandler(this.setVisitingTimeouts);
-            // 
-            // bVisitingTimeouts3
-            // 
-            this.bVisitingTimeouts3.Location = new System.Drawing.Point(325, 51);
-            this.bVisitingTimeouts3.Name = "bVisitingTimeouts3";
-            this.bVisitingTimeouts3.Size = new System.Drawing.Size(31, 23);
-            this.bVisitingTimeouts3.TabIndex = 1;
-            this.bVisitingTimeouts3.Text = "3";
-            this.bVisitingTimeouts3.UseVisualStyleBackColor = true;
-            this.bVisitingTimeouts3.Click += new System.EventHandler(this.setVisitingTimeouts);
+            this.bVersion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVersion.Location = new System.Drawing.Point(495, 577);
+            this.bVersion.Name = "bVersion";
+            this.bVersion.Size = new System.Drawing.Size(109, 23);
+            this.bVersion.TabIndex = 3;
+            this.bVersion.Text = "Version x.x.x.x";
+            this.bVersion.UseVisualStyleBackColor = true;
+            this.bVersion.Click += new System.EventHandler(this.bVersion_Click);
             // 
             // Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 607);
-            this.Controls.Add(this.lVersion);
+            this.Controls.Add(this.bVersion);
             this.Controls.Add(this.bToggleBug);
             this.Controls.Add(this.bToggleGraphics);
             this.Controls.Add(this.bUseCredits);
@@ -1702,6 +1626,7 @@
             this.Controls.Add(this.bUseScoreBar);
             this.Controls.Add(this.tabPage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Controls";
             this.Text = "Graphics Control Panel";
             this.panel2.ResumeLayout(false);
@@ -1718,6 +1643,10 @@
             this.panel1.PerformLayout();
             this.tabPage.ResumeLayout(false);
             this.tabScores.ResumeLayout(false);
+            this.gPossession.ResumeLayout(false);
+            this.gPossession.PerformLayout();
+            this.gTimeouts.ResumeLayout(false);
+            this.gTimeouts.PerformLayout();
             this.gInfoText.ResumeLayout(false);
             this.gInfoText.PerformLayout();
             this.pDownYards.ResumeLayout(false);
@@ -1726,8 +1655,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nYards)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.gMatchScores.ResumeLayout(false);
             this.gMatchScores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeAltScore)).EndInit();
@@ -1741,14 +1668,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dRoles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).EndInit();
-            this.gPossession.ResumeLayout(false);
-            this.gPossession.PerformLayout();
-            this.gTimeouts.ResumeLayout(false);
-            this.gTimeouts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1765,7 +1685,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lVersion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nHomeScore;
         private System.Windows.Forms.Label label2;
@@ -1805,11 +1724,7 @@
         private System.Windows.Forms.NumericUpDown nDown;
         private System.Windows.Forms.Button bResetDownYards;
         private System.Windows.Forms.Button bDisplayDownYards;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button bToggleTimeouts;
-        private System.Windows.Forms.Button bToggleScores;
-        private System.Windows.Forms.Button bToggleInfoBar;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button bToggleBug;
         private System.Windows.Forms.DataGridView dRoles;
         private System.Windows.Forms.RichTextBox tCredits;
@@ -1878,12 +1793,7 @@
         private System.Windows.Forms.Button bVisitingBall;
         private System.Windows.Forms.Button bConestogaBall;
         private System.Windows.Forms.GroupBox gTimeouts;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button bHomeTimeouts3;
         private System.Windows.Forms.Button bHomeTimeouts0;
         private System.Windows.Forms.Button bHomeTimeouts1;
@@ -1892,6 +1802,10 @@
         private System.Windows.Forms.Button bVisitingTimeouts0;
         private System.Windows.Forms.Button bVisitingTimeouts1;
         private System.Windows.Forms.Button bVisitingTimeouts2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button bVersion;
 
 
 

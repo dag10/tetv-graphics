@@ -43,7 +43,7 @@ namespace TETV_ScoreBar {
             tabPage.TabPages.Remove(tStats);
             
             // Set version label
-            lVersion.Text = "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            bVersion.Text = "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 
             // Set default info text
             tCustomInfoText.Text = game.infoText;
@@ -172,13 +172,13 @@ namespace TETV_ScoreBar {
             }
             set {
                 _showInfoText = value;
-                bToggleInfoBar.Text = (value ? "Hide Text Bar" : "Show Text Bar");
+                //bToggleInfoBar.Text = (value ? "Hide Text Bar" : "Show Text Bar");
                 Config.SetValue(ConfigKey.ShowInfoText, value);
                 Config.Save();
                 display.showInfoText = value;
                 display.UpdateDisplay();
                 //gInfoText.Enabled = value;
-                bToggleInfoBar.BackColor = (value ? Color.LightGreen : Color.Yellow);
+                //bToggleInfoBar.BackColor = (value ? Color.LightGreen : Color.Yellow);
             }
         }
 
@@ -189,13 +189,13 @@ namespace TETV_ScoreBar {
             }
             set {
                 _showScores = value;
-                bToggleScores.Text = (value ? "Hide Scores" : "Show Scores");
+                //bToggleScores.Text = (value ? "Hide Scores" : "Show Scores");
                 Config.SetValue(ConfigKey.ShowScores, value);
                 Config.Save();
                 display.showScores = value;
                 display.UpdateDisplay();
                 //gScores.Enabled = value;
-                bToggleScores.BackColor = (value ? Color.LightGreen : Color.Yellow);
+                //bToggleScores.BackColor = (value ? Color.LightGreen : Color.Yellow);
             }
         }
 
@@ -250,7 +250,7 @@ namespace TETV_ScoreBar {
                 display.showBug = showGraphics && showBug;
                 display.UpdateDisplay();
 
-                Color inUseColor = Color.LightGreen;
+                Color inUseColor = Color.SkyBlue;
                 switch (_mode) {
                     case GraphicsMode.ScoreBar:
                         bUseScoreBar.BackColor = inUseColor;
@@ -712,6 +712,10 @@ namespace TETV_ScoreBar {
         }
 
         #endregion
+
+        private void bVersion_Click(object sender, EventArgs e) {
+            MessageBox.Show(TETV_ScoreBar.Program.AboutText, "About This Program");
+        }
     }
 
     public enum GraphicsMode {

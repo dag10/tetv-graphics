@@ -173,15 +173,7 @@ namespace TETV_ScoreBar {
         }
 
         private void bAbout_Click(object sender, EventArgs e) {
-            MessageBox.Show("TETV Sports Graphics\n" +
-                            "\n" +
-                            "All code and graphics Copyright © Drew Gottlieb, 2010-2011\n" +
-                            "\n" +
-                            "Do not redistribute, use, or modify without permission.\n" +
-                            "\n" +
-                            "For questions, help, requests, or suggestions, I can be reached at:\n" +
-                            "drew1313132@gmail.com",
-                            "About This Program");
+            MessageBox.Show(TETV_ScoreBar.Program.AboutText, "About This Program");
         }
 
         #endregion

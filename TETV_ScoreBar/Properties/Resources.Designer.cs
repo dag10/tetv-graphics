@@ -81,6 +81,27 @@ namespace TETV_ScoreBar.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap center {
+            get {
+                object obj = ResourceManager.GetObject("center", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap divider {
+            get {
+                object obj = ResourceManager.GetObject("divider", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap drop_down {
+            get {
+                object obj = ResourceManager.GetObject("drop_down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap halftime_L {
             get {
                 object obj = ResourceManager.GetObject("halftime_L", resourceCulture);
@@ -200,6 +221,13 @@ namespace TETV_ScoreBar.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap score {
+            get {
+                object obj = ResourceManager.GetObject("score", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap score_left {
             get {
                 object obj = ResourceManager.GetObject("score_left", resourceCulture);
@@ -273,6 +301,34 @@ namespace TETV_ScoreBar.Properties {
         internal static System.Drawing.Bitmap stats {
             get {
                 object obj = ResourceManager.GetObject("stats", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tip_l {
+            get {
+                object obj = ResourceManager.GetObject("tip_l", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tip_lp {
+            get {
+                object obj = ResourceManager.GetObject("tip_lp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tip_r {
+            get {
+                object obj = ResourceManager.GetObject("tip_r", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tip_rp {
+            get {
+                object obj = ResourceManager.GetObject("tip_rp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
