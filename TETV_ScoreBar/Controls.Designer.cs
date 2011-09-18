@@ -663,7 +663,7 @@
             // 
             // pDownYards
             // 
-            this.pDownYards.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pDownYards.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.pDownYards.Controls.Add(this.bDisplayDownYards);
             this.pDownYards.Controls.Add(this.label16);
             this.pDownYards.Controls.Add(this.bResetDownYards);

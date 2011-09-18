@@ -65,14 +65,14 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.lAbbr2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pLT1 = new System.Windows.Forms.Panel();
-            this.pLT2 = new System.Windows.Forms.Panel();
-            this.pLT3 = new System.Windows.Forms.Panel();
-            this.pRT1 = new System.Windows.Forms.Panel();
-            this.pRT2 = new System.Windows.Forms.Panel();
             this.pRT3 = new System.Windows.Forms.Panel();
+            this.lAbbr2 = new System.Windows.Forms.Label();
+            this.pRT2 = new System.Windows.Forms.Panel();
+            this.pRT1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pLT3 = new System.Windows.Forms.Panel();
+            this.pLT2 = new System.Windows.Forms.Panel();
+            this.pLT1 = new System.Windows.Forms.Panel();
             this.pBarOLD.SuspendLayout();
             this.pAltScoreLeft.SuspendLayout();
             this.pAltScoreRight.SuspendLayout();
@@ -107,7 +107,7 @@
             this.pBarOLD.Controls.Add(this.pMain);
             this.pBarOLD.Controls.Add(this.pLeftScore);
             this.pBarOLD.Controls.Add(this.pRightScore);
-            this.pBarOLD.Location = new System.Drawing.Point(124, 525);
+            this.pBarOLD.Location = new System.Drawing.Point(47, 512);
             this.pBarOLD.Name = "pBarOLD";
             this.pBarOLD.Size = new System.Drawing.Size(757, 112);
             this.pBarOLD.TabIndex = 4;
@@ -595,7 +595,7 @@
             this.pBar.Controls.Add(this.panel2);
             this.pBar.Location = new System.Drawing.Point(12, 348);
             this.pBar.Name = "pBar";
-            this.pBar.Size = new System.Drawing.Size(952, 112);
+            this.pBar.Size = new System.Drawing.Size(818, 57);
             this.pBar.TabIndex = 4;
             this.pBar.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
             this.pBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
@@ -606,7 +606,7 @@
             // pRightTip
             // 
             this.pRightTip.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.tip_r;
-            this.pRightTip.Location = new System.Drawing.Point(818, 0);
+            this.pRightTip.Location = new System.Drawing.Point(761, 0);
             this.pRightTip.Margin = new System.Windows.Forms.Padding(0);
             this.pRightTip.Name = "pRightTip";
             this.pRightTip.Size = new System.Drawing.Size(55, 57);
@@ -620,7 +620,7 @@
             // pLeftTip
             // 
             this.pLeftTip.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.tip_l;
-            this.pLeftTip.Location = new System.Drawing.Point(57, 0);
+            this.pLeftTip.Location = new System.Drawing.Point(0, 0);
             this.pLeftTip.Margin = new System.Windows.Forms.Padding(0);
             this.pLeftTip.Name = "pLeftTip";
             this.pLeftTip.Size = new System.Drawing.Size(55, 57);
@@ -635,7 +635,7 @@
             // 
             this.panel6.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.score;
             this.panel6.Controls.Add(this.lScore2);
-            this.panel6.Location = new System.Drawing.Point(610, 0);
+            this.panel6.Location = new System.Drawing.Point(553, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(117, 57);
@@ -669,7 +669,7 @@
             // 
             this.panel5.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.score;
             this.panel5.Controls.Add(this.lScore1);
-            this.panel5.Location = new System.Drawing.Point(203, 0);
+            this.panel5.Location = new System.Drawing.Point(146, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(117, 57);
@@ -683,7 +683,7 @@
             // panel12
             // 
             this.panel12.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.divider;
-            this.panel12.Location = new System.Drawing.Point(600, 0);
+            this.panel12.Location = new System.Drawing.Point(543, 0);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(5, 57);
@@ -697,7 +697,7 @@
             // panel10
             // 
             this.panel10.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.divider;
-            this.panel10.Location = new System.Drawing.Point(412, 0);
+            this.panel10.Location = new System.Drawing.Point(355, 0);
             this.panel10.Margin = new System.Windows.Forms.Padding(0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(5, 57);
@@ -711,7 +711,7 @@
             // panel8
             // 
             this.panel8.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.divider;
-            this.panel8.Location = new System.Drawing.Point(325, 0);
+            this.panel8.Location = new System.Drawing.Point(268, 0);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(5, 57);
@@ -725,7 +725,7 @@
             // panel13
             // 
             this.panel13.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
-            this.panel13.Location = new System.Drawing.Point(605, 0);
+            this.panel13.Location = new System.Drawing.Point(548, 0);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(5, 57);
@@ -739,7 +739,7 @@
             // panel7
             // 
             this.panel7.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
-            this.panel7.Location = new System.Drawing.Point(320, 0);
+            this.panel7.Location = new System.Drawing.Point(263, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(5, 57);
@@ -754,7 +754,7 @@
             // 
             this.panel11.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
             this.panel11.Controls.Add(this.lInfoText);
-            this.panel11.Location = new System.Drawing.Point(417, 0);
+            this.panel11.Location = new System.Drawing.Point(360, 0);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(183, 57);
@@ -769,7 +769,7 @@
             // 
             this.panel9.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
             this.panel9.Controls.Add(this.lQuarter);
-            this.panel9.Location = new System.Drawing.Point(330, 0);
+            this.panel9.Location = new System.Drawing.Point(273, 0);
             this.panel9.Margin = new System.Windows.Forms.Padding(0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(82, 57);
@@ -788,7 +788,7 @@
             this.panel14.Controls.Add(this.lAbbr2);
             this.panel14.Controls.Add(this.pRT2);
             this.panel14.Controls.Add(this.pRT1);
-            this.panel14.Location = new System.Drawing.Point(727, 0);
+            this.panel14.Location = new System.Drawing.Point(670, 0);
             this.panel14.Margin = new System.Windows.Forms.Padding(0);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(91, 57);
@@ -798,6 +798,14 @@
             this.panel14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
             this.panel14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.panel14.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // pRT3
+            // 
+            this.pRT3.BackColor = System.Drawing.Color.Lime;
+            this.pRT3.Location = new System.Drawing.Point(61, 41);
+            this.pRT3.Name = "pRT3";
+            this.pRT3.Size = new System.Drawing.Size(23, 5);
+            this.pRT3.TabIndex = 6;
             // 
             // lAbbr2
             // 
@@ -816,6 +824,22 @@
             this.lAbbr2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.lAbbr2.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
+            // pRT2
+            // 
+            this.pRT2.BackColor = System.Drawing.Color.Lime;
+            this.pRT2.Location = new System.Drawing.Point(32, 41);
+            this.pRT2.Name = "pRT2";
+            this.pRT2.Size = new System.Drawing.Size(23, 5);
+            this.pRT2.TabIndex = 6;
+            // 
+            // pRT1
+            // 
+            this.pRT1.BackColor = System.Drawing.Color.Lime;
+            this.pRT1.Location = new System.Drawing.Point(3, 41);
+            this.pRT1.Name = "pRT1";
+            this.pRT1.Size = new System.Drawing.Size(23, 5);
+            this.pRT1.TabIndex = 6;
+            // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
@@ -823,7 +847,7 @@
             this.panel2.Controls.Add(this.pLT2);
             this.panel2.Controls.Add(this.pLT1);
             this.panel2.Controls.Add(this.lAbbr1);
-            this.panel2.Location = new System.Drawing.Point(112, 0);
+            this.panel2.Location = new System.Drawing.Point(55, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(91, 57);
@@ -834,13 +858,13 @@
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.panel2.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
-            // pLT1
+            // pLT3
             // 
-            this.pLT1.BackColor = System.Drawing.Color.Lime;
-            this.pLT1.Location = new System.Drawing.Point(2, 41);
-            this.pLT1.Name = "pLT1";
-            this.pLT1.Size = new System.Drawing.Size(23, 5);
-            this.pLT1.TabIndex = 6;
+            this.pLT3.BackColor = System.Drawing.Color.Lime;
+            this.pLT3.Location = new System.Drawing.Point(60, 41);
+            this.pLT3.Name = "pLT3";
+            this.pLT3.Size = new System.Drawing.Size(23, 5);
+            this.pLT3.TabIndex = 6;
             // 
             // pLT2
             // 
@@ -850,37 +874,13 @@
             this.pLT2.Size = new System.Drawing.Size(23, 5);
             this.pLT2.TabIndex = 6;
             // 
-            // pLT3
+            // pLT1
             // 
-            this.pLT3.BackColor = System.Drawing.Color.Lime;
-            this.pLT3.Location = new System.Drawing.Point(60, 41);
-            this.pLT3.Name = "pLT3";
-            this.pLT3.Size = new System.Drawing.Size(23, 5);
-            this.pLT3.TabIndex = 6;
-            // 
-            // pRT1
-            // 
-            this.pRT1.BackColor = System.Drawing.Color.Lime;
-            this.pRT1.Location = new System.Drawing.Point(3, 41);
-            this.pRT1.Name = "pRT1";
-            this.pRT1.Size = new System.Drawing.Size(23, 5);
-            this.pRT1.TabIndex = 6;
-            // 
-            // pRT2
-            // 
-            this.pRT2.BackColor = System.Drawing.Color.Lime;
-            this.pRT2.Location = new System.Drawing.Point(32, 41);
-            this.pRT2.Name = "pRT2";
-            this.pRT2.Size = new System.Drawing.Size(23, 5);
-            this.pRT2.TabIndex = 6;
-            // 
-            // pRT3
-            // 
-            this.pRT3.BackColor = System.Drawing.Color.Lime;
-            this.pRT3.Location = new System.Drawing.Point(61, 41);
-            this.pRT3.Name = "pRT3";
-            this.pRT3.Size = new System.Drawing.Size(23, 5);
-            this.pRT3.TabIndex = 6;
+            this.pLT1.BackColor = System.Drawing.Color.Lime;
+            this.pLT1.Location = new System.Drawing.Point(2, 41);
+            this.pLT1.Name = "pLT1";
+            this.pLT1.Size = new System.Drawing.Size(23, 5);
+            this.pLT1.TabIndex = 6;
             // 
             // Display
             // 

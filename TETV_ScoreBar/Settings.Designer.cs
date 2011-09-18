@@ -58,6 +58,7 @@
             this.bSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tAbbr2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tAbbr1 = new System.Windows.Forms.TextBox();
             this.tName2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.bAbout = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.pStatPosition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nStatX)).BeginInit();
@@ -487,6 +487,15 @@
             this.tAbbr2.TabIndex = 8;
             this.tAbbr2.TextChanged += new System.EventHandler(this.tAbbr2_TextChanged);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(244, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(167, 26);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Note: Do not choose anything but\r\nGeneric/Football in this version!";
+            // 
             // tAbbr1
             // 
             this.tAbbr1.Location = new System.Drawing.Point(418, 53);
@@ -554,15 +563,6 @@
             this.bAbout.UseVisualStyleBackColor = true;
             this.bAbout.Click += new System.EventHandler(this.bAbout_Click);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(244, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(167, 26);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Note: Do not choose anything but\r\nGeneric/Football in this version!";
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,6 +575,7 @@
             this.Controls.Add(this.bSwap);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Settings";
             this.Text = "Configure Game Settings";
             this.groupBox1.ResumeLayout(false);

@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity version="1.4.0.1" name="TETV_Graphics.exe" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="TETV_Graphics" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="TETV_Graphics" version="2.1.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="TETV_Graphics.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -59,13 +59,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2408960">
-      <assemblyIdentity name="TETV_Graphics" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="TETV_Graphics" version="2.1.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>G9I/wh5SqDw1+ZOsRAWDkdodOPI=</dsig:DigestValue>
+        <dsig:DigestValue>Xwykv066/h+8nnP8o9nVb3HIams=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

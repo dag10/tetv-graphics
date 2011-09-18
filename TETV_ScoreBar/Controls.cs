@@ -83,6 +83,14 @@ namespace TETV_ScoreBar {
             switch (game.gameType) {
                 case GameType.Football:
                     RemoveGroup(tabScores, gMatchScores);
+                    bIncHome1.Text = "+1";
+                    bIncHome2.Text = "+2";
+                    bIncHome3.Text = "+3";
+                    bIncHome4.Text = "+6";
+                    bIncVisiting1.Text = "+1";
+                    bIncVisiting2.Text = "+2";
+                    bIncVisiting3.Text = "+3";
+                    bIncVisiting4.Text = "+6";
                     break;
                 case GameType.Generic:
                     RemoveGroup(tabScores, gMatchScores);
