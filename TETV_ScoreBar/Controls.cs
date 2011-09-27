@@ -15,6 +15,7 @@ namespace TETV_ScoreBar {
         Display display;
         Stats stats;
         Screen[] screens;
+        bool[] editingPreset = { false, false, false, false, false };
         int screen;
         
         #region Constructors
@@ -112,7 +113,7 @@ namespace TETV_ScoreBar {
                     bInfoPreset3.Text = "Face Off";
                     bInfoPreset4.Text = "Timeout";
                     bInfoPreset5.Visible = false;
-                    gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
+                    //gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     break;
                 case GameType.Basketball:
                     //bQuarterOT.Visible = false;
@@ -127,7 +128,7 @@ namespace TETV_ScoreBar {
                     bInfoPreset3.Text = "Free Throw";
                     bInfoPreset4.Text = "3 Points";
                     bInfoPreset5.Visible = false;
-                    gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
+                    //gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     break;
                 case GameType.Wrestling:
                     gScores.Text = "Team Score";
@@ -141,7 +142,7 @@ namespace TETV_ScoreBar {
                     bInfoPreset3.Text = "Forfeit";
                     bInfoPreset4.Text = "Pin";
                     bInfoPreset5.Visible = false;
-                    gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
+                    //gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     bIncHome1.Text = "+3";
                     bIncHome2.Text = "+4";
                     bIncHome3.Text = "+5";
@@ -151,9 +152,44 @@ namespace TETV_ScoreBar {
                     bIncVisiting3.Text = "+5";
                     bIncVisiting4.Text = "+6";
                     break;
+                case GameType.Volleyball:
+                    gScores.Text = "Game Score";
+                    bToggleTimeouts.Visible = false;
+                    showTimeouts = false;
+                    RemoveGroup(tabScores, gTimeouts);
+                    RemoveGroup(tabScores, gPeriod);
+                    pDownYards.Visible = false;
+                    bInfoPreset1.Text = "Preset 1";
+                    bInfoPreset2.Text = "Preset 2";
+                    bInfoPreset3.Text = "Preset 3";
+                    bInfoPreset4.Text = "Preset 4";
+                    bInfoPreset5.Visible = false;
+                    //gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
+                    bIncHome1.Text = "+1";
+                    bIncHome2.Text = "+2";
+                    bIncHome3.Text = "+3";
+                    bIncHome4.Text = "+4";
+                    bIncVisiting1.Text = "+1";
+                    bIncVisiting2.Text = "+2";
+                    bIncVisiting3.Text = "+3";
+                    bIncVisiting4.Text = "+4";
+                    
+                    break;
                 default:
                     break;
             }
+
+            // Hide preset edit boxes
+            tPreset1.Visible = false;
+            tPreset2.Visible = false;
+            tPreset3.Visible = false;
+            tPreset4.Visible = false;
+            tPreset5.Visible = false;
+            bInfoPreset1.Visible = true;
+            bInfoPreset2.Visible = true;
+            bInfoPreset3.Visible = true;
+            bInfoPreset4.Visible = true;
+            bInfoPreset5.Visible = true;
         }
 
         #endregion
@@ -371,6 +407,10 @@ namespace TETV_ScoreBar {
 
         private void bToggleBug_Click(object sender, EventArgs e) {
             showBug = !showBug;
+        }
+
+        private void bVersion_Click(object sender, EventArgs e) {
+            MessageBox.Show(TETV_ScoreBar.Program.AboutText, "About This Program");
         }
 
         #endregion
@@ -713,17 +753,129 @@ namespace TETV_ScoreBar {
         #region Group Management
 
         void RemoveGroup(TabPage page, GroupBox group) {
+            if (!group.Visible) return;
+
+            bool alone = true;
+
             group.Visible = false;
             foreach (GroupBox g in tabScores.Controls.OfType<GroupBox>().OrderBy(box => box.Location.Y).ToList<GroupBox>())
-                if (g.Location.Y > group.Location.Y)
+                if (g.Location.Y > group.Location.Y) {
                     g.Location = new Point(g.Location.X, g.Location.Y - (group.Height + group.Margin.Top));
+                } else if (g.Location.Y == group.Location.Y && g.Width < 555) {
+                    g.Width = 555;
+                    g.Location = new Point(6, g.Location.Y);
+                    g.Visible = false;
+                }
         }
 
         #endregion
 
-        private void bVersion_Click(object sender, EventArgs e) {
-            MessageBox.Show(TETV_ScoreBar.Program.AboutText, "About This Program");
+        #region Preset Editing
+
+        private void bEditPreset1_Click(object sender, EventArgs e) {
+            StartEditing(0);
         }
+
+        private void bEditPreset2_Click(object sender, EventArgs e) {
+            StartEditing(1);
+        }
+
+        private void bEditPreset3_Click(object sender, EventArgs e) {
+            StartEditing(2);
+        }
+
+        private void bEditPreset4_Click(object sender, EventArgs e) {
+            StartEditing(3);
+        }
+
+        private void bEditPreset5_Click(object sender, EventArgs e) {
+            StartEditing(4);
+        }
+
+        void StartEditing(int preset) {
+            if (preset < 0 || preset >= editingPreset.Length) return;
+
+            if (editingPreset[preset]) {
+                StopEditing(preset);
+                return;
+            }
+
+            for (int i = 0; i < editingPreset.Length; i++)
+                if (editingPreset[i])
+                    StopEditing(i);
+
+            Button presetButton = null;
+            TextBox presetBox = null;
+
+            switch (preset) {
+                case 0:
+                    presetButton = bInfoPreset1;
+                    presetBox = tPreset1;
+                    break;
+                case 1:
+                    presetButton = bInfoPreset2;
+                    presetBox = tPreset2;
+                    break;
+                case 2:
+                    presetButton = bInfoPreset3;
+                    presetBox = tPreset3;
+                    break;
+                case 3:
+                    presetButton = bInfoPreset4;
+                    presetBox = tPreset4;
+                    break;
+                case 4:
+                    presetButton = bInfoPreset5;
+                    presetBox = tPreset5;
+                    break;
+            }
+
+            presetBox.Bounds = presetButton.Bounds;
+            presetBox.Text = presetButton.Text;
+            presetButton.Visible = false;
+            presetBox.Visible = true;
+
+            editingPreset[preset] = true;
+        }
+
+        void StopEditing(int preset) {
+            if (preset < 0 || preset >= editingPreset.Length) return;
+
+            Button presetButton = null;
+            TextBox presetBox = null;
+
+            switch (preset) {
+                case 0:
+                    presetButton = bInfoPreset1;
+                    presetBox = tPreset1;
+                    break;
+                case 1:
+                    presetButton = bInfoPreset2;
+                    presetBox = tPreset2;
+                    break;
+                case 2:
+                    presetButton = bInfoPreset3;
+                    presetBox = tPreset3;
+                    break;
+                case 3:
+                    presetButton = bInfoPreset4;
+                    presetBox = tPreset4;
+                    break;
+                case 4:
+                    presetButton = bInfoPreset5;
+                    presetBox = tPreset5;
+                    break;
+            }
+
+            presetButton.Text = presetBox.Text;
+
+            presetBox.Visible = false;
+            presetButton.Visible = true;
+
+            editingPreset[preset] = false;
+        }
+
+        #endregion
     }
 
     public enum GraphicsMode {

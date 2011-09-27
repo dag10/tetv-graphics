@@ -12,7 +12,7 @@ namespace TETV_ScoreBar {
         Basketball,
         Hockey,
         Wrestling,
-        //Volleyball,
+        Volleyball,
         //Baseball
     }
 

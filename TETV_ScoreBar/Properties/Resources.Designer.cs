@@ -228,6 +228,20 @@ namespace TETV_ScoreBar.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap score_dl {
+            get {
+                object obj = ResourceManager.GetObject("score_dl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap score_dr {
+            get {
+                object obj = ResourceManager.GetObject("score_dr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap score_left {
             get {
                 object obj = ResourceManager.GetObject("score_left", resourceCulture);

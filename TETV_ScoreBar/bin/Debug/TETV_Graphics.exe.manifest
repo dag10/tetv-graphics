@@ -58,14 +58,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2415104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2483712">
       <assemblyIdentity name="TETV_Graphics" version="2.1.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>aocaSF6aNLOnpdmJwfZm5I5UDvs=</dsig:DigestValue>
+        <dsig:DigestValue>4dU6TaXJafDCPpfStsS4BCck3bY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -330,13 +330,13 @@
       <dsig:DigestValue>WpipGirTFJ78NGl6+EnCwY2bZ8s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TETV_Graphics.exe.config" size="457">
+  <file name="TETV_Graphics.exe.config" size="453">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>QM8E9cWeW4JkYopAIR04UvkgHAc=</dsig:DigestValue>
+      <dsig:DigestValue>tqAskwqE6/dlQcNqJgqzrxpVkrU=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

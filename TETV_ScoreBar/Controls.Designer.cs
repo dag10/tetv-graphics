@@ -84,7 +84,7 @@
             this.bUpdateInfoText = new System.Windows.Forms.Button();
             this.bInfoPreset2 = new System.Windows.Forms.Button();
             this.bInfoPreset1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gPeriod = new System.Windows.Forms.GroupBox();
             this.lQuarter = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.bQuarterOT = new System.Windows.Forms.Button();
@@ -156,6 +156,16 @@
             this.label21 = new System.Windows.Forms.Label();
             this.bResetTimeouts = new System.Windows.Forms.Button();
             this.bVersion = new System.Windows.Forms.Button();
+            this.bEditPreset1 = new System.Windows.Forms.Button();
+            this.bEditPreset3 = new System.Windows.Forms.Button();
+            this.bEditPreset5 = new System.Windows.Forms.Button();
+            this.bEditPreset2 = new System.Windows.Forms.Button();
+            this.bEditPreset4 = new System.Windows.Forms.Button();
+            this.tPreset1 = new System.Windows.Forms.TextBox();
+            this.tPreset2 = new System.Windows.Forms.TextBox();
+            this.tPreset3 = new System.Windows.Forms.TextBox();
+            this.tPreset5 = new System.Windows.Forms.TextBox();
+            this.tPreset4 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).BeginInit();
@@ -172,7 +182,7 @@
             this.pDownYards.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nYards)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.gPeriod.SuspendLayout();
             this.gMatchScores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeAltScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingAltScore)).BeginInit();
@@ -434,7 +444,7 @@
             this.tabScores.Controls.Add(this.gPossession);
             this.tabScores.Controls.Add(this.gTimeouts);
             this.tabScores.Controls.Add(this.gInfoText);
-            this.tabScores.Controls.Add(this.groupBox2);
+            this.tabScores.Controls.Add(this.gPeriod);
             this.tabScores.Controls.Add(this.gMatchScores);
             this.tabScores.Controls.Add(this.gScores);
             this.tabScores.Location = new System.Drawing.Point(4, 22);
@@ -644,6 +654,16 @@
             // 
             // gInfoText
             // 
+            this.gInfoText.Controls.Add(this.tPreset5);
+            this.gInfoText.Controls.Add(this.tPreset4);
+            this.gInfoText.Controls.Add(this.tPreset3);
+            this.gInfoText.Controls.Add(this.tPreset2);
+            this.gInfoText.Controls.Add(this.tPreset1);
+            this.gInfoText.Controls.Add(this.bEditPreset4);
+            this.gInfoText.Controls.Add(this.bEditPreset2);
+            this.gInfoText.Controls.Add(this.bEditPreset5);
+            this.gInfoText.Controls.Add(this.bEditPreset3);
+            this.gInfoText.Controls.Add(this.bEditPreset1);
             this.gInfoText.Controls.Add(this.pDownYards);
             this.gInfoText.Controls.Add(this.label13);
             this.gInfoText.Controls.Add(this.tCustomInfoText);
@@ -775,7 +795,7 @@
             // 
             this.bInfoPreset5.Location = new System.Drawing.Point(8, 77);
             this.bInfoPreset5.Name = "bInfoPreset5";
-            this.bInfoPreset5.Size = new System.Drawing.Size(141, 23);
+            this.bInfoPreset5.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset5.TabIndex = 2;
             this.bInfoPreset5.Text = "Timeout";
             this.bInfoPreset5.UseVisualStyleBackColor = true;
@@ -785,7 +805,7 @@
             // 
             this.bInfoPreset4.Location = new System.Drawing.Point(155, 48);
             this.bInfoPreset4.Name = "bInfoPreset4";
-            this.bInfoPreset4.Size = new System.Drawing.Size(141, 23);
+            this.bInfoPreset4.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset4.TabIndex = 2;
             this.bInfoPreset4.Text = "Field Goal";
             this.bInfoPreset4.UseVisualStyleBackColor = true;
@@ -793,9 +813,9 @@
             // 
             // bInfoPreset3
             // 
-            this.bInfoPreset3.Location = new System.Drawing.Point(8, 48);
+            this.bInfoPreset3.Location = new System.Drawing.Point(9, 48);
             this.bInfoPreset3.Name = "bInfoPreset3";
-            this.bInfoPreset3.Size = new System.Drawing.Size(141, 23);
+            this.bInfoPreset3.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset3.TabIndex = 2;
             this.bInfoPreset3.Text = "Kickoff";
             this.bInfoPreset3.UseVisualStyleBackColor = true;
@@ -815,7 +835,7 @@
             // 
             this.bInfoPreset2.Location = new System.Drawing.Point(156, 19);
             this.bInfoPreset2.Name = "bInfoPreset2";
-            this.bInfoPreset2.Size = new System.Drawing.Size(141, 23);
+            this.bInfoPreset2.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset2.TabIndex = 2;
             this.bInfoPreset2.Text = "Touchdown";
             this.bInfoPreset2.UseVisualStyleBackColor = true;
@@ -825,27 +845,27 @@
             // 
             this.bInfoPreset1.Location = new System.Drawing.Point(9, 19);
             this.bInfoPreset1.Name = "bInfoPreset1";
-            this.bInfoPreset1.Size = new System.Drawing.Size(141, 23);
+            this.bInfoPreset1.Size = new System.Drawing.Size(108, 23);
             this.bInfoPreset1.TabIndex = 2;
             this.bInfoPreset1.Text = "Flag";
             this.bInfoPreset1.UseVisualStyleBackColor = true;
             this.bInfoPreset1.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
-            // groupBox2
+            // gPeriod
             // 
-            this.groupBox2.Controls.Add(this.lQuarter);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.bQuarterOT);
-            this.groupBox2.Controls.Add(this.bQuarter4);
-            this.groupBox2.Controls.Add(this.bQuarter2);
-            this.groupBox2.Controls.Add(this.bQuarter3);
-            this.groupBox2.Controls.Add(this.bQuarter1);
-            this.groupBox2.Location = new System.Drawing.Point(279, 186);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(282, 51);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Game Info";
+            this.gPeriod.Controls.Add(this.lQuarter);
+            this.gPeriod.Controls.Add(this.label7);
+            this.gPeriod.Controls.Add(this.bQuarterOT);
+            this.gPeriod.Controls.Add(this.bQuarter4);
+            this.gPeriod.Controls.Add(this.bQuarter2);
+            this.gPeriod.Controls.Add(this.bQuarter3);
+            this.gPeriod.Controls.Add(this.bQuarter1);
+            this.gPeriod.Location = new System.Drawing.Point(279, 186);
+            this.gPeriod.Name = "gPeriod";
+            this.gPeriod.Size = new System.Drawing.Size(282, 51);
+            this.gPeriod.TabIndex = 1;
+            this.gPeriod.TabStop = false;
+            this.gPeriod.Text = "Game Info";
             // 
             // lQuarter
             // 
@@ -1608,6 +1628,106 @@
             this.bVersion.UseVisualStyleBackColor = true;
             this.bVersion.Click += new System.EventHandler(this.bVersion_Click);
             // 
+            // bEditPreset1
+            // 
+            this.bEditPreset1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset1.Location = new System.Drawing.Point(122, 19);
+            this.bEditPreset1.Name = "bEditPreset1";
+            this.bEditPreset1.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset1.TabIndex = 7;
+            this.bEditPreset1.Text = "=";
+            this.bEditPreset1.UseVisualStyleBackColor = true;
+            this.bEditPreset1.Click += new System.EventHandler(this.bEditPreset1_Click);
+            // 
+            // bEditPreset3
+            // 
+            this.bEditPreset3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset3.Location = new System.Drawing.Point(122, 48);
+            this.bEditPreset3.Name = "bEditPreset3";
+            this.bEditPreset3.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset3.TabIndex = 7;
+            this.bEditPreset3.Text = "=";
+            this.bEditPreset3.UseVisualStyleBackColor = true;
+            this.bEditPreset3.Click += new System.EventHandler(this.bEditPreset3_Click);
+            // 
+            // bEditPreset5
+            // 
+            this.bEditPreset5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset5.Location = new System.Drawing.Point(122, 77);
+            this.bEditPreset5.Name = "bEditPreset5";
+            this.bEditPreset5.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset5.TabIndex = 7;
+            this.bEditPreset5.Text = "=";
+            this.bEditPreset5.UseVisualStyleBackColor = true;
+            this.bEditPreset5.Click += new System.EventHandler(this.bEditPreset5_Click);
+            // 
+            // bEditPreset2
+            // 
+            this.bEditPreset2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset2.Location = new System.Drawing.Point(270, 19);
+            this.bEditPreset2.Name = "bEditPreset2";
+            this.bEditPreset2.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset2.TabIndex = 7;
+            this.bEditPreset2.Text = "=";
+            this.bEditPreset2.UseVisualStyleBackColor = true;
+            this.bEditPreset2.Click += new System.EventHandler(this.bEditPreset2_Click);
+            // 
+            // bEditPreset4
+            // 
+            this.bEditPreset4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset4.Location = new System.Drawing.Point(270, 48);
+            this.bEditPreset4.Name = "bEditPreset4";
+            this.bEditPreset4.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset4.TabIndex = 7;
+            this.bEditPreset4.Text = "=";
+            this.bEditPreset4.UseVisualStyleBackColor = true;
+            this.bEditPreset4.Click += new System.EventHandler(this.bEditPreset4_Click);
+            // 
+            // tPreset1
+            // 
+            this.tPreset1.Location = new System.Drawing.Point(156, 80);
+            this.tPreset1.Name = "tPreset1";
+            this.tPreset1.Size = new System.Drawing.Size(11, 20);
+            this.tPreset1.TabIndex = 8;
+            this.tPreset1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPreset2
+            // 
+            this.tPreset2.Location = new System.Drawing.Point(173, 80);
+            this.tPreset2.Name = "tPreset2";
+            this.tPreset2.Size = new System.Drawing.Size(11, 20);
+            this.tPreset2.TabIndex = 9;
+            this.tPreset2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPreset3
+            // 
+            this.tPreset3.Location = new System.Drawing.Point(190, 80);
+            this.tPreset3.Name = "tPreset3";
+            this.tPreset3.Size = new System.Drawing.Size(11, 20);
+            this.tPreset3.TabIndex = 10;
+            this.tPreset3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPreset5
+            // 
+            this.tPreset5.Location = new System.Drawing.Point(224, 80);
+            this.tPreset5.Name = "tPreset5";
+            this.tPreset5.Size = new System.Drawing.Size(11, 20);
+            this.tPreset5.TabIndex = 12;
+            this.tPreset5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPreset4
+            // 
+            this.tPreset4.Location = new System.Drawing.Point(207, 80);
+            this.tPreset4.Name = "tPreset4";
+            this.tPreset4.Size = new System.Drawing.Size(11, 20);
+            this.tPreset4.TabIndex = 11;
+            this.tPreset4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1653,8 +1773,8 @@
             this.pDownYards.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nYards)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gPeriod.ResumeLayout(false);
+            this.gPeriod.PerformLayout();
             this.gMatchScores.ResumeLayout(false);
             this.gMatchScores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeAltScore)).EndInit();
@@ -1703,7 +1823,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button bUseCredits;
         private System.Windows.Forms.GroupBox gScores;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gPeriod;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lQuarter;
         private System.Windows.Forms.Label label12;
@@ -1806,6 +1926,16 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button bVersion;
+        private System.Windows.Forms.Button bEditPreset1;
+        private System.Windows.Forms.Button bEditPreset4;
+        private System.Windows.Forms.Button bEditPreset2;
+        private System.Windows.Forms.Button bEditPreset5;
+        private System.Windows.Forms.Button bEditPreset3;
+        private System.Windows.Forms.TextBox tPreset5;
+        private System.Windows.Forms.TextBox tPreset4;
+        private System.Windows.Forms.TextBox tPreset3;
+        private System.Windows.Forms.TextBox tPreset2;
+        private System.Windows.Forms.TextBox tPreset1;
 
 
 

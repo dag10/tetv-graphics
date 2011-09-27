@@ -63,8 +63,6 @@ namespace TETV_ScoreBar {
             lAbbr2.BackColor = Color.Transparent;
             lScore1.BackColor = Color.Transparent;
             lScore2.BackColor = Color.Transparent;
-            lAltScore1.BackColor = Color.Transparent;
-            lAltScore2.BackColor = Color.Transparent;
             pReplay.BackColor = Color.Transparent;
 
             // Set label colors
@@ -74,8 +72,10 @@ namespace TETV_ScoreBar {
             lAbbr2.ForeColor = Color.FromArgb(102, 0, 0);
             lScore1.ForeColor = Color.FromArgb(51, 51, 51);
             lScore2.ForeColor = Color.FromArgb(51, 51, 51);
-            lAltScore1.ForeColor = Color.FromArgb(10, 10, 10);
-            lAltScore2.ForeColor = Color.FromArgb(10, 10, 10);
+            lScoreLP.ForeColor = Color.FromArgb(51, 51, 51);
+            lScoreLS.ForeColor = Color.FromArgb(51, 51, 51);
+            lScoreRP.ForeColor = Color.FromArgb(51, 51, 51);
+            lScoreRS.ForeColor = Color.FromArgb(51, 51, 51);
         }
 
         #endregion
@@ -100,6 +100,20 @@ namespace TETV_ScoreBar {
                     pBar.BorderStyle = BorderStyle.None;
                     pBug.BorderStyle = BorderStyle.None;
                     pStat.BorderStyle = BorderStyle.None;
+                }
+
+                // Adjust per game
+                switch (game.gameType) {
+                    case GameType.Volleyball:
+                        HideScoreboardSegment(pPeriod);
+                        HideScoreboardSegment(pPeriodDivider);
+                        HideScoreboardSegment(pScoreLS);
+                        HideScoreboardSegment(pScoreRS);
+                        break;
+                    default:
+                        HideScoreboardSegment(pScoreLD);
+                        HideScoreboardSegment(pScoreRD);
+                        break;
                 }
             }
         }
@@ -143,8 +157,10 @@ namespace TETV_ScoreBar {
             this.lAbbr2.Text = game.TeamAbbr[1];
             this.lScore1.Text = game.TeamScore[0].ToString();
             this.lScore2.Text = game.TeamScore[1].ToString();
-            this.lAltScore1.Text = game.AltScore[0].ToString();
-            this.lAltScore2.Text = game.AltScore[1].ToString();
+            this.lScoreLP.Text = game.TeamScore[0].ToString();
+            this.lScoreRP.Text = game.TeamScore[1].ToString();
+            this.lScoreLS.Text = game.AltScore[0].ToString();
+            this.lScoreRS.Text = game.AltScore[1].ToString();
             this.lQuarter.Text = game.Quarter.ToString();
             this.lInfoText.Text = game.infoText.Replace("&", "&&");
             if (game.Quarter == -1)
@@ -434,6 +450,20 @@ namespace TETV_ScoreBar {
             UpdateDisplay();
         }
 
+
+        #endregion
+
+        #region Scoreboard Manipulation
+
+        void HideScoreboardSegment(Panel segment) {
+            if (!segment.Visible) return;
+
+            segment.Visible = false;
+            foreach (Panel g in pBar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
+                if (g.Location.X > segment.Location.X)
+                    g.Location = new Point(g.Location.X - (segment.Width + segment.Margin.Left), g.Location.Y);
+            pBar.Width -= segment.Width;
+        }
 
         #endregion
     }
