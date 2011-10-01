@@ -1,0 +1,8 @@
+C:\My Projects\FairPlayTest\FairPlayTest\bin\Release\FairPlayTest.exe
+C:\My Projects\FairPlayTest\FairPlayTest\bin\Release\FairPlayTest.pdb
+C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\ResolveAssemblyReference.cache
+C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.fMain.resources
+C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.Properties.Resources.resources
+C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.csproj.GenerateResource.Cache
+C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.exe
+C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.pdb
