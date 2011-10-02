@@ -186,7 +186,6 @@
             this.tClock.ReadOnly = true;
             this.tClock.Size = new System.Drawing.Size(58, 20);
             this.tClock.TabIndex = 1;
-            this.tClock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tClock.WordWrap = false;
             // 
             // label6

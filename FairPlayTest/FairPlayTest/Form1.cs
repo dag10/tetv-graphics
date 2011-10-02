@@ -80,6 +80,12 @@ namespace FairPlayTest {
                 Invoke(callback, new object[] { record });
             } else {
                 tGameType.Text = "Football";
+                tHomeTimeoutsLeft.Enabled = true;
+                tVisitingTimeoutsLeft.Enabled = true;
+                tDown.Enabled = true;
+                tToGo.Enabled = true;
+                tPossession.Enabled = true;
+
                 if (record.TeamNameChanged) {
                     tHomeTeamName.Text = record.TeamName[0];
                     tVisitingTeamName.Text = record.TeamName[1];
@@ -111,6 +117,20 @@ namespace FairPlayTest {
                 Invoke(callback, new object[] { record });
             } else {
                 tGameType.Text = "Soccer";
+                tHomeTimeoutsLeft.Enabled = false;
+                tVisitingTimeoutsLeft.Enabled = false;
+                tDown.Enabled = false;
+                tToGo.Enabled = false;
+                tPossession.Enabled = false;
+
+                if (record.TeamNameChanged) {
+                    tHomeTeamName.Text = record.TeamName[0];
+                    tVisitingTeamName.Text = record.TeamName[1];
+                }
+                if (record.ScoreChanged) {
+                    tScoreHome.Text = record.Score[0].ToString();
+                    tScoreVisiting.Text = record.Score[1].ToString();
+                }
             }
         }
 
