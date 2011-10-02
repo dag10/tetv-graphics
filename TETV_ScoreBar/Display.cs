@@ -22,8 +22,10 @@ namespace TETV_ScoreBar {
         public bool showTimeouts = true;
         public bool showBug = true;
         public bool showStats = false;
+        public bool showHalfTimeClock = true;
         public bool halftime = false;
         public bool usingDoubleScores = false;
+        public bool showPeriod = true;
         public const int ScreenPadding = 60;
         public string creditsRTF = "";
         string replayImage = "";
@@ -45,9 +47,6 @@ namespace TETV_ScoreBar {
 
             // Get screen from config
             screen = Config.GetInt(ConfigKey.DisplayScreen);
-
-            // Hide match (alt) scores if needed
-            pAltScoreLeft.Visible = pAltScoreRight.Visible = game.gameType == GameType.Wrestling;
 
             // Update display
             UpdateDisplay();
@@ -77,6 +76,9 @@ namespace TETV_ScoreBar {
             lScoreLS.ForeColor = Color.FromArgb(51, 51, 51);
             lScoreRP.ForeColor = Color.FromArgb(51, 51, 51);
             lScoreRS.ForeColor = Color.FromArgb(51, 51, 51);
+            lHalfTime.ForeColor = Color.FromArgb(102, 0, 0);
+            lHalfTimeClock.ForeColor = Color.FromArgb(102, 0, 0);
+            lReplay.ForeColor = Color.FromArgb(102, 0, 0);
         }
 
         #endregion
@@ -95,12 +97,14 @@ namespace TETV_ScoreBar {
                     pBar.BorderStyle = BorderStyle.Fixed3D;
                     pBug.BorderStyle = BorderStyle.Fixed3D;
                     pStat.BorderStyle = BorderStyle.Fixed3D;
-                    halftime = true;
+                    pHalfTime.BorderStyle = BorderStyle.Fixed3D;
+                    halftime = false;
                 } else {
                     pReplay.BorderStyle = BorderStyle.None;
                     pBar.BorderStyle = BorderStyle.None;
                     pBug.BorderStyle = BorderStyle.None;
                     pStat.BorderStyle = BorderStyle.None;
+                    pHalfTime.BorderStyle = BorderStyle.None;
                 }
 
                 // Adjust per game
@@ -169,6 +173,7 @@ namespace TETV_ScoreBar {
 
             // Set positions
             this.pReplay.Location = game.ReplayPosition;
+            this.pHalfTime.Location = game.HalfTimePosition;
             this.pBug.Location = game.BugPosition;
             this.pStat.Location = game.StatPosition;
             this.pCredits.Location = new Point((this.Width / 2) - (this.pCredits.Width / 2),
@@ -191,32 +196,25 @@ namespace TETV_ScoreBar {
 
             // Show right score type
             if (usingDoubleScores) {
-                HideScoreboardSegment(pPeriodDivider);
-                HideScoreboardSegment(pPeriod);
-                HideScoreboardSegment(pScoreLS);
-                HideScoreboardSegment(pScoreRS);
-                ShowScoreboardSegment(pScoreLD);
-                ShowScoreboardSegment(pScoreRD);
+                ShowBarSegment(pScoreLD, pBar);
+                HideBarSegment(pScoreLS, pBar);
+                ShowBarSegment(pScoreRD, pBar);
+                HideBarSegment(pScoreRS, pBar);
             } else {
-                ShowScoreboardSegment(pPeriodDivider);
-                ShowScoreboardSegment(pPeriod);
-                ShowScoreboardSegment(pScoreLS);
-                ShowScoreboardSegment(pScoreRS);
-                HideScoreboardSegment(pScoreLD);
-                HideScoreboardSegment(pScoreRD);
+                HideBarSegment(pScoreLD, pBar);
+                ShowBarSegment(pScoreLS, pBar);
+                HideBarSegment(pScoreRD, pBar);
+                ShowBarSegment(pScoreRS, pBar);
             }
 
-            /*
-            if (showTimeouts)
-                pLeftScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_left_" + game.Timeouts[0]);
-            else
-                pLeftScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_left");
-
-            if (showTimeouts)
-                pRightScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_right_" + game.Timeouts[1]);
-            else
-                pRightScore.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject("score_right");
-            */
+            // Show period
+            if (showPeriod) {
+                ShowBarSegment(pPeriodDivider, pBar);
+                ShowBarSegment(pPeriod, pBar);
+            } else {
+                HideBarSegment(pPeriodDivider, pBar);
+                HideBarSegment(pPeriod, pBar);
+            }
 
             if (showTimeouts != wasShowingTimeouts) {
                 pLT1.Visible = showTimeouts;
@@ -245,24 +243,17 @@ namespace TETV_ScoreBar {
             pRT2.BackColor = game.Timeouts[1] > 1 ? Color.Red : Color.Lime;
             pRT3.BackColor = game.Timeouts[1] > 2 ? Color.Red : Color.Lime;
 
-            if (halftime)
-                if (game.ReplayPosition.X < (this.Width / 2) - (pReplay.Width / 2))
-                    imgStr = "halftime_L";
-                else
-                    imgStr = "halftime_R";
-            else
-                if (game.ReplayPosition.X < (this.Width / 2) - (pReplay.Width / 2))
-                    imgStr = "replay_L";
-                else
-                    imgStr = "replay_R";
-
-            if (!replayImage.Equals(imgStr))
-                pReplay.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject(imgStr);
-            replayImage = string.Copy(imgStr);
-
-
             // Set credits
             tCredits.Rtf = creditsRTF;
+
+            // Show / Hide Half Time clock
+            if (showHalfTimeClock) {
+                ShowBarSegment(pHalfTimeClockDivider, pHalfTime);
+                ShowBarSegment(pHalfTimeClock, pHalfTime);
+            } else {
+                HideBarSegment(pHalfTimeClockDivider, pHalfTime);
+                HideBarSegment(pHalfTimeClock, pHalfTime);
+            }
         }
 
         public void HideButtons() {
@@ -280,6 +271,10 @@ namespace TETV_ScoreBar {
 
         public Point ReplaySize {
             get { return new Point(pReplay.Size.Width, pReplay.Size.Height); }
+        }
+
+        public Point HalfTimeSize {
+            get { return new Point(pHalfTime.Size.Width, pHalfTime.Size.Height); }
         }
 
         public Point BugSize {
@@ -321,7 +316,7 @@ namespace TETV_ScoreBar {
         }
 
         public void ShowHalfTime() {
-            pReplay.Visible = true;
+            pHalfTime.Visible = true;
             halftime = true;
             UpdateDisplay();
         }
@@ -354,6 +349,7 @@ namespace TETV_ScoreBar {
         public void HideAll() {
             pBar.Visible = false;
             pReplay.Visible = false;
+            pHalfTime.Visible = false;
             pCredits.Visible = false;
             pBug.Visible = false;
             pStat.Visible = false;
@@ -410,6 +406,15 @@ namespace TETV_ScoreBar {
             dragTarget = pStat;
         }
 
+        void DragHalfTime(object sender, MouseEventArgs e) {
+            if (!editMode) return;
+
+            Point p = PointToClient(Cursor.Position);
+
+            dragOffset = new Point(p.X - pHalfTime.Location.X, p.Y - pHalfTime.Location.Y);
+            dragTarget = pHalfTime;
+        }
+
         void DragStop(object sender, MouseEventArgs e) {
             if (((Control)dragTarget).Location.X < 0) ((Control)dragTarget).Location = new Point(0, ((Control)dragTarget).Location.Y);
             if (((Control)dragTarget).Location.Y < 0) ((Control)dragTarget).Location = new Point(((Control)dragTarget).Location.X, 0);
@@ -437,6 +442,9 @@ namespace TETV_ScoreBar {
             } else if (dragTarget == pReplay) {
                 game.ReplayPosition.X = p.X - dragOffset.X;
                 game.ReplayPosition.Y = p.Y - dragOffset.Y;
+            } else if (dragTarget == pHalfTime) {
+                game.HalfTimePosition.X = p.X - dragOffset.X;
+                game.HalfTimePosition.Y = p.Y - dragOffset.Y;
             } else if (dragTarget == pBug) {
                 game.BugPosition.X = p.X - dragOffset.X;
                 game.BugPosition.Y = p.Y - dragOffset.Y;
@@ -451,28 +459,28 @@ namespace TETV_ScoreBar {
 
         #endregion
 
-        #region Scoreboard Manipulation
+        #region Scoreboard / Half-Time Manipulation
 
-        void HideScoreboardSegment(Panel segment) {
-            if (!pBar.Visible || !segment.Visible) return;
+        void HideBarSegment(Panel segment, Panel bar) {
+            if (!bar.Visible || !segment.Visible) return;
 
-            foreach (Panel g in pBar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
+            foreach (Panel g in bar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
                 if (g.Location.X > (segment.Location.X))
                     g.Location = new Point(g.Location.X - (segment.Width), g.Location.Y);
-            pBar.Width -= segment.Width;
+            bar.Width -= segment.Width;
 
             segment.Visible = false;
 
             this.Update();
         }
 
-        void ShowScoreboardSegment(Panel segment) {
-            if (!pBar.Visible || segment.Visible) return;
+        void ShowBarSegment(Panel segment, Panel bar) {
+            if (!bar.Visible || segment.Visible) return;
 
-            foreach (Panel g in pBar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
+            foreach (Panel g in bar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
                 if (g.Location.X >= (segment.Location.X) && g.Name != segment.Name)
                     g.Location = new Point(g.Location.X + (segment.Width), g.Location.Y);
-            pBar.Width += segment.Width;
+            bar.Width += segment.Width;
 
             segment.Visible = true;
 

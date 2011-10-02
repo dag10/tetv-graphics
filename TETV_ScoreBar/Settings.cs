@@ -41,12 +41,13 @@ namespace TETV_ScoreBar {
         #region GUI Management
 
         public void DisableDisplayButtons() {
-            bSwap.Enabled = false;
+            //bSwap.Enabled = false;
         }
 
         void HandleValueChange() {
             display.showStats = pStatPosition.Enabled = cGameType.SelectedItem.Equals("Basketball") || cGameType.SelectedItem.Equals("Wrestling");
             display.usingDoubleScores = cGameType.SelectedItem.Equals("Volleyball") || cGameType.SelectedItem.Equals("Wrestling");
+            display.showPeriod = !(cGameType.SelectedItem.Equals("Volleyball"));
             display.showTimeouts = cGameType.SelectedItem.Equals("Football");
             if (display != null)
                 display.UpdateDisplay();
@@ -101,12 +102,12 @@ namespace TETV_ScoreBar {
             nBoardY.Value = game.ScoreBoardPosition.Y;
             nReplayX.Value = game.ReplayPosition.X;
             nReplayY.Value = game.ReplayPosition.Y;
+            nHalfTimeX.Value = game.HalfTimePosition.X;
+            nHalfTimeY.Value = game.HalfTimePosition.Y;
             nBugX.Value = game.BugPosition.X;
             nBugY.Value = game.BugPosition.Y;
             nStatX.Value = game.StatPosition.X;
             nStatY.Value = game.StatPosition.Y;
-            tName1.Text = game.TeamName[0];
-            tName2.Text = game.TeamName[1];
             tAbbr1.Text = game.TeamAbbr[0];
             tAbbr2.Text = game.TeamAbbr[1];
 
@@ -124,6 +125,8 @@ namespace TETV_ScoreBar {
             nBoardY.Value = game.ScoreBoardPosition.Y;
             nReplayX.Value = game.ReplayPosition.X;
             nReplayY.Value = game.ReplayPosition.Y;
+            nHalfTimeX.Value = game.HalfTimePosition.X;
+            nHalfTimeY.Value = game.HalfTimePosition.Y;
             nBugX.Value = game.BugPosition.X;
             nBugY.Value = game.BugPosition.Y;
             nStatX.Value = game.StatPosition.X;
@@ -136,6 +139,8 @@ namespace TETV_ScoreBar {
             Config.SetValue(ConfigKey.BoardY, game.ScoreBoardPosition.Y);
             Config.SetValue(ConfigKey.ReplayX, game.ReplayPosition.X);
             Config.SetValue(ConfigKey.ReplayY, game.ReplayPosition.Y);
+            Config.SetValue(ConfigKey.HalfTimeX, game.HalfTimePosition.X);
+            Config.SetValue(ConfigKey.HalfTimeY, game.HalfTimePosition.Y);
             Config.SetValue(ConfigKey.BugX, game.BugPosition.X);
             Config.SetValue(ConfigKey.BugY, game.BugPosition.Y);
             Config.SetValue(ConfigKey.StatX, game.StatPosition.X);
@@ -239,6 +244,29 @@ namespace TETV_ScoreBar {
 
         #endregion
 
+        #region Half Time Position
+
+        private void nHalfTime_ValueChanged(object sender, EventArgs e) {
+            if (!hasLoaded) return;
+            game.HalfTimePosition.X = (int)nHalfTimeX.Value;
+            game.HalfTimePosition.Y = (int)nHalfTimeY.Value;
+            HandleValueChange();
+        }
+
+        private void bHalfTimeLeft_Click(object sender, EventArgs e) {
+            nHalfTimeY.Value = Display.ScreenPadding;
+            nHalfTimeX.Value = Display.ScreenPadding;
+            HandleValueChange();
+        }
+
+        private void bHalfTimeRight_Click(object sender, EventArgs e) {
+            nHalfTimeY.Value = Display.ScreenPadding;
+            nHalfTimeX.Value = display.Width - (display.HalfTimeSize.X + Display.ScreenPadding);
+            HandleValueChange();
+        }
+
+        #endregion
+
         #region Bug Position
 
         private void BugPositionValueChanged(object sender, EventArgs e) {
@@ -307,18 +335,6 @@ namespace TETV_ScoreBar {
         #endregion
 
         #region Team Names
-
-        private void tName1_TextChanged(object sender, EventArgs e) {
-            if (!hasLoaded) return;
-            game.TeamName[0] = tName1.Text;
-            HandleValueChange();
-        }
-
-        private void tName2_TextChanged(object sender, EventArgs e) {
-            if (!hasLoaded) return;
-            game.TeamName[1] = tName2.Text;
-            HandleValueChange();
-        }
 
         private void tAbbr1_TextChanged(object sender, EventArgs e) {
             if (!hasLoaded) return;

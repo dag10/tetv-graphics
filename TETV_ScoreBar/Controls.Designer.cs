@@ -41,8 +41,6 @@
             this.nVisitingScore = new System.Windows.Forms.NumericUpDown();
             this.bUpdateScores = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,7 +85,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.nDown = new System.Windows.Forms.NumericUpDown();
             this.nYards = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lCustomText = new System.Windows.Forms.Label();
             this.tCustomInfoText = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.bInfoPreset6 = new System.Windows.Forms.Button();
@@ -180,12 +178,13 @@
             this.lStatus = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.bVersion = new System.Windows.Forms.ToolStripButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bShowHalfTimeClock = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingScore)).BeginInit();
             this.tabPage5.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage.SuspendLayout();
@@ -206,6 +205,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).BeginInit();
             this.toolStrip2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bUseScoreBar
@@ -378,34 +378,13 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.panel5);
+            this.tabPage5.Controls.Add(this.groupBox1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(588, 484);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Half-Time";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(561, 100);
-            this.panel5.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(185, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(187, 24);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "No Settings Available";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage2
             // 
@@ -681,7 +660,7 @@
             this.gInfoText.Controls.Add(this.bEditPreset3);
             this.gInfoText.Controls.Add(this.bEditPreset1);
             this.gInfoText.Controls.Add(this.pDownYards);
-            this.gInfoText.Controls.Add(this.label13);
+            this.gInfoText.Controls.Add(this.lCustomText);
             this.gInfoText.Controls.Add(this.tCustomInfoText);
             this.gInfoText.Controls.Add(this.label14);
             this.gInfoText.Controls.Add(this.bInfoPreset6);
@@ -904,14 +883,14 @@
             0,
             0});
             // 
-            // label13
+            // lCustomText
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 111);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 13);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Custom Text";
+            this.lCustomText.AutoSize = true;
+            this.lCustomText.Location = new System.Drawing.Point(6, 111);
+            this.lCustomText.Name = "lCustomText";
+            this.lCustomText.Size = new System.Drawing.Size(66, 13);
+            this.lCustomText.TabIndex = 4;
+            this.lCustomText.Text = "Custom Text";
             // 
             // tCustomInfoText
             // 
@@ -1827,6 +1806,7 @@
             this.bStartStop.Name = "bStartStop";
             this.bStartStop.Size = new System.Drawing.Size(64, 22);
             this.bStartStop.Text = "Connect";
+            this.bStartStop.Click += new System.EventHandler(this.bStartStop_Click);
             // 
             // toolStripSeparator4
             // 
@@ -1862,6 +1842,26 @@
             this.bVersion.Text = "Version x.x.x.x";
             this.bVersion.Click += new System.EventHandler(this.bVersion_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.bShowHalfTimeClock);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(582, 58);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Settings";
+            // 
+            // bShowHalfTimeClock
+            // 
+            this.bShowHalfTimeClock.Location = new System.Drawing.Point(8, 19);
+            this.bShowHalfTimeClock.Name = "bShowHalfTimeClock";
+            this.bShowHalfTimeClock.Size = new System.Drawing.Size(150, 23);
+            this.bShowHalfTimeClock.TabIndex = 0;
+            this.bShowHalfTimeClock.Text = "Show Scoreboard Clock";
+            this.bShowHalfTimeClock.UseVisualStyleBackColor = true;
+            this.bShowHalfTimeClock.Click += new System.EventHandler(this.bShowScoreboardClock_Click);
+            // 
             // Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1893,8 +1893,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingScore)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1925,6 +1923,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1949,8 +1948,6 @@
         private System.Windows.Forms.NumericUpDown nVisitingScore;
         private System.Windows.Forms.Button bUpdateScores;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
@@ -1974,7 +1971,7 @@
         private System.Windows.Forms.Button bInfoPreset2;
         private System.Windows.Forms.Button bInfoPreset1;
         private System.Windows.Forms.Button bUpdateInfoText;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lCustomText;
         private System.Windows.Forms.TextBox tCustomInfoText;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
@@ -2088,6 +2085,8 @@
         private System.Windows.Forms.ToolStripLabel lStatus;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton bVersion;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button bShowHalfTimeClock;
 
 
 

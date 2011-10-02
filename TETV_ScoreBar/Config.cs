@@ -25,6 +25,8 @@ namespace TETV_ScoreBar {
             settings[ConfigKey.BoardY] = (Display.ScreenPadding + 60).ToString();
             settings[ConfigKey.ReplayX] = Display.ScreenPadding.ToString();
             settings[ConfigKey.ReplayY] = Display.ScreenPadding.ToString();
+            settings[ConfigKey.HalfTimeX] = Display.ScreenPadding.ToString();
+            settings[ConfigKey.HalfTimeY] = Display.ScreenPadding.ToString();
             settings[ConfigKey.BugX] = (Display.ScreenPadding + 160).ToString();
             settings[ConfigKey.BugY] = (Display.ScreenPadding + 460).ToString();
             settings[ConfigKey.StatX] = (Display.ScreenPadding + 60).ToString();
@@ -35,6 +37,7 @@ namespace TETV_ScoreBar {
             settings[ConfigKey.ShowInfoText] = "True";
             settings[ConfigKey.ShowScores] = "True";
             settings[ConfigKey.ShowTimeouts] = "True";
+            settings[ConfigKey.ShowHalfTimeClock] = "True";
             settings[ConfigKey.ShowBug] = "True";
             settings[ConfigKey.CreditsFile] = "";
             settings[ConfigKey.SerialPort] = "COM1";
@@ -110,6 +113,8 @@ namespace TETV_ScoreBar {
                 case ConfigKey.BoardY:
                 case ConfigKey.ReplayX:
                 case ConfigKey.ReplayY:
+                case ConfigKey.HalfTimeX:
+                case ConfigKey.HalfTimeY:
                 case ConfigKey.BugX:
                 case ConfigKey.BugY:
                 case ConfigKey.StatX:
@@ -118,6 +123,7 @@ namespace TETV_ScoreBar {
                 case ConfigKey.ShowInfoText:
                 case ConfigKey.ShowScores:
                 case ConfigKey.ShowTimeouts:
+                case ConfigKey.ShowHalfTimeClock:
                 case ConfigKey.ShowBug:
                     return ValidateBool(key, value);
                 case ConfigKey.CreditsFile:

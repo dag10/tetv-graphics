@@ -23,16 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Display));
             this.bOtherSide = new System.Windows.Forms.Button();
-            this.pBarOLD = new System.Windows.Forms.Panel();
-            this.pAltScoreLeft = new System.Windows.Forms.Panel();
-            this.lAltScore1 = new System.Windows.Forms.Label();
-            this.pAltScoreRight = new System.Windows.Forms.Panel();
-            this.lAltScore2 = new System.Windows.Forms.Label();
-            this.pMain = new System.Windows.Forms.Panel();
-            this.pLeftScore = new System.Windows.Forms.Panel();
-            this.pRightScore = new System.Windows.Forms.Panel();
             this.pCredits = new System.Windows.Forms.Panel();
             this.pInnerCredits = new System.Windows.Forms.Panel();
             this.tCredits = new System.Windows.Forms.RichTextBox();
@@ -78,10 +69,19 @@
             this.lStatField1 = new System.Windows.Forms.Label();
             this.lStatField0 = new System.Windows.Forms.Label();
             this.pBug = new System.Windows.Forms.Panel();
+            this.pHalfTime = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pHalfTimeClock = new System.Windows.Forms.Panel();
+            this.lHalfTimeClock = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lHalfTime = new System.Windows.Forms.Label();
+            this.pHalfTimeClockDivider = new System.Windows.Forms.Panel();
             this.pReplay = new System.Windows.Forms.Panel();
-            this.pBarOLD.SuspendLayout();
-            this.pAltScoreLeft.SuspendLayout();
-            this.pAltScoreRight.SuspendLayout();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.lReplay = new System.Windows.Forms.Label();
             this.pCredits.SuspendLayout();
             this.pInnerCredits.SuspendLayout();
             this.pBar.SuspendLayout();
@@ -94,6 +94,11 @@
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pStat.SuspendLayout();
+            this.pHalfTime.SuspendLayout();
+            this.pHalfTimeClock.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.pReplay.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // bOtherSide
@@ -104,130 +109,10 @@
             this.bOtherSide.TabIndex = 1;
             this.bOtherSide.Text = "Don\'t use this monitor for Display";
             this.bOtherSide.UseVisualStyleBackColor = true;
+            this.bOtherSide.Visible = false;
             this.bOtherSide.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
             this.bOtherSide.Click += new System.EventHandler(this.bOtherSide_Click);
             this.bOtherSide.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            // 
-            // pBarOLD
-            // 
-            this.pBarOLD.Controls.Add(this.pAltScoreLeft);
-            this.pBarOLD.Controls.Add(this.pAltScoreRight);
-            this.pBarOLD.Controls.Add(this.pMain);
-            this.pBarOLD.Controls.Add(this.pLeftScore);
-            this.pBarOLD.Controls.Add(this.pRightScore);
-            this.pBarOLD.Location = new System.Drawing.Point(47, 512);
-            this.pBarOLD.Name = "pBarOLD";
-            this.pBarOLD.Size = new System.Drawing.Size(757, 112);
-            this.pBarOLD.TabIndex = 4;
-            this.pBarOLD.Visible = false;
-            this.pBarOLD.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.pBarOLD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.pBarOLD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.pBarOLD.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.pBarOLD.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
-            // 
-            // pAltScoreLeft
-            // 
-            this.pAltScoreLeft.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.altscore_l;
-            this.pAltScoreLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pAltScoreLeft.Controls.Add(this.lAltScore1);
-            this.pAltScoreLeft.Location = new System.Drawing.Point(3, 1);
-            this.pAltScoreLeft.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.pAltScoreLeft.Name = "pAltScoreLeft";
-            this.pAltScoreLeft.Size = new System.Drawing.Size(95, 87);
-            this.pAltScoreLeft.TabIndex = 7;
-            // 
-            // lAltScore1
-            // 
-            this.lAltScore1.AutoSize = true;
-            this.lAltScore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAltScore1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lAltScore1.Location = new System.Drawing.Point(15, 25);
-            this.lAltScore1.MinimumSize = new System.Drawing.Size(50, 0);
-            this.lAltScore1.Name = "lAltScore1";
-            this.lAltScore1.Size = new System.Drawing.Size(50, 37);
-            this.lAltScore1.TabIndex = 5;
-            this.lAltScore1.Text = "0";
-            this.lAltScore1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lAltScore1.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.lAltScore1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.lAltScore1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.lAltScore1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.lAltScore1.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
-            // 
-            // pAltScoreRight
-            // 
-            this.pAltScoreRight.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.altscore_r;
-            this.pAltScoreRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pAltScoreRight.Controls.Add(this.lAltScore2);
-            this.pAltScoreRight.Location = new System.Drawing.Point(614, 1);
-            this.pAltScoreRight.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.pAltScoreRight.Name = "pAltScoreRight";
-            this.pAltScoreRight.Size = new System.Drawing.Size(95, 87);
-            this.pAltScoreRight.TabIndex = 8;
-            // 
-            // lAltScore2
-            // 
-            this.lAltScore2.AutoSize = true;
-            this.lAltScore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAltScore2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lAltScore2.Location = new System.Drawing.Point(27, 25);
-            this.lAltScore2.MinimumSize = new System.Drawing.Size(50, 0);
-            this.lAltScore2.Name = "lAltScore2";
-            this.lAltScore2.Size = new System.Drawing.Size(50, 37);
-            this.lAltScore2.TabIndex = 5;
-            this.lAltScore2.Text = "0";
-            this.lAltScore2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lAltScore2.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.lAltScore2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.lAltScore2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.lAltScore2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.lAltScore2.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
-            // 
-            // pMain
-            // 
-            this.pMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pMain.BackgroundImage")));
-            this.pMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pMain.Location = new System.Drawing.Point(197, 0);
-            this.pMain.Margin = new System.Windows.Forms.Padding(0);
-            this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(318, 112);
-            this.pMain.TabIndex = 0;
-            this.pMain.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.pMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.pMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.pMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.pMain.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
-            // 
-            // pLeftScore
-            // 
-            this.pLeftScore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pLeftScore.BackgroundImage")));
-            this.pLeftScore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pLeftScore.Location = new System.Drawing.Point(108, 0);
-            this.pLeftScore.Margin = new System.Windows.Forms.Padding(0);
-            this.pLeftScore.Name = "pLeftScore";
-            this.pLeftScore.Size = new System.Drawing.Size(89, 79);
-            this.pLeftScore.TabIndex = 0;
-            this.pLeftScore.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.pLeftScore.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.pLeftScore.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.pLeftScore.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.pLeftScore.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
-            // 
-            // pRightScore
-            // 
-            this.pRightScore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pRightScore.BackgroundImage")));
-            this.pRightScore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pRightScore.Location = new System.Drawing.Point(515, 0);
-            this.pRightScore.Margin = new System.Windows.Forms.Padding(0);
-            this.pRightScore.Name = "pRightScore";
-            this.pRightScore.Size = new System.Drawing.Size(89, 79);
-            this.pRightScore.TabIndex = 0;
-            this.pRightScore.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.pRightScore.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.pRightScore.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.pRightScore.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.pRightScore.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
             // pCredits
             // 
@@ -316,6 +201,11 @@
             this.pScoreRD.Name = "pScoreRD";
             this.pScoreRD.Size = new System.Drawing.Size(180, 57);
             this.pScoreRD.TabIndex = 7;
+            this.pScoreRD.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.pScoreRD.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.pScoreRD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.pScoreRD.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.pScoreRD.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
             // lScoreRS
             // 
@@ -330,6 +220,11 @@
             this.lScoreRS.TabIndex = 6;
             this.lScoreRS.Text = "0";
             this.lScoreRS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lScoreRS.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lScoreRS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lScoreRS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.lScoreRS.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lScoreRS.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
             // lScoreRP
             // 
@@ -344,6 +239,11 @@
             this.lScoreRP.TabIndex = 5;
             this.lScoreRP.Text = "0";
             this.lScoreRP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lScoreRP.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lScoreRP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lScoreRP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.lScoreRP.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lScoreRP.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
             // pRightTip
             // 
@@ -965,20 +865,208 @@
             this.pBug.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.pBug.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
+            // pHalfTime
+            // 
+            this.pHalfTime.Controls.Add(this.panel1);
+            this.pHalfTime.Controls.Add(this.panel3);
+            this.pHalfTime.Controls.Add(this.pHalfTimeClock);
+            this.pHalfTime.Controls.Add(this.panel4);
+            this.pHalfTime.Controls.Add(this.pHalfTimeClockDivider);
+            this.pHalfTime.Location = new System.Drawing.Point(510, 41);
+            this.pHalfTime.Name = "pHalfTime";
+            this.pHalfTime.Size = new System.Drawing.Size(337, 57);
+            this.pHalfTime.TabIndex = 9;
+            this.pHalfTime.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.pHalfTime.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.pHalfTime.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragHalfTime);
+            this.pHalfTime.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.pHalfTime.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.tip_l;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(55, 57);
+            this.panel1.TabIndex = 5;
+            this.panel1.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragHalfTime);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.panel1.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.tip_r;
+            this.panel3.Location = new System.Drawing.Point(276, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(55, 57);
+            this.panel3.TabIndex = 5;
+            this.panel3.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragHalfTime);
+            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.panel3.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // pHalfTimeClock
+            // 
+            this.pHalfTimeClock.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
+            this.pHalfTimeClock.Controls.Add(this.lHalfTimeClock);
+            this.pHalfTimeClock.Location = new System.Drawing.Point(190, 0);
+            this.pHalfTimeClock.Margin = new System.Windows.Forms.Padding(0);
+            this.pHalfTimeClock.Name = "pHalfTimeClock";
+            this.pHalfTimeClock.Size = new System.Drawing.Size(86, 57);
+            this.pHalfTimeClock.TabIndex = 5;
+            this.pHalfTimeClock.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.pHalfTimeClock.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.pHalfTimeClock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragHalfTime);
+            this.pHalfTimeClock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.pHalfTimeClock.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // lHalfTimeClock
+            // 
+            this.lHalfTimeClock.BackColor = System.Drawing.Color.Transparent;
+            this.lHalfTimeClock.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHalfTimeClock.ForeColor = System.Drawing.Color.Black;
+            this.lHalfTimeClock.Location = new System.Drawing.Point(4, 9);
+            this.lHalfTimeClock.MinimumSize = new System.Drawing.Size(50, 0);
+            this.lHalfTimeClock.Name = "lHalfTimeClock";
+            this.lHalfTimeClock.Size = new System.Drawing.Size(87, 34);
+            this.lHalfTimeClock.TabIndex = 5;
+            this.lHalfTimeClock.Text = "00:00";
+            this.lHalfTimeClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lHalfTimeClock.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lHalfTimeClock.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lHalfTimeClock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragHalfTime);
+            this.lHalfTimeClock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lHalfTimeClock.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
+            this.panel4.Controls.Add(this.lHalfTime);
+            this.panel4.Location = new System.Drawing.Point(55, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(130, 57);
+            this.panel4.TabIndex = 5;
+            this.panel4.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragHalfTime);
+            this.panel4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.panel4.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // lHalfTime
+            // 
+            this.lHalfTime.AutoSize = true;
+            this.lHalfTime.BackColor = System.Drawing.Color.Transparent;
+            this.lHalfTime.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHalfTime.ForeColor = System.Drawing.Color.Black;
+            this.lHalfTime.Location = new System.Drawing.Point(7, 9);
+            this.lHalfTime.MinimumSize = new System.Drawing.Size(50, 0);
+            this.lHalfTime.Name = "lHalfTime";
+            this.lHalfTime.Size = new System.Drawing.Size(120, 34);
+            this.lHalfTime.TabIndex = 5;
+            this.lHalfTime.Text = "HALF TIME";
+            this.lHalfTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lHalfTime.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lHalfTime.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lHalfTime.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragHalfTime);
+            this.lHalfTime.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lHalfTime.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // pHalfTimeClockDivider
+            // 
+            this.pHalfTimeClockDivider.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.divider;
+            this.pHalfTimeClockDivider.Location = new System.Drawing.Point(185, 0);
+            this.pHalfTimeClockDivider.Margin = new System.Windows.Forms.Padding(0);
+            this.pHalfTimeClockDivider.Name = "pHalfTimeClockDivider";
+            this.pHalfTimeClockDivider.Size = new System.Drawing.Size(5, 57);
+            this.pHalfTimeClockDivider.TabIndex = 5;
+            this.pHalfTimeClockDivider.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.pHalfTimeClockDivider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.pHalfTimeClockDivider.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragHalfTime);
+            this.pHalfTimeClockDivider.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.pHalfTimeClockDivider.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
             // pReplay
             // 
-            this.pReplay.BackColor = System.Drawing.Color.Transparent;
-            this.pReplay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pReplay.BackgroundImage")));
-            this.pReplay.ForeColor = System.Drawing.Color.Transparent;
-            this.pReplay.Location = new System.Drawing.Point(76, 57);
+            this.pReplay.Controls.Add(this.panel6);
+            this.pReplay.Controls.Add(this.panel8);
+            this.pReplay.Controls.Add(this.panel15);
+            this.pReplay.Location = new System.Drawing.Point(862, 41);
             this.pReplay.Name = "pReplay";
-            this.pReplay.Size = new System.Drawing.Size(243, 48);
-            this.pReplay.TabIndex = 5;
+            this.pReplay.Size = new System.Drawing.Size(220, 57);
+            this.pReplay.TabIndex = 9;
             this.pReplay.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
             this.pReplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
             this.pReplay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragReplay);
             this.pReplay.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.pReplay.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // panel6
+            // 
+            this.panel6.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.tip_l;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(55, 57);
+            this.panel6.TabIndex = 5;
+            this.panel6.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragReplay);
+            this.panel6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.panel6.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // panel8
+            // 
+            this.panel8.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.tip_r;
+            this.panel8.Location = new System.Drawing.Point(161, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(55, 57);
+            this.panel8.TabIndex = 5;
+            this.panel8.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.panel8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragReplay);
+            this.panel8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.panel8.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // panel15
+            // 
+            this.panel15.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
+            this.panel15.Controls.Add(this.lReplay);
+            this.panel15.Location = new System.Drawing.Point(55, 0);
+            this.panel15.Margin = new System.Windows.Forms.Padding(0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(106, 57);
+            this.panel15.TabIndex = 5;
+            this.panel15.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.panel15.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.panel15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragReplay);
+            this.panel15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.panel15.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // lReplay
+            // 
+            this.lReplay.AutoSize = true;
+            this.lReplay.BackColor = System.Drawing.Color.Transparent;
+            this.lReplay.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lReplay.ForeColor = System.Drawing.Color.Black;
+            this.lReplay.Location = new System.Drawing.Point(9, 9);
+            this.lReplay.MinimumSize = new System.Drawing.Size(50, 0);
+            this.lReplay.Name = "lReplay";
+            this.lReplay.Size = new System.Drawing.Size(92, 34);
+            this.lReplay.TabIndex = 5;
+            this.lReplay.Text = "REPLAY";
+            this.lReplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lReplay.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lReplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lReplay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragReplay);
+            this.lReplay.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lReplay.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
             // Display
             // 
@@ -986,12 +1074,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1436, 742);
+            this.Controls.Add(this.pReplay);
+            this.Controls.Add(this.pHalfTime);
             this.Controls.Add(this.pStat);
             this.Controls.Add(this.pCredits);
             this.Controls.Add(this.pBug);
-            this.Controls.Add(this.pReplay);
             this.Controls.Add(this.pBar);
-            this.Controls.Add(this.pBarOLD);
             this.Controls.Add(this.bOtherSide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Display";
@@ -1000,11 +1088,6 @@
             this.Text = "Display";
             this.TopMost = true;
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.pBarOLD.ResumeLayout(false);
-            this.pAltScoreLeft.ResumeLayout(false);
-            this.pAltScoreLeft.PerformLayout();
-            this.pAltScoreRight.ResumeLayout(false);
-            this.pAltScoreRight.PerformLayout();
             this.pCredits.ResumeLayout(false);
             this.pInnerCredits.ResumeLayout(false);
             this.pBar.ResumeLayout(false);
@@ -1026,6 +1109,13 @@
             this.panel2.PerformLayout();
             this.pStat.ResumeLayout(false);
             this.pStat.PerformLayout();
+            this.pHalfTime.ResumeLayout(false);
+            this.pHalfTimeClock.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.pReplay.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1033,15 +1123,10 @@
         #endregion
 
         private System.Windows.Forms.Button bOtherSide;
-        private System.Windows.Forms.Panel pBarOLD;
-        private System.Windows.Forms.Panel pMain;
-        private System.Windows.Forms.Panel pRightScore;
-        private System.Windows.Forms.Panel pLeftScore;
         private System.Windows.Forms.Label lInfoText;
         private System.Windows.Forms.Label lScore1;
         private System.Windows.Forms.Label lAbbr1;
         private System.Windows.Forms.Label lQuarter;
-        private System.Windows.Forms.Panel pReplay;
         private System.Windows.Forms.Panel pBug;
         private System.Windows.Forms.Panel pCredits;
         private System.Windows.Forms.RichTextBox tCredits;
@@ -1055,10 +1140,6 @@
         private System.Windows.Forms.Label lStatValue2;
         private System.Windows.Forms.Label lStatValue1;
         private System.Windows.Forms.Label lStatValue0;
-        private System.Windows.Forms.Panel pAltScoreLeft;
-        private System.Windows.Forms.Panel pAltScoreRight;
-        private System.Windows.Forms.Label lAltScore1;
-        private System.Windows.Forms.Label lAltScore2;
         private System.Windows.Forms.Panel pBar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pRightTip;
@@ -1087,5 +1168,18 @@
         private System.Windows.Forms.Panel pScoreRD;
         private System.Windows.Forms.Label lScoreRS;
         private System.Windows.Forms.Label lScoreRP;
+        private System.Windows.Forms.Panel pHalfTime;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lHalfTime;
+        private System.Windows.Forms.Panel pHalfTimeClockDivider;
+        private System.Windows.Forms.Panel pHalfTimeClock;
+        private System.Windows.Forms.Label lHalfTimeClock;
+        private System.Windows.Forms.Panel pReplay;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label lReplay;
     }
 }

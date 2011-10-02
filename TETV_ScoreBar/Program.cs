@@ -46,6 +46,7 @@ namespace TETV_ScoreBar {
                                             "\n" +
                                             "All code and graphics Copyright © Drew Gottlieb, 2010-2011\n" +
                                             "\n" +
+                                            "Intended for the exclusive use of Conestoga High School.\n" +
                                             "Do not redistribute, use, or modify without permission.\n" +
                                             "\n" +
                                             "For questions, help, requests, or suggestions, I can be reached at:\n" +

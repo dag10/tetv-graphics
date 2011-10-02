@@ -1,20 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ScoreBarSettings version="2">
-  <BoardX>331</BoardX>
-  <BoardY>635</BoardY>
-  <ReplayX>116</ReplayX>
-  <ReplayY>135</ReplayY>
-  <BugX>604</BugX>
-  <BugY>236</BugY>
-  <StatX>120</StatX>
-  <StatY>520</StatY>
+  <BoardX>531</BoardX>
+  <BoardY>71</BoardY>
+  <ReplayX>76</ReplayX>
+  <ReplayY>60</ReplayY>
+  <HalfTimeX>78</HalfTimeX>
+  <HalfTimeY>60</HalfTimeY>
+  <BugX>1739</BugX>
+  <BugY>922</BugY>
+  <StatX>555</StatX>
+  <StatY>883</StatY>
   <ControlScreen>0</ControlScreen>
   <DisplayScreen>1</DisplayScreen>
-  <GameType>5</GameType>
+  <GameType>4</GameType>
   <ShowInfoText>True</ShowInfoText>
   <ShowScores>True</ShowScores>
   <ShowTimeouts>False</ShowTimeouts>
-  <ShowBug>True</ShowBug>
+  <ShowHalfTimeClock>True</ShowHalfTimeClock>
+  <ShowBug>False</ShowBug>
   <CreditsFile></CreditsFile>
   <SerialPort>COM6</SerialPort>
 </ScoreBarSettings>

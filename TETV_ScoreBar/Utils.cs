@@ -26,6 +26,7 @@ namespace TETV_ScoreBar {
             return curStr;
         }
 
+        // OBSELETE: Use Resources now except for images determined in runtime
         private static Dictionary<string, Image> images = new Dictionary<string, Image>();
         public static Image GetImage(string location) {
             Image retImg = null;

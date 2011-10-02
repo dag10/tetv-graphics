@@ -30,6 +30,7 @@ namespace TETV_ScoreBar {
 
         public Point ScoreBoardPosition;
         public Point ReplayPosition;
+        public Point HalfTimePosition;
         public Point BugPosition;
         public Point StatPosition;
 
@@ -42,6 +43,7 @@ namespace TETV_ScoreBar {
             Timeouts = new int[2] { 3, 3 };
             ScoreBoardPosition = new Point(Config.GetInt(ConfigKey.BoardX), Config.GetInt(ConfigKey.BoardY));
             ReplayPosition = new Point(Config.GetInt(ConfigKey.ReplayX), Config.GetInt(ConfigKey.ReplayY));
+            HalfTimePosition = new Point(Config.GetInt(ConfigKey.HalfTimeX), Config.GetInt(ConfigKey.HalfTimeY));
             BugPosition = new Point(Config.GetInt(ConfigKey.BugX), Config.GetInt(ConfigKey.BugY));
             StatPosition = new Point(Config.GetInt(ConfigKey.StatX), Config.GetInt(ConfigKey.StatY));
         }
@@ -55,6 +57,7 @@ namespace TETV_ScoreBar {
             Timeouts = new int[2] { 3, 3 };
             ScoreBoardPosition = new Point(Config.GetInt(ConfigKey.BoardX), Config.GetInt(ConfigKey.BoardY));
             ReplayPosition = new Point(Config.GetInt(ConfigKey.ReplayX), Config.GetInt(ConfigKey.ReplayY));
+            HalfTimePosition = new Point(Config.GetInt(ConfigKey.HalfTimeX), Config.GetInt(ConfigKey.HalfTimeY));
             BugPosition = new Point(Config.GetInt(ConfigKey.BugX), Config.GetInt(ConfigKey.BugY));
             StatPosition = new Point(Config.GetInt(ConfigKey.StatX), Config.GetInt(ConfigKey.StatY));
         }

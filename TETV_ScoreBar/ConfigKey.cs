@@ -7,6 +7,8 @@
         BoardY,
         ReplayX,
         ReplayY,
+        HalfTimeX,
+        HalfTimeY,
         BugX,
         BugY,
         StatX,
@@ -14,6 +16,7 @@
         ShowInfoText,
         ShowScores,
         ShowTimeouts,
+        ShowHalfTimeClock,
         ShowBug,
         CreditsFile,
         SerialPort

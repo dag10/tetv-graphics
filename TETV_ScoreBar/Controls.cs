@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using Scoreboard_Communication;
 
 namespace TETV_ScoreBar {
     public partial class Controls : Form {
@@ -17,6 +18,7 @@ namespace TETV_ScoreBar {
         Screen[] screens;
         bool[] editingPreset = { false, false, false, false, false, false };
         int screen;
+        ScoreboardInterface controller = null;
         
         #region Constructors
 
@@ -63,6 +65,7 @@ namespace TETV_ScoreBar {
             showScores = Config.GetBool(ConfigKey.ShowScores);
             showTimeouts = Config.GetBool(ConfigKey.ShowTimeouts);
             showBug = Config.GetBool(ConfigKey.ShowBug);
+            showHalfTimeClock = Config.GetBool(ConfigKey.ShowHalfTimeClock);
 
             // Set default control values
             nHomeTimeouts.Value = game.Timeouts[0];
@@ -104,6 +107,14 @@ namespace TETV_ScoreBar {
                 case GameType.Generic:
                     RemoveGroup(tabScores, gMatchScores);
                     pDownYards.Visible = false;
+                    bInfoPreset5.Location = new Point(303, 19);
+                    bEditPreset5.Location = new Point(417, 19);
+                    bInfoPreset6.Location = new Point(303, 48);
+                    bEditPreset6.Location = new Point(417, 48);
+                    lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
+                    tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
+                    bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    gInfoText.Height -= 29;
                     break;
                 case GameType.Hockey:
                     lQuarter.Text = "Period";
@@ -117,6 +128,14 @@ namespace TETV_ScoreBar {
                     bVisitingBall.Text = "Visitor Power Play";
                     bNobodysBall.Text = "No Power Play";
                     pDownYards.Visible = false;
+                    bInfoPreset5.Location = new Point(303, 19);
+                    bEditPreset5.Location = new Point(417, 19);
+                    bInfoPreset6.Location = new Point(303, 48);
+                    bEditPreset6.Location = new Point(417, 48);
+                    lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
+                    tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
+                    bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    gInfoText.Height -= 29;
                     bInfoPreset1.Text = "Penalty";
                     bInfoPreset2.Text = "Goal";
                     bInfoPreset3.Text = "Face Off";
@@ -130,6 +149,14 @@ namespace TETV_ScoreBar {
                     RemoveGroup(tabScores, gPossession);
                     RemoveGroup(tabScores, gMatchScores);
                     pDownYards.Visible = false;
+                    bInfoPreset5.Location = new Point(303, 19);
+                    bEditPreset5.Location = new Point(417, 19);
+                    bInfoPreset6.Location = new Point(303, 48);
+                    bEditPreset6.Location = new Point(417, 48);
+                    lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
+                    tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
+                    bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    gInfoText.Height -= 29;
                     bInfoPreset1.Text = "Foul";
                     bInfoPreset2.Text = "Timeout";
                     bInfoPreset3.Text = "Free Throw";
@@ -142,6 +169,14 @@ namespace TETV_ScoreBar {
                     RemoveGroup(tabScores, gTimeouts);
                     RemoveGroup(tabScores, gPossession);
                     pDownYards.Visible = false;
+                    bInfoPreset5.Location = new Point(303, 19);
+                    bEditPreset5.Location = new Point(417, 19);
+                    bInfoPreset6.Location = new Point(303, 48);
+                    bEditPreset6.Location = new Point(417, 48);
+                    lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
+                    tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
+                    bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    gInfoText.Height -= 29;
                     bInfoPreset1.Text = "Timeout";
                     bInfoPreset2.Text = "Injury Timeout";
                     bInfoPreset3.Text = "Forfeit";
@@ -162,6 +197,14 @@ namespace TETV_ScoreBar {
                     RemoveGroup(tabScores, gTimeouts);
                     RemoveGroup(tabScores, gPeriod);
                     pDownYards.Visible = false;
+                    bInfoPreset5.Location = new Point(303, 19);
+                    bEditPreset5.Location = new Point(417, 19);
+                    bInfoPreset6.Location = new Point(303, 48);
+                    bEditPreset6.Location = new Point(417, 48);
+                    lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
+                    tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
+                    bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    gInfoText.Height -= 29;
                     bIncHome1.Text = "+1";
                     bIncHome2.Text = "+2";
                     bIncHome3.Text = "+3";
@@ -190,7 +233,7 @@ namespace TETV_ScoreBar {
             bInfoPreset5.Visible = true;
             bInfoPreset6.Visible = true;
 
-            // Set Toggle Stats button's default background
+            // Set toggle buttons' default backgrounds
             bUseStats.BackColor = display.showStats ? Color.Cyan : Color.Yellow;
         }
 
@@ -275,6 +318,22 @@ namespace TETV_ScoreBar {
                 display.showBug = value && showGraphics;
                 display.UpdateDisplay();
                 bToggleBug.BackColor = (value ? Color.LightGreen : Color.Yellow);
+            }
+        }
+
+        bool _showHalfTimeClock;
+        public bool showHalfTimeClock {
+            get {
+                return _showHalfTimeClock;
+            }
+            set {
+                _showHalfTimeClock = value;
+                bShowHalfTimeClock.Text = (value ? "Hide Scoreboard Clock" : "Show Scoreboard Clock");
+                Config.SetValue(ConfigKey.ShowHalfTimeClock, value);
+                Config.Save();
+                display.showHalfTimeClock = value && showGraphics;
+                display.UpdateDisplay();
+                bShowHalfTimeClock.BackColor = (value ? Color.LightGreen : Color.Yellow);
             }
         }
 
@@ -757,17 +816,40 @@ namespace TETV_ScoreBar {
         #region Group Management
 
         void RemoveGroup(TabPage page, GroupBox group) {
-            if (!group.Visible) return;
+            //if (!group.Visible) return;
+
+            bool foundSideGroup = group.Width == 555;
 
             group.Visible = false;
             foreach (GroupBox g in tabScores.Controls.OfType<GroupBox>().OrderBy(box => box.Location.Y).ToList<GroupBox>())
-                if (g.Location.Y > group.Location.Y) {
+                if (g == group) continue;
+                else if (g.Location.Y > group.Location.Y && group.Width == 555) {
                     g.Location = new Point(g.Location.X, g.Location.Y - (group.Height + group.Margin.Top));
                 } else if (g.Location.Y == group.Location.Y && g.Width < 555) {
                     g.Width = 555;
                     g.Location = new Point(6, g.Location.Y);
-                    g.Visible = false;
+                    foundSideGroup = true;
                 }
+
+            if (!foundSideGroup) {
+                group.Width = 555;
+                group.Visible = true;
+                group.Location = new Point(6, group.Location.Y);
+                RemoveGroup(page, group);
+            }
+        }
+
+        void HideBarSegment(Panel segment, Panel bar) {
+            if (!bar.Visible || !segment.Visible) return;
+
+            foreach (Panel g in bar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
+                if (g.Location.X > (segment.Location.X))
+                    g.Location = new Point(g.Location.X - (segment.Width), g.Location.Y);
+            bar.Width -= segment.Width;
+
+            segment.Visible = false;
+
+            this.Update();
         }
 
         #endregion
@@ -891,10 +973,30 @@ namespace TETV_ScoreBar {
 
         #endregion
 
+        #region Scoreboard Controller Controls
+
         private void cSerialPort_TextUpdate(object sender, EventArgs e) {
             Config.SetValue(ConfigKey.SerialPort, cSerialPort.Text);
             Config.Save();
         }
+
+        private void bStartStop_Click(object sender, EventArgs e) {
+
+        }
+
+        #endregion
+
+        #region Scoreboard Controller Delegates
+
+        #endregion
+
+        #region Half-Time Settings
+
+        private void bShowScoreboardClock_Click(object sender, EventArgs e) {
+            showHalfTimeClock = !showHalfTimeClock;
+        }
+
+        #endregion
     }
 
     public enum GraphicsMode {

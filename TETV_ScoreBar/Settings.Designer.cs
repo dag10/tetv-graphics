@@ -55,17 +55,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cGameType = new System.Windows.Forms.ComboBox();
-            this.bSwap = new System.Windows.Forms.Button();
             this.bSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tAbbr2 = new System.Windows.Forms.TextBox();
             this.tAbbr1 = new System.Windows.Forms.TextBox();
-            this.tName2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tName1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.bAbout = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.nHalfTimeX = new System.Windows.Forms.NumericUpDown();
+            this.nHalfTimeY = new System.Windows.Forms.NumericUpDown();
+            this.bHalfTimeLeft = new System.Windows.Forms.Button();
+            this.bHalfTimeRight = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.pStatPosition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nStatX)).BeginInit();
@@ -77,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nBugX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBoardX)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeY)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -88,26 +92,31 @@
             this.groupBox1.Controls.Add(this.bBugBottom);
             this.groupBox1.Controls.Add(this.bPresetBottom);
             this.groupBox1.Controls.Add(this.bPresetCenter);
+            this.groupBox1.Controls.Add(this.bHalfTimeRight);
             this.groupBox1.Controls.Add(this.bReplayRight);
             this.groupBox1.Controls.Add(this.bBugRight);
             this.groupBox1.Controls.Add(this.bPresetRight);
+            this.groupBox1.Controls.Add(this.bHalfTimeLeft);
             this.groupBox1.Controls.Add(this.bReplayLeft);
             this.groupBox1.Controls.Add(this.bBugLeft);
             this.groupBox1.Controls.Add(this.bPresetLeft);
             this.groupBox1.Controls.Add(this.bBugTop);
+            this.groupBox1.Controls.Add(this.nHalfTimeY);
             this.groupBox1.Controls.Add(this.bPresetTop);
             this.groupBox1.Controls.Add(this.nReplayY);
             this.groupBox1.Controls.Add(this.nBugY);
+            this.groupBox1.Controls.Add(this.nHalfTimeX);
             this.groupBox1.Controls.Add(this.nBoardY);
             this.groupBox1.Controls.Add(this.nReplayX);
             this.groupBox1.Controls.Add(this.nBugX);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.nBoardX);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(518, 146);
+            this.groupBox1.Size = new System.Drawing.Size(518, 173);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Appearance";
@@ -120,7 +129,7 @@
             this.pStatPosition.Controls.Add(this.nStatY);
             this.pStatPosition.Controls.Add(this.bStatTop);
             this.pStatPosition.Controls.Add(this.bStatCenter);
-            this.pStatPosition.Location = new System.Drawing.Point(22, 96);
+            this.pStatPosition.Location = new System.Drawing.Point(22, 126);
             this.pStatPosition.Name = "pStatPosition";
             this.pStatPosition.Size = new System.Drawing.Size(450, 26);
             this.pStatPosition.TabIndex = 6;
@@ -193,7 +202,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(124, 125);
+            this.label8.Location = new System.Drawing.Point(120, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(266, 13);
             this.label8.TabIndex = 5;
@@ -201,7 +210,7 @@
             // 
             // bBugBottom
             // 
-            this.bBugBottom.Location = new System.Drawing.Point(272, 70);
+            this.bBugBottom.Location = new System.Drawing.Point(272, 100);
             this.bBugBottom.Name = "bBugBottom";
             this.bBugBottom.Size = new System.Drawing.Size(57, 22);
             this.bBugBottom.TabIndex = 4;
@@ -231,7 +240,7 @@
             // 
             // bReplayRight
             // 
-            this.bReplayRight.Location = new System.Drawing.Point(455, 43);
+            this.bReplayRight.Location = new System.Drawing.Point(455, 44);
             this.bReplayRight.Name = "bReplayRight";
             this.bReplayRight.Size = new System.Drawing.Size(45, 22);
             this.bReplayRight.TabIndex = 3;
@@ -241,7 +250,7 @@
             // 
             // bBugRight
             // 
-            this.bBugRight.Location = new System.Drawing.Point(455, 69);
+            this.bBugRight.Location = new System.Drawing.Point(455, 99);
             this.bBugRight.Name = "bBugRight";
             this.bBugRight.Size = new System.Drawing.Size(45, 22);
             this.bBugRight.TabIndex = 3;
@@ -261,7 +270,7 @@
             // 
             // bReplayLeft
             // 
-            this.bReplayLeft.Location = new System.Drawing.Point(341, 42);
+            this.bReplayLeft.Location = new System.Drawing.Point(341, 43);
             this.bReplayLeft.Name = "bReplayLeft";
             this.bReplayLeft.Size = new System.Drawing.Size(45, 22);
             this.bReplayLeft.TabIndex = 3;
@@ -271,7 +280,7 @@
             // 
             // bBugLeft
             // 
-            this.bBugLeft.Location = new System.Drawing.Point(341, 69);
+            this.bBugLeft.Location = new System.Drawing.Point(341, 99);
             this.bBugLeft.Name = "bBugLeft";
             this.bBugLeft.Size = new System.Drawing.Size(45, 22);
             this.bBugLeft.TabIndex = 3;
@@ -291,7 +300,7 @@
             // 
             // bBugTop
             // 
-            this.bBugTop.Location = new System.Drawing.Point(221, 70);
+            this.bBugTop.Location = new System.Drawing.Point(221, 100);
             this.bBugTop.Name = "bBugTop";
             this.bBugTop.Size = new System.Drawing.Size(45, 22);
             this.bBugTop.TabIndex = 3;
@@ -311,7 +320,7 @@
             // 
             // nReplayY
             // 
-            this.nReplayY.Location = new System.Drawing.Point(163, 44);
+            this.nReplayY.Location = new System.Drawing.Point(163, 45);
             this.nReplayY.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -324,7 +333,7 @@
             // 
             // nBugY
             // 
-            this.nBugY.Location = new System.Drawing.Point(163, 70);
+            this.nBugY.Location = new System.Drawing.Point(163, 100);
             this.nBugY.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -350,7 +359,7 @@
             // 
             // nReplayX
             // 
-            this.nReplayX.Location = new System.Drawing.Point(114, 44);
+            this.nReplayX.Location = new System.Drawing.Point(114, 45);
             this.nReplayX.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -363,7 +372,7 @@
             // 
             // nBugX
             // 
-            this.nBugX.Location = new System.Drawing.Point(114, 70);
+            this.nBugX.Location = new System.Drawing.Point(114, 100);
             this.nBugX.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -390,7 +399,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 46);
+            this.label6.Location = new System.Drawing.Point(28, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 1;
@@ -399,7 +408,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 72);
+            this.label7.Location = new System.Drawing.Point(42, 102);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 1;
@@ -417,7 +426,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 29);
+            this.label1.Location = new System.Drawing.Point(16, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 1;
@@ -428,30 +437,17 @@
             this.cGameType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cGameType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cGameType.FormattingEnabled = true;
-            this.cGameType.Location = new System.Drawing.Point(77, 26);
+            this.cGameType.Location = new System.Drawing.Point(84, 19);
             this.cGameType.Name = "cGameType";
-            this.cGameType.Size = new System.Drawing.Size(161, 21);
+            this.cGameType.Size = new System.Drawing.Size(163, 21);
             this.cGameType.TabIndex = 0;
             this.cGameType.SelectedIndexChanged += new System.EventHandler(this.cGameType_SelectedIndexChanged);
-            // 
-            // bSwap
-            // 
-            this.bSwap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bSwap.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bSwap.Location = new System.Drawing.Point(74, 296);
-            this.bSwap.Name = "bSwap";
-            this.bSwap.Size = new System.Drawing.Size(168, 23);
-            this.bSwap.TabIndex = 90;
-            this.bSwap.Text = "Use this monitor for the Display";
-            this.bSwap.UseVisualStyleBackColor = true;
-            this.bSwap.Visible = false;
-            this.bSwap.Click += new System.EventHandler(this.bSwap_Click);
             // 
             // bSave
             // 
             this.bSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bSave.Location = new System.Drawing.Point(452, 296);
+            this.bSave.Location = new System.Drawing.Point(420, 257);
             this.bSave.Name = "bSave";
             this.bSave.Size = new System.Drawing.Size(78, 23);
             this.bSave.TabIndex = 100;
@@ -465,68 +461,50 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.tAbbr2);
             this.groupBox2.Controls.Add(this.tAbbr1);
-            this.groupBox2.Controls.Add(this.tName2);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.tName1);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cGameType);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 180);
+            this.groupBox2.Location = new System.Drawing.Point(12, 207);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(518, 107);
+            this.groupBox2.Size = new System.Drawing.Size(266, 74);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game Settings";
             // 
             // tAbbr2
             // 
-            this.tAbbr2.Location = new System.Drawing.Point(418, 79);
+            this.tAbbr2.Location = new System.Drawing.Point(212, 46);
             this.tAbbr2.Name = "tAbbr2";
-            this.tAbbr2.Size = new System.Drawing.Size(86, 20);
+            this.tAbbr2.Size = new System.Drawing.Size(35, 20);
             this.tAbbr2.TabIndex = 8;
             this.tAbbr2.TextChanged += new System.EventHandler(this.tAbbr2_TextChanged);
             // 
             // tAbbr1
             // 
-            this.tAbbr1.Location = new System.Drawing.Point(418, 53);
+            this.tAbbr1.Location = new System.Drawing.Point(84, 46);
             this.tAbbr1.Name = "tAbbr1";
-            this.tAbbr1.Size = new System.Drawing.Size(86, 20);
+            this.tAbbr1.Size = new System.Drawing.Size(35, 20);
             this.tAbbr1.TabIndex = 6;
             this.tAbbr1.TextChanged += new System.EventHandler(this.tAbbr1_TextChanged);
-            // 
-            // tName2
-            // 
-            this.tName2.Location = new System.Drawing.Point(108, 79);
-            this.tName2.Name = "tName2";
-            this.tName2.Size = new System.Drawing.Size(304, 20);
-            this.tName2.TabIndex = 7;
-            this.tName2.TextChanged += new System.EventHandler(this.tName2_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 82);
+            this.label3.Location = new System.Drawing.Point(134, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Visiting Team Name";
-            // 
-            // tName1
-            // 
-            this.tName1.Location = new System.Drawing.Point(108, 53);
-            this.tName1.Name = "tName1";
-            this.tName1.Size = new System.Drawing.Size(304, 20);
-            this.tName1.TabIndex = 5;
-            this.tName1.TextChanged += new System.EventHandler(this.tName1_TextChanged);
+            this.label3.Text = "Visiting Initials";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 56);
+            this.label4.Location = new System.Drawing.Point(11, 49);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
+            this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Home Team Name";
+            this.label4.Text = "Home Initials";
             // 
             // label5
             // 
@@ -545,24 +523,78 @@
             // 
             this.bAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bAbout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bAbout.Location = new System.Drawing.Point(12, 296);
+            this.bAbout.Location = new System.Drawing.Point(321, 257);
             this.bAbout.Name = "bAbout";
-            this.bAbout.Size = new System.Drawing.Size(56, 23);
+            this.bAbout.Size = new System.Drawing.Size(63, 23);
             this.bAbout.TabIndex = 100;
             this.bAbout.Text = "About";
             this.bAbout.UseVisualStyleBackColor = true;
             this.bAbout.Click += new System.EventHandler(this.bAbout_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 76);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Half-Time Position";
+            // 
+            // nHalfTimeX
+            // 
+            this.nHalfTimeX.Location = new System.Drawing.Point(114, 72);
+            this.nHalfTimeX.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nHalfTimeX.Name = "nHalfTimeX";
+            this.nHalfTimeX.Size = new System.Drawing.Size(43, 20);
+            this.nHalfTimeX.TabIndex = 2;
+            this.nHalfTimeX.ValueChanged += new System.EventHandler(this.nHalfTime_ValueChanged);
+            // 
+            // nHalfTimeY
+            // 
+            this.nHalfTimeY.Location = new System.Drawing.Point(163, 72);
+            this.nHalfTimeY.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nHalfTimeY.Name = "nHalfTimeY";
+            this.nHalfTimeY.Size = new System.Drawing.Size(43, 20);
+            this.nHalfTimeY.TabIndex = 2;
+            this.nHalfTimeY.ValueChanged += new System.EventHandler(this.nHalfTime_ValueChanged);
+            // 
+            // bHalfTimeLeft
+            // 
+            this.bHalfTimeLeft.Location = new System.Drawing.Point(341, 70);
+            this.bHalfTimeLeft.Name = "bHalfTimeLeft";
+            this.bHalfTimeLeft.Size = new System.Drawing.Size(45, 22);
+            this.bHalfTimeLeft.TabIndex = 3;
+            this.bHalfTimeLeft.Text = "Left";
+            this.bHalfTimeLeft.UseVisualStyleBackColor = true;
+            this.bHalfTimeLeft.Click += new System.EventHandler(this.bHalfTimeLeft_Click);
+            // 
+            // bHalfTimeRight
+            // 
+            this.bHalfTimeRight.Location = new System.Drawing.Point(455, 71);
+            this.bHalfTimeRight.Name = "bHalfTimeRight";
+            this.bHalfTimeRight.Size = new System.Drawing.Size(45, 22);
+            this.bHalfTimeRight.TabIndex = 3;
+            this.bHalfTimeRight.Text = "Right";
+            this.bHalfTimeRight.UseVisualStyleBackColor = true;
+            this.bHalfTimeRight.Click += new System.EventHandler(this.bHalfTimeRight_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 331);
+            this.ClientSize = new System.Drawing.Size(542, 293);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.bAbout);
             this.Controls.Add(this.bSave);
-            this.Controls.Add(this.bSwap);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -583,6 +615,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nBoardX)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeY)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,7 +625,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button bSwap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cGameType;
         private System.Windows.Forms.Label label2;
@@ -601,10 +634,8 @@
         private System.Windows.Forms.Button bSave;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tName1;
         private System.Windows.Forms.TextBox tAbbr1;
         private System.Windows.Forms.TextBox tAbbr2;
-        private System.Windows.Forms.TextBox tName2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nBoardY;
@@ -632,5 +663,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button bStatCenter;
         private System.Windows.Forms.Panel pStatPosition;
+        private System.Windows.Forms.Button bHalfTimeRight;
+        private System.Windows.Forms.Button bHalfTimeLeft;
+        private System.Windows.Forms.NumericUpDown nHalfTimeY;
+        private System.Windows.Forms.NumericUpDown nHalfTimeX;
+        private System.Windows.Forms.Label label10;
     }
 }
