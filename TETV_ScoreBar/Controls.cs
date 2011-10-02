@@ -15,7 +15,7 @@ namespace TETV_ScoreBar {
         Display display;
         Stats stats;
         Screen[] screens;
-        bool[] editingPreset = { false, false, false, false, false };
+        bool[] editingPreset = { false, false, false, false, false, false };
         int screen;
         
         #region Constructors
@@ -76,6 +76,9 @@ namespace TETV_ScoreBar {
                 creditsLocation = creditsFile;
             }
 
+            // Load default Serial Port
+            cSerialPort.Text = Config.GetString(ConfigKey.SerialPort);
+
             // Set timeout's default value
             setHomeTimeouts(bHomeTimeouts0, null);
             setVisitingTimeouts(bVisitingTimeouts0, null);
@@ -84,6 +87,11 @@ namespace TETV_ScoreBar {
             switch (game.gameType) {
                 case GameType.Football:
                     RemoveGroup(tabScores, gMatchScores);
+                    bInfoPreset1.Text = "Flag";
+                    bInfoPreset2.Text = "Touchdown";
+                    bInfoPreset3.Text = "Kickoff";
+                    bInfoPreset4.Text = "Field Goal";
+                    bInfoPreset5.Text = "Timeout";
                     bIncHome1.Text = "+1";
                     bIncHome2.Text = "+2";
                     bIncHome3.Text = "+3";
@@ -95,6 +103,7 @@ namespace TETV_ScoreBar {
                     break;
                 case GameType.Generic:
                     RemoveGroup(tabScores, gMatchScores);
+                    pDownYards.Visible = false;
                     break;
                 case GameType.Hockey:
                     lQuarter.Text = "Period";
@@ -112,8 +121,6 @@ namespace TETV_ScoreBar {
                     bInfoPreset2.Text = "Goal";
                     bInfoPreset3.Text = "Face Off";
                     bInfoPreset4.Text = "Timeout";
-                    bInfoPreset5.Visible = false;
-                    //gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     break;
                 case GameType.Basketball:
                     //bQuarterOT.Visible = false;
@@ -127,8 +134,6 @@ namespace TETV_ScoreBar {
                     bInfoPreset2.Text = "Timeout";
                     bInfoPreset3.Text = "Free Throw";
                     bInfoPreset4.Text = "3 Points";
-                    bInfoPreset5.Visible = false;
-                    //gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     break;
                 case GameType.Wrestling:
                     gScores.Text = "Team Score";
@@ -141,8 +146,6 @@ namespace TETV_ScoreBar {
                     bInfoPreset2.Text = "Injury Timeout";
                     bInfoPreset3.Text = "Forfeit";
                     bInfoPreset4.Text = "Pin";
-                    bInfoPreset5.Visible = false;
-                    //gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     bIncHome1.Text = "+3";
                     bIncHome2.Text = "+4";
                     bIncHome3.Text = "+5";
@@ -159,12 +162,6 @@ namespace TETV_ScoreBar {
                     RemoveGroup(tabScores, gTimeouts);
                     RemoveGroup(tabScores, gPeriod);
                     pDownYards.Visible = false;
-                    bInfoPreset1.Text = "Preset 1";
-                    bInfoPreset2.Text = "Preset 2";
-                    bInfoPreset3.Text = "Preset 3";
-                    bInfoPreset4.Text = "Preset 4";
-                    bInfoPreset5.Visible = false;
-                    //gInfoText.Height -= (bInfoPreset5.Height + bInfoPreset5.Margin.Bottom);
                     bIncHome1.Text = "+1";
                     bIncHome2.Text = "+2";
                     bIncHome3.Text = "+3";
@@ -185,11 +182,16 @@ namespace TETV_ScoreBar {
             tPreset3.Visible = false;
             tPreset4.Visible = false;
             tPreset5.Visible = false;
+            tPreset6.Visible = false;
             bInfoPreset1.Visible = true;
             bInfoPreset2.Visible = true;
             bInfoPreset3.Visible = true;
             bInfoPreset4.Visible = true;
             bInfoPreset5.Visible = true;
+            bInfoPreset6.Visible = true;
+
+            // Set Toggle Stats button's default background
+            bUseStats.BackColor = display.showStats ? Color.Cyan : Color.Yellow;
         }
 
         #endregion
@@ -393,8 +395,9 @@ namespace TETV_ScoreBar {
 
         private void bUseStats_Click(object sender, EventArgs e) {
             display.showStats = !display.showStats;
+            bUseStats.Text = (display.showStats ? "Hide Stats" : "Show Stats");
             display.UpdateDisplay();
-            bUseStats.BackColor = display.showStats ? Color.Cyan : Color.FromName("Control");
+            bUseStats.BackColor = display.showStats ? Color.Cyan : Color.Yellow;
         }
 
         #endregion
@@ -627,6 +630,7 @@ namespace TETV_ScoreBar {
             bInfoPreset3.BackColor = Color.FromName("Control");
             bInfoPreset4.BackColor = Color.FromName("Control");
             bInfoPreset5.BackColor = Color.FromName("Control");
+            bInfoPreset6.BackColor = Color.FromName("Control");
             bUpdateInfoText.BackColor = Color.FromName("Control");
             bDisplayDownYards.BackColor = Color.FromName("Control");
         }
@@ -755,8 +759,6 @@ namespace TETV_ScoreBar {
         void RemoveGroup(TabPage page, GroupBox group) {
             if (!group.Visible) return;
 
-            bool alone = true;
-
             group.Visible = false;
             foreach (GroupBox g in tabScores.Controls.OfType<GroupBox>().OrderBy(box => box.Location.Y).ToList<GroupBox>())
                 if (g.Location.Y > group.Location.Y) {
@@ -790,6 +792,10 @@ namespace TETV_ScoreBar {
 
         private void bEditPreset5_Click(object sender, EventArgs e) {
             StartEditing(4);
+        }
+
+        private void bEditPreset6_Click(object sender, EventArgs e) {
+            StartEditing(5);
         }
 
         void StartEditing(int preset) {
@@ -828,6 +834,10 @@ namespace TETV_ScoreBar {
                     presetButton = bInfoPreset5;
                     presetBox = tPreset5;
                     break;
+                case 5:
+                    presetButton = bInfoPreset6;
+                    presetBox = tPreset6;
+                    break;
             }
 
             presetBox.Bounds = presetButton.Bounds;
@@ -865,6 +875,10 @@ namespace TETV_ScoreBar {
                     presetButton = bInfoPreset5;
                     presetBox = tPreset5;
                     break;
+                case 5:
+                    presetButton = bInfoPreset6;
+                    presetBox = tPreset6;
+                    break;
             }
 
             presetButton.Text = presetBox.Text;
@@ -876,6 +890,11 @@ namespace TETV_ScoreBar {
         }
 
         #endregion
+
+        private void cSerialPort_TextUpdate(object sender, EventArgs e) {
+            Config.SetValue(ConfigKey.SerialPort, cSerialPort.Text);
+            Config.Save();
+        }
     }
 
     public enum GraphicsMode {

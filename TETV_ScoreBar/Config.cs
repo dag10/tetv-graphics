@@ -37,6 +37,7 @@ namespace TETV_ScoreBar {
             settings[ConfigKey.ShowTimeouts] = "True";
             settings[ConfigKey.ShowBug] = "True";
             settings[ConfigKey.CreditsFile] = "";
+            settings[ConfigKey.SerialPort] = "COM1";
         }
 
         public static bool Load() {
@@ -120,6 +121,7 @@ namespace TETV_ScoreBar {
                 case ConfigKey.ShowBug:
                     return ValidateBool(key, value);
                 case ConfigKey.CreditsFile:
+                case ConfigKey.SerialPort:
                     return ValidateString(key, value, 1, 128);
                 default:
                     settings[key] = value;

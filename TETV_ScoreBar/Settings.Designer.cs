@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pStatPosition = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.bSave = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tAbbr2 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.tAbbr1 = new System.Windows.Forms.TextBox();
             this.tName2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -438,7 +438,7 @@
             // 
             this.bSwap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.bSwap.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bSwap.Location = new System.Drawing.Point(74, 311);
+            this.bSwap.Location = new System.Drawing.Point(74, 296);
             this.bSwap.Name = "bSwap";
             this.bSwap.Size = new System.Drawing.Size(168, 23);
             this.bSwap.TabIndex = 90;
@@ -451,9 +451,9 @@
             // 
             this.bSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bSave.Location = new System.Drawing.Point(437, 311);
+            this.bSave.Location = new System.Drawing.Point(452, 296);
             this.bSave.Name = "bSave";
-            this.bSave.Size = new System.Drawing.Size(93, 23);
+            this.bSave.Size = new System.Drawing.Size(78, 23);
             this.bSave.TabIndex = 100;
             this.bSave.Text = "Start Game";
             this.bSave.UseVisualStyleBackColor = true;
@@ -464,7 +464,6 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.tAbbr2);
-            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.tAbbr1);
             this.groupBox2.Controls.Add(this.tName2);
             this.groupBox2.Controls.Add(this.label3);
@@ -486,15 +485,6 @@
             this.tAbbr2.Size = new System.Drawing.Size(86, 20);
             this.tAbbr2.TabIndex = 8;
             this.tAbbr2.TextChanged += new System.EventHandler(this.tAbbr2_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(244, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(167, 26);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Note: Do not choose anything but\r\nGeneric/Football in this version!";
             // 
             // tAbbr1
             // 
@@ -555,7 +545,7 @@
             // 
             this.bAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bAbout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bAbout.Location = new System.Drawing.Point(12, 311);
+            this.bAbout.Location = new System.Drawing.Point(12, 296);
             this.bAbout.Name = "bAbout";
             this.bAbout.Size = new System.Drawing.Size(56, 23);
             this.bAbout.TabIndex = 100;
@@ -567,7 +557,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 346);
+            this.ClientSize = new System.Drawing.Size(542, 331);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.bAbout);
@@ -575,6 +565,7 @@
             this.Controls.Add(this.bSwap);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Settings";
             this.Text = "Configure Game Settings";
@@ -641,6 +632,5 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button bStatCenter;
         private System.Windows.Forms.Panel pStatPosition;
-        private System.Windows.Forms.Label label10;
     }
 }

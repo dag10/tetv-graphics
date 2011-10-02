@@ -16,4 +16,5 @@
   <ShowTimeouts>False</ShowTimeouts>
   <ShowBug>True</ShowBug>
   <CreditsFile></CreditsFile>
+  <SerialPort>COM6</SerialPort>
 </ScoreBarSettings>

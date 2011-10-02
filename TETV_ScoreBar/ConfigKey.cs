@@ -15,6 +15,7 @@
         ShowScores,
         ShowTimeouts,
         ShowBug,
-        CreditsFile
+        CreditsFile,
+        SerialPort
     }
 }

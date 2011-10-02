@@ -68,6 +68,18 @@
             this.bHomeTimeouts1 = new System.Windows.Forms.Button();
             this.bHomeTimeouts2 = new System.Windows.Forms.Button();
             this.gInfoText = new System.Windows.Forms.GroupBox();
+            this.tPreset6 = new System.Windows.Forms.TextBox();
+            this.tPreset5 = new System.Windows.Forms.TextBox();
+            this.tPreset4 = new System.Windows.Forms.TextBox();
+            this.tPreset3 = new System.Windows.Forms.TextBox();
+            this.tPreset2 = new System.Windows.Forms.TextBox();
+            this.tPreset1 = new System.Windows.Forms.TextBox();
+            this.bEditPreset4 = new System.Windows.Forms.Button();
+            this.bEditPreset2 = new System.Windows.Forms.Button();
+            this.bEditPreset6 = new System.Windows.Forms.Button();
+            this.bEditPreset5 = new System.Windows.Forms.Button();
+            this.bEditPreset3 = new System.Windows.Forms.Button();
+            this.bEditPreset1 = new System.Windows.Forms.Button();
             this.pDownYards = new System.Windows.Forms.Panel();
             this.bDisplayDownYards = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
@@ -78,6 +90,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tCustomInfoText = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.bInfoPreset6 = new System.Windows.Forms.Button();
             this.bInfoPreset5 = new System.Windows.Forms.Button();
             this.bInfoPreset4 = new System.Windows.Forms.Button();
             this.bInfoPreset3 = new System.Windows.Forms.Button();
@@ -121,6 +134,12 @@
             this.bIncHome1 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tCredits = new System.Windows.Forms.RichTextBox();
+            this.dRoles = new System.Windows.Forms.DataGridView();
+            this.CreditName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreditRole = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ScrollSpace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tStats = new System.Windows.Forms.TabPage();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -134,12 +153,6 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.tCredits = new System.Windows.Forms.RichTextBox();
-            this.dRoles = new System.Windows.Forms.DataGridView();
-            this.CreditName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreditRole = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ScrollSpace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tStats = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.bUseCredits = new System.Windows.Forms.Button();
             this.bToggleBug = new System.Windows.Forms.Button();
@@ -155,17 +168,18 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.bResetTimeouts = new System.Windows.Forms.Button();
-            this.bVersion = new System.Windows.Forms.Button();
-            this.bEditPreset1 = new System.Windows.Forms.Button();
-            this.bEditPreset3 = new System.Windows.Forms.Button();
-            this.bEditPreset5 = new System.Windows.Forms.Button();
-            this.bEditPreset2 = new System.Windows.Forms.Button();
-            this.bEditPreset4 = new System.Windows.Forms.Button();
-            this.tPreset1 = new System.Windows.Forms.TextBox();
-            this.tPreset2 = new System.Windows.Forms.TextBox();
-            this.tPreset3 = new System.Windows.Forms.TextBox();
-            this.tPreset5 = new System.Windows.Forms.TextBox();
-            this.tPreset4 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tClockPreview = new System.Windows.Forms.TextBox();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.cSerialPort = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bStartStop = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.lStatus = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.bVersion = new System.Windows.Forms.ToolStripButton();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).BeginInit();
@@ -188,10 +202,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingAltScore)).BeginInit();
             this.gScores.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dRoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bUseScoreBar
@@ -259,9 +273,9 @@
             // 
             // bToggleGraphics
             // 
-            this.bToggleGraphics.Location = new System.Drawing.Point(12, 577);
+            this.bToggleGraphics.Location = new System.Drawing.Point(12, 557);
             this.bToggleGraphics.Name = "bToggleGraphics";
-            this.bToggleGraphics.Size = new System.Drawing.Size(134, 23);
+            this.bToggleGraphics.Size = new System.Drawing.Size(102, 23);
             this.bToggleGraphics.TabIndex = 2;
             this.bToggleGraphics.Text = "Hide Graphics";
             this.bToggleGraphics.UseVisualStyleBackColor = true;
@@ -367,7 +381,7 @@
             this.tabPage5.Controls.Add(this.panel5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(588, 504);
+            this.tabPage5.Size = new System.Drawing.Size(588, 484);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Half-Time";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -399,7 +413,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(588, 504);
+            this.tabPage2.Size = new System.Drawing.Size(588, 484);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Replay";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -435,7 +449,7 @@
             this.tabPage.Location = new System.Drawing.Point(12, 41);
             this.tabPage.Name = "tabPage";
             this.tabPage.SelectedIndex = 0;
-            this.tabPage.Size = new System.Drawing.Size(596, 530);
+            this.tabPage.Size = new System.Drawing.Size(596, 510);
             this.tabPage.TabIndex = 0;
             // 
             // tabScores
@@ -450,7 +464,7 @@
             this.tabScores.Location = new System.Drawing.Point(4, 22);
             this.tabScores.Name = "tabScores";
             this.tabScores.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScores.Size = new System.Drawing.Size(588, 504);
+            this.tabScores.Size = new System.Drawing.Size(588, 484);
             this.tabScores.TabIndex = 0;
             this.tabScores.Text = "Score Bar";
             this.tabScores.UseVisualStyleBackColor = true;
@@ -654,6 +668,7 @@
             // 
             // gInfoText
             // 
+            this.gInfoText.Controls.Add(this.tPreset6);
             this.gInfoText.Controls.Add(this.tPreset5);
             this.gInfoText.Controls.Add(this.tPreset4);
             this.gInfoText.Controls.Add(this.tPreset3);
@@ -661,6 +676,7 @@
             this.gInfoText.Controls.Add(this.tPreset1);
             this.gInfoText.Controls.Add(this.bEditPreset4);
             this.gInfoText.Controls.Add(this.bEditPreset2);
+            this.gInfoText.Controls.Add(this.bEditPreset6);
             this.gInfoText.Controls.Add(this.bEditPreset5);
             this.gInfoText.Controls.Add(this.bEditPreset3);
             this.gInfoText.Controls.Add(this.bEditPreset1);
@@ -668,6 +684,7 @@
             this.gInfoText.Controls.Add(this.label13);
             this.gInfoText.Controls.Add(this.tCustomInfoText);
             this.gInfoText.Controls.Add(this.label14);
+            this.gInfoText.Controls.Add(this.bInfoPreset6);
             this.gInfoText.Controls.Add(this.bInfoPreset5);
             this.gInfoText.Controls.Add(this.bInfoPreset4);
             this.gInfoText.Controls.Add(this.bInfoPreset3);
@@ -680,6 +697,126 @@
             this.gInfoText.TabIndex = 1;
             this.gInfoText.TabStop = false;
             this.gInfoText.Text = "Text Bar";
+            // 
+            // tPreset6
+            // 
+            this.tPreset6.Location = new System.Drawing.Point(396, 83);
+            this.tPreset6.Name = "tPreset6";
+            this.tPreset6.Size = new System.Drawing.Size(11, 20);
+            this.tPreset6.TabIndex = 12;
+            this.tPreset6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPreset5
+            // 
+            this.tPreset5.Location = new System.Drawing.Point(379, 83);
+            this.tPreset5.Name = "tPreset5";
+            this.tPreset5.Size = new System.Drawing.Size(11, 20);
+            this.tPreset5.TabIndex = 12;
+            this.tPreset5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPreset4
+            // 
+            this.tPreset4.Location = new System.Drawing.Point(362, 83);
+            this.tPreset4.Name = "tPreset4";
+            this.tPreset4.Size = new System.Drawing.Size(11, 20);
+            this.tPreset4.TabIndex = 11;
+            this.tPreset4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPreset3
+            // 
+            this.tPreset3.Location = new System.Drawing.Point(345, 83);
+            this.tPreset3.Name = "tPreset3";
+            this.tPreset3.Size = new System.Drawing.Size(11, 20);
+            this.tPreset3.TabIndex = 10;
+            this.tPreset3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPreset2
+            // 
+            this.tPreset2.Location = new System.Drawing.Point(328, 83);
+            this.tPreset2.Name = "tPreset2";
+            this.tPreset2.Size = new System.Drawing.Size(11, 20);
+            this.tPreset2.TabIndex = 9;
+            this.tPreset2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tPreset1
+            // 
+            this.tPreset1.Location = new System.Drawing.Point(311, 83);
+            this.tPreset1.Name = "tPreset1";
+            this.tPreset1.Size = new System.Drawing.Size(11, 20);
+            this.tPreset1.TabIndex = 8;
+            this.tPreset1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bEditPreset4
+            // 
+            this.bEditPreset4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset4.Location = new System.Drawing.Point(270, 48);
+            this.bEditPreset4.Name = "bEditPreset4";
+            this.bEditPreset4.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset4.TabIndex = 7;
+            this.bEditPreset4.Text = "=";
+            this.bEditPreset4.UseVisualStyleBackColor = true;
+            this.bEditPreset4.Click += new System.EventHandler(this.bEditPreset4_Click);
+            // 
+            // bEditPreset2
+            // 
+            this.bEditPreset2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset2.Location = new System.Drawing.Point(270, 19);
+            this.bEditPreset2.Name = "bEditPreset2";
+            this.bEditPreset2.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset2.TabIndex = 7;
+            this.bEditPreset2.Text = "=";
+            this.bEditPreset2.UseVisualStyleBackColor = true;
+            this.bEditPreset2.Click += new System.EventHandler(this.bEditPreset2_Click);
+            // 
+            // bEditPreset6
+            // 
+            this.bEditPreset6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset6.Location = new System.Drawing.Point(270, 77);
+            this.bEditPreset6.Name = "bEditPreset6";
+            this.bEditPreset6.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset6.TabIndex = 7;
+            this.bEditPreset6.Text = "=";
+            this.bEditPreset6.UseVisualStyleBackColor = true;
+            this.bEditPreset6.Click += new System.EventHandler(this.bEditPreset6_Click);
+            // 
+            // bEditPreset5
+            // 
+            this.bEditPreset5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset5.Location = new System.Drawing.Point(122, 77);
+            this.bEditPreset5.Name = "bEditPreset5";
+            this.bEditPreset5.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset5.TabIndex = 7;
+            this.bEditPreset5.Text = "=";
+            this.bEditPreset5.UseVisualStyleBackColor = true;
+            this.bEditPreset5.Click += new System.EventHandler(this.bEditPreset5_Click);
+            // 
+            // bEditPreset3
+            // 
+            this.bEditPreset3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset3.Location = new System.Drawing.Point(122, 48);
+            this.bEditPreset3.Name = "bEditPreset3";
+            this.bEditPreset3.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset3.TabIndex = 7;
+            this.bEditPreset3.Text = "=";
+            this.bEditPreset3.UseVisualStyleBackColor = true;
+            this.bEditPreset3.Click += new System.EventHandler(this.bEditPreset3_Click);
+            // 
+            // bEditPreset1
+            // 
+            this.bEditPreset1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditPreset1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditPreset1.Location = new System.Drawing.Point(122, 19);
+            this.bEditPreset1.Name = "bEditPreset1";
+            this.bEditPreset1.Size = new System.Drawing.Size(27, 23);
+            this.bEditPreset1.TabIndex = 7;
+            this.bEditPreset1.Text = "=";
+            this.bEditPreset1.UseVisualStyleBackColor = true;
+            this.bEditPreset1.Click += new System.EventHandler(this.bEditPreset1_Click);
             // 
             // pDownYards
             // 
@@ -791,13 +928,23 @@
             this.label14.Size = new System.Drawing.Size(0, 13);
             this.label14.TabIndex = 0;
             // 
+            // bInfoPreset6
+            // 
+            this.bInfoPreset6.Location = new System.Drawing.Point(156, 77);
+            this.bInfoPreset6.Name = "bInfoPreset6";
+            this.bInfoPreset6.Size = new System.Drawing.Size(109, 23);
+            this.bInfoPreset6.TabIndex = 2;
+            this.bInfoPreset6.Text = "Preset 6";
+            this.bInfoPreset6.UseVisualStyleBackColor = true;
+            this.bInfoPreset6.Click += new System.EventHandler(this.bInfoPreset_Click);
+            // 
             // bInfoPreset5
             // 
             this.bInfoPreset5.Location = new System.Drawing.Point(8, 77);
             this.bInfoPreset5.Name = "bInfoPreset5";
             this.bInfoPreset5.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset5.TabIndex = 2;
-            this.bInfoPreset5.Text = "Timeout";
+            this.bInfoPreset5.Text = "Preset 5";
             this.bInfoPreset5.UseVisualStyleBackColor = true;
             this.bInfoPreset5.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
@@ -807,7 +954,7 @@
             this.bInfoPreset4.Name = "bInfoPreset4";
             this.bInfoPreset4.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset4.TabIndex = 2;
-            this.bInfoPreset4.Text = "Field Goal";
+            this.bInfoPreset4.Text = "Preset 4";
             this.bInfoPreset4.UseVisualStyleBackColor = true;
             this.bInfoPreset4.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
@@ -817,7 +964,7 @@
             this.bInfoPreset3.Name = "bInfoPreset3";
             this.bInfoPreset3.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset3.TabIndex = 2;
-            this.bInfoPreset3.Text = "Kickoff";
+            this.bInfoPreset3.Text = "Preset 3";
             this.bInfoPreset3.UseVisualStyleBackColor = true;
             this.bInfoPreset3.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
@@ -837,7 +984,7 @@
             this.bInfoPreset2.Name = "bInfoPreset2";
             this.bInfoPreset2.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset2.TabIndex = 2;
-            this.bInfoPreset2.Text = "Touchdown";
+            this.bInfoPreset2.Text = "Preset 2";
             this.bInfoPreset2.UseVisualStyleBackColor = true;
             this.bInfoPreset2.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
@@ -847,7 +994,7 @@
             this.bInfoPreset1.Name = "bInfoPreset1";
             this.bInfoPreset1.Size = new System.Drawing.Size(108, 23);
             this.bInfoPreset1.TabIndex = 2;
-            this.bInfoPreset1.Text = "Flag";
+            this.bInfoPreset1.Text = "Preset 1";
             this.bInfoPreset1.UseVisualStyleBackColor = true;
             this.bInfoPreset1.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
@@ -1238,7 +1385,7 @@
             this.tabPage4.Controls.Add(this.dRoles);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(588, 504);
+            this.tabPage4.Size = new System.Drawing.Size(588, 484);
             this.tabPage4.TabIndex = 8;
             this.tabPage4.Text = "Credits";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1247,20 +1394,6 @@
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.toolStripSeparator,
-            this.cutToolStripButton,
-            this.copyToolStripButton,
-            this.pasteToolStripButton,
-            this.toolStripSeparator1,
-            this.toolStripButton2,
-            this.toolStripSeparator2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.MinimumSize = new System.Drawing.Size(567, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -1268,6 +1401,98 @@
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tCredits
+            // 
+            this.tCredits.AcceptsTab = true;
+            this.tCredits.AutoWordSelection = true;
+            this.tCredits.BackColor = System.Drawing.Color.LightGray;
+            this.tCredits.DetectUrls = false;
+            this.tCredits.EnableAutoDragDrop = true;
+            this.tCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tCredits.ForeColor = System.Drawing.Color.Green;
+            this.tCredits.Location = new System.Drawing.Point(0, 25);
+            this.tCredits.Margin = new System.Windows.Forms.Padding(0);
+            this.tCredits.Name = "tCredits";
+            this.tCredits.Size = new System.Drawing.Size(567, 479);
+            this.tCredits.TabIndex = 1;
+            this.tCredits.Text = "";
+            this.tCredits.TextChanged += new System.EventHandler(this.tCredits_TextChanged);
+            // 
+            // dRoles
+            // 
+            this.dRoles.AllowUserToResizeColumns = false;
+            this.dRoles.AllowUserToResizeRows = false;
+            this.dRoles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dRoles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CreditName,
+            this.CreditRole,
+            this.ScrollSpace});
+            this.dRoles.Location = new System.Drawing.Point(121, 84);
+            this.dRoles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.dRoles.Name = "dRoles";
+            this.dRoles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dRoles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dRoles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dRoles.Size = new System.Drawing.Size(228, 126);
+            this.dRoles.TabIndex = 0;
+            // 
+            // CreditName
+            // 
+            this.CreditName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CreditName.Frozen = true;
+            this.CreditName.HeaderText = "Name";
+            this.CreditName.Name = "CreditName";
+            this.CreditName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CreditName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CreditName.Width = 300;
+            // 
+            // CreditRole
+            // 
+            this.CreditRole.Frozen = true;
+            this.CreditRole.HeaderText = "Role";
+            this.CreditRole.Items.AddRange(new object[] {
+            "Producer",
+            "Director",
+            "Tech Director",
+            "Graphics",
+            "Audio",
+            "Replay",
+            "Tape Jammer",
+            "Camera",
+            "Camera 1",
+            "Camera 2",
+            "Camera 3",
+            "Camera 4",
+            "Camera 5",
+            "Jib Operator",
+            "Commentator",
+            "Reporter",
+            "Special Thanks"});
+            this.CreditRole.Name = "CreditRole";
+            this.CreditRole.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CreditRole.Width = 200;
+            // 
+            // ScrollSpace
+            // 
+            this.ScrollSpace.Frozen = true;
+            this.ScrollSpace.HeaderText = "   ";
+            this.ScrollSpace.MinimumWidth = 18;
+            this.ScrollSpace.Name = "ScrollSpace";
+            this.ScrollSpace.ReadOnly = true;
+            this.ScrollSpace.Width = 18;
+            // 
+            // tStats
+            // 
+            this.tStats.Location = new System.Drawing.Point(4, 22);
+            this.tStats.Name = "tStats";
+            this.tStats.Padding = new System.Windows.Forms.Padding(3);
+            this.tStats.Size = new System.Drawing.Size(588, 484);
+            this.tStats.TabIndex = 9;
+            this.tStats.Text = "Stats";
+            this.tStats.UseVisualStyleBackColor = true;
             // 
             // newToolStripButton
             // 
@@ -1384,98 +1609,6 @@
             this.toolStripButton5.Text = "&Right";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
-            // tCredits
-            // 
-            this.tCredits.AcceptsTab = true;
-            this.tCredits.AutoWordSelection = true;
-            this.tCredits.BackColor = System.Drawing.Color.LightGray;
-            this.tCredits.DetectUrls = false;
-            this.tCredits.EnableAutoDragDrop = true;
-            this.tCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tCredits.ForeColor = System.Drawing.Color.Green;
-            this.tCredits.Location = new System.Drawing.Point(0, 25);
-            this.tCredits.Margin = new System.Windows.Forms.Padding(0);
-            this.tCredits.Name = "tCredits";
-            this.tCredits.Size = new System.Drawing.Size(567, 479);
-            this.tCredits.TabIndex = 1;
-            this.tCredits.Text = "";
-            this.tCredits.TextChanged += new System.EventHandler(this.tCredits_TextChanged);
-            // 
-            // dRoles
-            // 
-            this.dRoles.AllowUserToResizeColumns = false;
-            this.dRoles.AllowUserToResizeRows = false;
-            this.dRoles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dRoles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CreditName,
-            this.CreditRole,
-            this.ScrollSpace});
-            this.dRoles.Location = new System.Drawing.Point(121, 84);
-            this.dRoles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.dRoles.Name = "dRoles";
-            this.dRoles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dRoles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dRoles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dRoles.Size = new System.Drawing.Size(228, 126);
-            this.dRoles.TabIndex = 0;
-            // 
-            // CreditName
-            // 
-            this.CreditName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CreditName.Frozen = true;
-            this.CreditName.HeaderText = "Name";
-            this.CreditName.Name = "CreditName";
-            this.CreditName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CreditName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CreditName.Width = 300;
-            // 
-            // CreditRole
-            // 
-            this.CreditRole.Frozen = true;
-            this.CreditRole.HeaderText = "Role";
-            this.CreditRole.Items.AddRange(new object[] {
-            "Producer",
-            "Director",
-            "Tech Director",
-            "Graphics",
-            "Audio",
-            "Replay",
-            "Tape Jammer",
-            "Camera",
-            "Camera 1",
-            "Camera 2",
-            "Camera 3",
-            "Camera 4",
-            "Camera 5",
-            "Jib Operator",
-            "Commentator",
-            "Reporter",
-            "Special Thanks"});
-            this.CreditRole.Name = "CreditRole";
-            this.CreditRole.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CreditRole.Width = 200;
-            // 
-            // ScrollSpace
-            // 
-            this.ScrollSpace.Frozen = true;
-            this.ScrollSpace.HeaderText = "   ";
-            this.ScrollSpace.MinimumWidth = 18;
-            this.ScrollSpace.Name = "ScrollSpace";
-            this.ScrollSpace.ReadOnly = true;
-            this.ScrollSpace.Width = 18;
-            // 
-            // tStats
-            // 
-            this.tStats.Location = new System.Drawing.Point(4, 22);
-            this.tStats.Name = "tStats";
-            this.tStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tStats.Size = new System.Drawing.Size(588, 504);
-            this.tStats.TabIndex = 9;
-            this.tStats.Text = "Stats";
-            this.tStats.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1496,9 +1629,9 @@
             // 
             // bToggleBug
             // 
-            this.bToggleBug.Location = new System.Drawing.Point(152, 577);
+            this.bToggleBug.Location = new System.Drawing.Point(120, 557);
             this.bToggleBug.Name = "bToggleBug";
-            this.bToggleBug.Size = new System.Drawing.Size(134, 23);
+            this.bToggleBug.Size = new System.Drawing.Size(102, 23);
             this.bToggleBug.TabIndex = 2;
             this.bToggleBug.Text = "Hide Bug";
             this.bToggleBug.UseVisualStyleBackColor = true;
@@ -1532,11 +1665,11 @@
             // 
             // bUseStats
             // 
-            this.bUseStats.Location = new System.Drawing.Point(292, 577);
+            this.bUseStats.Location = new System.Drawing.Point(228, 557);
             this.bUseStats.Name = "bUseStats";
-            this.bUseStats.Size = new System.Drawing.Size(134, 23);
+            this.bUseStats.Size = new System.Drawing.Size(102, 23);
             this.bUseStats.TabIndex = 1;
-            this.bUseStats.Text = "Toggle Stats";
+            this.bUseStats.Text = "Show Stats";
             this.bUseStats.UseVisualStyleBackColor = true;
             this.bUseStats.Click += new System.EventHandler(this.bUseStats_Click);
             // 
@@ -1617,135 +1750,139 @@
             this.bResetTimeouts.Text = "Reset";
             this.bResetTimeouts.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(501, 557);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Show Clock";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.bUseStats_Click);
+            // 
+            // tClockPreview
+            // 
+            this.tClockPreview.Location = new System.Drawing.Point(447, 559);
+            this.tClockPreview.Name = "tClockPreview";
+            this.tClockPreview.ReadOnly = true;
+            this.tClockPreview.Size = new System.Drawing.Size(51, 20);
+            this.tClockPreview.TabIndex = 4;
+            this.tClockPreview.Text = "00:00:0";
+            this.tClockPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.cSerialPort,
+            this.toolStripSeparator3,
+            this.bStartStop,
+            this.toolStripSeparator4,
+            this.toolStripLabel2,
+            this.lStatus,
+            this.toolStripSeparator5,
+            this.bVersion});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 590);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip2.Size = new System.Drawing.Size(616, 25);
+            this.toolStrip2.TabIndex = 5;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(60, 22);
+            this.toolStripLabel1.Text = "Serial Port";
+            // 
+            // cSerialPort
+            // 
+            this.cSerialPort.AutoSize = false;
+            this.cSerialPort.Items.AddRange(new object[] {
+            "COM1",
+            "COM2",
+            "COM3",
+            "COM4",
+            "COM5",
+            "COM6",
+            "COM7"});
+            this.cSerialPort.Name = "cSerialPort";
+            this.cSerialPort.Size = new System.Drawing.Size(64, 23);
+            this.cSerialPort.Text = "COM1";
+            this.cSerialPort.TextChanged += new System.EventHandler(this.cSerialPort_TextUpdate);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bStartStop
+            // 
+            this.bStartStop.AutoSize = false;
+            this.bStartStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.bStartStop.Image = ((System.Drawing.Image)(resources.GetObject("bStartStop.Image")));
+            this.bStartStop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bStartStop.Name = "bStartStop";
+            this.bStartStop.Size = new System.Drawing.Size(64, 22);
+            this.bStartStop.Text = "Connect";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(107, 22);
+            this.toolStripLabel2.Text = "Connection Status:";
+            // 
+            // lStatus
+            // 
+            this.lStatus.ForeColor = System.Drawing.Color.Red;
+            this.lStatus.Name = "lStatus";
+            this.lStatus.Size = new System.Drawing.Size(79, 22);
+            this.lStatus.Text = "Disconnected";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
             // bVersion
             // 
-            this.bVersion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVersion.Location = new System.Drawing.Point(495, 577);
+            this.bVersion.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.bVersion.Image = global::TETV_ScoreBar.Properties.Resources.icon1;
+            this.bVersion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bVersion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bVersion.Name = "bVersion";
-            this.bVersion.Size = new System.Drawing.Size(109, 23);
-            this.bVersion.TabIndex = 3;
+            this.bVersion.Size = new System.Drawing.Size(98, 22);
             this.bVersion.Text = "Version x.x.x.x";
-            this.bVersion.UseVisualStyleBackColor = true;
             this.bVersion.Click += new System.EventHandler(this.bVersion_Click);
-            // 
-            // bEditPreset1
-            // 
-            this.bEditPreset1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bEditPreset1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEditPreset1.Location = new System.Drawing.Point(122, 19);
-            this.bEditPreset1.Name = "bEditPreset1";
-            this.bEditPreset1.Size = new System.Drawing.Size(27, 23);
-            this.bEditPreset1.TabIndex = 7;
-            this.bEditPreset1.Text = "=";
-            this.bEditPreset1.UseVisualStyleBackColor = true;
-            this.bEditPreset1.Click += new System.EventHandler(this.bEditPreset1_Click);
-            // 
-            // bEditPreset3
-            // 
-            this.bEditPreset3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bEditPreset3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEditPreset3.Location = new System.Drawing.Point(122, 48);
-            this.bEditPreset3.Name = "bEditPreset3";
-            this.bEditPreset3.Size = new System.Drawing.Size(27, 23);
-            this.bEditPreset3.TabIndex = 7;
-            this.bEditPreset3.Text = "=";
-            this.bEditPreset3.UseVisualStyleBackColor = true;
-            this.bEditPreset3.Click += new System.EventHandler(this.bEditPreset3_Click);
-            // 
-            // bEditPreset5
-            // 
-            this.bEditPreset5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bEditPreset5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEditPreset5.Location = new System.Drawing.Point(122, 77);
-            this.bEditPreset5.Name = "bEditPreset5";
-            this.bEditPreset5.Size = new System.Drawing.Size(27, 23);
-            this.bEditPreset5.TabIndex = 7;
-            this.bEditPreset5.Text = "=";
-            this.bEditPreset5.UseVisualStyleBackColor = true;
-            this.bEditPreset5.Click += new System.EventHandler(this.bEditPreset5_Click);
-            // 
-            // bEditPreset2
-            // 
-            this.bEditPreset2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bEditPreset2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEditPreset2.Location = new System.Drawing.Point(270, 19);
-            this.bEditPreset2.Name = "bEditPreset2";
-            this.bEditPreset2.Size = new System.Drawing.Size(27, 23);
-            this.bEditPreset2.TabIndex = 7;
-            this.bEditPreset2.Text = "=";
-            this.bEditPreset2.UseVisualStyleBackColor = true;
-            this.bEditPreset2.Click += new System.EventHandler(this.bEditPreset2_Click);
-            // 
-            // bEditPreset4
-            // 
-            this.bEditPreset4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bEditPreset4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEditPreset4.Location = new System.Drawing.Point(270, 48);
-            this.bEditPreset4.Name = "bEditPreset4";
-            this.bEditPreset4.Size = new System.Drawing.Size(27, 23);
-            this.bEditPreset4.TabIndex = 7;
-            this.bEditPreset4.Text = "=";
-            this.bEditPreset4.UseVisualStyleBackColor = true;
-            this.bEditPreset4.Click += new System.EventHandler(this.bEditPreset4_Click);
-            // 
-            // tPreset1
-            // 
-            this.tPreset1.Location = new System.Drawing.Point(156, 80);
-            this.tPreset1.Name = "tPreset1";
-            this.tPreset1.Size = new System.Drawing.Size(11, 20);
-            this.tPreset1.TabIndex = 8;
-            this.tPreset1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPreset2
-            // 
-            this.tPreset2.Location = new System.Drawing.Point(173, 80);
-            this.tPreset2.Name = "tPreset2";
-            this.tPreset2.Size = new System.Drawing.Size(11, 20);
-            this.tPreset2.TabIndex = 9;
-            this.tPreset2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPreset3
-            // 
-            this.tPreset3.Location = new System.Drawing.Point(190, 80);
-            this.tPreset3.Name = "tPreset3";
-            this.tPreset3.Size = new System.Drawing.Size(11, 20);
-            this.tPreset3.TabIndex = 10;
-            this.tPreset3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPreset5
-            // 
-            this.tPreset5.Location = new System.Drawing.Point(224, 80);
-            this.tPreset5.Name = "tPreset5";
-            this.tPreset5.Size = new System.Drawing.Size(11, 20);
-            this.tPreset5.TabIndex = 12;
-            this.tPreset5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tPreset4
-            // 
-            this.tPreset4.Location = new System.Drawing.Point(207, 80);
-            this.tPreset4.Name = "tPreset4";
-            this.tPreset4.Size = new System.Drawing.Size(11, 20);
-            this.tPreset4.TabIndex = 11;
-            this.tPreset4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 607);
-            this.Controls.Add(this.bVersion);
+            this.ClientSize = new System.Drawing.Size(616, 615);
+            this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.tClockPreview);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bUseStats);
             this.Controls.Add(this.bToggleBug);
             this.Controls.Add(this.bToggleGraphics);
             this.Controls.Add(this.bUseCredits);
             this.Controls.Add(this.bUseCustomShow);
             this.Controls.Add(this.bUseHalfTime);
             this.Controls.Add(this.bUseEndOfGame);
-            this.Controls.Add(this.bUseStats);
             this.Controls.Add(this.bUseBeforeGame);
             this.Controls.Add(this.bUseReplay);
             this.Controls.Add(this.bUseScoreBar);
             this.Controls.Add(this.tabPage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Controls";
             this.Text = "Graphics Control Panel";
@@ -1783,12 +1920,13 @@
             this.gScores.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dRoles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1925,7 +2063,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button bVersion;
         private System.Windows.Forms.Button bEditPreset1;
         private System.Windows.Forms.Button bEditPreset4;
         private System.Windows.Forms.Button bEditPreset2;
@@ -1936,6 +2073,21 @@
         private System.Windows.Forms.TextBox tPreset3;
         private System.Windows.Forms.TextBox tPreset2;
         private System.Windows.Forms.TextBox tPreset1;
+        private System.Windows.Forms.Button bEditPreset6;
+        private System.Windows.Forms.Button bInfoPreset6;
+        private System.Windows.Forms.TextBox tPreset6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tClockPreview;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripComboBox cSerialPort;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton bStartStop;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel lStatus;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton bVersion;
 
 
 

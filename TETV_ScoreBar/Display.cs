@@ -23,6 +23,7 @@ namespace TETV_ScoreBar {
         public bool showBug = true;
         public bool showStats = false;
         public bool halftime = false;
+        public bool usingDoubleScores = false;
         public const int ScreenPadding = 60;
         public string creditsRTF = "";
         string replayImage = "";
@@ -103,18 +104,15 @@ namespace TETV_ScoreBar {
                 }
 
                 // Adjust per game
-                switch (game.gameType) {
+                /*switch (game.gameType) {
                     case GameType.Volleyball:
-                        HideScoreboardSegment(pPeriod);
-                        HideScoreboardSegment(pPeriodDivider);
-                        HideScoreboardSegment(pScoreLS);
-                        HideScoreboardSegment(pScoreRS);
+                    case GameType.Wrestling:
+                        usingDoubleScores = true;
                         break;
                     default:
-                        HideScoreboardSegment(pScoreLD);
-                        HideScoreboardSegment(pScoreRD);
+                        usingDoubleScores = false;
                         break;
-                }
+                }*/
             }
         }
 
@@ -178,20 +176,6 @@ namespace TETV_ScoreBar {
 
             // Set images
             string imgStr = "";
-            /*
-            if (showInfoText) imgStr += "B";
-            if (showScores) imgStr += "S";
-            if (game.BallPossession == 1) imgStr += "L";
-            if (game.BallPossession == 2) imgStr += "R";
-            if (imgStr.Length > 0)
-                imgStr = "main_" + imgStr;
-            else
-                imgStr = "main";
-            if (!boardImage.Equals(imgStr))
-                pMain.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject(imgStr);
-            boardImage = string.Copy(imgStr);
-            */
-
             imgStr = "tip_l" + (game.BallPossession == 1 ? "p" : "");
             if (!leftTipImage.Equals(imgStr))
                 pLeftTip.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject(imgStr);
@@ -202,11 +186,25 @@ namespace TETV_ScoreBar {
                 pRightTip.BackgroundImage = (Image)TETV_ScoreBar.Properties.Resources.ResourceManager.GetObject(imgStr);
             rightTipImage = string.Copy(imgStr);
 
-
-            pLeftScore.Visible = showScores;
-            pRightScore.Visible = showScores;
             pBug.Visible = showBug;
             pStat.Visible = showStats;
+
+            // Show right score type
+            if (usingDoubleScores) {
+                HideScoreboardSegment(pPeriodDivider);
+                HideScoreboardSegment(pPeriod);
+                HideScoreboardSegment(pScoreLS);
+                HideScoreboardSegment(pScoreRS);
+                ShowScoreboardSegment(pScoreLD);
+                ShowScoreboardSegment(pScoreRD);
+            } else {
+                ShowScoreboardSegment(pPeriodDivider);
+                ShowScoreboardSegment(pPeriod);
+                ShowScoreboardSegment(pScoreLS);
+                ShowScoreboardSegment(pScoreRS);
+                HideScoreboardSegment(pScoreLD);
+                HideScoreboardSegment(pScoreRD);
+            }
 
             /*
             if (showTimeouts)
@@ -456,13 +454,29 @@ namespace TETV_ScoreBar {
         #region Scoreboard Manipulation
 
         void HideScoreboardSegment(Panel segment) {
-            if (!segment.Visible) return;
+            if (!pBar.Visible || !segment.Visible) return;
+
+            foreach (Panel g in pBar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
+                if (g.Location.X > (segment.Location.X))
+                    g.Location = new Point(g.Location.X - (segment.Width), g.Location.Y);
+            pBar.Width -= segment.Width;
 
             segment.Visible = false;
+
+            this.Update();
+        }
+
+        void ShowScoreboardSegment(Panel segment) {
+            if (!pBar.Visible || segment.Visible) return;
+
             foreach (Panel g in pBar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
-                if (g.Location.X > segment.Location.X)
-                    g.Location = new Point(g.Location.X - (segment.Width + segment.Margin.Left), g.Location.Y);
-            pBar.Width -= segment.Width;
+                if (g.Location.X >= (segment.Location.X) && g.Name != segment.Name)
+                    g.Location = new Point(g.Location.X + (segment.Width), g.Location.Y);
+            pBar.Width += segment.Width;
+
+            segment.Visible = true;
+
+            this.Update();
         }
 
         #endregion
