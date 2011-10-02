@@ -80,6 +80,27 @@ namespace FairPlayTest {
                 Invoke(callback, new object[] { record });
             } else {
                 tGameType.Text = "Football";
+                if (record.TeamNameChanged) {
+                    tHomeTeamName.Text = record.TeamName[0];
+                    tVisitingTeamName.Text = record.TeamName[1];
+                }
+                if (record.ScoreChanged) {
+                    tScoreHome.Text = record.Score[0].ToString();
+                    tScoreVisiting.Text = record.Score[1].ToString();
+                }
+                if (record.TimeoutsLeftChanged) {
+                    tHomeTimeoutsLeft.Text = record.TimeoutsLeft[0].ToString();
+                    tVisitingTimeoutsLeft.Text = record.TimeoutsLeft[1].ToString();
+                }
+                if (record.DownChanged) {
+                    tDown.Text = record.Down.ToString();
+                }
+                if (record.ToGoChanged) {
+                    tToGo.Text = record.ToGo.ToString();
+                }
+                if (record.PossessionChanged) {
+                    tPossession.Text = record.Possession.ToString();
+                }
             }
         }
 

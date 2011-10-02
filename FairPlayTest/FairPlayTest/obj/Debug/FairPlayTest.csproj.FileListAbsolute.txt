@@ -6,3 +6,11 @@ C:\My Projects\FairPlayTest\FairPlayTest\obj\Debug\FairPlayTest.Properties.Resou
 C:\My Projects\FairPlayTest\FairPlayTest\obj\Debug\FairPlayTest.csproj.GenerateResource.Cache
 C:\My Projects\FairPlayTest\FairPlayTest\obj\Debug\FairPlayTest.exe
 C:\My Projects\FairPlayTest\FairPlayTest\obj\Debug\FairPlayTest.pdb
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\bin\Debug\FairPlayTest.exe
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\bin\Debug\FairPlayTest.pdb
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\obj\Debug\FairPlayTest.fMain.resources
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\obj\Debug\FairPlayTest.Properties.Resources.resources
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\obj\Debug\FairPlayTest.csproj.GenerateResource.Cache
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\obj\Debug\FairPlayTest.exe
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\obj\Debug\FairPlayTest.pdb

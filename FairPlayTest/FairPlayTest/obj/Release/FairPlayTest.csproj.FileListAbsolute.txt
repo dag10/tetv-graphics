@@ -6,3 +6,5 @@ C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.Properties.Res
 C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.csproj.GenerateResource.Cache
 C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.exe
 C:\My Projects\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.pdb
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.exe
+C:\Users\Drew Gottlieb\Desktop\tetv-graphics\FairPlayTest\FairPlayTest\obj\Release\FairPlayTest.pdb
