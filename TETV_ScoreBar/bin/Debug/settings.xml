@@ -12,7 +12,7 @@
   <StatY>835</StatY>
   <ControlScreen>0</ControlScreen>
   <DisplayScreen>1</DisplayScreen>
-  <GameType>5</GameType>
+  <GameType>0</GameType>
   <ShowInfoText>False</ShowInfoText>
   <ShowScores>True</ShowScores>
   <ShowTimeouts>False</ShowTimeouts>

@@ -262,13 +262,13 @@ namespace TETV_ScoreBar {
                 wasShowingTimeouts = showTimeouts;
             }
 
-            pLT1.BackColor = game.Timeouts[0] > 0 ? Color.Red : Color.Lime;
-            pLT2.BackColor = game.Timeouts[0] > 1 ? Color.Red : Color.Lime;
-            pLT3.BackColor = game.Timeouts[0] > 2 ? Color.Red : Color.Lime;
+            pLT1.BackColor = game.Timeouts[0] < 1 ? Color.Red : Color.Lime;
+            pLT2.BackColor = game.Timeouts[0] < 2 ? Color.Red : Color.Lime;
+            pLT3.BackColor = game.Timeouts[0] < 3 ? Color.Red : Color.Lime;
 
-            pRT1.BackColor = game.Timeouts[1] > 0 ? Color.Red : Color.Lime;
-            pRT2.BackColor = game.Timeouts[1] > 1 ? Color.Red : Color.Lime;
-            pRT3.BackColor = game.Timeouts[1] > 2 ? Color.Red : Color.Lime;
+            pRT1.BackColor = game.Timeouts[1] < 1 ? Color.Red : Color.Lime;
+            pRT2.BackColor = game.Timeouts[1] < 2 ? Color.Red : Color.Lime;
+            pRT3.BackColor = game.Timeouts[1] < 3 ? Color.Red : Color.Lime;
 
             // Set credits
             tCredits.Rtf = creditsRTF;

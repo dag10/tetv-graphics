@@ -48,6 +48,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage = new System.Windows.Forms.TabControl();
             this.tabScores = new System.Windows.Forms.TabPage();
+            this.gClock = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.bToggleClock = new System.Windows.Forms.Button();
+            this.tClockPreview = new System.Windows.Forms.TextBox();
             this.gPossession = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
             this.bNobodysBall = new System.Windows.Forms.Button();
@@ -94,6 +98,7 @@
             this.bInfoPreset5 = new System.Windows.Forms.Button();
             this.bInfoPreset4 = new System.Windows.Forms.Button();
             this.bInfoPreset3 = new System.Windows.Forms.Button();
+            this.bHideInfoText = new System.Windows.Forms.Button();
             this.bUpdateInfoText = new System.Windows.Forms.Button();
             this.bInfoPreset2 = new System.Windows.Forms.Button();
             this.bInfoPreset1 = new System.Windows.Forms.Button();
@@ -133,12 +138,7 @@
             this.bIncVisiting1 = new System.Windows.Forms.Button();
             this.bIncHome1 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tCredits = new System.Windows.Forms.RichTextBox();
-            this.dRoles = new System.Windows.Forms.DataGridView();
-            this.CreditName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreditRole = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ScrollSpace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tStats = new System.Windows.Forms.TabPage();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -168,8 +168,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.bResetTimeouts = new System.Windows.Forms.Button();
-            this.bToggleClock = new System.Windows.Forms.Button();
-            this.tClockPreview = new System.Windows.Forms.TextBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.cSerialPort = new System.Windows.Forms.ToolStripComboBox();
@@ -180,9 +178,21 @@
             this.lStatus = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.bVersion = new System.Windows.Forms.ToolStripButton();
-            this.gClock = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.bHideInfoText = new System.Windows.Forms.Button();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.iUseForScore = new System.Windows.Forms.ToolStripMenuItem();
+            this.iUseForMatchScore = new System.Windows.Forms.ToolStripMenuItem();
+            this.iUseForPossession = new System.Windows.Forms.ToolStripMenuItem();
+            this.iUseForPeriod = new System.Windows.Forms.ToolStripMenuItem();
+            this.iUseForTimeouts = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.iUseForDownYards = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).BeginInit();
@@ -193,6 +203,7 @@
             this.panel1.SuspendLayout();
             this.tabPage.SuspendLayout();
             this.tabScores.SuspendLayout();
+            this.gClock.SuspendLayout();
             this.gPossession.SuspendLayout();
             this.gTimeouts.SuspendLayout();
             this.gInfoText.SuspendLayout();
@@ -205,31 +216,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingAltScore)).BeginInit();
             this.gScores.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dRoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).BeginInit();
             this.toolStrip2.SuspendLayout();
-            this.gClock.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // bUseScoreBar
             // 
-            this.bUseScoreBar.Location = new System.Drawing.Point(27, 12);
+            this.bUseScoreBar.BackColor = System.Drawing.Color.Silver;
+            this.bUseScoreBar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bUseScoreBar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bUseScoreBar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.bUseScoreBar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.bUseScoreBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bUseScoreBar.Location = new System.Drawing.Point(26, 9);
             this.bUseScoreBar.Name = "bUseScoreBar";
-            this.bUseScoreBar.Size = new System.Drawing.Size(31, 23);
+            this.bUseScoreBar.Size = new System.Drawing.Size(33, 23);
             this.bUseScoreBar.TabIndex = 1;
             this.bUseScoreBar.Text = "   ";
-            this.bUseScoreBar.UseVisualStyleBackColor = true;
+            this.bUseScoreBar.UseVisualStyleBackColor = false;
             this.bUseScoreBar.Click += new System.EventHandler(this.bUseScoreBar_Click);
             // 
             // bUseReplay
             // 
-            this.bUseReplay.Location = new System.Drawing.Point(79, 12);
+            this.bUseReplay.BackColor = System.Drawing.Color.Silver;
+            this.bUseReplay.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bUseReplay.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bUseReplay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.bUseReplay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.bUseReplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bUseReplay.Location = new System.Drawing.Point(78, 9);
             this.bUseReplay.Name = "bUseReplay";
-            this.bUseReplay.Size = new System.Drawing.Size(31, 23);
+            this.bUseReplay.Size = new System.Drawing.Size(33, 23);
             this.bUseReplay.TabIndex = 1;
             this.bUseReplay.Text = "   ";
-            this.bUseReplay.UseVisualStyleBackColor = true;
+            this.bUseReplay.UseVisualStyleBackColor = false;
             this.bUseReplay.Click += new System.EventHandler(this.bUseReplay_Click);
             // 
             // bUseBeforeGame
@@ -256,12 +278,18 @@
             // 
             // bUseHalfTime
             // 
-            this.bUseHalfTime.Location = new System.Drawing.Point(132, 12);
+            this.bUseHalfTime.BackColor = System.Drawing.Color.Silver;
+            this.bUseHalfTime.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bUseHalfTime.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bUseHalfTime.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.bUseHalfTime.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.bUseHalfTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bUseHalfTime.Location = new System.Drawing.Point(131, 9);
             this.bUseHalfTime.Name = "bUseHalfTime";
-            this.bUseHalfTime.Size = new System.Drawing.Size(31, 23);
+            this.bUseHalfTime.Size = new System.Drawing.Size(33, 23);
             this.bUseHalfTime.TabIndex = 1;
             this.bUseHalfTime.Text = "   ";
-            this.bUseHalfTime.UseVisualStyleBackColor = true;
+            this.bUseHalfTime.UseVisualStyleBackColor = false;
             this.bUseHalfTime.Click += new System.EventHandler(this.bUseHalfTime_Click);
             // 
             // bUseCustomShow
@@ -458,6 +486,7 @@
             // tabScores
             // 
             this.tabScores.AutoScroll = true;
+            this.tabScores.BackColor = System.Drawing.Color.Transparent;
             this.tabScores.Controls.Add(this.gClock);
             this.tabScores.Controls.Add(this.gPossession);
             this.tabScores.Controls.Add(this.gTimeouts);
@@ -471,7 +500,46 @@
             this.tabScores.Size = new System.Drawing.Size(588, 484);
             this.tabScores.TabIndex = 0;
             this.tabScores.Text = "Score Bar";
-            this.tabScores.UseVisualStyleBackColor = true;
+            // 
+            // gClock
+            // 
+            this.gClock.Controls.Add(this.label8);
+            this.gClock.Controls.Add(this.bToggleClock);
+            this.gClock.Controls.Add(this.tClockPreview);
+            this.gClock.Location = new System.Drawing.Point(6, 330);
+            this.gClock.Name = "gClock";
+            this.gClock.Size = new System.Drawing.Size(555, 51);
+            this.gClock.TabIndex = 8;
+            this.gClock.TabStop = false;
+            this.gClock.Text = "Clock";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 0;
+            // 
+            // bToggleClock
+            // 
+            this.bToggleClock.Location = new System.Drawing.Point(9, 19);
+            this.bToggleClock.Name = "bToggleClock";
+            this.bToggleClock.Size = new System.Drawing.Size(102, 23);
+            this.bToggleClock.TabIndex = 1;
+            this.bToggleClock.Text = "Show Clock";
+            this.bToggleClock.UseVisualStyleBackColor = true;
+            this.bToggleClock.Click += new System.EventHandler(this.bToggleClock_Click);
+            // 
+            // tClockPreview
+            // 
+            this.tClockPreview.Location = new System.Drawing.Point(120, 20);
+            this.tClockPreview.Name = "tClockPreview";
+            this.tClockPreview.ReadOnly = true;
+            this.tClockPreview.Size = new System.Drawing.Size(58, 20);
+            this.tClockPreview.TabIndex = 4;
+            this.tClockPreview.Text = "00:00:0";
+            this.tClockPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gPossession
             // 
@@ -544,7 +612,7 @@
             this.gTimeouts.Size = new System.Drawing.Size(555, 81);
             this.gTimeouts.TabIndex = 7;
             this.gTimeouts.TabStop = false;
-            this.gTimeouts.Text = "Timeouts Used";
+            this.gTimeouts.Text = "Timeouts Left";
             // 
             // bToggleTimeouts
             // 
@@ -843,7 +911,7 @@
             this.bDisplayDownYards.Name = "bDisplayDownYards";
             this.bDisplayDownYards.Size = new System.Drawing.Size(159, 23);
             this.bDisplayDownYards.TabIndex = 2;
-            this.bDisplayDownYards.Text = "Display Down and Yards";
+            this.bDisplayDownYards.Text = "Display Down and To Go";
             this.bDisplayDownYards.UseVisualStyleBackColor = true;
             this.bDisplayDownYards.Click += new System.EventHandler(this.bDisplayDownYards_Click);
             // 
@@ -972,6 +1040,16 @@
             this.bInfoPreset3.Text = "Preset 4";
             this.bInfoPreset3.UseVisualStyleBackColor = true;
             this.bInfoPreset3.Click += new System.EventHandler(this.bInfoPreset_Click);
+            // 
+            // bHideInfoText
+            // 
+            this.bHideInfoText.Location = new System.Drawing.Point(457, 107);
+            this.bHideInfoText.Name = "bHideInfoText";
+            this.bHideInfoText.Size = new System.Drawing.Size(88, 23);
+            this.bHideInfoText.TabIndex = 2;
+            this.bHideInfoText.Text = "Hide Text";
+            this.bHideInfoText.UseVisualStyleBackColor = true;
+            this.bHideInfoText.Click += new System.EventHandler(this.bToggleText);
             // 
             // bUpdateInfoText
             // 
@@ -1385,27 +1463,14 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.toolStrip1);
+            this.tabPage4.Controls.Add(this.panel4);
             this.tabPage4.Controls.Add(this.tCredits);
-            this.tabPage4.Controls.Add(this.dRoles);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(588, 484);
             this.tabPage4.TabIndex = 8;
             this.tabPage4.Text = "Credits";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.MinimumSize = new System.Drawing.Size(567, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(567, 25);
-            this.toolStrip1.Stretch = true;
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // tCredits
             // 
@@ -1416,78 +1481,14 @@
             this.tCredits.EnableAutoDragDrop = true;
             this.tCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tCredits.ForeColor = System.Drawing.Color.Green;
-            this.tCredits.Location = new System.Drawing.Point(0, 25);
+            this.tCredits.Location = new System.Drawing.Point(0, 357);
             this.tCredits.Margin = new System.Windows.Forms.Padding(0);
             this.tCredits.Name = "tCredits";
-            this.tCredits.Size = new System.Drawing.Size(567, 479);
+            this.tCredits.Size = new System.Drawing.Size(567, 147);
             this.tCredits.TabIndex = 1;
             this.tCredits.Text = "";
+            this.tCredits.Visible = false;
             this.tCredits.TextChanged += new System.EventHandler(this.tCredits_TextChanged);
-            // 
-            // dRoles
-            // 
-            this.dRoles.AllowUserToResizeColumns = false;
-            this.dRoles.AllowUserToResizeRows = false;
-            this.dRoles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dRoles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CreditName,
-            this.CreditRole,
-            this.ScrollSpace});
-            this.dRoles.Location = new System.Drawing.Point(121, 84);
-            this.dRoles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.dRoles.Name = "dRoles";
-            this.dRoles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dRoles.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dRoles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dRoles.Size = new System.Drawing.Size(228, 126);
-            this.dRoles.TabIndex = 0;
-            // 
-            // CreditName
-            // 
-            this.CreditName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CreditName.Frozen = true;
-            this.CreditName.HeaderText = "Name";
-            this.CreditName.Name = "CreditName";
-            this.CreditName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CreditName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CreditName.Width = 300;
-            // 
-            // CreditRole
-            // 
-            this.CreditRole.Frozen = true;
-            this.CreditRole.HeaderText = "Role";
-            this.CreditRole.Items.AddRange(new object[] {
-            "Producer",
-            "Director",
-            "Tech Director",
-            "Graphics",
-            "Audio",
-            "Replay",
-            "Tape Jammer",
-            "Camera",
-            "Camera 1",
-            "Camera 2",
-            "Camera 3",
-            "Camera 4",
-            "Camera 5",
-            "Jib Operator",
-            "Commentator",
-            "Reporter",
-            "Special Thanks"});
-            this.CreditRole.Name = "CreditRole";
-            this.CreditRole.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CreditRole.Width = 200;
-            // 
-            // ScrollSpace
-            // 
-            this.ScrollSpace.Frozen = true;
-            this.ScrollSpace.HeaderText = "   ";
-            this.ScrollSpace.MinimumWidth = 18;
-            this.ScrollSpace.Name = "ScrollSpace";
-            this.ScrollSpace.ReadOnly = true;
-            this.ScrollSpace.Width = 18;
             // 
             // tStats
             // 
@@ -1624,12 +1625,19 @@
             // 
             // bUseCredits
             // 
-            this.bUseCredits.Location = new System.Drawing.Point(181, 12);
+            this.bUseCredits.BackColor = System.Drawing.Color.Silver;
+            this.bUseCredits.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bUseCredits.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.bUseCredits.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.bUseCredits.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.bUseCredits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bUseCredits.Location = new System.Drawing.Point(180, 9);
             this.bUseCredits.Name = "bUseCredits";
-            this.bUseCredits.Size = new System.Drawing.Size(31, 23);
+            this.bUseCredits.Size = new System.Drawing.Size(33, 23);
             this.bUseCredits.TabIndex = 1;
             this.bUseCredits.Text = "   ";
-            this.bUseCredits.UseVisualStyleBackColor = true;
+            this.bUseCredits.UseVisualStyleBackColor = false;
+            this.bUseCredits.Visible = false;
             this.bUseCredits.Click += new System.EventHandler(this.bUseCredits_Click);
             // 
             // bToggleBug
@@ -1755,26 +1763,6 @@
             this.bResetTimeouts.Text = "Reset";
             this.bResetTimeouts.UseVisualStyleBackColor = true;
             // 
-            // bToggleClock
-            // 
-            this.bToggleClock.Location = new System.Drawing.Point(9, 19);
-            this.bToggleClock.Name = "bToggleClock";
-            this.bToggleClock.Size = new System.Drawing.Size(102, 23);
-            this.bToggleClock.TabIndex = 1;
-            this.bToggleClock.Text = "Show Clock";
-            this.bToggleClock.UseVisualStyleBackColor = true;
-            this.bToggleClock.Click += new System.EventHandler(this.bToggleClock_Click);
-            // 
-            // tClockPreview
-            // 
-            this.tClockPreview.Location = new System.Drawing.Point(120, 20);
-            this.tClockPreview.Name = "tClockPreview";
-            this.tClockPreview.ReadOnly = true;
-            this.tClockPreview.Size = new System.Drawing.Size(58, 20);
-            this.tClockPreview.TabIndex = 4;
-            this.tClockPreview.Text = "00:00:0";
-            this.tClockPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // toolStrip2
             // 
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1788,7 +1776,9 @@
             this.toolStripLabel2,
             this.lStatus,
             this.toolStripSeparator5,
-            this.bVersion});
+            this.bVersion,
+            this.toolStripDropDownButton1,
+            this.toolStripSeparator6});
             this.toolStrip2.Location = new System.Drawing.Point(0, 590);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -1847,6 +1837,7 @@
             // 
             // lStatus
             // 
+            this.lStatus.AutoToolTip = true;
             this.lStatus.ForeColor = System.Drawing.Color.Red;
             this.lStatus.Name = "lStatus";
             this.lStatus.Size = new System.Drawing.Size(79, 22);
@@ -1868,40 +1859,161 @@
             this.bVersion.Text = "Version x.x.x.x";
             this.bVersion.Click += new System.EventHandler(this.bVersion_Click);
             // 
-            // gClock
+            // toolStripDropDownButton1
             // 
-            this.gClock.Controls.Add(this.label8);
-            this.gClock.Controls.Add(this.bToggleClock);
-            this.gClock.Controls.Add(this.tClockPreview);
-            this.gClock.Location = new System.Drawing.Point(6, 330);
-            this.gClock.Name = "gClock";
-            this.gClock.Size = new System.Drawing.Size(555, 51);
-            this.gClock.TabIndex = 8;
-            this.gClock.TabStop = false;
-            this.gClock.Text = "Clock";
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iUseForScore,
+            this.iUseForMatchScore,
+            this.iUseForPossession,
+            this.iUseForPeriod,
+            this.iUseForTimeouts,
+            this.iUseForDownYards});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(59, 22);
+            this.toolStripDropDownButton1.Text = "Use For";
+            this.toolStripDropDownButton1.ToolTipText = "Select which items automatically use the data from the FairPlay Controller.";
             // 
-            // label8
+            // iUseForScore
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 27);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 13);
-            this.label8.TabIndex = 0;
+            this.iUseForScore.CheckOnClick = true;
+            this.iUseForScore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.iUseForScore.Name = "iUseForScore";
+            this.iUseForScore.Size = new System.Drawing.Size(150, 22);
+            this.iUseForScore.Text = "Score";
+            this.iUseForScore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iUseForScore.Click += new System.EventHandler(this.iUseForScore_Click);
             // 
-            // bHideInfoText
+            // iUseForMatchScore
             // 
-            this.bHideInfoText.Location = new System.Drawing.Point(457, 107);
-            this.bHideInfoText.Name = "bHideInfoText";
-            this.bHideInfoText.Size = new System.Drawing.Size(88, 23);
-            this.bHideInfoText.TabIndex = 2;
-            this.bHideInfoText.Text = "Hide Text";
-            this.bHideInfoText.UseVisualStyleBackColor = true;
-            this.bHideInfoText.Click += new System.EventHandler(this.bToggleText);
+            this.iUseForMatchScore.CheckOnClick = true;
+            this.iUseForMatchScore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.iUseForMatchScore.Name = "iUseForMatchScore";
+            this.iUseForMatchScore.Size = new System.Drawing.Size(150, 22);
+            this.iUseForMatchScore.Text = "Match Score";
+            this.iUseForMatchScore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iUseForMatchScore.Click += new System.EventHandler(this.iUseForMatchScore_Click);
+            // 
+            // iUseForPossession
+            // 
+            this.iUseForPossession.CheckOnClick = true;
+            this.iUseForPossession.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.iUseForPossession.Name = "iUseForPossession";
+            this.iUseForPossession.Size = new System.Drawing.Size(150, 22);
+            this.iUseForPossession.Text = "Possession";
+            this.iUseForPossession.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iUseForPossession.Click += new System.EventHandler(this.iUseForPossession_Click);
+            // 
+            // iUseForPeriod
+            // 
+            this.iUseForPeriod.CheckOnClick = true;
+            this.iUseForPeriod.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.iUseForPeriod.Name = "iUseForPeriod";
+            this.iUseForPeriod.Size = new System.Drawing.Size(150, 22);
+            this.iUseForPeriod.Text = "Period";
+            this.iUseForPeriod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iUseForPeriod.Click += new System.EventHandler(this.iUseForPeriod_Click);
+            // 
+            // iUseForTimeouts
+            // 
+            this.iUseForTimeouts.CheckOnClick = true;
+            this.iUseForTimeouts.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.iUseForTimeouts.Name = "iUseForTimeouts";
+            this.iUseForTimeouts.Size = new System.Drawing.Size(150, 22);
+            this.iUseForTimeouts.Text = "Timeouts";
+            this.iUseForTimeouts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iUseForTimeouts.Click += new System.EventHandler(this.iUseForTimeouts_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(185, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(187, 24);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "No Settings Available";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label19);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(561, 156);
+            this.panel4.TabIndex = 4;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(158, 22);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(260, 96);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Temporarily Broken\r\n_________________________\r\n\r\nI\'ll fix this soon. Don\'t worry." +
+                "";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // iUseForDownYards
+            // 
+            this.iUseForDownYards.CheckOnClick = true;
+            this.iUseForDownYards.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.iUseForDownYards.Name = "iUseForDownYards";
+            this.iUseForDownYards.Size = new System.Drawing.Size(150, 22);
+            this.iUseForDownYards.Text = "Down && Yards";
+            this.iUseForDownYards.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iUseForDownYards.Click += new System.EventHandler(this.iUseForDownYards_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.DimGray;
+            this.panel5.Location = new System.Drawing.Point(181, 10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(33, 23);
+            this.panel5.TabIndex = 9;
+            this.panel5.Visible = false;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.DimGray;
+            this.panel6.Location = new System.Drawing.Point(132, 10);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(33, 23);
+            this.panel6.TabIndex = 9;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.DimGray;
+            this.panel7.Location = new System.Drawing.Point(79, 10);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(33, 23);
+            this.panel7.TabIndex = 9;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DimGray;
+            this.panel8.Location = new System.Drawing.Point(27, 10);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(33, 23);
+            this.panel8.TabIndex = 9;
             // 
             // Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(616, 615);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.bUseStats);
@@ -1915,6 +2027,10 @@
             this.Controls.Add(this.bUseReplay);
             this.Controls.Add(this.bUseScoreBar);
             this.Controls.Add(this.tabPage);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1934,6 +2050,8 @@
             this.panel1.PerformLayout();
             this.tabPage.ResumeLayout(false);
             this.tabScores.ResumeLayout(false);
+            this.gClock.ResumeLayout(false);
+            this.gClock.PerformLayout();
             this.gPossession.ResumeLayout(false);
             this.gPossession.PerformLayout();
             this.gTimeouts.ResumeLayout(false);
@@ -1953,14 +2071,12 @@
             this.gScores.ResumeLayout(false);
             this.gScores.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dRoles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            this.gClock.ResumeLayout(false);
-            this.gClock.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2018,13 +2134,8 @@
         private System.Windows.Forms.Button bDisplayDownYards;
         private System.Windows.Forms.Button bToggleTimeouts;
         private System.Windows.Forms.Button bToggleBug;
-        private System.Windows.Forms.DataGridView dRoles;
         private System.Windows.Forms.RichTextBox tCredits;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CreditName;
-        private System.Windows.Forms.DataGridViewComboBoxColumn CreditRole;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ScrollSpace;
         private System.Windows.Forms.OpenFileDialog dImageBrowser;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton newToolStripButton;
         private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
@@ -2127,6 +2238,21 @@
         private System.Windows.Forms.GroupBox gClock;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button bHideInfoText;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem iUseForScore;
+        private System.Windows.Forms.ToolStripMenuItem iUseForMatchScore;
+        private System.Windows.Forms.ToolStripMenuItem iUseForPossession;
+        private System.Windows.Forms.ToolStripMenuItem iUseForPeriod;
+        private System.Windows.Forms.ToolStripMenuItem iUseForTimeouts;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ToolStripMenuItem iUseForDownYards;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
 
 
 
