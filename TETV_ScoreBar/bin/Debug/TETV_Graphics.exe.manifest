@@ -64,14 +64,22 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+<<<<<<< HEAD
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2654720">
+=======
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2654208">
+>>>>>>> 54055eb09992d2d9370f37d937e1b7d4de5f2bec
       <assemblyIdentity name="TETV_Graphics" version="2.2.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<<<<<<< HEAD
         <dsig:DigestValue>A985kUTBRq9xGlcpdFTd3L/Kq9E=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>1OwPawqUYTr4++OjW6o1QkQ/A0Y=</dsig:DigestValue>
+>>>>>>> 54055eb09992d2d9370f37d937e1b7d4de5f2bec
       </hash>
     </dependentAssembly>
   </dependency>
