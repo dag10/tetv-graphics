@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using Scoreboard_Communication;
+using System.Threading;
 
 namespace TETV_ScoreBar {
     public partial class Controls : Form {
@@ -19,6 +20,7 @@ namespace TETV_ScoreBar {
         bool[] editingPreset = { false, false, false, false, false, false };
         int screen;
         ScoreboardInterface controller = null;
+        bool connected = false;
         
         #region Constructors
 
@@ -34,6 +36,14 @@ namespace TETV_ScoreBar {
             // Set mode
             mode = GraphicsMode.ScoreBar;
             showGraphics = true;
+
+            // Initialize controller
+            controller = new ScoreboardInterface();
+            controller.StatusChanged += new SerialConnectionStatusChanged(StatusChanged);
+            controller.GameClockUpdated += new GameClockRecordUpdated(GameClockRecordUpdated);
+            controller.DisplayException += new PassException(PassException);
+            Thread controllerThread = new Thread(new ThreadStart(controller.StartThread));
+            controllerThread.Start();
 
             // Hide stats stuff if needed
             bUseStats.Visible = game.gameType == GameType.Basketball || game.gameType == GameType.Wrestling;
@@ -66,6 +76,7 @@ namespace TETV_ScoreBar {
             showTimeouts = Config.GetBool(ConfigKey.ShowTimeouts);
             showBug = Config.GetBool(ConfigKey.ShowBug);
             showHalfTimeClock = Config.GetBool(ConfigKey.ShowHalfTimeClock);
+            showClock = Config.GetBool(ConfigKey.ShowClock);
 
             // Set default control values
             nHomeTimeouts.Value = game.Timeouts[0];
@@ -114,6 +125,7 @@ namespace TETV_ScoreBar {
                     lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
                     tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
                     bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    bHideInfoText.Location = new Point(bHideInfoText.Location.X, bHideInfoText.Location.Y - 29);
                     gInfoText.Height -= 29;
                     break;
                 case GameType.Hockey:
@@ -126,7 +138,7 @@ namespace TETV_ScoreBar {
                     gPossession.Text = "Power Play";
                     bConestogaBall.Text = "Conestoga Power Play";
                     bVisitingBall.Text = "Visitor Power Play";
-                    bNobodysBall.Text = "No Power Play";
+                    bNobodysBall.Text = "None";
                     pDownYards.Visible = false;
                     bInfoPreset5.Location = new Point(303, 19);
                     bEditPreset5.Location = new Point(417, 19);
@@ -135,6 +147,7 @@ namespace TETV_ScoreBar {
                     lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
                     tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
                     bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    bHideInfoText.Location = new Point(bHideInfoText.Location.X, bHideInfoText.Location.Y - 29);
                     gInfoText.Height -= 29;
                     bInfoPreset1.Text = "Penalty";
                     bInfoPreset2.Text = "Goal";
@@ -156,6 +169,7 @@ namespace TETV_ScoreBar {
                     lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
                     tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
                     bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    bHideInfoText.Location = new Point(bHideInfoText.Location.X, bHideInfoText.Location.Y - 29);
                     gInfoText.Height -= 29;
                     bInfoPreset1.Text = "Foul";
                     bInfoPreset2.Text = "Timeout";
@@ -176,6 +190,7 @@ namespace TETV_ScoreBar {
                     lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
                     tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
                     bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    bHideInfoText.Location = new Point(bHideInfoText.Location.X, bHideInfoText.Location.Y - 29);
                     gInfoText.Height -= 29;
                     bInfoPreset1.Text = "Timeout";
                     bInfoPreset2.Text = "Injury Timeout";
@@ -204,6 +219,7 @@ namespace TETV_ScoreBar {
                     lCustomText.Location = new Point(lCustomText.Location.X, lCustomText.Location.Y - 29);
                     tCustomInfoText.Location = new Point(tCustomInfoText.Location.X, tCustomInfoText.Location.Y - 29);
                     bUpdateInfoText.Location = new Point(bUpdateInfoText.Location.X, bUpdateInfoText.Location.Y - 29);
+                    bHideInfoText.Location = new Point(bHideInfoText.Location.X, bHideInfoText.Location.Y - 29);
                     gInfoText.Height -= 29;
                     bIncHome1.Text = "+1";
                     bIncHome2.Text = "+2";
@@ -261,13 +277,14 @@ namespace TETV_ScoreBar {
             }
             set {
                 _showInfoText = value;
-                //bToggleInfoBar.Text = (value ? "Hide Text Bar" : "Show Text Bar");
                 Config.SetValue(ConfigKey.ShowInfoText, value);
                 Config.Save();
                 display.showInfoText = value;
                 display.UpdateDisplay();
-                //gInfoText.Enabled = value;
-                //bToggleInfoBar.BackColor = (value ? Color.LightGreen : Color.Yellow);
+                bHideInfoText.Enabled = value;
+                bHideInfoText.Text = (value ? "Hide Text" : "( Text Hidden )");
+                bHideInfoText.BackColor = (value ? Color.FromName("Control") : Color.Yellow);
+                if (!value) DeselectInfoTextPresets();
             }
         }
 
@@ -334,6 +351,22 @@ namespace TETV_ScoreBar {
                 display.showHalfTimeClock = value && showGraphics;
                 display.UpdateDisplay();
                 bShowHalfTimeClock.BackColor = (value ? Color.LightGreen : Color.Yellow);
+            }
+        }
+
+        bool _showClock;
+        public bool showClock {
+            get {
+                return _showClock;
+            }
+            set {
+                _showClock = value;
+                bToggleClock.Text = (value ? "Hide Clock" : "Show Clock");
+                Config.SetValue(ConfigKey.ShowClock, value);
+                Config.Save();
+                display.showClock = value && showGraphics;
+                display.UpdateDisplay();
+                bToggleClock.BackColor = (value ? Color.LightGreen : Color.Yellow);
             }
         }
 
@@ -601,7 +634,7 @@ namespace TETV_ScoreBar {
                     showOldInfoText = showInfoText;
                 }
                 showInfoText = true;
-                game.infoText = "^ Power Play  ";
+                game.infoText = "<- Power Play  ";
             }
             display.UpdateDisplay();
         }
@@ -617,7 +650,7 @@ namespace TETV_ScoreBar {
                     showOldInfoText = showInfoText;
                 }
                 showInfoText = true;
-                game.infoText = "  Power Play ^";
+                game.infoText = "Power Play ->";
             }
             display.UpdateDisplay();
         }
@@ -658,6 +691,10 @@ namespace TETV_ScoreBar {
         #endregion
 
         #region Info Text
+
+        private void bToggleText(object sender, EventArgs e) {
+            showInfoText = !showInfoText;
+        }
 
         private void bUpdateInfoText_Click(object sender, EventArgs e) {
             game.infoText = tCustomInfoText.Text;
@@ -981,12 +1018,58 @@ namespace TETV_ScoreBar {
         }
 
         private void bStartStop_Click(object sender, EventArgs e) {
+            if (connected) {
+                controller.StopSerialConnection();
+            } else {
+                controller.StartSerialConnection(cSerialPort.Text);
+            }
+        }
 
+        private void bToggleClock_Click(object sender, EventArgs e) {
+            showClock = !showClock;
+        }
+
+        private void Controls_FormClosing(object sender, FormClosingEventArgs e) {
+            controller.StopThread();
         }
 
         #endregion
 
         #region Scoreboard Controller Delegates
+
+        void PassException(Exception e) {
+            MessageBox.Show(e.Message, "Error");
+        }
+
+        public void StatusChanged(bool status) {
+            try {
+                connected = status;
+
+                lStatus.Text = (status ? "Connected" : "Disconnected");
+                lStatus.ForeColor = (status ? Color.Green : Color.Red);
+                bStartStop.Text = (status ? "Disconnect" : "Connect");
+                cSerialPort.Enabled = !status;
+            } catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        private delegate void GameClockRecordUpdatedCallback(Game_Clock_Record record);
+        public void GameClockRecordUpdated(Game_Clock_Record record) {
+            if (InvokeRequired) {
+                GameClockRecordUpdatedCallback callback = new GameClockRecordUpdatedCallback(GameClockRecordUpdated);
+                Invoke(callback, new object[] { record });
+            } else {
+                if (record.ClockChanged) {
+                    game.Clock = record.Clock;
+                    tClockPreview.Text = (game.Clock[0].ToString("D2") + ":" + game.Clock[1].ToString("D2") + (game.Clock[0] == 0 ? ":" + game.Clock[2] : ""));
+                } if (record.PeriodChanged) {
+                    game.Quarter = record.Period;
+                }
+
+                display.DataWasUpdated();
+            }
+        }
 
         #endregion
 

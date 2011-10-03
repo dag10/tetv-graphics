@@ -36,19 +36,24 @@
             this.bBugBottom = new System.Windows.Forms.Button();
             this.bPresetBottom = new System.Windows.Forms.Button();
             this.bPresetCenter = new System.Windows.Forms.Button();
+            this.bHalfTimeRight = new System.Windows.Forms.Button();
             this.bReplayRight = new System.Windows.Forms.Button();
             this.bBugRight = new System.Windows.Forms.Button();
             this.bPresetRight = new System.Windows.Forms.Button();
+            this.bHalfTimeLeft = new System.Windows.Forms.Button();
             this.bReplayLeft = new System.Windows.Forms.Button();
             this.bBugLeft = new System.Windows.Forms.Button();
             this.bPresetLeft = new System.Windows.Forms.Button();
             this.bBugTop = new System.Windows.Forms.Button();
+            this.nHalfTimeY = new System.Windows.Forms.NumericUpDown();
             this.bPresetTop = new System.Windows.Forms.Button();
             this.nReplayY = new System.Windows.Forms.NumericUpDown();
             this.nBugY = new System.Windows.Forms.NumericUpDown();
+            this.nHalfTimeX = new System.Windows.Forms.NumericUpDown();
             this.nBoardY = new System.Windows.Forms.NumericUpDown();
             this.nReplayX = new System.Windows.Forms.NumericUpDown();
             this.nBugX = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.nBoardX = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,24 +68,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.bAbout = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.nHalfTimeX = new System.Windows.Forms.NumericUpDown();
-            this.nHalfTimeY = new System.Windows.Forms.NumericUpDown();
-            this.bHalfTimeLeft = new System.Windows.Forms.Button();
-            this.bHalfTimeRight = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cPreviewClock = new System.Windows.Forms.CheckBox();
+            this.cPreviewInfoText = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.pStatPosition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nStatX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nStatY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReplayY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBugY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBoardY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReplayX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBugX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBoardX)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeY)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -238,6 +242,16 @@
             this.bPresetCenter.UseVisualStyleBackColor = true;
             this.bPresetCenter.Click += new System.EventHandler(this.bPresetCenter_Click);
             // 
+            // bHalfTimeRight
+            // 
+            this.bHalfTimeRight.Location = new System.Drawing.Point(455, 71);
+            this.bHalfTimeRight.Name = "bHalfTimeRight";
+            this.bHalfTimeRight.Size = new System.Drawing.Size(45, 22);
+            this.bHalfTimeRight.TabIndex = 3;
+            this.bHalfTimeRight.Text = "Right";
+            this.bHalfTimeRight.UseVisualStyleBackColor = true;
+            this.bHalfTimeRight.Click += new System.EventHandler(this.bHalfTimeRight_Click);
+            // 
             // bReplayRight
             // 
             this.bReplayRight.Location = new System.Drawing.Point(455, 44);
@@ -267,6 +281,16 @@
             this.bPresetRight.Text = "Right";
             this.bPresetRight.UseVisualStyleBackColor = true;
             this.bPresetRight.Click += new System.EventHandler(this.bPresetRight_Click);
+            // 
+            // bHalfTimeLeft
+            // 
+            this.bHalfTimeLeft.Location = new System.Drawing.Point(341, 70);
+            this.bHalfTimeLeft.Name = "bHalfTimeLeft";
+            this.bHalfTimeLeft.Size = new System.Drawing.Size(45, 22);
+            this.bHalfTimeLeft.TabIndex = 3;
+            this.bHalfTimeLeft.Text = "Left";
+            this.bHalfTimeLeft.UseVisualStyleBackColor = true;
+            this.bHalfTimeLeft.Click += new System.EventHandler(this.bHalfTimeLeft_Click);
             // 
             // bReplayLeft
             // 
@@ -308,6 +332,19 @@
             this.bBugTop.UseVisualStyleBackColor = true;
             this.bBugTop.Click += new System.EventHandler(this.BugTop);
             // 
+            // nHalfTimeY
+            // 
+            this.nHalfTimeY.Location = new System.Drawing.Point(163, 72);
+            this.nHalfTimeY.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nHalfTimeY.Name = "nHalfTimeY";
+            this.nHalfTimeY.Size = new System.Drawing.Size(43, 20);
+            this.nHalfTimeY.TabIndex = 2;
+            this.nHalfTimeY.ValueChanged += new System.EventHandler(this.nHalfTime_ValueChanged);
+            // 
             // bPresetTop
             // 
             this.bPresetTop.Location = new System.Drawing.Point(221, 18);
@@ -343,6 +380,19 @@
             this.nBugY.Size = new System.Drawing.Size(43, 20);
             this.nBugY.TabIndex = 2;
             this.nBugY.ValueChanged += new System.EventHandler(this.BugPositionValueChanged);
+            // 
+            // nHalfTimeX
+            // 
+            this.nHalfTimeX.Location = new System.Drawing.Point(114, 72);
+            this.nHalfTimeX.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nHalfTimeX.Name = "nHalfTimeX";
+            this.nHalfTimeX.Size = new System.Drawing.Size(43, 20);
+            this.nHalfTimeX.TabIndex = 2;
+            this.nHalfTimeX.ValueChanged += new System.EventHandler(this.nHalfTime_ValueChanged);
             // 
             // nBoardY
             // 
@@ -382,6 +432,15 @@
             this.nBugX.Size = new System.Drawing.Size(43, 20);
             this.nBugX.TabIndex = 2;
             this.nBugX.ValueChanged += new System.EventHandler(this.BugPositionValueChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 76);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Half-Time Position";
             // 
             // nBoardX
             // 
@@ -447,7 +506,7 @@
             // 
             this.bSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bSave.Location = new System.Drawing.Point(420, 257);
+            this.bSave.Location = new System.Drawing.Point(417, 255);
             this.bSave.Name = "bSave";
             this.bSave.Size = new System.Drawing.Size(78, 23);
             this.bSave.TabIndex = 100;
@@ -523,7 +582,7 @@
             // 
             this.bAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bAbout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bAbout.Location = new System.Drawing.Point(321, 257);
+            this.bAbout.Location = new System.Drawing.Point(321, 255);
             this.bAbout.Name = "bAbout";
             this.bAbout.Size = new System.Drawing.Size(63, 23);
             this.bAbout.TabIndex = 100;
@@ -531,67 +590,48 @@
             this.bAbout.UseVisualStyleBackColor = true;
             this.bAbout.Click += new System.EventHandler(this.bAbout_Click);
             // 
-            // label10
+            // groupBox3
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 76);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Half-Time Position";
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.cPreviewInfoText);
+            this.groupBox3.Controls.Add(this.cPreviewClock);
+            this.groupBox3.Location = new System.Drawing.Point(284, 207);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(246, 40);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Preview Scoreboard Elements";
             // 
-            // nHalfTimeX
+            // cPreviewClock
             // 
-            this.nHalfTimeX.Location = new System.Drawing.Point(114, 72);
-            this.nHalfTimeX.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.nHalfTimeX.Name = "nHalfTimeX";
-            this.nHalfTimeX.Size = new System.Drawing.Size(43, 20);
-            this.nHalfTimeX.TabIndex = 2;
-            this.nHalfTimeX.ValueChanged += new System.EventHandler(this.nHalfTime_ValueChanged);
+            this.cPreviewClock.AutoSize = true;
+            this.cPreviewClock.Location = new System.Drawing.Point(7, 20);
+            this.cPreviewClock.Name = "cPreviewClock";
+            this.cPreviewClock.Size = new System.Drawing.Size(53, 17);
+            this.cPreviewClock.TabIndex = 0;
+            this.cPreviewClock.Text = "Clock";
+            this.cPreviewClock.UseVisualStyleBackColor = true;
+            this.cPreviewClock.CheckedChanged += new System.EventHandler(this.cPreviewClock_CheckedChanged);
             // 
-            // nHalfTimeY
+            // cPreviewInfoText
             // 
-            this.nHalfTimeY.Location = new System.Drawing.Point(163, 72);
-            this.nHalfTimeY.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.nHalfTimeY.Name = "nHalfTimeY";
-            this.nHalfTimeY.Size = new System.Drawing.Size(43, 20);
-            this.nHalfTimeY.TabIndex = 2;
-            this.nHalfTimeY.ValueChanged += new System.EventHandler(this.nHalfTime_ValueChanged);
-            // 
-            // bHalfTimeLeft
-            // 
-            this.bHalfTimeLeft.Location = new System.Drawing.Point(341, 70);
-            this.bHalfTimeLeft.Name = "bHalfTimeLeft";
-            this.bHalfTimeLeft.Size = new System.Drawing.Size(45, 22);
-            this.bHalfTimeLeft.TabIndex = 3;
-            this.bHalfTimeLeft.Text = "Left";
-            this.bHalfTimeLeft.UseVisualStyleBackColor = true;
-            this.bHalfTimeLeft.Click += new System.EventHandler(this.bHalfTimeLeft_Click);
-            // 
-            // bHalfTimeRight
-            // 
-            this.bHalfTimeRight.Location = new System.Drawing.Point(455, 71);
-            this.bHalfTimeRight.Name = "bHalfTimeRight";
-            this.bHalfTimeRight.Size = new System.Drawing.Size(45, 22);
-            this.bHalfTimeRight.TabIndex = 3;
-            this.bHalfTimeRight.Text = "Right";
-            this.bHalfTimeRight.UseVisualStyleBackColor = true;
-            this.bHalfTimeRight.Click += new System.EventHandler(this.bHalfTimeRight_Click);
+            this.cPreviewInfoText.AutoSize = true;
+            this.cPreviewInfoText.Location = new System.Drawing.Point(83, 20);
+            this.cPreviewInfoText.Name = "cPreviewInfoText";
+            this.cPreviewInfoText.Size = new System.Drawing.Size(47, 17);
+            this.cPreviewInfoText.TabIndex = 0;
+            this.cPreviewInfoText.Text = "Text";
+            this.cPreviewInfoText.UseVisualStyleBackColor = true;
+            this.cPreviewInfoText.CheckedChanged += new System.EventHandler(this.cPreviewInfoText_CheckedChanged);
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 293);
+            this.ClientSize = new System.Drawing.Size(542, 290);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.bAbout);
             this.Controls.Add(this.bSave);
@@ -607,16 +647,18 @@
             this.pStatPosition.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nStatX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nStatY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReplayY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBugY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBoardY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nReplayX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBugX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nBoardX)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nHalfTimeY)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -668,5 +710,8 @@
         private System.Windows.Forms.NumericUpDown nHalfTimeY;
         private System.Windows.Forms.NumericUpDown nHalfTimeX;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox cPreviewClock;
+        private System.Windows.Forms.CheckBox cPreviewInfoText;
     }
 }

@@ -26,10 +26,9 @@ namespace TETV_ScoreBar {
         public bool halftime = false;
         public bool usingDoubleScores = false;
         public bool showPeriod = true;
+        public bool showClock = true;
         public const int ScreenPadding = 60;
         public string creditsRTF = "";
-        string replayImage = "";
-        //string boardImage = "";
         string leftTipImage = "";
         string rightTipImage = "";
         bool screenSet = false;
@@ -79,6 +78,7 @@ namespace TETV_ScoreBar {
             lHalfTime.ForeColor = Color.FromArgb(102, 0, 0);
             lHalfTimeClock.ForeColor = Color.FromArgb(102, 0, 0);
             lReplay.ForeColor = Color.FromArgb(102, 0, 0);
+            lClock.ForeColor = Color.FromArgb(102, 0, 0);
         }
 
         #endregion
@@ -169,9 +169,9 @@ namespace TETV_ScoreBar {
                 this.lQuarter.Text = "OT";
             else
                 this.lQuarter.Text = Utils.ToOrderedString(game.Quarter);
-            this.pBar.Location = game.ScoreBoardPosition;
 
             // Set positions
+            this.pBar.Location = new Point(game.ScoreBoardPosition.X - (this.pBar.Width / 2), game.ScoreBoardPosition.Y);
             this.pReplay.Location = game.ReplayPosition;
             this.pHalfTime.Location = game.HalfTimePosition;
             this.pBug.Location = game.BugPosition;
@@ -194,17 +194,13 @@ namespace TETV_ScoreBar {
             pBug.Visible = showBug;
             pStat.Visible = showStats;
 
-            // Show right score type
+            // Show left score
             if (usingDoubleScores) {
                 ShowBarSegment(pScoreLD, pBar);
                 HideBarSegment(pScoreLS, pBar);
-                ShowBarSegment(pScoreRD, pBar);
-                HideBarSegment(pScoreRS, pBar);
             } else {
                 HideBarSegment(pScoreLD, pBar);
                 ShowBarSegment(pScoreLS, pBar);
-                HideBarSegment(pScoreRD, pBar);
-                ShowBarSegment(pScoreRS, pBar);
             }
 
             // Show period
@@ -215,6 +211,37 @@ namespace TETV_ScoreBar {
                 HideBarSegment(pPeriodDivider, pBar);
                 HideBarSegment(pPeriod, pBar);
             }
+
+            // Show clock
+            if (showClock) {
+                ShowBarSegment(pClockDivider, pBar);
+                ShowBarSegment(pClock, pBar);
+            } else {
+                HideBarSegment(pClockDivider, pBar);
+                HideBarSegment(pClock, pBar);
+            }
+
+            // Show text
+            if (showInfoText) {
+                ShowBarSegment(pInfoTextDivider, pBar);
+                ShowBarSegment(pInfoText, pBar);
+            } else {
+                HideBarSegment(pInfoTextDivider, pBar);
+                HideBarSegment(pInfoText, pBar);
+            }
+
+            // Show right score
+            if (usingDoubleScores) {
+                ShowBarSegment(pScoreRD, pBar);
+                HideBarSegment(pScoreRS, pBar);
+            } else {
+                HideBarSegment(pScoreRD, pBar);
+                ShowBarSegment(pScoreRS, pBar);
+            }
+
+            // Update clocks
+            lClock.Text = (game.Clock[0].ToString("D2") + ":" + game.Clock[1].ToString("D2") + (game.Clock[0] == 0 ? ":" + game.Clock[2] : ""));
+            lHalfTimeClock.Text = (game.Clock[0].ToString("D2") + ":" + game.Clock[1].ToString("D2"));
 
             if (showTimeouts != wasShowingTimeouts) {
                 pLT1.Visible = showTimeouts;
@@ -254,10 +281,13 @@ namespace TETV_ScoreBar {
                 HideBarSegment(pHalfTimeClockDivider, pHalfTime);
                 HideBarSegment(pHalfTimeClock, pHalfTime);
             }
+
+            // Only update layout here (prevents redundant updates, speeds up updating)
+            this.ResumeLayout(false);
+            this.SuspendLayout();
         }
 
         public void HideButtons() {
-            bOtherSide.Hide();
             editMode = false;
         }
 
@@ -375,7 +405,7 @@ namespace TETV_ScoreBar {
 
             Point p = PointToClient(Cursor.Position);
 
-            dragOffset = new Point(p.X - pBar.Location.X, p.Y - pBar.Location.Y);
+            dragOffset = new Point(p.X - (pBar.Location.X + (pBar.Width / 2)), p.Y - pBar.Location.Y);
             dragTarget = pBar;
         }
 
@@ -435,6 +465,7 @@ namespace TETV_ScoreBar {
 
             if (p.X - dragOffset.X < 0) p.X = dragOffset.X;
             if (p.Y - dragOffset.Y < 0) p.Y = dragOffset.Y;
+            if (dragTarget == pBar && p.X < dragOffset.X + (pBar.Width / 2)) p.X = dragOffset.X + (pBar.Width / 2);
 
             if (dragTarget == pBar) {
                 game.ScoreBoardPosition.X = p.X - dragOffset.X;
@@ -454,6 +485,7 @@ namespace TETV_ScoreBar {
             } else return;
 
             UpdateDisplay();
+            controls.ReloadValues();
         }
 
 
@@ -467,11 +499,12 @@ namespace TETV_ScoreBar {
             foreach (Panel g in bar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
                 if (g.Location.X > (segment.Location.X))
                     g.Location = new Point(g.Location.X - (segment.Width), g.Location.Y);
+
             bar.Width -= segment.Width;
 
             segment.Visible = false;
 
-            this.Update();
+            this.UpdateDisplay();
         }
 
         void ShowBarSegment(Panel segment, Panel bar) {
@@ -480,11 +513,38 @@ namespace TETV_ScoreBar {
             foreach (Panel g in bar.Controls.OfType<Panel>().OrderBy(box => box.Location.X).ToList<Panel>())
                 if (g.Location.X >= (segment.Location.X) && g.Name != segment.Name)
                     g.Location = new Point(g.Location.X + (segment.Width), g.Location.Y);
+
             bar.Width += segment.Width;
 
             segment.Visible = true;
 
-            this.Update();
+            this.UpdateDisplay();
+        }
+
+        #endregion
+
+        #region Updating
+
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000; // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
+
+        #endregion
+
+        #region Data Updating
+
+        private delegate void DataWasUpdatedCallback();
+        public void DataWasUpdated() {
+            if (InvokeRequired) {
+                DataWasUpdatedCallback callback = new DataWasUpdatedCallback(DataWasUpdated);
+                Invoke(callback, new object[] {});
+            } else {
+                UpdateDisplay();
+            }
         }
 
         #endregion

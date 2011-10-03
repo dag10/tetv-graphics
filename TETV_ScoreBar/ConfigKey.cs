@@ -17,6 +17,7 @@
         ShowScores,
         ShowTimeouts,
         ShowHalfTimeClock,
+        ShowClock,
         ShowBug,
         CreditsFile,
         SerialPort

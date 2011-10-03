@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.bOtherSide = new System.Windows.Forms.Button();
             this.pCredits = new System.Windows.Forms.Panel();
             this.pInnerCredits = new System.Windows.Forms.Panel();
             this.tCredits = new System.Windows.Forms.RichTextBox();
@@ -41,11 +40,14 @@
             this.pScoreLS = new System.Windows.Forms.Panel();
             this.lScore1 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.pClockDivider = new System.Windows.Forms.Panel();
+            this.pInfoTextDivider = new System.Windows.Forms.Panel();
+            this.pClock = new System.Windows.Forms.Panel();
+            this.lClock = new System.Windows.Forms.Label();
             this.pPeriodDivider = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.pInfoText = new System.Windows.Forms.Panel();
             this.lInfoText = new System.Windows.Forms.Label();
             this.pPeriod = new System.Windows.Forms.Panel();
             this.lQuarter = new System.Windows.Forms.Label();
@@ -89,7 +91,8 @@
             this.pScoreRS.SuspendLayout();
             this.pScoreLD.SuspendLayout();
             this.pScoreLS.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.pClock.SuspendLayout();
+            this.pInfoText.SuspendLayout();
             this.pPeriod.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -101,25 +104,12 @@
             this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bOtherSide
-            // 
-            this.bOtherSide.Location = new System.Drawing.Point(12, 12);
-            this.bOtherSide.Name = "bOtherSide";
-            this.bOtherSide.Size = new System.Drawing.Size(126, 39);
-            this.bOtherSide.TabIndex = 1;
-            this.bOtherSide.Text = "Don\'t use this monitor for Display";
-            this.bOtherSide.UseVisualStyleBackColor = true;
-            this.bOtherSide.Visible = false;
-            this.bOtherSide.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.bOtherSide.Click += new System.EventHandler(this.bOtherSide_Click);
-            this.bOtherSide.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            // 
             // pCredits
             // 
             this.pCredits.BackColor = System.Drawing.Color.DarkGray;
             this.pCredits.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pCredits.Controls.Add(this.pInnerCredits);
-            this.pCredits.Location = new System.Drawing.Point(1395, 87);
+            this.pCredits.Location = new System.Drawing.Point(1631, 129);
             this.pCredits.Name = "pCredits";
             this.pCredits.Size = new System.Drawing.Size(441, 537);
             this.pCredits.TabIndex = 7;
@@ -166,6 +156,7 @@
             // 
             // pBar
             // 
+            this.pBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pBar.Controls.Add(this.pScoreRD);
             this.pBar.Controls.Add(this.pRightTip);
             this.pBar.Controls.Add(this.pLeftTip);
@@ -173,17 +164,19 @@
             this.pBar.Controls.Add(this.pScoreLD);
             this.pBar.Controls.Add(this.pScoreLS);
             this.pBar.Controls.Add(this.panel12);
-            this.pBar.Controls.Add(this.panel10);
+            this.pBar.Controls.Add(this.pClockDivider);
+            this.pBar.Controls.Add(this.pInfoTextDivider);
+            this.pBar.Controls.Add(this.pClock);
             this.pBar.Controls.Add(this.pPeriodDivider);
             this.pBar.Controls.Add(this.panel13);
             this.pBar.Controls.Add(this.panel7);
-            this.pBar.Controls.Add(this.panel11);
+            this.pBar.Controls.Add(this.pInfoText);
             this.pBar.Controls.Add(this.pPeriod);
             this.pBar.Controls.Add(this.panel14);
             this.pBar.Controls.Add(this.panel2);
             this.pBar.Location = new System.Drawing.Point(12, 339);
             this.pBar.Name = "pBar";
-            this.pBar.Size = new System.Drawing.Size(1179, 57);
+            this.pBar.Size = new System.Drawing.Size(1309, 57);
             this.pBar.TabIndex = 4;
             this.pBar.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
             this.pBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
@@ -196,7 +189,7 @@
             this.pScoreRD.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.score_dr;
             this.pScoreRD.Controls.Add(this.lScoreRS);
             this.pScoreRD.Controls.Add(this.lScoreRP);
-            this.pScoreRD.Location = new System.Drawing.Point(733, 0);
+            this.pScoreRD.Location = new System.Drawing.Point(862, 0);
             this.pScoreRD.Margin = new System.Windows.Forms.Padding(0);
             this.pScoreRD.Name = "pScoreRD";
             this.pScoreRD.Size = new System.Drawing.Size(180, 57);
@@ -248,7 +241,7 @@
             // pRightTip
             // 
             this.pRightTip.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.tip_r;
-            this.pRightTip.Location = new System.Drawing.Point(1121, 0);
+            this.pRightTip.Location = new System.Drawing.Point(1250, 0);
             this.pRightTip.Margin = new System.Windows.Forms.Padding(0);
             this.pRightTip.Name = "pRightTip";
             this.pRightTip.Size = new System.Drawing.Size(55, 57);
@@ -277,7 +270,7 @@
             // 
             this.pScoreRS.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.score;
             this.pScoreRS.Controls.Add(this.lScore2);
-            this.pScoreRS.Location = new System.Drawing.Point(913, 0);
+            this.pScoreRS.Location = new System.Drawing.Point(1042, 0);
             this.pScoreRS.Margin = new System.Windows.Forms.Padding(0);
             this.pScoreRS.Name = "pScoreRS";
             this.pScoreRS.Size = new System.Drawing.Size(117, 57);
@@ -393,7 +386,7 @@
             // panel12
             // 
             this.panel12.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.divider;
-            this.panel12.Location = new System.Drawing.Point(723, 0);
+            this.panel12.Location = new System.Drawing.Point(852, 0);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(5, 57);
@@ -404,19 +397,69 @@
             this.panel12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.panel12.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
-            // panel10
+            // pClockDivider
             // 
-            this.panel10.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.divider;
-            this.panel10.Location = new System.Drawing.Point(535, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 57);
-            this.panel10.TabIndex = 5;
-            this.panel10.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.panel10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.panel10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.panel10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.panel10.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            this.pClockDivider.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.divider;
+            this.pClockDivider.Location = new System.Drawing.Point(723, 0);
+            this.pClockDivider.Margin = new System.Windows.Forms.Padding(0);
+            this.pClockDivider.Name = "pClockDivider";
+            this.pClockDivider.Size = new System.Drawing.Size(5, 57);
+            this.pClockDivider.TabIndex = 5;
+            this.pClockDivider.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.pClockDivider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.pClockDivider.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.pClockDivider.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.pClockDivider.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // pInfoTextDivider
+            // 
+            this.pInfoTextDivider.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.divider;
+            this.pInfoTextDivider.Location = new System.Drawing.Point(535, 0);
+            this.pInfoTextDivider.Margin = new System.Windows.Forms.Padding(0);
+            this.pInfoTextDivider.Name = "pInfoTextDivider";
+            this.pInfoTextDivider.Size = new System.Drawing.Size(5, 57);
+            this.pInfoTextDivider.TabIndex = 5;
+            this.pInfoTextDivider.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.pInfoTextDivider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.pInfoTextDivider.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.pInfoTextDivider.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.pInfoTextDivider.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // pClock
+            // 
+            this.pClock.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
+            this.pClock.Controls.Add(this.lClock);
+            this.pClock.Location = new System.Drawing.Point(728, 0);
+            this.pClock.Margin = new System.Windows.Forms.Padding(0);
+            this.pClock.Name = "pClock";
+            this.pClock.Size = new System.Drawing.Size(124, 57);
+            this.pClock.TabIndex = 5;
+            this.pClock.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.pClock.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.pClock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.pClock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.pClock.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            // 
+            // lClock
+            // 
+            this.lClock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.lClock.BackColor = System.Drawing.Color.Transparent;
+            this.lClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lClock.ForeColor = System.Drawing.Color.Black;
+            this.lClock.Location = new System.Drawing.Point(1, 9);
+            this.lClock.Margin = new System.Windows.Forms.Padding(0);
+            this.lClock.Name = "lClock";
+            this.lClock.Size = new System.Drawing.Size(123, 40);
+            this.lClock.TabIndex = 5;
+            this.lClock.Text = "00:00:0";
+            this.lClock.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lClock.UseCompatibleTextRendering = true;
+            this.lClock.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.lClock.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.lClock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.lClock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.lClock.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
             // pPeriodDivider
             // 
@@ -435,7 +478,7 @@
             // panel13
             // 
             this.panel13.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
-            this.panel13.Location = new System.Drawing.Point(728, 0);
+            this.panel13.Location = new System.Drawing.Point(857, 0);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(5, 57);
@@ -460,20 +503,20 @@
             this.panel7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.panel7.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
-            // panel11
+            // pInfoText
             // 
-            this.panel11.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
-            this.panel11.Controls.Add(this.lInfoText);
-            this.panel11.Location = new System.Drawing.Point(540, 0);
-            this.panel11.Margin = new System.Windows.Forms.Padding(0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(183, 57);
-            this.panel11.TabIndex = 5;
-            this.panel11.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
-            this.panel11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
-            this.panel11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
-            this.panel11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
-            this.panel11.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
+            this.pInfoText.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.center;
+            this.pInfoText.Controls.Add(this.lInfoText);
+            this.pInfoText.Location = new System.Drawing.Point(540, 0);
+            this.pInfoText.Margin = new System.Windows.Forms.Padding(0);
+            this.pInfoText.Name = "pInfoText";
+            this.pInfoText.Size = new System.Drawing.Size(183, 57);
+            this.pInfoText.TabIndex = 5;
+            this.pInfoText.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
+            this.pInfoText.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
+            this.pInfoText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragBoard);
+            this.pInfoText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
+            this.pInfoText.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
             // lInfoText
             // 
@@ -481,15 +524,15 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lInfoText.AutoSize = true;
             this.lInfoText.BackColor = System.Drawing.Color.Transparent;
-            this.lInfoText.Font = new System.Drawing.Font("Impact", 20.25F);
+            this.lInfoText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lInfoText.ForeColor = System.Drawing.Color.Black;
             this.lInfoText.Location = new System.Drawing.Point(1, 9);
             this.lInfoText.Margin = new System.Windows.Forms.Padding(0);
             this.lInfoText.MinimumSize = new System.Drawing.Size(180, 0);
             this.lInfoText.Name = "lInfoText";
-            this.lInfoText.Size = new System.Drawing.Size(180, 40);
+            this.lInfoText.Size = new System.Drawing.Size(180, 37);
             this.lInfoText.TabIndex = 5;
-            this.lInfoText.Text = "1st & 10";
+            this.lInfoText.Text = "1st && 10";
             this.lInfoText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lInfoText.UseCompatibleTextRendering = true;
             this.lInfoText.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
@@ -517,12 +560,12 @@
             // 
             this.lQuarter.AutoSize = true;
             this.lQuarter.BackColor = System.Drawing.Color.Transparent;
-            this.lQuarter.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lQuarter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lQuarter.ForeColor = System.Drawing.Color.Black;
             this.lQuarter.Location = new System.Drawing.Point(15, 9);
             this.lQuarter.MinimumSize = new System.Drawing.Size(50, 0);
             this.lQuarter.Name = "lQuarter";
-            this.lQuarter.Size = new System.Drawing.Size(50, 34);
+            this.lQuarter.Size = new System.Drawing.Size(54, 31);
             this.lQuarter.TabIndex = 5;
             this.lQuarter.Text = "1st";
             this.lQuarter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -540,7 +583,7 @@
             this.panel14.Controls.Add(this.lAbbr2);
             this.panel14.Controls.Add(this.pRT2);
             this.panel14.Controls.Add(this.pRT1);
-            this.panel14.Location = new System.Drawing.Point(1030, 0);
+            this.panel14.Location = new System.Drawing.Point(1159, 0);
             this.panel14.Margin = new System.Windows.Forms.Padding(0);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(91, 57);
@@ -928,9 +971,9 @@
             // lHalfTimeClock
             // 
             this.lHalfTimeClock.BackColor = System.Drawing.Color.Transparent;
-            this.lHalfTimeClock.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHalfTimeClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lHalfTimeClock.ForeColor = System.Drawing.Color.Black;
-            this.lHalfTimeClock.Location = new System.Drawing.Point(4, 9);
+            this.lHalfTimeClock.Location = new System.Drawing.Point(3, 8);
             this.lHalfTimeClock.MinimumSize = new System.Drawing.Size(50, 0);
             this.lHalfTimeClock.Name = "lHalfTimeClock";
             this.lHalfTimeClock.Size = new System.Drawing.Size(87, 34);
@@ -962,7 +1005,7 @@
             // 
             this.lHalfTime.AutoSize = true;
             this.lHalfTime.BackColor = System.Drawing.Color.Transparent;
-            this.lHalfTime.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lHalfTime.Font = new System.Drawing.Font("Impact", 20.25F);
             this.lHalfTime.ForeColor = System.Drawing.Color.Black;
             this.lHalfTime.Location = new System.Drawing.Point(7, 9);
             this.lHalfTime.MinimumSize = new System.Drawing.Size(50, 0);
@@ -996,7 +1039,7 @@
             this.pReplay.Controls.Add(this.panel6);
             this.pReplay.Controls.Add(this.panel8);
             this.pReplay.Controls.Add(this.panel15);
-            this.pReplay.Location = new System.Drawing.Point(862, 41);
+            this.pReplay.Location = new System.Drawing.Point(937, 174);
             this.pReplay.Name = "pReplay";
             this.pReplay.Size = new System.Drawing.Size(220, 57);
             this.pReplay.TabIndex = 9;
@@ -1073,14 +1116,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1436, 742);
+            this.ClientSize = new System.Drawing.Size(1859, 742);
             this.Controls.Add(this.pReplay);
             this.Controls.Add(this.pHalfTime);
             this.Controls.Add(this.pStat);
             this.Controls.Add(this.pCredits);
             this.Controls.Add(this.pBug);
             this.Controls.Add(this.pBar);
-            this.Controls.Add(this.bOtherSide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Display";
             this.ShowIcon = false;
@@ -1099,8 +1141,9 @@
             this.pScoreLD.PerformLayout();
             this.pScoreLS.ResumeLayout(false);
             this.pScoreLS.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.pClock.ResumeLayout(false);
+            this.pInfoText.ResumeLayout(false);
+            this.pInfoText.PerformLayout();
             this.pPeriod.ResumeLayout(false);
             this.pPeriod.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -1122,7 +1165,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button bOtherSide;
         private System.Windows.Forms.Label lInfoText;
         private System.Windows.Forms.Label lScore1;
         private System.Windows.Forms.Label lAbbr1;
@@ -1149,8 +1191,8 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pPeriod;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel pInfoTextDivider;
+        private System.Windows.Forms.Panel pInfoText;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label lAbbr2;
@@ -1181,5 +1223,8 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label lReplay;
+        private System.Windows.Forms.Panel pClock;
+        private System.Windows.Forms.Label lClock;
+        private System.Windows.Forms.Panel pClockDivider;
     }
 }

@@ -31,6 +31,11 @@ namespace TETV_ScoreBar {
                 display.Show();
                 HandleValueChange();
 
+                // Initial privew states
+                display.showClock = cPreviewClock.Checked = Config.GetBool(ConfigKey.ShowClock);
+                display.showInfoText = cPreviewInfoText.Checked = Config.GetBool(ConfigKey.ShowInfoText);
+                display.UpdateDisplay();
+
             } catch (Exception e) {
                 MessageBox.Show(e.ToString(), "Unhandled Exception in Settings");
             }
@@ -210,7 +215,7 @@ namespace TETV_ScoreBar {
         }
 
         private void bPresetCenter_Click(object sender, EventArgs e) {
-            nBoardX.Value = (display.Width / 2) - (display.BoardSize.X / 2);
+            nBoardX.Value = (display.Width / 2);
             HandleValueChange();
         }
 
@@ -346,6 +351,20 @@ namespace TETV_ScoreBar {
             if (!hasLoaded) return;
             game.TeamAbbr[1] = tAbbr2.Text;
             HandleValueChange();
+        }
+
+        #endregion
+
+        #region Previews
+
+        private void cPreviewClock_CheckedChanged(object sender, EventArgs e) {
+            display.showClock = cPreviewClock.Checked;
+            display.UpdateDisplay();
+        }
+
+        private void cPreviewInfoText_CheckedChanged(object sender, EventArgs e) {
+            display.showInfoText = cPreviewInfoText.Checked;
+            display.UpdateDisplay();
         }
 
         #endregion

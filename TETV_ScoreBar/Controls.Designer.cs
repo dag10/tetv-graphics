@@ -41,6 +41,8 @@
             this.nVisitingScore = new System.Windows.Forms.NumericUpDown();
             this.bUpdateScores = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bShowHalfTimeClock = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -166,7 +168,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.bResetTimeouts = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bToggleClock = new System.Windows.Forms.Button();
             this.tClockPreview = new System.Windows.Forms.TextBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -178,13 +180,15 @@
             this.lStatus = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.bVersion = new System.Windows.Forms.ToolStripButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bShowHalfTimeClock = new System.Windows.Forms.Button();
+            this.gClock = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.bHideInfoText = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingScore)).BeginInit();
             this.tabPage5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage.SuspendLayout();
@@ -205,7 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nHomeTimeouts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).BeginInit();
             this.toolStrip2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gClock.SuspendLayout();
             this.SuspendLayout();
             // 
             // bUseScoreBar
@@ -386,6 +390,26 @@
             this.tabPage5.Text = "Half-Time";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.bShowHalfTimeClock);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(582, 58);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Settings";
+            // 
+            // bShowHalfTimeClock
+            // 
+            this.bShowHalfTimeClock.Location = new System.Drawing.Point(8, 19);
+            this.bShowHalfTimeClock.Name = "bShowHalfTimeClock";
+            this.bShowHalfTimeClock.Size = new System.Drawing.Size(150, 23);
+            this.bShowHalfTimeClock.TabIndex = 0;
+            this.bShowHalfTimeClock.Text = "Show Scoreboard Clock";
+            this.bShowHalfTimeClock.UseVisualStyleBackColor = true;
+            this.bShowHalfTimeClock.Click += new System.EventHandler(this.bShowScoreboardClock_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel1);
@@ -434,6 +458,7 @@
             // tabScores
             // 
             this.tabScores.AutoScroll = true;
+            this.tabScores.Controls.Add(this.gClock);
             this.tabScores.Controls.Add(this.gPossession);
             this.tabScores.Controls.Add(this.gTimeouts);
             this.tabScores.Controls.Add(this.gInfoText);
@@ -667,10 +692,11 @@
             this.gInfoText.Controls.Add(this.bInfoPreset5);
             this.gInfoText.Controls.Add(this.bInfoPreset4);
             this.gInfoText.Controls.Add(this.bInfoPreset3);
+            this.gInfoText.Controls.Add(this.bHideInfoText);
             this.gInfoText.Controls.Add(this.bUpdateInfoText);
             this.gInfoText.Controls.Add(this.bInfoPreset2);
             this.gInfoText.Controls.Add(this.bInfoPreset1);
-            this.gInfoText.Location = new System.Drawing.Point(3, 330);
+            this.gInfoText.Location = new System.Drawing.Point(6, 387);
             this.gInfoText.Name = "gInfoText";
             this.gInfoText.Size = new System.Drawing.Size(555, 147);
             this.gInfoText.TabIndex = 1;
@@ -896,7 +922,7 @@
             // 
             this.tCustomInfoText.Location = new System.Drawing.Point(78, 109);
             this.tCustomInfoText.Name = "tCustomInfoText";
-            this.tCustomInfoText.Size = new System.Drawing.Size(297, 20);
+            this.tCustomInfoText.Size = new System.Drawing.Size(245, 20);
             this.tCustomInfoText.TabIndex = 3;
             // 
             // label14
@@ -923,7 +949,7 @@
             this.bInfoPreset5.Name = "bInfoPreset5";
             this.bInfoPreset5.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset5.TabIndex = 2;
-            this.bInfoPreset5.Text = "Preset 5";
+            this.bInfoPreset5.Text = "Preset 3";
             this.bInfoPreset5.UseVisualStyleBackColor = true;
             this.bInfoPreset5.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
@@ -933,7 +959,7 @@
             this.bInfoPreset4.Name = "bInfoPreset4";
             this.bInfoPreset4.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset4.TabIndex = 2;
-            this.bInfoPreset4.Text = "Preset 4";
+            this.bInfoPreset4.Text = "Preset 5";
             this.bInfoPreset4.UseVisualStyleBackColor = true;
             this.bInfoPreset4.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
@@ -943,15 +969,15 @@
             this.bInfoPreset3.Name = "bInfoPreset3";
             this.bInfoPreset3.Size = new System.Drawing.Size(109, 23);
             this.bInfoPreset3.TabIndex = 2;
-            this.bInfoPreset3.Text = "Preset 3";
+            this.bInfoPreset3.Text = "Preset 4";
             this.bInfoPreset3.UseVisualStyleBackColor = true;
             this.bInfoPreset3.Click += new System.EventHandler(this.bInfoPreset_Click);
             // 
             // bUpdateInfoText
             // 
-            this.bUpdateInfoText.Location = new System.Drawing.Point(381, 107);
+            this.bUpdateInfoText.Location = new System.Drawing.Point(329, 106);
             this.bUpdateInfoText.Name = "bUpdateInfoText";
-            this.bUpdateInfoText.Size = new System.Drawing.Size(160, 23);
+            this.bUpdateInfoText.Size = new System.Drawing.Size(122, 23);
             this.bUpdateInfoText.TabIndex = 2;
             this.bUpdateInfoText.Text = "Use Custom Text";
             this.bUpdateInfoText.UseVisualStyleBackColor = true;
@@ -1729,22 +1755,22 @@
             this.bResetTimeouts.Text = "Reset";
             this.bResetTimeouts.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // bToggleClock
             // 
-            this.button1.Location = new System.Drawing.Point(501, 557);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Show Clock";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.bUseStats_Click);
+            this.bToggleClock.Location = new System.Drawing.Point(9, 19);
+            this.bToggleClock.Name = "bToggleClock";
+            this.bToggleClock.Size = new System.Drawing.Size(102, 23);
+            this.bToggleClock.TabIndex = 1;
+            this.bToggleClock.Text = "Show Clock";
+            this.bToggleClock.UseVisualStyleBackColor = true;
+            this.bToggleClock.Click += new System.EventHandler(this.bToggleClock_Click);
             // 
             // tClockPreview
             // 
-            this.tClockPreview.Location = new System.Drawing.Point(447, 559);
+            this.tClockPreview.Location = new System.Drawing.Point(120, 20);
             this.tClockPreview.Name = "tClockPreview";
             this.tClockPreview.ReadOnly = true;
-            this.tClockPreview.Size = new System.Drawing.Size(51, 20);
+            this.tClockPreview.Size = new System.Drawing.Size(58, 20);
             this.tClockPreview.TabIndex = 4;
             this.tClockPreview.Text = "00:00:0";
             this.tClockPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1842,25 +1868,35 @@
             this.bVersion.Text = "Version x.x.x.x";
             this.bVersion.Click += new System.EventHandler(this.bVersion_Click);
             // 
-            // groupBox1
+            // gClock
             // 
-            this.groupBox1.Controls.Add(this.bShowHalfTimeClock);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(582, 58);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Settings";
+            this.gClock.Controls.Add(this.label8);
+            this.gClock.Controls.Add(this.bToggleClock);
+            this.gClock.Controls.Add(this.tClockPreview);
+            this.gClock.Location = new System.Drawing.Point(6, 330);
+            this.gClock.Name = "gClock";
+            this.gClock.Size = new System.Drawing.Size(555, 51);
+            this.gClock.TabIndex = 8;
+            this.gClock.TabStop = false;
+            this.gClock.Text = "Clock";
             // 
-            // bShowHalfTimeClock
+            // label8
             // 
-            this.bShowHalfTimeClock.Location = new System.Drawing.Point(8, 19);
-            this.bShowHalfTimeClock.Name = "bShowHalfTimeClock";
-            this.bShowHalfTimeClock.Size = new System.Drawing.Size(150, 23);
-            this.bShowHalfTimeClock.TabIndex = 0;
-            this.bShowHalfTimeClock.Text = "Show Scoreboard Clock";
-            this.bShowHalfTimeClock.UseVisualStyleBackColor = true;
-            this.bShowHalfTimeClock.Click += new System.EventHandler(this.bShowScoreboardClock_Click);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 0;
+            // 
+            // bHideInfoText
+            // 
+            this.bHideInfoText.Location = new System.Drawing.Point(457, 107);
+            this.bHideInfoText.Name = "bHideInfoText";
+            this.bHideInfoText.Size = new System.Drawing.Size(88, 23);
+            this.bHideInfoText.TabIndex = 2;
+            this.bHideInfoText.Text = "Hide Text";
+            this.bHideInfoText.UseVisualStyleBackColor = true;
+            this.bHideInfoText.Click += new System.EventHandler(this.bToggleText);
             // 
             // Controls
             // 
@@ -1868,8 +1904,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 615);
             this.Controls.Add(this.toolStrip2);
-            this.Controls.Add(this.tClockPreview);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.bUseStats);
             this.Controls.Add(this.bToggleBug);
             this.Controls.Add(this.bToggleGraphics);
@@ -1886,6 +1920,7 @@
             this.MaximizeBox = false;
             this.Name = "Controls";
             this.Text = "Graphics Control Panel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Controls_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1893,6 +1928,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nHomeScore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingScore)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1923,7 +1959,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nVisitingTimeouts)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.gClock.ResumeLayout(false);
+            this.gClock.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2073,7 +2110,7 @@
         private System.Windows.Forms.Button bEditPreset6;
         private System.Windows.Forms.Button bInfoPreset6;
         private System.Windows.Forms.TextBox tPreset6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bToggleClock;
         private System.Windows.Forms.TextBox tClockPreview;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
@@ -2087,6 +2124,9 @@
         private System.Windows.Forms.ToolStripButton bVersion;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bShowHalfTimeClock;
+        private System.Windows.Forms.GroupBox gClock;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button bHideInfoText;
 
 
 

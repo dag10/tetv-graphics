@@ -24,6 +24,7 @@ namespace TETV_ScoreBar {
         public int[] Timeouts;
         public int Quarter = 1;
         public int BallPossession = 0;
+        public int[] Clock;
         public string infoText = "";
         public GameType gameType;
         public bool active = false;
@@ -41,6 +42,7 @@ namespace TETV_ScoreBar {
             TeamScore = new int[2] { 0, 0 };
             AltScore = new int[2] { 0, 0 };
             Timeouts = new int[2] { 3, 3 };
+            Clock = new int[3] { 0, 0, 0 };
             ScoreBoardPosition = new Point(Config.GetInt(ConfigKey.BoardX), Config.GetInt(ConfigKey.BoardY));
             ReplayPosition = new Point(Config.GetInt(ConfigKey.ReplayX), Config.GetInt(ConfigKey.ReplayY));
             HalfTimePosition = new Point(Config.GetInt(ConfigKey.HalfTimeX), Config.GetInt(ConfigKey.HalfTimeY));
@@ -55,6 +57,7 @@ namespace TETV_ScoreBar {
             TeamScore = new int[2] { 0, 0 };
             AltScore = new int[2] { 0, 0 };
             Timeouts = new int[2] { 3, 3 };
+            Clock = new int[3] { 0, 0, 0 };
             ScoreBoardPosition = new Point(Config.GetInt(ConfigKey.BoardX), Config.GetInt(ConfigKey.BoardY));
             ReplayPosition = new Point(Config.GetInt(ConfigKey.ReplayX), Config.GetInt(ConfigKey.ReplayY));
             HalfTimePosition = new Point(Config.GetInt(ConfigKey.HalfTimeX), Config.GetInt(ConfigKey.HalfTimeY));

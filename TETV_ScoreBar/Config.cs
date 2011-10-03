@@ -38,6 +38,7 @@ namespace TETV_ScoreBar {
             settings[ConfigKey.ShowScores] = "True";
             settings[ConfigKey.ShowTimeouts] = "True";
             settings[ConfigKey.ShowHalfTimeClock] = "True";
+            settings[ConfigKey.ShowClock] = "True";
             settings[ConfigKey.ShowBug] = "True";
             settings[ConfigKey.CreditsFile] = "";
             settings[ConfigKey.SerialPort] = "COM1";
@@ -124,6 +125,7 @@ namespace TETV_ScoreBar {
                 case ConfigKey.ShowScores:
                 case ConfigKey.ShowTimeouts:
                 case ConfigKey.ShowHalfTimeClock:
+                case ConfigKey.ShowClock:
                 case ConfigKey.ShowBug:
                     return ValidateBool(key, value);
                 case ConfigKey.CreditsFile:
