@@ -283,9 +283,9 @@ namespace TETV_ScoreBar {
             }
 
             // Only update layout here (prevents redundant updates, speeds up updating)
-            this.ResumeLayout(false);
+            //this.ResumeLayout(false);
             this.Update();
-            this.SuspendLayout();
+            //this.SuspendLayout();
         }
 
         public void HideButtons() {
@@ -525,7 +525,7 @@ namespace TETV_ScoreBar {
         #endregion
 
         #region Updating
-
+        /*
         protected override CreateParams CreateParams {
             get {
                 CreateParams cp = base.CreateParams;
@@ -533,11 +533,11 @@ namespace TETV_ScoreBar {
                 return cp;
             }
         }
-
+        */
         #endregion
 
         #region Data Updating
-
+        
         private delegate void DataWasUpdatedCallback();
         public void DataWasUpdated() {
             if (InvokeRequired) {
@@ -547,7 +547,7 @@ namespace TETV_ScoreBar {
                 UpdateDisplay();
             }
         }
-
+        
         #endregion
     }
 }

@@ -21,7 +21,7 @@
     <StartupObject>TETV_ScoreBar.Program</StartupObject>
     <ManifestCertificateThumbprint>3E2EE9C16A47B3F50AFA1F0823FD4576154019AA</ManifestCertificateThumbprint>
     <ManifestKeyFile>TETV_ScoreBar_TemporaryKey.pfx</ManifestKeyFile>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <PublishUrl>C:\Users\Drew Gottlieb\Desktop\Publish Test\</PublishUrl>
     <Install>true</Install>
@@ -39,6 +39,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

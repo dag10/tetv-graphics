@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ScoreBarSettings version="2">
-  <BoardX>960</BoardX>
-  <BoardY>60</BoardY>
+  <BoardX>968</BoardX>
+  <BoardY>77</BoardY>
   <ReplayX>194</ReplayX>
   <ReplayY>61</ReplayY>
   <HalfTimeX>188</HalfTimeX>
@@ -12,7 +12,7 @@
   <StatY>835</StatY>
   <ControlScreen>0</ControlScreen>
   <DisplayScreen>1</DisplayScreen>
-  <GameType>0</GameType>
+  <GameType>5</GameType>
   <ShowInfoText>False</ShowInfoText>
   <ShowScores>True</ShowScores>
   <ShowTimeouts>False</ShowTimeouts>

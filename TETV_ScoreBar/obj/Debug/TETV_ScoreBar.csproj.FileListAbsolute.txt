@@ -16,3 +16,21 @@ C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphi
 C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.TrustInfo.xml
 C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe.manifest
 C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.application
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe.config
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.pdb
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Controls.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Settings.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Display.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Properties.Resources.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Stats.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.csproj.GenerateResource.Cache
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\ConestogaPlayers.sdf
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe.manifest
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.application
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.pdb
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.TrustInfo.xml
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe.manifest
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.application
