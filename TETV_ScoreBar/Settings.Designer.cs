@@ -69,8 +69,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.bAbout = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cPreviewClock = new System.Windows.Forms.CheckBox();
             this.cPreviewInfoText = new System.Windows.Forms.CheckBox();
+            this.cPreviewClock = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.pStatPosition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nStatX)).BeginInit();
@@ -533,6 +533,7 @@
             // 
             // tAbbr2
             // 
+            this.tAbbr2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tAbbr2.Location = new System.Drawing.Point(212, 46);
             this.tAbbr2.Name = "tAbbr2";
             this.tAbbr2.Size = new System.Drawing.Size(35, 20);
@@ -541,6 +542,7 @@
             // 
             // tAbbr1
             // 
+            this.tAbbr1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tAbbr1.Location = new System.Drawing.Point(84, 46);
             this.tAbbr1.Name = "tAbbr1";
             this.tAbbr1.Size = new System.Drawing.Size(35, 20);
@@ -603,17 +605,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Preview Scoreboard Elements";
             // 
-            // cPreviewClock
-            // 
-            this.cPreviewClock.AutoSize = true;
-            this.cPreviewClock.Location = new System.Drawing.Point(7, 20);
-            this.cPreviewClock.Name = "cPreviewClock";
-            this.cPreviewClock.Size = new System.Drawing.Size(53, 17);
-            this.cPreviewClock.TabIndex = 0;
-            this.cPreviewClock.Text = "Clock";
-            this.cPreviewClock.UseVisualStyleBackColor = true;
-            this.cPreviewClock.CheckedChanged += new System.EventHandler(this.cPreviewClock_CheckedChanged);
-            // 
             // cPreviewInfoText
             // 
             this.cPreviewInfoText.AutoSize = true;
@@ -624,6 +615,17 @@
             this.cPreviewInfoText.Text = "Text";
             this.cPreviewInfoText.UseVisualStyleBackColor = true;
             this.cPreviewInfoText.CheckedChanged += new System.EventHandler(this.cPreviewInfoText_CheckedChanged);
+            // 
+            // cPreviewClock
+            // 
+            this.cPreviewClock.AutoSize = true;
+            this.cPreviewClock.Location = new System.Drawing.Point(7, 20);
+            this.cPreviewClock.Name = "cPreviewClock";
+            this.cPreviewClock.Size = new System.Drawing.Size(53, 17);
+            this.cPreviewClock.TabIndex = 0;
+            this.cPreviewClock.Text = "Clock";
+            this.cPreviewClock.UseVisualStyleBackColor = true;
+            this.cPreviewClock.CheckedChanged += new System.EventHandler(this.cPreviewClock_CheckedChanged);
             // 
             // Settings
             // 

@@ -41,6 +41,8 @@ namespace TETV_ScoreBar {
             controller = new ScoreboardInterface();
             controller.StatusChanged += new SerialConnectionStatusChanged(StatusChanged);
             controller.GameClockUpdated += new GameClockRecordUpdated(GameClockRecordUpdated);
+            controller.FootballUpdated += new FootballRecordUpdated(FootballRecordUpdated);
+            controller.SoccerUpdated += new SoccerRecordUpdated(SoccerRecordUpdated);
             controller.DisplayException += new PassException(PassException);
             Thread controllerThread = new Thread(new ThreadStart(controller.StartThread));
             controllerThread.Start();
@@ -97,10 +99,15 @@ namespace TETV_ScoreBar {
             setHomeTimeouts(bHomeTimeouts0, null);
             setVisitingTimeouts(bVisitingTimeouts0, null);
 
+            // Set window title
+            Text += " - " + game.gameType.ToString();
+
             // Alter controls for game type
             switch (game.gameType) {
                 case GameType.Football:
                     RemoveGroup(tabScores, gMatchScores);
+                    iUseForMatchScore.Visible = false;
+                    iUseForPeriod.Text = "Quarter";
                     bInfoPreset1.Text = "Flag";
                     bInfoPreset2.Text = "Touchdown";
                     bInfoPreset3.Text = "Kickoff";
@@ -117,7 +124,13 @@ namespace TETV_ScoreBar {
                     break;
                 case GameType.Generic:
                     RemoveGroup(tabScores, gMatchScores);
+                    RemoveGroup(tabScores, gTimeouts);
+                    iUseForMatchScore.Visible = false;
+                    iUseForDownYards.Visible = false;
+                    iUseForTimeouts.Visible = false;
+                    iUseForPossession.Visible = false;
                     pDownYards.Visible = false;
+                    display.showTimeouts = false;
                     bInfoPreset5.Location = new Point(303, 19);
                     bEditPreset5.Location = new Point(417, 19);
                     bInfoPreset6.Location = new Point(303, 48);
@@ -132,9 +145,12 @@ namespace TETV_ScoreBar {
                     lQuarter.Text = "Period";
                     //bQuarterOT.Visible = false;
                     bToggleTimeouts.Visible = false;
+                    iUseForDownYards.Visible = false;
                     showTimeouts = false;
                     RemoveGroup(tabScores, gTimeouts);
                     RemoveGroup(tabScores, gMatchScores);
+                    iUseForTimeouts.Visible = false;
+                    iUseForMatchScore.Visible = false;
                     gPossession.Text = "Power Play";
                     bConestogaBall.Text = "Conestoga Power Play";
                     bVisitingBall.Text = "Visitor Power Play";
@@ -157,10 +173,14 @@ namespace TETV_ScoreBar {
                 case GameType.Basketball:
                     //bQuarterOT.Visible = false;
                     bToggleTimeouts.Visible = false;
+                    iUseForDownYards.Visible = false;
                     showTimeouts = false;
                     RemoveGroup(tabScores, gTimeouts);
                     RemoveGroup(tabScores, gPossession);
                     RemoveGroup(tabScores, gMatchScores);
+                    iUseForTimeouts.Visible = false;
+                    iUseForPossession.Visible = false;
+                    iUseForMatchScore.Visible = false;
                     pDownYards.Visible = false;
                     bInfoPreset5.Location = new Point(303, 19);
                     bEditPreset5.Location = new Point(417, 19);
@@ -178,10 +198,14 @@ namespace TETV_ScoreBar {
                     break;
                 case GameType.Wrestling:
                     gScores.Text = "Team Score";
+                    iUseForScore.Text = "Team Score";
                     bToggleTimeouts.Visible = false;
+                    iUseForDownYards.Visible = false;
                     showTimeouts = false;
                     RemoveGroup(tabScores, gTimeouts);
                     RemoveGroup(tabScores, gPossession);
+                    iUseForTimeouts.Visible = false;
+                    iUseForPossession.Visible = false;
                     pDownYards.Visible = false;
                     bInfoPreset5.Location = new Point(303, 19);
                     bEditPreset5.Location = new Point(417, 19);
@@ -208,9 +232,13 @@ namespace TETV_ScoreBar {
                 case GameType.Volleyball:
                     gScores.Text = "Game Score";
                     bToggleTimeouts.Visible = false;
+                    iUseForDownYards.Visible = false;
+                    iUseForScore.Text = "Game Score";
                     showTimeouts = false;
                     RemoveGroup(tabScores, gTimeouts);
                     RemoveGroup(tabScores, gPeriod);
+                    iUseForTimeouts.Visible = false;
+                    iUseForPeriod.Visible = false;
                     pDownYards.Visible = false;
                     bInfoPreset5.Location = new Point(303, 19);
                     bEditPreset5.Location = new Point(417, 19);
@@ -375,20 +403,22 @@ namespace TETV_ScoreBar {
                 return _mode;
             }
             set {
+                Color inUseColor = Color.Lime;
+                Color notInUseColor = Color.LightGray;
+
                 _mode = value;
                 display.HideAll();
-                bUseScoreBar.BackColor = Color.FromName("Control");
-                bUseReplay.BackColor = Color.FromName("Control");
-                bUseHalfTime.BackColor = Color.FromName("Control");
-                bUseEndOfGame.BackColor = Color.FromName("Control");
-                bUseCustomShow.BackColor = Color.FromName("Control");
-                bUseBeforeGame.BackColor = Color.FromName("Control");
-                bUseCredits.BackColor = Color.FromName("Control");
+                bUseScoreBar.BackColor = notInUseColor;
+                bUseReplay.BackColor = notInUseColor;
+                bUseHalfTime.BackColor = notInUseColor;
+                bUseEndOfGame.BackColor = notInUseColor;
+                bUseCustomShow.BackColor = notInUseColor;
+                bUseBeforeGame.BackColor = notInUseColor;
+                bUseCredits.BackColor = notInUseColor;
 
                 display.showBug = showGraphics && showBug;
                 display.UpdateDisplay();
 
-                Color inUseColor = Color.SkyBlue;
                 switch (_mode) {
                     case GraphicsMode.ScoreBar:
                         bUseScoreBar.BackColor = inUseColor;
@@ -1063,8 +1093,101 @@ namespace TETV_ScoreBar {
                 if (record.ClockChanged) {
                     game.Clock = record.Clock;
                     tClockPreview.Text = (game.Clock[0].ToString("D2") + ":" + game.Clock[1].ToString("D2") + (game.Clock[0] == 0 ? ":" + game.Clock[2] : ""));
-                } if (record.PeriodChanged) {
-                    game.Quarter = record.Period;
+                } if (record.PeriodChanged && game.AutoPeriod) {
+                    game.Quarter = record.Period < 5 ? record.Period : -1;
+                    bQuarter1.BackColor = Color.FromName("Control");
+                    bQuarter2.BackColor = Color.FromName("Control");
+                    bQuarter3.BackColor = Color.FromName("Control");
+                    bQuarter4.BackColor = Color.FromName("Control");
+                    bQuarterOT.BackColor = Color.FromName("Control");
+                    if (record.Period == 1)
+                        bQuarter1.BackColor = Color.LightGreen;
+                    else if (record.Period == 2)
+                        bQuarter2.BackColor = Color.LightGreen;
+                    else if (record.Period == 3)
+                        bQuarter3.BackColor = Color.LightGreen;
+                    else if (record.Period == 4)
+                        bQuarter4.BackColor = Color.LightGreen;
+                    else if (record.Period == 5)
+                        bQuarterOT.BackColor = Color.LightGreen;
+                }
+
+                display.DataWasUpdated();
+            }
+        }
+
+        private delegate void FootballRecordUpdatedCallback(Football_Record record);
+        public void FootballRecordUpdated(Football_Record record) {
+            if (InvokeRequired) {
+                FootballRecordUpdatedCallback callback = new FootballRecordUpdatedCallback(FootballRecordUpdated);
+                Invoke(callback, new object[] { record });
+            } else {
+                bStartStop.ToolTipText = "Game Detected: Football";
+
+                if (record.ScoreChanged && game.AutoScore) {
+                    nHomeScore.Value = record.Score[0];
+                    nVisitingScore.Value = record.Score[1];
+                    game.TeamScore[0] = record.Score[0];
+                    game.TeamScore[1] = record.Score[1];
+                } else if (record.TimeoutsLeftChanged && game.AutoTimeouts) {
+                    game.Timeouts[0] = record.TimeoutsLeft[0];
+                    game.Timeouts[1] = record.TimeoutsLeft[1];
+
+                    bHomeTimeouts0.BackColor = Color.FromName("Control");
+                    bHomeTimeouts1.BackColor = Color.FromName("Control");
+                    bHomeTimeouts2.BackColor = Color.FromName("Control");
+                    bHomeTimeouts3.BackColor = Color.FromName("Control");
+
+                    bVisitingTimeouts0.BackColor = Color.FromName("Control");
+                    bVisitingTimeouts1.BackColor = Color.FromName("Control");
+                    bVisitingTimeouts2.BackColor = Color.FromName("Control");
+                    bVisitingTimeouts3.BackColor = Color.FromName("Control");
+
+                    if (record.TimeoutsLeft[0] == 0)
+                        bHomeTimeouts0.BackColor = Color.LightGreen;
+                    else if (record.TimeoutsLeft[0] == 1)
+                        bHomeTimeouts1.BackColor = Color.LightGreen;
+                    else if (record.TimeoutsLeft[0] == 2)
+                        bHomeTimeouts2.BackColor = Color.LightGreen;
+                    else if (record.TimeoutsLeft[0] == 3)
+                        bHomeTimeouts3.BackColor = Color.LightGreen;
+
+                    if (record.TimeoutsLeft[1] == 0)
+                        bVisitingTimeouts0.BackColor = Color.LightGreen;
+                    else if (record.TimeoutsLeft[1] == 1)
+                        bVisitingTimeouts1.BackColor = Color.LightGreen;
+                    else if (record.TimeoutsLeft[1] == 2)
+                        bVisitingTimeouts2.BackColor = Color.LightGreen;
+                    else if (record.TimeoutsLeft[1] == 3)
+                        bVisitingTimeouts3.BackColor = Color.LightGreen;
+
+                } else if ((record.DownChanged || record.ToGoChanged) && game.AutoDownYards) {
+                    nDown.Value = record.Down;
+                    nYards.Value = record.ToGo;
+                    if (bDisplayDownYards.BackColor == Color.LightGreen)
+                        bDisplayDownYards_Click(bDisplayDownYards, null);
+                } else if (record.PossessionChanged && game.AutoPossession) {
+                    game.BallPossession = record.Possession == Football_Record.FootballPossession.Home ? 1 :
+                        record.Possession == Football_Record.FootballPossession.Visitor ? 2 : 0;
+                }
+
+                display.DataWasUpdated();
+            }
+        }
+
+        private delegate void SoccerRecordUpdatedCallback(Soccer_Record record);
+        public void SoccerRecordUpdated(Soccer_Record record) {
+            if (InvokeRequired) {
+                SoccerRecordUpdatedCallback callback = new SoccerRecordUpdatedCallback(SoccerRecordUpdated);
+                Invoke(callback, new object[] { record });
+            } else {
+                bStartStop.ToolTipText = "Game Detected: Soccer";
+
+                if (record.ScoreChanged && game.AutoScore) {
+                    nHomeScore.Value = record.Score[0];
+                    nVisitingScore.Value = record.Score[1];
+                    game.TeamScore[0] = record.Score[0];
+                    game.TeamScore[1] = record.Score[1];
                 }
 
                 display.DataWasUpdated();
@@ -1077,6 +1200,40 @@ namespace TETV_ScoreBar {
 
         private void bShowScoreboardClock_Click(object sender, EventArgs e) {
             showHalfTimeClock = !showHalfTimeClock;
+        }
+
+        #endregion
+
+        #region Automatic (Controller-Controlled) Toggling
+
+        private void iUseForScore_Click(object sender, EventArgs e) {
+            gScores.Enabled = !iUseForScore.Checked;
+            game.AutoScore = iUseForScore.Checked;
+        }
+
+        private void iUseForMatchScore_Click(object sender, EventArgs e) {
+            gMatchScores.Enabled = !iUseForMatchScore.Checked;
+            game.AutoMatchScore = iUseForMatchScore.Checked;
+        }
+
+        private void iUseForPossession_Click(object sender, EventArgs e) {
+            gPossession.Enabled = !iUseForPossession.Checked;
+            game.AutoPossession = iUseForPossession.Checked;
+        }
+
+        private void iUseForPeriod_Click(object sender, EventArgs e) {
+            gPeriod.Enabled = !iUseForPeriod.Checked;
+            game.AutoPeriod = iUseForPeriod.Checked;
+        }
+
+        private void iUseForTimeouts_Click(object sender, EventArgs e) {
+            gTimeouts.Enabled = !iUseForTimeouts.Checked;
+            game.AutoTimeouts = iUseForTimeouts.Checked;
+        }
+
+        private void iUseForDownYards_Click(object sender, EventArgs e) {
+            bResetDownYards.Enabled = nDown.Enabled = nYards.Enabled = !iUseForDownYards.Checked;
+            game.AutoDownYards = iUseForDownYards.Checked;
         }
 
         #endregion

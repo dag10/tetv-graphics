@@ -35,6 +35,13 @@ namespace TETV_ScoreBar {
         public Point BugPosition;
         public Point StatPosition;
 
+        public bool AutoScore = false;
+        public bool AutoMatchScore = false;
+        public bool AutoPossession = false;
+        public bool AutoPeriod = false;
+        public bool AutoTimeouts = false;
+        public bool AutoDownYards = false;
+
         public Game() {
             this.gameType = (GameType)Config.GetInt(ConfigKey.GameType);
             TeamName = new string[2] { "Team1", "Team2" };
