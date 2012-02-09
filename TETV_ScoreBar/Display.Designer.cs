@@ -156,7 +156,7 @@
             // 
             // pBar
             // 
-            this.pBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pBar.Controls.Add(this.pScoreRD);
             this.pBar.Controls.Add(this.pRightTip);
             this.pBar.Controls.Add(this.pLeftTip);
@@ -176,7 +176,7 @@
             this.pBar.Controls.Add(this.panel2);
             this.pBar.Location = new System.Drawing.Point(1, 362);
             this.pBar.Name = "pBar";
-            this.pBar.Size = new System.Drawing.Size(1309, 57);
+            this.pBar.Size = new System.Drawing.Size(1310, 57);
             this.pBar.TabIndex = 4;
             this.pBar.MouseLeave += new System.EventHandler(this.HandleMouseLeave);
             this.pBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
@@ -1115,8 +1115,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1286, 742);
+            this.ClientSize = new System.Drawing.Size(1321, 742);
             this.Controls.Add(this.pReplay);
             this.Controls.Add(this.pHalfTime);
             this.Controls.Add(this.pStat);

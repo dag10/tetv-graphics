@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <visiting>
+    <name>lazy</name>
+    <points>0</points>
+    <fouls>0</fouls>
+  </visiting>
+  <visiting>
+    <name>dog</name>
+    <points>3</points>
+    <fouls>0</fouls>
+  </visiting>
+</DocumentElement>

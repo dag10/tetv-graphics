@@ -277,8 +277,7 @@ namespace TETV_ScoreBar {
             bInfoPreset5.Visible = true;
             bInfoPreset6.Visible = true;
 
-            // Set toggle buttons' default backgrounds
-            bUseStats.BackColor = display.showStats ? Color.Cyan : Color.Yellow;
+            GameUpdated();
         }
 
         #endregion
@@ -517,8 +516,8 @@ namespace TETV_ScoreBar {
 
         private void bUseStats_Click(object sender, EventArgs e) {
             display.showStats = !display.showStats;
-            bUseStats.Text = (display.showStats ? "Hide Stats" : "Show Stats");
             display.UpdateDisplay();
+            bUseStats.Text = (display.showStats ? "Hide Stats" : "Show Stats");
             bUseStats.BackColor = display.showStats ? Color.Cyan : Color.Yellow;
         }
 
@@ -1191,6 +1190,27 @@ namespace TETV_ScoreBar {
                 }
 
                 display.DataWasUpdated();
+            }
+        }
+
+        private delegate void GameUpdatedCallback();
+        public void GameUpdated() {
+            if (InvokeRequired) {
+                GameUpdatedCallback callback = new GameUpdatedCallback(GameUpdated);
+                Invoke(callback, new object[] { });
+            } else {
+                // TODO: Update ALL the things!
+                
+                // Scores
+                nHomeScore.Value = game.TeamScore[0];
+                nVisitingScore.Value = game.TeamScore[1];
+
+                // Set toggle buttons' default backgrounds
+                bUseStats.BackColor = display.showStats ? Color.Cyan : Color.Yellow;
+                bUseStats.Text = (display.showStats ? "Hide Stats" : "Show Stats");
+
+                // Update display
+                display.UpdateDisplay();
             }
         }
 

@@ -283,9 +283,9 @@ namespace TETV_ScoreBar {
             }
 
             // Only update layout here (prevents redundant updates, speeds up updating)
-            //this.ResumeLayout(false);
+            this.ResumeLayout(false);
             this.Update();
-            //this.SuspendLayout();
+            this.SuspendLayout();
         }
 
         public void HideButtons() {

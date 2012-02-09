@@ -4,7 +4,7 @@
   <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="TETV_Graphics" version="2.2.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="TETV_Graphics" version="2.3.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="TETV_Graphics.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -64,34 +64,17 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-<<<<<<< HEAD
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2654720">
-=======
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2654208">
->>>>>>> 54055eb09992d2d9370f37d937e1b7d4de5f2bec
-      <assemblyIdentity name="TETV_Graphics" version="2.2.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2638848">
+      <assemblyIdentity name="TETV_Graphics" version="2.3.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-<<<<<<< HEAD
-        <dsig:DigestValue>A985kUTBRq9xGlcpdFTd3L/Kq9E=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>1OwPawqUYTr4++OjW6o1QkQ/A0Y=</dsig:DigestValue>
->>>>>>> 54055eb09992d2d9370f37d937e1b7d4de5f2bec
+        <dsig:DigestValue>yGOqg9NKdTfdF1LQ43u9k9G6gDg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="ConestogaPlayers.sdf" size="20480" writeableType="applicationData">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1LULiTFdyaS88E/bZVcJnUhgIRE=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="icon.ico" size="32038">
     <hash>
       <dsig:Transforms>
@@ -353,13 +336,13 @@
       <dsig:DigestValue>WpipGirTFJ78NGl6+EnCwY2bZ8s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TETV_Graphics.exe.config" size="453">
+  <file name="TETV_Graphics.exe.config" size="174">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>tqAskwqE6/dlQcNqJgqzrxpVkrU=</dsig:DigestValue>
+      <dsig:DigestValue>w7UmmfcYffRySsOeFXBmaM7xQdk=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

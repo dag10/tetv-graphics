@@ -41,15 +41,18 @@ namespace TETV_ScoreBar {
             }
         }
 
-        public static string AboutText =    "TETV Sports Graphics\n" +
+        public static string AboutText = "TETV Sports Graphics\n" +
                                             "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version + "\n" +
                                             "\n" +
-                                            "All code and graphics Copyright © Drew Gottlieb, 2010-2011\n" +
+                                            "All code and graphics Copyright © Drew Gottlieb, 2010-2012\n" +
                                             "\n" +
                                             "Intended for the exclusive use of Conestoga High School.\n" +
                                             "Do not redistribute, use, or modify without permission.\n" +
                                             "\n" +
                                             "For questions, help, requests, or suggestions, I can be reached at:\n" +
-                                            "drew1313132@gmail.com";
+                                            "drew1313132@gmail.com\n" +
+                                            "\n" +
+                                            "Versions of this program can be found at:\n" +
+                                            "http://projects.minipenguin.com/projects/tetv-graphics";
     }
 }

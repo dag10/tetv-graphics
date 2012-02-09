@@ -4,18 +4,14 @@
   <description asmv2:publisher="TESD" asmv2:product="TETV_Graphics" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="TETV_Graphics.exe.manifest" size="16444">
+    <dependentAssembly dependencyType="install" codebase="TETV_Graphics.exe.manifest" size="16031">
       <assemblyIdentity name="TETV_Graphics.exe" version="1.4.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-<<<<<<< HEAD
-        <dsig:DigestValue>9lFpyE+bZisxgRxXxKv5WUh+iL8=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>g3+X3AQOgc3u//t3oTH3+GAAK3g=</dsig:DigestValue>
->>>>>>> 54055eb09992d2d9370f37d937e1b7d4de5f2bec
+        <dsig:DigestValue>4ujYLM7wH362wjm9dXyuPuoQnF4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

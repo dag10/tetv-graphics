@@ -78,15 +78,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConestogaPlayersDataSet.cs">
-      <DependentUpon>ConestogaPlayersDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ConestogaPlayersDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConestogaPlayersDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Config.cs" />
     <Compile Include="ConfigKey.cs" />
     <Compile Include="Controls.cs">
@@ -202,22 +193,8 @@
     <None Include="bin\Debug\resources\halftime_R.bmp" />
     <None Include="bin\Debug\resources\replay_L.bmp" />
     <None Include="bin\Debug\resources\replay_R.bmp" />
-    <None Include="ConestogaPlayersDataSet.xsc">
-      <DependentUpon>ConestogaPlayersDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ConestogaPlayersDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ConestogaPlayersDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ConestogaPlayersDataSet.xss">
-      <DependentUpon>ConestogaPlayersDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConestogaPlayers.sdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="resources\altscore_l.bmp" />
     <None Include="resources\altscore_r.bmp" />
     <Content Include="icon.ico" />

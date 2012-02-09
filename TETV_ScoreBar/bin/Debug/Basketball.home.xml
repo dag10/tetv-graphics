@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <home>
+    <name>the</name>
+    <points>0</points>
+    <fouls>0</fouls>
+  </home>
+  <home>
+    <name>quick</name>
+    <points>5</points>
+    <fouls>0</fouls>
+  </home>
+  <home>
+    <name>brown</name>
+    <points>5</points>
+    <fouls>0</fouls>
+  </home>
+  <home>
+    <name>fox</name>
+    <points>17</points>
+    <fouls>0</fouls>
+  </home>
+  <home>
+    <name>jumps</name>
+    <points>4</points>
+    <fouls>0</fouls>
+  </home>
+  <home>
+    <name>the</name>
+    <points>2</points>
+    <fouls>0</fouls>
+  </home>
+</DocumentElement>
