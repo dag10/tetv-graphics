@@ -38,14 +38,6 @@ namespace TETV_ScoreBar {
 
                     display.statFields = new string[] { "", "Name", "Weight Class", "" };
 
-                    /*
-                     * type     name            title
-                     * -------  --------------  -------------
-                     * int      number          #
-                     * string   name            Name
-                     * string   weightclass     Weight Class
-                     */
-
                     break;
                 }
                 case GameType.Basketball: {
@@ -66,11 +58,11 @@ namespace TETV_ScoreBar {
             if (File.Exists(homeFileName))
                 homeData.ReadXml(homeFileName);
             else
-                File.Create(homeFileName);
+                homeData.WriteXml(homeFileName);
             if (File.Exists(visitngFileName))
                 visitingData.ReadXml(visitngFileName);
             else
-                File.Create(visitngFileName);
+                visitingData.WriteXml(visitngFileName);
 
             // Allow data to be saved on change
             allowDataSave = true;
@@ -81,19 +73,33 @@ namespace TETV_ScoreBar {
         private void playerGrid_CellClick(object sender, DataGridViewCellEventArgs e) {
             DataGridView grid = ((DataGridView)sender);
 
-            if (game.gameType != GameType.Basketball)
-                return; // TEMPORARY - REMOVED WHEN WRESTLING IMPLEMENTED
-
             foreach (DataGridViewCell c in ((DataGridView)sender).CurrentRow.Cells)
                 if (c.Value == null) c.Value = " ";
 
             switch (game.gameType) {
-                /*case GameType.Wrestling:
-                    display.statValues[1] = grid.CurrentRow.Cells["name"].Value.ToString();
-                    display.statValues[2] = grid.CurrentRow.Cells["weightclass"].Value.ToString();
-                    break;*/
+                case GameType.Wrestling: {
+                    DataGridViewRow row = grid.CurrentRow;
+
+                    switch (e.ColumnIndex) {
+                        case 0: { // USE
+                            display.statValues[0] = "";
+                            display.statValues[1] = row.Cells["name"].Value.ToString();
+                            display.statValues[2] = row.Cells["weightclass"].Value.ToString() + " lbs";
+                            display.statValues[3] = "";
+
+                            display.ShowStats();
+                            display.showStats = true;
+                            controls.GameUpdated();
+
+                            break;
+                        }
+                    }
+
+                    break;
+                }
                 case GameType.Basketball: {
                     DataGridViewRow row = grid.CurrentRow;
+
                     switch (e.ColumnIndex) {
                         case 0: { // USE
                             display.statValues[0] = row.Cells["number"].Value.ToString();
@@ -147,9 +153,47 @@ namespace TETV_ScoreBar {
         #endregion
 
         void PopulateWrestlingColumns(DataTable table, DataGridView grid, string tableName) {
-            // TODO
+            DataColumn col;
 
-            MessageBox.Show("Wrestling: TODO");
+            // Weight Class
+            col = new DataColumn();
+            col.ReadOnly = false;
+            col.ColumnName = "weightclass";
+            col.DataType = typeof(int);
+            table.Columns.Add(col);
+
+            // Name
+            col = new DataColumn();
+            col.ReadOnly = false;
+            col.ColumnName = "name";
+            col.DataType = typeof(string);
+            table.Columns.Add(col);
+
+            // Set data source for datagridview
+            grid.DataSource = table;
+
+            /* Set column headers */
+
+            grid.Columns["weightclass"].HeaderText = "Weight";
+            grid.Columns["weightclass"].Width = INT_COL_WIDTH;
+            grid.Columns["weightclass"].Resizable = DataGridViewTriState.False;
+
+            grid.Columns["name"].HeaderText = "Name";
+            grid.Columns["name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grid.Columns["name"].Resizable = DataGridViewTriState.False;
+
+            /* Add buttons */
+
+            DataGridViewButtonColumn useBtn = new DataGridViewButtonColumn();
+            useBtn.Resizable = DataGridViewTriState.False;
+            useBtn.HeaderText = "Use";
+            useBtn.Text = "GO";
+            useBtn.UseColumnTextForButtonValue = true;
+            useBtn.Width = BTN_COL_WIDTH;
+            grid.Columns.Add(useBtn);
+
+            // Table name
+            table.TableName = tableName;
         }
 
         void PopulateBasketballColumns(DataTable table, DataGridView grid, string tableName) {
@@ -250,13 +294,6 @@ namespace TETV_ScoreBar {
         private void saveStatData(bool home, bool visiting) {
             if (!allowDataSave) return;
 
-            /*homeData.GetChanges();
-            visitingData.GetChanges();
-
-            homeData.AcceptChanges();
-            visitingData.AcceptChanges();
-             * */
-
             conestogaPlayerGrid.EndEdit();
             visitingPlayerGrid.EndEdit();
 
@@ -265,8 +302,6 @@ namespace TETV_ScoreBar {
 
             if (home)       lHomeData.WriteXml(homeFileName);
             if (visiting)   lVisitingData.WriteXml(visitngFileName);
-
-            //MessageBox.Show("Home: " + (home ? "Yes" : "No") + " Visiting: " + (visiting ? "Yes" : "No"));
         }
 
         private void playerGrid_CellEndEdit(object sender, DataGridViewCellCancelEventArgs e) {

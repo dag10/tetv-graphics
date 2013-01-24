@@ -69,3 +69,40 @@ C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.3-beta\te
 C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.3-beta\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.TrustInfo.xml
 C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.3-beta\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe.manifest
 C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.3-beta\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.application
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4-beta\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe.config
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4-beta\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4-beta\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.pdb
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe.config
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.pdb
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Controls.resources
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Settings.resources
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Display.resources
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Properties.Resources.resources
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Stats.resources
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.csproj.GenerateResource.Cache
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe.manifest
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.application
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.pdb
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.TrustInfo.xml
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe.manifest
+C:\Documents and Settings\tvstudio\My Documents\tetv-graphics-src-xp-2.4\tetv-graphics\TETV_ScoreBar\obj\Debug\TETV_Graphics.application
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe.config
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe.manifest
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\bin\Debug\TETV_Graphics.application
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\bin\Debug\TETV_Graphics.pdb
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Controls.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Settings.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Display.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Properties.Resources.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.Stats.resources
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_ScoreBar.csproj.GenerateResource.Cache
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_Graphics.TrustInfo.xml
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe.manifest
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_Graphics.application
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_Graphics.exe
+C:\Documents and Settings\tvstudio\Desktop\tetv-graphics-2.4\TETV_ScoreBar\obj\Debug\TETV_Graphics.pdb

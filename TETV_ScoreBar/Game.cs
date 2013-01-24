@@ -25,7 +25,7 @@ namespace TETV_ScoreBar {
         public int Quarter = 1;
         public int BallPossession = 0;
         public int[] Clock;
-        public string infoText = "";
+        public string infoText = "", dropText = "";
         public GameType gameType;
         public bool active = false;
 
@@ -42,7 +42,12 @@ namespace TETV_ScoreBar {
         public bool AutoTimeouts = false;
         public bool AutoDownYards = false;
 
-        public Game() {
+        public Game() :
+            this((GameType)Config.GetInt(ConfigKey.GameType),
+                 "Team1", "Team2",
+                 "Abbr1", "Abbr2")
+    {}
+            /*
             this.gameType = (GameType)Config.GetInt(ConfigKey.GameType);
             TeamName = new string[2] { "Team1", "Team2" };
             TeamAbbr = new string[2] { "Abbr1", "Abbr2" };
@@ -55,7 +60,10 @@ namespace TETV_ScoreBar {
             HalfTimePosition = new Point(Config.GetInt(ConfigKey.HalfTimeX), Config.GetInt(ConfigKey.HalfTimeY));
             BugPosition = new Point(Config.GetInt(ConfigKey.BugX), Config.GetInt(ConfigKey.BugY));
             StatPosition = new Point(Config.GetInt(ConfigKey.StatX), Config.GetInt(ConfigKey.StatY));
-        }
+             * 
+        }*/
+
+        // NOTE TO SELF: CLEAN THIS SHIT UP ^
 
         public Game(GameType type, string Name1, string Name2, string Abbr1, string Abbr2) {
             this.gameType = type;

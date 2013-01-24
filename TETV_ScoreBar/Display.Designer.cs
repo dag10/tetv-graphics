@@ -84,6 +84,11 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.lReplay = new System.Windows.Forms.Label();
+            this.pDropText = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.pDropTextInner = new System.Windows.Forms.Panel();
+            this.lDropText = new System.Windows.Forms.Label();
             this.pCredits.SuspendLayout();
             this.pInnerCredits.SuspendLayout();
             this.pBar.SuspendLayout();
@@ -102,6 +107,8 @@
             this.panel4.SuspendLayout();
             this.pReplay.SuspendLayout();
             this.panel15.SuspendLayout();
+            this.pDropText.SuspendLayout();
+            this.pDropTextInner.SuspendLayout();
             this.SuspendLayout();
             // 
             // pCredits
@@ -1111,13 +1118,67 @@
             this.lReplay.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DragStop);
             this.lReplay.MouseEnter += new System.EventHandler(this.HandleMouseEnter);
             // 
+            // pDropText
+            // 
+            this.pDropText.Controls.Add(this.panel9);
+            this.pDropText.Controls.Add(this.panel10);
+            this.pDropText.Controls.Add(this.pDropTextInner);
+            this.pDropText.Location = new System.Drawing.Point(103, 498);
+            this.pDropText.Name = "pDropText";
+            this.pDropText.Size = new System.Drawing.Size(619, 36);
+            this.pDropText.TabIndex = 10;
+            // 
+            // panel9
+            // 
+            this.panel9.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.dropdown_l;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Margin = new System.Windows.Forms.Padding(0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(41, 36);
+            this.panel9.TabIndex = 5;
+            // 
+            // panel10
+            // 
+            this.panel10.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.dropdown_r;
+            this.panel10.Location = new System.Drawing.Point(542, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(40, 36);
+            this.panel10.TabIndex = 5;
+            // 
+            // pDropTextInner
+            // 
+            this.pDropTextInner.BackgroundImage = global::TETV_ScoreBar.Properties.Resources.dropdown_c;
+            this.pDropTextInner.Controls.Add(this.lDropText);
+            this.pDropTextInner.Location = new System.Drawing.Point(41, 0);
+            this.pDropTextInner.Margin = new System.Windows.Forms.Padding(0);
+            this.pDropTextInner.Name = "pDropTextInner";
+            this.pDropTextInner.Size = new System.Drawing.Size(501, 36);
+            this.pDropTextInner.TabIndex = 5;
+            // 
+            // lDropText
+            // 
+            this.lDropText.BackColor = System.Drawing.Color.Transparent;
+            this.lDropText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDropText.ForeColor = System.Drawing.Color.Black;
+            this.lDropText.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lDropText.Location = new System.Drawing.Point(3, 0);
+            this.lDropText.MinimumSize = new System.Drawing.Size(50, 0);
+            this.lDropText.Name = "lDropText";
+            this.lDropText.Size = new System.Drawing.Size(465, 27);
+            this.lDropText.TabIndex = 6;
+            this.lDropText.Text = "The quick brown fox jumps!";
+            this.lDropText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lDropText.Click += new System.EventHandler(this.lDropText_Click);
+            // 
             // Display
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1321, 742);
+            this.ClientSize = new System.Drawing.Size(1286, 742);
+            this.Controls.Add(this.pDropText);
             this.Controls.Add(this.pReplay);
             this.Controls.Add(this.pHalfTime);
             this.Controls.Add(this.pStat);
@@ -1130,6 +1191,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Display";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Display_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.display_MouseMove);
             this.pCredits.ResumeLayout(false);
             this.pInnerCredits.ResumeLayout(false);
@@ -1160,6 +1222,8 @@
             this.pReplay.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            this.pDropText.ResumeLayout(false);
+            this.pDropTextInner.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1227,5 +1291,10 @@
         private System.Windows.Forms.Panel pClock;
         private System.Windows.Forms.Label lClock;
         private System.Windows.Forms.Panel pClockDivider;
+        private System.Windows.Forms.Panel pDropText;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel pDropTextInner;
+        private System.Windows.Forms.Label lDropText;
     }
 }

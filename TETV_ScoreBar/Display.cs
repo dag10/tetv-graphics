@@ -79,6 +79,17 @@ namespace TETV_ScoreBar {
             lHalfTimeClock.ForeColor = Color.FromArgb(102, 0, 0);
             lReplay.ForeColor = Color.FromArgb(102, 0, 0);
             lClock.ForeColor = Color.FromArgb(102, 0, 0);
+
+            // Per-game initialization
+            switch (game.gameType) {
+                case GameType.Wrestling:
+                    // Blank first and last stat bar fields
+                    statFields[0] = statValues[0] = "";
+                    statFields[3] = statValues[3] = "";
+                    break;
+                default:
+                    break;
+            }
         }
 
         #endregion
@@ -154,6 +165,12 @@ namespace TETV_ScoreBar {
             lStatField2.Text = statFields[2];
             lStatField3.Text = statFields[3];
 
+            // Hide unused stat bar elements
+            lStatValue0.Visible = lStatField0.Visible = (statValues[0] != null && statValues[0].Length > 0);
+            lStatValue1.Visible = lStatField1.Visible = (statValues[1] != null && statValues[1].Length > 0);
+            lStatValue2.Visible = lStatField2.Visible = (statValues[2] != null && statValues[2].Length > 0);
+            lStatValue3.Visible = lStatField3.Visible = (statValues[3] != null && statValues[3].Length > 0);
+
             // Set ScoreBar elements
             this.lAbbr1.Text = game.TeamAbbr[0];
             this.lAbbr2.Text = game.TeamAbbr[1];
@@ -165,6 +182,7 @@ namespace TETV_ScoreBar {
             this.lScoreRS.Text = game.AltScore[1].ToString();
             this.lQuarter.Text = game.Quarter.ToString();
             this.lInfoText.Text = game.infoText.Replace("&", "&&");
+            this.lDropText.Text = game.dropText.Replace("&", "&&");
             if (game.Quarter == -1)
                 this.lQuarter.Text = "OT";
             else
@@ -172,6 +190,8 @@ namespace TETV_ScoreBar {
 
             // Set positions
             this.pBar.Location = new Point(game.ScoreBoardPosition.X - (this.pBar.Width / 2), game.ScoreBoardPosition.Y);
+            this.pDropText.Location = new Point(this.pBar.Location.X + (this.pBar.Width / 2) - (this.pDropText.Width / 2), this.pBar.Location.Y + this.pBar.Height - 0);
+                // ^ -7 because I want to overlap the pBar's bottom red strip which is 7px tall
             this.pReplay.Location = game.ReplayPosition;
             this.pHalfTime.Location = game.HalfTimePosition;
             this.pBug.Location = game.BugPosition;
@@ -549,5 +569,13 @@ namespace TETV_ScoreBar {
         }
         
         #endregion
+
+        private void lDropText_Click(object sender, EventArgs e) {
+
+        }
+
+        private void Display_Load(object sender, EventArgs e) {
+
+        }
     }
 }

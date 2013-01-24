@@ -4,7 +4,7 @@
   <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="TETV_Graphics" version="2.3.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="TETV_Graphics" version="2.4.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="TETV_Graphics.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -64,14 +64,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2632192">
-      <assemblyIdentity name="TETV_Graphics" version="2.3.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TETV_Graphics.exe" size="2632704">
+      <assemblyIdentity name="TETV_Graphics" version="2.4.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>VC8/jbKdkXtUsuPla8w/20EfECA=</dsig:DigestValue>
+        <dsig:DigestValue>6XvOV35SF53D61hdD6jlxsjB6GA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

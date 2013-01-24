@@ -50,7 +50,7 @@ namespace TETV_ScoreBar {
                                             "Do not redistribute, use, or modify without permission.\n" +
                                             "\n" +
                                             "For questions, help, requests, or suggestions, I can be reached at:\n" +
-                                            "drew1313132@gmail.com\n" +
+                                            "gottlieb.drew@gmail.com\n" +
                                             "\n" +
                                             "Versions of this program can be found at:\n" +
                                             "http://projects.minipenguin.com/projects/tetv-graphics";
