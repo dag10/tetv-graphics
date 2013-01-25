@@ -1204,6 +1204,7 @@ namespace TETV_ScoreBar {
                 // Scores
                 nHomeScore.Value = game.TeamScore[0];
                 nVisitingScore.Value = game.TeamScore[1];
+                bUpdateScores.Enabled = false;
 
                 // Set toggle buttons' default backgrounds
                 bUseStats.BackColor = display.showStats ? Color.Cyan : Color.Yellow;

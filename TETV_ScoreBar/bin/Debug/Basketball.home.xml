@@ -1,33 +1,33 @@
 <?xml version="1.0" standalone="yes"?>
-<DocumentElement>
-  <home>
-    <name>the</name>
+<DocumentElement xmlns="Basketball">
+  <player>
+    <number>3</number>
+    <name>lazy</name>
     <points>0</points>
     <fouls>0</fouls>
-  </home>
-  <home>
-    <name>quick</name>
-    <points>5</points>
+  </player>
+  <player>
+    <number>65</number>
+    <name>dog</name>
+    <points>0</points>
     <fouls>0</fouls>
-  </home>
-  <home>
-    <name>brown</name>
-    <points>5</points>
+  </player>
+  <player>
+    <number>3</number>
+    <name>drew</name>
+    <points>0</points>
     <fouls>0</fouls>
-  </home>
-  <home>
-    <name>fox</name>
-    <points>17</points>
+  </player>
+  <player>
+    <number>1</number>
+    <name>Test 1</name>
+    <points>0</points>
     <fouls>0</fouls>
-  </home>
-  <home>
-    <name>jumps</name>
-    <points>4</points>
+  </player>
+  <player>
+    <number>6</number>
+    <name>test</name>
+    <points>0</points>
     <fouls>0</fouls>
-  </home>
-  <home>
-    <name>the</name>
-    <points>2</points>
-    <fouls>0</fouls>
-  </home>
+  </player>
 </DocumentElement>

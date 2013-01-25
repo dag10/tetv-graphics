@@ -12,10 +12,10 @@
   <StatY>608</StatY>
   <ControlScreen>0</ControlScreen>
   <DisplayScreen>1</DisplayScreen>
-  <GameType>1</GameType>
-  <ShowInfoText>True</ShowInfoText>
+  <GameType>4</GameType>
+  <ShowInfoText>False</ShowInfoText>
   <ShowScores>True</ShowScores>
-  <ShowTimeouts>True</ShowTimeouts>
+  <ShowTimeouts>False</ShowTimeouts>
   <ShowHalfTimeClock>False</ShowHalfTimeClock>
   <ShowClock>False</ShowClock>
   <ShowBug>True</ShowBug>

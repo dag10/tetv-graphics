@@ -1,4 +1,3 @@
-C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\ConestogaPlayers.sdf
 C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe.config
 C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.exe
 C:\Users\Drew Gottlieb\Desktop\tetv-graphics\TETV_ScoreBar\bin\Debug\TETV_Graphics.pdb

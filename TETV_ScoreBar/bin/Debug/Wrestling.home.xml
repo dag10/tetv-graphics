@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
-<DocumentElement>
-  <home>
-    <weightclass>50</weightclass>
-    <name>Joe Shmoe</name>
-  </home>
+<DocumentElement xmlns="Wrestling">
+  <player>
+    <weightclass>1100</weightclass>
+    <name>Emily "Ginger" Seeburger</name>
+  </player>
 </DocumentElement>

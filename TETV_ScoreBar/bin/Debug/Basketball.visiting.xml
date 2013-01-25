@@ -1,13 +1,33 @@
 <?xml version="1.0" standalone="yes"?>
-<DocumentElement>
-  <visiting>
+<DocumentElement xmlns="Basketball">
+  <player>
+    <number>3</number>
     <name>lazy</name>
+    <points>2</points>
+    <fouls>0</fouls>
+  </player>
+  <player>
+    <number>65</number>
+    <name>dog</name>
     <points>0</points>
     <fouls>0</fouls>
-  </visiting>
-  <visiting>
-    <name>dog</name>
-    <points>3</points>
+  </player>
+  <player>
+    <number>3</number>
+    <name>drew</name>
+    <points>0</points>
     <fouls>0</fouls>
-  </visiting>
+  </player>
+  <player>
+    <number>1</number>
+    <name>Test 1</name>
+    <points>0</points>
+    <fouls>0</fouls>
+  </player>
+  <player>
+    <number>6</number>
+    <name>test</name>
+    <points>0</points>
+    <fouls>0</fouls>
+  </player>
 </DocumentElement>
