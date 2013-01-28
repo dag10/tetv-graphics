@@ -24,48 +24,21 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QApplication>
-#include <QtGui/QPushButton>
-#include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
-#include <QtCore/QDebug>
+#ifndef MODEWINDOW_H
+#define MODEWINDOW_H
 
-#include "modewindow.h"
+#include <QtGui/QDialog>
 
-// Preferred inner resolution: 1280 x 744
+class ModeWindow : public QDialog {
+	Q_OBJECT
 
-int main(int argc, char *argv[])
-{
-	QApplication a(argc, argv);
+public:
+	ModeWindow(QWidget * parent = NULL);
+	enum ModeCode { MasterMode = 2, SlaveMode };
 
-	// Mode window
+private slots:
+	void masterClicked();
+	void slaveClicked();
+};
 
-	ModeWindow modePrompt;
-	int mode = modePrompt.exec();
-
-	if (mode == QDialog::Rejected)
-		return 0;
-
-	bool isMaster = (mode == ModeWindow::MasterMode);
-
-	// Secondary window
-
-	QWidget window;
-	QVBoxLayout layout(&window);
-
-	// Message
-	QLabel lblMessage(QString("You selected %1 mode.").arg(isMaster ? "master" : "slave"));
-	layout.addWidget(&lblMessage, 1);
-
-	layout.addSpacing(20);
-
-	// Close button
-	QPushButton btnClose("Close me");
-	QWidget::connect(&btnClose, SIGNAL(clicked()), &window, SLOT(close()));
-	layout.addWidget(&btnClose, 0);
-
-	window.setMinimumSize(230, 80);
-	window.setWindowTitle("TETV Graphics");
-	window.show();
-	return a.exec();
-}
+#endif // MODEWINDOW_H

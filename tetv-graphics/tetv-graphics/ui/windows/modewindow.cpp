@@ -24,48 +24,59 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QApplication>
-#include <QtGui/QPushButton>
+#include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
-#include <QtCore/QDebug>
+#include <QtGui/QPushButton>
 
 #include "modewindow.h"
+#include "consts.h"
 
-// Preferred inner resolution: 1280 x 744
-
-int main(int argc, char *argv[])
+ModeWindow::ModeWindow(QWidget * parent)
+	: QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint)
 {
-	QApplication a(argc, argv);
+	setFixedSize(250, 300);
+	setWindowTitle("TETV Graphics");
 
-	// Mode window
+	QVBoxLayout * layout = new QVBoxLayout(this);
 
-	ModeWindow modePrompt;
-	int mode = modePrompt.exec();
+	// Program title
 
-	if (mode == QDialog::Rejected)
-		return 0;
+	QLabel * lblTitle = new QLabel("TETV Graphics");
+	lblTitle->setStyleSheet("font: 24px bold;");
+	layout->addWidget(lblTitle, 30, Qt::AlignHCenter | Qt::AlignBottom);
 
-	bool isMaster = (mode == ModeWindow::MasterMode);
+	// Version text
 
-	// Secondary window
+	QLabel * lblVersion = new QLabel(QString("Version %1.%2.%3")
+		.arg(TETVGFX_VERSION_MAJOR)
+		.arg(TETVGFX_VERSION_MINOR)
+		.arg(TETVGFX_VERSION_PATCH));
+	lblVersion->setStyleSheet("font-weight: bold;");
+	layout->addWidget(lblVersion, 30, Qt::AlignHCenter | Qt::AlignTop);
 
-	QWidget window;
-	QVBoxLayout layout(&window);
+	// Master button
 
-	// Message
-	QLabel lblMessage(QString("You selected %1 mode.").arg(isMaster ? "master" : "slave"));
-	layout.addWidget(&lblMessage, 1);
+	QPushButton * btnMaster = new QPushButton("Master");
+	btnMaster->setFixedSize(170, 80);
+	btnMaster->setStyleSheet("font: 18px bold;");
+	layout->addWidget(btnMaster, 0, Qt::AlignHCenter);
+	connect(btnMaster, SIGNAL(clicked()), this, SLOT(masterClicked()));
 
-	layout.addSpacing(20);
+	// Slave button
 
-	// Close button
-	QPushButton btnClose("Close me");
-	QWidget::connect(&btnClose, SIGNAL(clicked()), &window, SLOT(close()));
-	layout.addWidget(&btnClose, 0);
+	QPushButton * btnSlave = new QPushButton("Slave");
+	btnSlave->setFixedSize(170, 80);
+	btnSlave->setStyleSheet("font: 18px bold;");
+	layout->addWidget(btnSlave, 0, Qt::AlignHCenter);
+	connect(btnSlave, SIGNAL(clicked()), this, SLOT(slaveClicked()));
+}
 
-	window.setMinimumSize(230, 80);
-	window.setWindowTitle("TETV Graphics");
-	window.show();
-	return a.exec();
+void ModeWindow::masterClicked()
+{
+	done(MasterMode);
+}
+
+void ModeWindow::slaveClicked()
+{
+	done(SlaveMode);
 }

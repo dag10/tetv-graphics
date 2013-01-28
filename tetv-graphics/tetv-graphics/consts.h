@@ -24,48 +24,6 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QApplication>
-#include <QtGui/QPushButton>
-#include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
-#include <QtCore/QDebug>
-
-#include "modewindow.h"
-
-// Preferred inner resolution: 1280 x 744
-
-int main(int argc, char *argv[])
-{
-	QApplication a(argc, argv);
-
-	// Mode window
-
-	ModeWindow modePrompt;
-	int mode = modePrompt.exec();
-
-	if (mode == QDialog::Rejected)
-		return 0;
-
-	bool isMaster = (mode == ModeWindow::MasterMode);
-
-	// Secondary window
-
-	QWidget window;
-	QVBoxLayout layout(&window);
-
-	// Message
-	QLabel lblMessage(QString("You selected %1 mode.").arg(isMaster ? "master" : "slave"));
-	layout.addWidget(&lblMessage, 1);
-
-	layout.addSpacing(20);
-
-	// Close button
-	QPushButton btnClose("Close me");
-	QWidget::connect(&btnClose, SIGNAL(clicked()), &window, SLOT(close()));
-	layout.addWidget(&btnClose, 0);
-
-	window.setMinimumSize(230, 80);
-	window.setWindowTitle("TETV Graphics");
-	window.show();
-	return a.exec();
-}
+#define TETVGFX_VERSION_MAJOR 3
+#define TETVGFX_VERSION_MINOR 0
+#define TETVGFX_VERSION_PATCH 0
