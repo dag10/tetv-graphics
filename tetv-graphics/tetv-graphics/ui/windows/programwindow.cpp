@@ -24,33 +24,18 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QApplication>
-#include <QtGui/QPushButton>
+#include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
-#include <QtCore/QDebug>
+#include <QtGui/QPushButton>
 
-#include "modewindow.h"
 #include "programwindow.h"
 
-// Preferred inner resolution: 1280 x 744
-
-int main(int argc, char *argv[])
+ProgramWindow::ProgramWindow(bool isMaster, QWidget * parent)
+	: QWidget(parent)
 {
-	QApplication a(argc, argv);
+	m_isMaster = isMaster;
+	setMinimumSize(1024, 768);
+	setWindowTitle(QString("TETV Graphics - %1").arg(isMaster ? "Master" : "Slave"));
 
-	// Mode window
-
-	ModeWindow modePrompt;
-	int mode = modePrompt.exec();
-
-	if (mode == QDialog::Rejected)
-		return 0;
-
-	// Program window
-
-	ProgramWindow pgmWindow(mode == ModeWindow::MasterMode);
-	pgmWindow.show();
-
-	return a.exec();
+	// TODO: Create three-column UI to start
 }

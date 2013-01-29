@@ -24,33 +24,19 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QApplication>
-#include <QtGui/QPushButton>
-#include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
-#include <QtCore/QDebug>
+#ifndef PROGRAMWINDOW_H
+#define PROGRAMWINDOW_H
 
-#include "modewindow.h"
-#include "programwindow.h"
+#include <QtGui/QWidget>
 
-// Preferred inner resolution: 1280 x 744
+class ProgramWindow : public QWidget {
+	Q_OBJECT
 
-int main(int argc, char *argv[])
-{
-	QApplication a(argc, argv);
+public:
+	ProgramWindow(bool isMaster = true, QWidget * parent = NULL);
 
-	// Mode window
+private:
+	bool m_isMaster;
+};
 
-	ModeWindow modePrompt;
-	int mode = modePrompt.exec();
-
-	if (mode == QDialog::Rejected)
-		return 0;
-
-	// Program window
-
-	ProgramWindow pgmWindow(mode == ModeWindow::MasterMode);
-	pgmWindow.show();
-
-	return a.exec();
-}
+#endif // PROGRAMWINDOW_H
