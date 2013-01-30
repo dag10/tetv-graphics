@@ -1,3 +1,35 @@
-QWidget {
-    background-color: orange;
+/* Windows */
+
+ProgramWindow, ModeWindow {
+    background-color: #595959;
+}
+
+/* Font color */
+
+QLabel {
+    color: #e2e2e2;
+}
+
+/* Buttons */
+
+QPushButton {
+    color: #e2e2e2;
+    border-image: url(res/img/button-border.png) 3 repeat stretch;
+    border-width: 3px;
+    padding: 2px 6px;
+    outline: none;
+}
+QPushButton:focus, QPushButton:selected {
+    border-image: url(res/img/button-border-selected.png) 3 repeat stretch; }
+QPushButton:hover {
+    border-image: url(res/img/button-border-hover.png) 3 repeat stretch; }
+QPushButton:focus:hover, QPushButton:selected:hover {
+    border-image: url(res/img/button-border-selected-hover.png) 3 repeat stretch; }
+QPushButton:pressed, QPushButton:focus:pressed, QPushButton:selected:pressed {
+    border-image: url(res/img/button-border-selected-pressed.png) 3 repeat stretch; }
+
+/* Inputs */
+
+QLineEdit {
+    background-color: #a6a6a6;
 }

@@ -24,19 +24,16 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef PROGRAMWINDOW_H
-#define PROGRAMWINDOW_H
+#ifndef TPUSHBUTTON_H
+#define TPUSHBUTTON_H
 
-#include <QtGui/QWidget>
+#include <QtGui/QPushButton>
 
-class ProgramWindow : public QWidget {
+class TPushButton : public QPushButton {
     Q_OBJECT
 
 public:
-    ProgramWindow(bool isMaster = true, QWidget * parent = NULL);
-
-private:
-    bool m_isMaster;
+    TPushButton(const QString & text = QString(), QWidget * parent = NULL);
 };
 
-#endif // PROGRAMWINDOW_H
+#endif // TPUSHBUTTON_H

@@ -30,15 +30,15 @@
 #include <QtGui/QDialog>
 
 class ModeWindow : public QDialog {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	ModeWindow(QWidget * parent = NULL);
-	enum ModeCode { MasterMode = 2, SlaveMode };
+    ModeWindow(QWidget * parent = NULL);
+    enum ModeCode { MasterMode = 2, SlaveMode };
 
 private slots:
-	void masterClicked();
-	void slaveClicked();
+    void masterClicked();
+    void slaveClicked();
 };
 
 #endif // MODEWINDOW_H

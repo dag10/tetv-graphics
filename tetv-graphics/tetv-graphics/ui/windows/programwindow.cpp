@@ -24,18 +24,39 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QVBoxLayout>
+#include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
 
-#include "programwindow.h"
+#include "ui/controls/TPushButton.h"
+#include "ui/windows/programwindow.h"
 
 ProgramWindow::ProgramWindow(bool isMaster, QWidget * parent)
-	: QWidget(parent)
+    : QWidget(parent)
 {
-	m_isMaster = isMaster;
-	setMinimumSize(1024, 768);
-	setWindowTitle(QString("TETV Graphics - %1").arg(isMaster ? "Master" : "Slave"));
+    m_isMaster = isMaster;
+    setWindowTitle(QString("TETV Graphics - %1").arg(isMaster ? "Master" : "Slave"));
+    setMinimumSize(1024, 768);
 
-	// TODO: Create three-column UI to start
+    // Temporary demonstration buttons:
+
+    QGridLayout * layout = new QGridLayout(this);
+    layout->setColumnStretch(0, 1);
+    layout->setColumnStretch(1, 0);
+    layout->setColumnStretch(2, 1);
+    layout->setRowStretch(0, 1);
+    layout->setRowStretch(4, 1);
+
+    TPushButton * close = new TPushButton("Close");
+    layout->addWidget(close, 1, 1);
+
+    TPushButton * btn = new TPushButton("Another test");
+    layout->addWidget(btn, 2, 1);
+
+    TPushButton * btn2 = new TPushButton("Hello world!");
+    layout->addWidget(btn2, 3, 1);
+
+    connect(close, SIGNAL(clicked()), this, SLOT(close()));
+
+    // TODO: Create three-column UI to start
 }

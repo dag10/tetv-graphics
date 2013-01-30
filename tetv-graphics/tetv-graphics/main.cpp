@@ -28,29 +28,36 @@
 #include <QtGui/QPushButton>
 #include <QtGui/QLabel>
 #include <QtGui/QBoxLayout>
+#include <QtCore/QFile>
 #include <QtCore/QDebug>
 
-#include "modewindow.h"
-#include "programwindow.h"
+#include "ui/windows/modewindow.h"
+#include "ui/windows/programwindow.h"
 
 // Preferred inner resolution: 1280 x 744
 
 int main(int argc, char *argv[])
 {
-	QApplication a(argc, argv);
+    QApplication app(argc, argv);
 
-	// Mode window
+    // Load stylesheet
 
-	ModeWindow modePrompt;
-	int mode = modePrompt.exec();
+    QFile style("res/css/application.css");
+    style.open(QFile::ReadOnly);
+    app.setStyleSheet(QLatin1String(style.readAll()));
 
-	if (mode == QDialog::Rejected)
-		return 0;
+    // Mode window
 
-	// Program window
+    ModeWindow modePrompt;
+    int mode = modePrompt.exec();
 
-	ProgramWindow pgmWindow(mode == ModeWindow::MasterMode);
-	pgmWindow.show();
+    if (mode == QDialog::Rejected)
+        return 0;
 
-	return a.exec();
+    // Program window
+
+    ProgramWindow pgmWindow(mode == ModeWindow::MasterMode);
+    pgmWindow.show();
+
+    return app.exec();
 }

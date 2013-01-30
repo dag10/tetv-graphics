@@ -24,19 +24,11 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef PROGRAMWINDOW_H
-#define PROGRAMWINDOW_H
+#include <QtGui/QGraphicsDropShadowEffect>
+#include "ui/controls/TPushButton.h"
 
-#include <QtGui/QWidget>
-
-class ProgramWindow : public QWidget {
-    Q_OBJECT
-
-public:
-    ProgramWindow(bool isMaster = true, QWidget * parent = NULL);
-
-private:
-    bool m_isMaster;
-};
-
-#endif // PROGRAMWINDOW_H
+TPushButton::TPushButton(const QString & text, QWidget * parent)
+    : QPushButton(text, parent)
+{
+    // Nothing at the moment
+}

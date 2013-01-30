@@ -26,57 +26,57 @@
 
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
-#include <QtGui/QPushButton>
 
-#include "modewindow.h"
+#include "ui/controls/TPushButton.h"
+#include "ui/windows/modewindow.h"
 #include "consts.h"
 
 ModeWindow::ModeWindow(QWidget * parent)
-	: QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint)
+    : QDialog(parent, Qt::WindowSystemMenuHint | Qt::WindowTitleHint)
 {
-	setFixedSize(250, 300);
-	setWindowTitle("TETV Graphics");
+    setFixedSize(250, 300);
+    setWindowTitle("TETV Graphics");
 
-	QVBoxLayout * layout = new QVBoxLayout(this);
+    QVBoxLayout * layout = new QVBoxLayout(this);
 
-	// Program title
+    // Program title
 
-	QLabel * lblTitle = new QLabel("TETV Graphics");
-	lblTitle->setStyleSheet("font: 24px bold;");
-	layout->addWidget(lblTitle, 30, Qt::AlignHCenter | Qt::AlignBottom);
+    QLabel * lblTitle = new QLabel("TETV Graphics");
+    lblTitle->setStyleSheet("font: 24px bold;");
+    layout->addWidget(lblTitle, 30, Qt::AlignHCenter | Qt::AlignBottom);
 
-	// Version text
+    // Version text
 
-	QLabel * lblVersion = new QLabel(QString("Version %1.%2.%3")
-		.arg(TETVGFX_VERSION_MAJOR)
-		.arg(TETVGFX_VERSION_MINOR)
-		.arg(TETVGFX_VERSION_PATCH));
-	lblVersion->setStyleSheet("font-weight: bold;");
-	layout->addWidget(lblVersion, 30, Qt::AlignHCenter | Qt::AlignTop);
+    QLabel * lblVersion = new QLabel(QString("Version %1.%2.%3")
+        .arg(TETVGFX_VERSION_MAJOR)
+        .arg(TETVGFX_VERSION_MINOR)
+        .arg(TETVGFX_VERSION_PATCH));
+    lblVersion->setStyleSheet("font-weight: bold;");
+    layout->addWidget(lblVersion, 30, Qt::AlignHCenter | Qt::AlignTop);
 
-	// Master button
+    // Master button
 
-	QPushButton * btnMaster = new QPushButton("Master");
-	btnMaster->setFixedSize(170, 80);
-	btnMaster->setStyleSheet("font: 18px bold;");
-	layout->addWidget(btnMaster, 0, Qt::AlignHCenter);
-	connect(btnMaster, SIGNAL(clicked()), this, SLOT(masterClicked()));
+    TPushButton * btnMaster = new TPushButton("Master");
+    btnMaster->setFixedSize(170, 50);
+    btnMaster->setStyleSheet("font: 18px bold;");
+    layout->addWidget(btnMaster, 0, Qt::AlignHCenter);
+    connect(btnMaster, SIGNAL(clicked()), this, SLOT(masterClicked()));
 
-	// Slave button
+    // Slave button
 
-	QPushButton * btnSlave = new QPushButton("Slave");
-	btnSlave->setFixedSize(170, 80);
-	btnSlave->setStyleSheet("font: 18px bold;");
-	layout->addWidget(btnSlave, 0, Qt::AlignHCenter);
-	connect(btnSlave, SIGNAL(clicked()), this, SLOT(slaveClicked()));
+    TPushButton * btnSlave = new TPushButton("Slave");
+    btnSlave->setFixedSize(170, 50);
+    btnSlave->setStyleSheet("font: 18px bold;");
+    layout->addWidget(btnSlave, 0, Qt::AlignHCenter);
+    connect(btnSlave, SIGNAL(clicked()), this, SLOT(slaveClicked()));
 }
 
 void ModeWindow::masterClicked()
 {
-	done(MasterMode);
+    done(MasterMode);
 }
 
 void ModeWindow::slaveClicked()
 {
-	done(SlaveMode);
+    done(SlaveMode);
 }
