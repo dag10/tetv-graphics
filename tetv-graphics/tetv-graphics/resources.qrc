@@ -1,5 +1,10 @@
- <!DOCTYPE RCC><RCC version="1.0">
- <qresource>
-     <file>res/img/button-border.png</file>
- </qresource>
- </RCC>
+<RCC>
+    <qresource prefix="/">
+        <file>res/css/application.css</file>
+        <file>res/img/button-border.png</file>
+        <file>res/img/button-border-hover.png</file>
+        <file>res/img/button-border-selected.png</file>
+        <file>res/img/button-border-selected-hover.png</file>
+        <file>res/img/button-border-selected-pressed.png</file>
+    </qresource>
+</RCC>

@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
     // Load stylesheet
 
-    QFile style("res/css/application.css");
+    QFile style(":/res/css/application.css");
     style.open(QFile::ReadOnly);
     app.setStyleSheet(QLatin1String(style.readAll()));
 
