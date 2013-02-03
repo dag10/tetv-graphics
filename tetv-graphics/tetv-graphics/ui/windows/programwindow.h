@@ -27,9 +27,11 @@
 #ifndef PROGRAMWINDOW_H
 #define PROGRAMWINDOW_H
 
-#include <QtGui/QWidget>
+#include <QtGui/QMainWindow>
 
-class ProgramWindow : public QWidget {
+class QVBoxLayout;
+
+class ProgramWindow : public QMainWindow {
     Q_OBJECT
 
 public:
@@ -37,6 +39,10 @@ public:
 
 private:
     bool m_isMaster;
+    QMainWindow * middle;
+    QVBoxLayout * leftColumn;
+    QVBoxLayout * middleColumn;
+    QVBoxLayout * rightColumn;
 };
 
 #endif // PROGRAMWINDOW_H

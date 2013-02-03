@@ -27,36 +27,58 @@
 #include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
+#include <QtGui/QDockWidget.h>
+#include <QtGui/QMainWindow.h>
+#include <QtCore/QDebug.h>
+
+#include "ui/panels/TestPanel.h"
 
 #include "ui/controls/TPushButton.h"
 #include "ui/windows/programwindow.h"
 
+// Preferred inner resolution: 1280 x 744
+
 ProgramWindow::ProgramWindow(bool isMaster, QWidget * parent)
-    : QWidget(parent)
+    : QMainWindow(parent)
 {
     m_isMaster = isMaster;
     setWindowTitle(QString("TETV Graphics - %1").arg(isMaster ? "Master" : "Slave"));
-    setMinimumSize(1024, 768);
+    setMinimumSize(1024, 700);
+    resize(1280, 744);
 
-    // Temporary demonstration buttons:
+    // Create columns
 
-    QGridLayout * layout = new QGridLayout(this);
-    layout->setColumnStretch(0, 1);
-    layout->setColumnStretch(1, 0);
-    layout->setColumnStretch(2, 1);
-    layout->setRowStretch(0, 1);
-    layout->setRowStretch(4, 1);
+    QWidget * columnsContainer = new QWidget(this);
+    this->setCentralWidget(columnsContainer);
+    QHBoxLayout * columns = new QHBoxLayout(columnsContainer);
 
-    TPushButton * close = new TPushButton("Close");
-    layout->addWidget(close, 1, 1);
+    QVBoxLayout * leftColumnLayout = new QVBoxLayout();
+    leftColumnLayout->addLayout(leftColumn = new QVBoxLayout(), 0);
+    leftColumnLayout->addStretch(1);
+    columns->addLayout(leftColumnLayout, 0);
 
-    TPushButton * btn = new TPushButton("Another test");
-    layout->addWidget(btn, 2, 1);
+    QVBoxLayout * middleColumnLayout = new QVBoxLayout();
+    middleColumnLayout->addLayout(middleColumn = new QVBoxLayout(), 0);
+    middleColumnLayout->addStretch(1);
+    columns->addLayout(middleColumnLayout, 1);
 
-    TPushButton * btn2 = new TPushButton("Hello world!");
-    layout->addWidget(btn2, 3, 1);
+    QVBoxLayout * rightColumnLayout = new QVBoxLayout();
+    rightColumnLayout->addLayout(rightColumn = new QVBoxLayout(), 0);
+    rightColumnLayout->addStretch(1);
+    columns->addLayout(rightColumnLayout, 0);
 
-    connect(close, SIGNAL(clicked()), this, SLOT(close()));
+    // Left column
+    leftColumn->addWidget(new TestPanel("Left 1"));
+    leftColumn->addWidget(new TestPanel("Left 2"));
+    leftColumn->addWidget(new TestPanel("Left 3"));
 
-    // TODO: Create three-column UI to start
+    // Middle column
+    middleColumn->addWidget(new TestPanel("Middle 1"));
+    middleColumn->addWidget(new TestPanel("Middle 2"));
+
+    // Right column
+    rightColumn->addWidget(new TestPanel("Right 1"));
+    rightColumn->addWidget(new TestPanel("Right 2"));
+    rightColumn->addWidget(new TestPanel("Right 3"));
+    rightColumn->addWidget(new TestPanel("Right 4"));
 }

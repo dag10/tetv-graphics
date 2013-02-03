@@ -24,49 +24,31 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QApplication>
-#include <QtGui/QPushButton>
-#include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QPlastiqueStyle>
-#include <QtCore/QFile>
-#include <QtCore/QDebug>
+#ifndef ABSTRACTPANEL_H
+#define ABSTRACTPANEL_H
 
-#include "consts.h"
-#include "ui/windows/modewindow.h"
-#include "ui/windows/programwindow.h"
+#include <QtGui/QFrame>
 
-int main(int argc, char *argv[])
-{
-    QApplication app(argc, argv);
+class PanelTitleWidget;
+class QLabel;
+class QGridLayout;
 
-    // Set up application
-    app.setStyle(new QPlastiqueStyle());
-    app.setApplicationName("TETV Graphics");
-    app.setApplicationVersion(QString("Version %1.%2.%3")
-        .arg(TETVGFX_VERSION_MAJOR)
-        .arg(TETVGFX_VERSION_MINOR)
-        .arg(TETVGFX_VERSION_PATCH));
-    app.setOrganizationName("tetv");
+class AbstractPanel : public QFrame {
+    Q_OBJECT
+    Q_PROPERTY(QString title READ title WRITE setTitle)
+    Q_PROPERTY(QGridLayout * grid READ grid)
 
-    // Load stylesheet
+public:
+    AbstractPanel(QWidget * parent = NULL);
+    QString title() const;
+    QGridLayout * grid();
 
-    QFile style(":/res/css/application.css");
-    style.open(QFile::ReadOnly);
-    app.setStyleSheet(style.readAll());
+public slots:
+    void setTitle(const QString & title);
 
-    // Mode window
+private:
+    QLabel * lblTitle;
+    QGridLayout * m_grid;
+};
 
-    ModeWindow modePrompt;
-    int mode = modePrompt.exec();
-
-    if (mode == QDialog::Rejected)
-        return 0;
-
-    // Program window
-
-    ProgramWindow pgmWindow(mode == ModeWindow::MasterMode);
-    pgmWindow.show();
-
-    return app.exec();
-}
+#endif // ABSTRACTPANEL_H

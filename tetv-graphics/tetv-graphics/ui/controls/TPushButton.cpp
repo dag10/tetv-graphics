@@ -24,7 +24,6 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QGraphicsDropShadowEffect>
 #include "ui/controls/TPushButton.h"
 
 TPushButton::TPushButton(const QString & text, QWidget * parent)

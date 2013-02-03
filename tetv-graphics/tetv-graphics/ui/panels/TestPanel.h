@@ -24,49 +24,16 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QApplication>
-#include <QtGui/QPushButton>
-#include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QPlastiqueStyle>
-#include <QtCore/QFile>
-#include <QtCore/QDebug>
+#ifndef TESTPANEL_H
+#define TESTPANEL_H
 
-#include "consts.h"
-#include "ui/windows/modewindow.h"
-#include "ui/windows/programwindow.h"
+#include "ui/panels/AbstractPanel.h"
 
-int main(int argc, char *argv[])
-{
-    QApplication app(argc, argv);
+class TestPanel : public AbstractPanel {
+    Q_OBJECT
 
-    // Set up application
-    app.setStyle(new QPlastiqueStyle());
-    app.setApplicationName("TETV Graphics");
-    app.setApplicationVersion(QString("Version %1.%2.%3")
-        .arg(TETVGFX_VERSION_MAJOR)
-        .arg(TETVGFX_VERSION_MINOR)
-        .arg(TETVGFX_VERSION_PATCH));
-    app.setOrganizationName("tetv");
+public:
+    TestPanel(const QString & title = QString(), QWidget * parent = NULL);
+};
 
-    // Load stylesheet
-
-    QFile style(":/res/css/application.css");
-    style.open(QFile::ReadOnly);
-    app.setStyleSheet(style.readAll());
-
-    // Mode window
-
-    ModeWindow modePrompt;
-    int mode = modePrompt.exec();
-
-    if (mode == QDialog::Rejected)
-        return 0;
-
-    // Program window
-
-    ProgramWindow pgmWindow(mode == ModeWindow::MasterMode);
-    pgmWindow.show();
-
-    return app.exec();
-}
+#endif // TESTPANEL_H

@@ -24,49 +24,17 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QApplication>
-#include <QtGui/QPushButton>
-#include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QPlastiqueStyle>
-#include <QtCore/QFile>
+#include <QtGui/QGridLayout>
 #include <QtCore/QDebug>
+#include "ui/controls/TPushButton.h"
+#include "ui/panels/TestPanel.h"
 
-#include "consts.h"
-#include "ui/windows/modewindow.h"
-#include "ui/windows/programwindow.h"
-
-int main(int argc, char *argv[])
+TestPanel::TestPanel(const QString & title, QWidget * parent)
+    : AbstractPanel(parent)
 {
-    QApplication app(argc, argv);
+    setTitle(title.isEmpty() ? "Test panel" : title);
 
-    // Set up application
-    app.setStyle(new QPlastiqueStyle());
-    app.setApplicationName("TETV Graphics");
-    app.setApplicationVersion(QString("Version %1.%2.%3")
-        .arg(TETVGFX_VERSION_MAJOR)
-        .arg(TETVGFX_VERSION_MINOR)
-        .arg(TETVGFX_VERSION_PATCH));
-    app.setOrganizationName("tetv");
-
-    // Load stylesheet
-
-    QFile style(":/res/css/application.css");
-    style.open(QFile::ReadOnly);
-    app.setStyleSheet(style.readAll());
-
-    // Mode window
-
-    ModeWindow modePrompt;
-    int mode = modePrompt.exec();
-
-    if (mode == QDialog::Rejected)
-        return 0;
-
-    // Program window
-
-    ProgramWindow pgmWindow(mode == ModeWindow::MasterMode);
-    pgmWindow.show();
-
-    return app.exec();
+    grid()->addWidget(new TPushButton("First..."), 0, 0, 1, 2);
+    grid()->addWidget(new TPushButton("Secondary"), 1, 0);
+    grid()->addWidget(new TPushButton("Third!"), 1, 1);
 }

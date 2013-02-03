@@ -1,35 +1,58 @@
 /* Windows */
 
-ProgramWindow, ModeWindow {
-    background-color: #595959;
+ModeWindow
+{
+    background-color: rgb(89, 89, 89);
+}
+
+ProgramWindow
+{
+    background-color: rgb(38, 38, 38);
 }
 
 /* Font color */
 
-QLabel {
-    color: #e2e2e2;
+QLabel
+{
+    color: rgb(226, 226, 226);
 }
 
 /* Buttons */
 
-QPushButton {
-    color: #e2e2e2;
+TPushButton
+{
+    color: rgb(226, 226, 226);
     border-image: url(:/res/img/button-border.png) 3 repeat stretch;
     border-width: 3px;
     padding: 2px 6px;
     outline: none;
 }
-QPushButton:focus, QPushButton:selected {
+TPushButton:focus, TPushButton:selected {
     border-image: url(:/res/img/button-border-selected.png) 3 repeat stretch; }
-QPushButton:hover {
+TPushButton:hover {
     border-image: url(:/res/img/button-border-hover.png) 3 repeat stretch; }
-QPushButton:focus:hover, QPushButton:selected:hover {
+TPushButton:focus:hover, TPushButton:selected:hover {
     border-image: url(:/res/img/button-border-selected-hover.png) 3 repeat stretch; }
-QPushButton:pressed, QPushButton:focus:pressed, QPushButton:selected:pressed {
+TPushButton:pressed, TPushButton:focus:pressed, TPushButton:selected:pressed {
     border-image: url(:/res/img/button-border-selected-pressed.png) 3 repeat stretch; }
 
 /* Inputs */
 
-QLineEdit {
-    background-color: #a6a6a6;
+QLineEdit
+{
+    background-color: rgb(166, 166, 166);
+}
+
+/* Panels */
+
+AbstractPanel
+{
+    border-image: url(:/res/img/panel-border.png) 2 stretch stretch;
+    border-width: 2px;
+}
+
+AbstractPanel > #title
+{
+    padding: auto 1px;
+    background-image: url(:/res/img/panel-header.png);
 }

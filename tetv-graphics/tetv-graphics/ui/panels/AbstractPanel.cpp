@@ -24,49 +24,47 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QApplication>
-#include <QtGui/QPushButton>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QPlastiqueStyle>
-#include <QtCore/QFile>
-#include <QtCore/QDebug>
+#include <QtCore/QDebug.h>
+#include "ui/panels/AbstractPanel.h"
 
-#include "consts.h"
-#include "ui/windows/modewindow.h"
-#include "ui/windows/programwindow.h"
-
-int main(int argc, char *argv[])
+AbstractPanel::AbstractPanel(QWidget * parent)
+    : QFrame(parent)
 {
-    QApplication app(argc, argv);
+    setMinimumWidth(200);
 
-    // Set up application
-    app.setStyle(new QPlastiqueStyle());
-    app.setApplicationName("TETV Graphics");
-    app.setApplicationVersion(QString("Version %1.%2.%3")
-        .arg(TETVGFX_VERSION_MAJOR)
-        .arg(TETVGFX_VERSION_MINOR)
-        .arg(TETVGFX_VERSION_PATCH));
-    app.setOrganizationName("tetv");
+    QVBoxLayout * mainLayout = new QVBoxLayout(this);
+    mainLayout->setMargin(0);
+    
+    // Title label
 
-    // Load stylesheet
+    lblTitle = new QLabel();
+    lblTitle->setFixedHeight(19);
+    lblTitle->setFont(QFont("Arial", 8, QFont::Light));
+    lblTitle->setObjectName("title");
+    mainLayout->addWidget(lblTitle, 0);
 
-    QFile style(":/res/css/application.css");
-    style.open(QFile::ReadOnly);
-    app.setStyleSheet(style.readAll());
+    // Body widget
 
-    // Mode window
+    m_grid = new QGridLayout();
+    m_grid->setMargin(4);
+    m_grid->setSpacing(2);
+    mainLayout->addLayout(m_grid, 1);
+}
 
-    ModeWindow modePrompt;
-    int mode = modePrompt.exec();
+void AbstractPanel::setTitle(const QString & title)
+{
+    lblTitle->setText(title);
+}
 
-    if (mode == QDialog::Rejected)
-        return 0;
+QString AbstractPanel::title() const
+{
+    return lblTitle->text();
+}
 
-    // Program window
-
-    ProgramWindow pgmWindow(mode == ModeWindow::MasterMode);
-    pgmWindow.show();
-
-    return app.exec();
+QGridLayout * AbstractPanel::grid()
+{
+    return m_grid;
 }
