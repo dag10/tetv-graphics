@@ -24,47 +24,31 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QGridLayout>
-#include <QtGui/QLabel>
-#include <QtCore/QDebug>
-#include "ui/panels/AbstractPanel.h"
+#ifndef NETABSTRACT_H
+#define NETABSTRACT_H
 
-AbstractPanel::AbstractPanel(QWidget * parent)
-    : QFrame(parent)
-{
-    setMinimumWidth(200);
+#include <QtCore/QObject>
 
-    QVBoxLayout * mainLayout = new QVBoxLayout(this);
-    mainLayout->setMargin(0);
-    
-    // Title label
+class NetAbstract : public QObject {
+    Q_OBJECT
+    Q_ENUMS(HandlerResponse)
 
-    lblTitle = new QLabel();
-    lblTitle->setFixedHeight(19);
-    lblTitle->setFont(QFont("Arial", 8, QFont::Light));
-    lblTitle->setObjectName("title");
-    mainLayout->addWidget(lblTitle, 0);
+public:
+    enum HandlerResponse {
+        Continue,   // This handler didn't handle this packet, keep trying other handlers.
+        Handled,    // This handler handled it. Don't try other handlers.
+        Forward     // This handler handled it; please forward this message to other slaves if master.
+    };
 
-    // Body widget
+    NetAbstract();
+    void RegisterHandler(const QString * packetName, NetHandler * handler);
+};
 
-    m_grid = new QGridLayout();
-    m_grid->setMargin(4);
-    m_grid->setSpacing(2);
-    mainLayout->addLayout(m_grid, 1);
-}
+#endif // NETABSTRACT_H
 
-void AbstractPanel::setTitle(const QString & title)
-{
-    lblTitle->setText(title);
-}
-
-QString AbstractPanel::title() const
-{
-    return lblTitle->text();
-}
-
-QGridLayout * AbstractPanel::grid()
-{
-    return m_grid;
-}
+// TODO: Create NetHandler class (it's abstract)
+/* Here's how it'll work:
+    - When a packet is received, each registered NetHandler will be told to Handle() the packet,
+        and the Handle() will return a HandlerResponse indicating what we should do. If forward,
+        and we are master, we will forward this to all other slaves.
+    - That's all I've got so far. I really should try to do this sort of planning while I'm NOT exhausted.

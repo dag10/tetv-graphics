@@ -24,47 +24,4 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QGridLayout>
-#include <QtGui/QLabel>
-#include <QtCore/QDebug>
-#include "ui/panels/AbstractPanel.h"
-
-AbstractPanel::AbstractPanel(QWidget * parent)
-    : QFrame(parent)
-{
-    setMinimumWidth(200);
-
-    QVBoxLayout * mainLayout = new QVBoxLayout(this);
-    mainLayout->setMargin(0);
-    
-    // Title label
-
-    lblTitle = new QLabel();
-    lblTitle->setFixedHeight(19);
-    lblTitle->setFont(QFont("Arial", 8, QFont::Light));
-    lblTitle->setObjectName("title");
-    mainLayout->addWidget(lblTitle, 0);
-
-    // Body widget
-
-    m_grid = new QGridLayout();
-    m_grid->setMargin(4);
-    m_grid->setSpacing(2);
-    mainLayout->addLayout(m_grid, 1);
-}
-
-void AbstractPanel::setTitle(const QString & title)
-{
-    lblTitle->setText(title);
-}
-
-QString AbstractPanel::title() const
-{
-    return lblTitle->text();
-}
-
-QGridLayout * AbstractPanel::grid()
-{
-    return m_grid;
-}
+#include "net/NetMaster.h"

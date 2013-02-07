@@ -27,9 +27,9 @@
 #include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
-#include <QtGui/QDockWidget.h>
-#include <QtGui/QMainWindow.h>
-#include <QtCore/QDebug.h>
+#include <QtGui/QDockWidget>
+#include <QtGui/QMainWindow>
+#include <QtCore/QDebug>
 
 #include "ui/panels/TestPanel.h"
 

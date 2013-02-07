@@ -24,47 +24,27 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QGridLayout>
-#include <QtGui/QLabel>
-#include <QtCore/QDebug>
-#include "ui/panels/AbstractPanel.h"
+#ifndef NETMASTER_H
+#define NETMASTER_H
 
-AbstractPanel::AbstractPanel(QWidget * parent)
-    : QFrame(parent)
-{
-    setMinimumWidth(200);
+#include <QtNetwork/QTcpServer>
 
-    QVBoxLayout * mainLayout = new QVBoxLayout(this);
-    mainLayout->setMargin(0);
-    
-    // Title label
+class NetMaster : public QObject {
+    Q_OBJECT
+    Q_PROPERTY(QString title READ title WRITE setTitle)
+    Q_PROPERTY(QGridLayout * grid READ grid)
 
-    lblTitle = new QLabel();
-    lblTitle->setFixedHeight(19);
-    lblTitle->setFont(QFont("Arial", 8, QFont::Light));
-    lblTitle->setObjectName("title");
-    mainLayout->addWidget(lblTitle, 0);
+public:
+    AbstractPanel(QWidget * parent = NULL);
+    QString title() const;
+    QGridLayout * grid();
 
-    // Body widget
+public slots:
+    void setTitle(const QString & title);
 
-    m_grid = new QGridLayout();
-    m_grid->setMargin(4);
-    m_grid->setSpacing(2);
-    mainLayout->addLayout(m_grid, 1);
-}
+private:
+    QLabel * lblTitle;
+    QGridLayout * m_grid;
+};
 
-void AbstractPanel::setTitle(const QString & title)
-{
-    lblTitle->setText(title);
-}
-
-QString AbstractPanel::title() const
-{
-    return lblTitle->text();
-}
-
-QGridLayout * AbstractPanel::grid()
-{
-    return m_grid;
-}
+#endif // NETMASTER_H
