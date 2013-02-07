@@ -27,24 +27,16 @@
 #ifndef NETMASTER_H
 #define NETMASTER_H
 
-#include <QtNetwork/QTcpServer>
+#include "net/NetAbstract.h"
 
-class NetMaster : public QObject {
+class NetMaster : public NetAbstract {
     Q_OBJECT
-    Q_PROPERTY(QString title READ title WRITE setTitle)
-    Q_PROPERTY(QGridLayout * grid READ grid)
 
 public:
-    AbstractPanel(QWidget * parent = NULL);
-    QString title() const;
-    QGridLayout * grid();
+    NetMaster();
 
-public slots:
-    void setTitle(const QString & title);
+public signals:
 
-private:
-    QLabel * lblTitle;
-    QGridLayout * m_grid;
 };
 
 #endif // NETMASTER_H

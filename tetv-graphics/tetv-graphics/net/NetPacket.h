@@ -24,24 +24,48 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef NETABSTRACT_H
-#define NETABSTRACT_H
+#ifndef NETPACKET_H
+#define NETPACKET_H
 
-#include <QtCore/QHash>
-#include <QtCore/QObject>
+#include <QtCore/QString>
+#include <QtCore/QList>
+#include <QtCore/QVariant>
+#include <QtCore/QIODevice>
+#include <QtCore/QDataStream>
 
-class AbstractNetHandler;
-
-class NetAbstract : public QObject {
+class NetPacket : public QObject {
     Q_OBJECT
+    Q_PROPERTY(QString name READ name WRITE setName)
 
 public:
-    NetAbstract();
-    void registerHandler(const QString & packetName, AbstractNetHandler * handler);
-    bool handlerExists(const QString & packetName, AbstractNetHandler * handler);
+    NetPacket(const QString & name) { m_name = name; }
+    NetPacket(QIODevice * io)
+    {
+        QDataStream in(io);
+        quint8 numArgs;
+        in >> m_name >> numArgs;
+        for (int i = 0; i < numArgs; i++)
+            addArg(QVariant(in));
+    }
+
+    void writeOut(QIODevice * io)
+    {
+        QDataStream out(io);
+        out << m_name << (quint8)args();
+        for (int i = 0; i < args(); i++)
+            out << m_args.at(i);
+    }
+
+    int args() const { return m_args.count(); }
+    QString name() const { return m_name; }
+    const QVariant & operator [](int i) { return m_args.at(i); }
+
+    void setName(const QString & name) { m_name = name; }
+    void addArg(const QVariant & arg) { m_args.append(arg); }
 
 private:
-    QHash<QString, QList<AbstractNetHandler*>> handlers;
+    QString m_name;
+    QList<QVariant> m_args;
 };
 
-#endif // NETABSTRACT_H
+#endif // NETPACKET_H

@@ -24,24 +24,18 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef NETABSTRACT_H
-#define NETABSTRACT_H
+#ifndef ABSTRACTNETHANDLER_H
+#define ABSTRACTNETHANDLER_H
 
-#include <QtCore/QHash>
+#include "net/NetPacket.h"
 #include <QtCore/QObject>
 
-class AbstractNetHandler;
-
-class NetAbstract : public QObject {
+class AbstractNetHandler : public QObject {
     Q_OBJECT
 
 public:
-    NetAbstract();
-    void registerHandler(const QString & packetName, AbstractNetHandler * handler);
-    bool handlerExists(const QString & packetName, AbstractNetHandler * handler);
-
-private:
-    QHash<QString, QList<AbstractNetHandler*>> handlers;
+    // Returns true if -- as a master -- this packet should be forwarded to all other slaves.
+    virtual bool Handle(const NetPacket & packet) = NULL;
 };
 
-#endif // NETABSTRACT_H
+#endif // ABSTRACTNETHANDLER_H

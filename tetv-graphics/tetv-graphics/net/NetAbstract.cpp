@@ -24,9 +24,26 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "net/AbstractNetHandler.h"
 #include "net/NetAbstract.h"
 
 NetAbstract::NetAbstract()
 {
 
+}
+
+void NetAbstract::registerHandler(const QString & packetName, AbstractNetHandler * handler)
+{
+    if (handlerExists(packetName, handler)) return;
+
+    if (!handlers.contains(packetName))
+        handlers.insert(packetName, QList<AbstractNetHandler*>());
+
+    handlers.values(packetName).first().append(handler);
+}
+
+bool NetAbstract::handlerExists(const QString & packetName, AbstractNetHandler * handler)
+{
+    return handlers.contains(packetName) &&
+        handlers.value(packetName).contains(handler);
 }
