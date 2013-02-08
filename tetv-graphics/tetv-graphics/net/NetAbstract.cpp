@@ -27,7 +27,8 @@
 #include "net/AbstractNetHandler.h"
 #include "net/NetAbstract.h"
 
-NetAbstract::NetAbstract()
+NetAbstract::NetAbstract(QObject * parent)
+    : QObject(parent)
 {
 
 }

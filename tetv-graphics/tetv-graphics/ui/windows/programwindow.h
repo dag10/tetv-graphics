@@ -30,6 +30,7 @@
 #include <QtGui/QMainWindow>
 
 class QVBoxLayout;
+class NetAbstract;
 
 class ProgramWindow : public QMainWindow {
     Q_OBJECT
@@ -38,11 +39,15 @@ public:
     ProgramWindow(bool isMaster = true, QWidget * parent = NULL);
 
 private:
+    void initNet();
+
     bool m_isMaster;
     QMainWindow * middle;
     QVBoxLayout * leftColumn;
     QVBoxLayout * middleColumn;
     QVBoxLayout * rightColumn;
+
+    NetAbstract * netManager;
 };
 
 #endif // PROGRAMWINDOW_H

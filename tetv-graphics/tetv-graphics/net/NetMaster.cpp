@@ -24,4 +24,44 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <QtNetwork/QTcpServer>
+#include <QtNetwork/QTcpSocket>
+#include <QtCore/QDebug>
+#include "consts.h"
 #include "net/NetMaster.h"
+
+NetMaster::NetMaster(QObject * parent)
+    : NetAbstract(parent)
+{
+    m_server = new QTcpServer(this);
+
+    connect(m_server, SIGNAL(newConnection()), this, SLOT(handleConnection()));
+
+    m_server->listen(QHostAddress::Any, DEFAULT_PORT);
+
+    qDebug() << "LISTENTING ON PORT" << DEFAULT_PORT;
+}
+
+void NetMaster::sendToAll(NetPacket * packet, QTcpSocket * exclude)
+{
+    foreach(QTcpSocket *socket, m_sockets)
+        if (socket != exclude)
+            packet->writeOut(socket);
+}
+
+void NetMaster::handleConnection()
+{
+    QTcpSocket * socket = m_server->nextPendingConnection();
+    connect(socket, SIGNAL(disconnected()), this, SLOT(handleDisconnection()));
+    m_sockets.append(socket);
+
+    qDebug() << "CONNECTION";
+}
+
+void NetMaster::handleDisconnection()
+{
+    QTcpSocket * socket = (QTcpSocket*)sender();
+    m_sockets.removeAll(socket);
+
+    qDebug() << "DISCONNECTION";
+}

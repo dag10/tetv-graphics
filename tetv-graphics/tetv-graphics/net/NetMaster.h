@@ -27,16 +27,26 @@
 #ifndef NETMASTER_H
 #define NETMASTER_H
 
+#include "net/NetPacket.h"
 #include "net/NetAbstract.h"
+
+class QTcpSocket;
+class QTcpServer;
 
 class NetMaster : public NetAbstract {
     Q_OBJECT
 
 public:
-    NetMaster();
+    NetMaster(QObject * parent = NULL);
 
-public signals:
+private:
+    void sendToAll(NetPacket * packet, QTcpSocket * exclude = NULL);
+    QList<QTcpSocket*> m_sockets;
+    QTcpServer * m_server;
 
+private slots:
+    void handleConnection();
+    void handleDisconnection();
 };
 
 #endif // NETMASTER_H

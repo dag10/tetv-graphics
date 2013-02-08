@@ -36,7 +36,7 @@ class NetAbstract : public QObject {
     Q_OBJECT
 
 public:
-    NetAbstract();
+    NetAbstract(QObject * parent = NULL);
     void registerHandler(const QString & packetName, AbstractNetHandler * handler);
     bool handlerExists(const QString & packetName, AbstractNetHandler * handler);
 

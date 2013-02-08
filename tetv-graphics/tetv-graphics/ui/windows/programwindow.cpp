@@ -31,8 +31,8 @@
 #include <QtGui/QMainWindow>
 #include <QtCore/QDebug>
 
+#include "net/NetMaster.h"
 #include "ui/panels/TestPanel.h"
-
 #include "ui/controls/TPushButton.h"
 #include "ui/windows/programwindow.h"
 
@@ -45,6 +45,8 @@ ProgramWindow::ProgramWindow(bool isMaster, QWidget * parent)
     setWindowTitle(QString("TETV Graphics - %1").arg(isMaster ? "Master" : "Slave"));
     setMinimumSize(1024, 700);
     resize(1280, 744);
+
+    initNet();
 
     // Create columns
 
@@ -66,19 +68,16 @@ ProgramWindow::ProgramWindow(bool isMaster, QWidget * parent)
     rightColumnLayout->addLayout(rightColumn = new QVBoxLayout(), 0);
     rightColumnLayout->addStretch(1);
     columns->addLayout(rightColumnLayout, 0);
+}
 
-    // Left column
-    leftColumn->addWidget(new TestPanel("Left 1"));
-    leftColumn->addWidget(new TestPanel("Left 2"));
-    leftColumn->addWidget(new TestPanel("Left 3"));
-
-    // Middle column
-    middleColumn->addWidget(new TestPanel("Middle 1"));
-    middleColumn->addWidget(new TestPanel("Middle 2"));
-
-    // Right column
-    rightColumn->addWidget(new TestPanel("Right 1"));
-    rightColumn->addWidget(new TestPanel("Right 2"));
-    rightColumn->addWidget(new TestPanel("Right 3"));
-    rightColumn->addWidget(new TestPanel("Right 4"));
+void ProgramWindow::initNet()
+{
+    if (m_isMaster)
+    {
+        netManager = new NetMaster(this);
+    }
+    else
+    {
+        // netManager = new NetSlave(this);
+    }
 }

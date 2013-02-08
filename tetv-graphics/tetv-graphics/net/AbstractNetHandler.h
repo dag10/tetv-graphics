@@ -28,11 +28,8 @@
 #define ABSTRACTNETHANDLER_H
 
 #include "net/NetPacket.h"
-#include <QtCore/QObject>
 
-class AbstractNetHandler : public QObject {
-    Q_OBJECT
-
+class AbstractNetHandler {
 public:
     // Returns true if -- as a master -- this packet should be forwarded to all other slaves.
     virtual bool Handle(const NetPacket & packet) = NULL;
