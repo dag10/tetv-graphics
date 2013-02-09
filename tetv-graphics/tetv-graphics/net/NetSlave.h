@@ -24,47 +24,42 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtNetwork/QTcpServer>
+#ifndef NETSLAVE_H
+#define NETSLAVE_H
+
 #include <QtNetwork/QTcpSocket>
-#include <QtCore/QDebug>
-#include "consts.h"
-#include "net/NetMaster.h"
+#include "net/NetPacket.h"
+#include "net/AbstractNetHandler.h"
+#include "net/NetAbstract.h"
 
-NetMaster::NetMaster(QObject * parent)
-    : NetAbstract(parent)
-{
-    m_server = new QTcpServer(this);
+class NetSlave : public NetAbstract, public AbstractNetHandler {
+    Q_OBJECT
 
-    connect(m_server, SIGNAL(newConnection()), this, SLOT(handleConnection()));
+public:
+    NetSlave(QObject * parent = NULL);
+    void processInitialPackets();
+    bool handle(const NetPacket & packet);
+    void begin();
 
-    m_server->listen(QHostAddress::Any, DEFAULT_PORT);
+private:
+    void send(NetPacket * packet);
+    void processPacket(NetPacket * packet);
+    bool receivingInitialPackets;
+    quint16 nextPacketSize;
+    QTcpSocket * m_socket;
+    QList<NetPacket*> initialPackets;
 
-    qDebug() << "LISTENTING ON PORT" << DEFAULT_PORT;
-}
+private slots:
+    void handleConnection();
+    void handleDisconnection();
+    void handleError(QAbstractSocket::SocketError);
+    void dataReady();
 
-void NetMaster::sendToAll(NetPacket * packet, QTcpSocket * exclude)
-{
-    foreach(QTcpSocket *socket, m_sockets)
-        if (socket != exclude)
-            packet->writeOut(socket);
-}
+signals:
+    void connected();
+    void disconnected();
+    void error(QAbstractSocket::SocketError);
+    void receivedInitialPackets();
+};
 
-void NetMaster::handleConnection()
-{
-    QTcpSocket * socket = m_server->nextPendingConnection();
-    connect(socket, SIGNAL(disconnected()), this, SLOT(handleDisconnection()));
-    m_sockets.append(socket);
-    
-    NetPacket("PRINT", "Hello, client!").writeOut(socket);
-    NetPacket("INIT_DONE").writeOut(socket);
-
-    qDebug() << "CONNECTION";
-}
-
-void NetMaster::handleDisconnection()
-{
-    QTcpSocket * socket = (QTcpSocket*)sender();
-    m_sockets.removeAll(socket);
-
-    qDebug() << "DISCONNECTION";
-}
+#endif // NETSLAVE_H

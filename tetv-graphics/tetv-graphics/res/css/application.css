@@ -1,6 +1,6 @@
 /* Windows */
 
-ModeWindow
+ModeWindow, QMessageBox
 {
     background-color: rgb(89, 89, 89);
 }
@@ -19,7 +19,7 @@ QLabel
 
 /* Buttons */
 
-TPushButton
+QPushButton
 {
     color: rgb(226, 226, 226);
     border-image: url(:/res/img/button-border.png) 3 repeat stretch;
@@ -27,13 +27,13 @@ TPushButton
     padding: 2px 6px;
     outline: none;
 }
-TPushButton:focus, TPushButton:selected {
+QPushButton:focus, QPushButton:selected {
     border-image: url(:/res/img/button-border-selected.png) 3 repeat stretch; }
-TPushButton:hover {
+QPushButton:hover {
     border-image: url(:/res/img/button-border-hover.png) 3 repeat stretch; }
-TPushButton:focus:hover, TPushButton:selected:hover {
+QPushButton:focus:hover, QPushButton:selected:hover {
     border-image: url(:/res/img/button-border-selected-hover.png) 3 repeat stretch; }
-TPushButton:pressed, TPushButton:focus:pressed, TPushButton:selected:pressed {
+QPushButton:pressed, QPushButton:focus:pressed, QPushButton:selected:pressed {
     border-image: url(:/res/img/button-border-selected-pressed.png) 3 repeat stretch; }
 
 /* Inputs */

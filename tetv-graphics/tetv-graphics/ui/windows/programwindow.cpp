@@ -32,13 +32,14 @@
 #include <QtCore/QDebug>
 
 #include "net/NetMaster.h"
+#include "net/NetSlave.h"
 #include "ui/panels/TestPanel.h"
 #include "ui/controls/TPushButton.h"
 #include "ui/windows/programwindow.h"
 
 // Preferred inner resolution: 1280 x 744
 
-ProgramWindow::ProgramWindow(bool isMaster, QWidget * parent)
+ProgramWindow::ProgramWindow(bool isMaster, NetSlave * slave, QWidget * parent)
     : QMainWindow(parent)
 {
     m_isMaster = isMaster;
@@ -46,7 +47,16 @@ ProgramWindow::ProgramWindow(bool isMaster, QWidget * parent)
     setMinimumSize(1024, 700);
     resize(1280, 744);
 
-    initNet();
+    // Init Net
+
+    if (m_isMaster)
+    {
+        netManager = new NetMaster(this);
+    }
+    else
+    {
+        netManager = slave;
+    }
 
     // Create columns
 
@@ -68,6 +78,15 @@ ProgramWindow::ProgramWindow(bool isMaster, QWidget * parent)
     rightColumnLayout->addLayout(rightColumn = new QVBoxLayout(), 0);
     rightColumnLayout->addStretch(1);
     columns->addLayout(rightColumnLayout, 0);
+
+    // TODO: Set up panels
+
+    // If slave, process queued received packets
+
+    if (!m_isMaster)
+    {
+        ((NetSlave*)netManager)->processInitialPackets();
+    }
 }
 
 void ProgramWindow::initNet()
@@ -78,6 +97,6 @@ void ProgramWindow::initNet()
     }
     else
     {
-        // netManager = new NetSlave(this);
+        // TODO 
     }
 }

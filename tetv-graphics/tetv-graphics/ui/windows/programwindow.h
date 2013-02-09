@@ -31,12 +31,13 @@
 
 class QVBoxLayout;
 class NetAbstract;
+class NetSlave;
 
 class ProgramWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    ProgramWindow(bool isMaster = true, QWidget * parent = NULL);
+    ProgramWindow(bool isMaster = true, NetSlave * slave = NULL, QWidget * parent = NULL);
 
 private:
     void initNet();

@@ -26,6 +26,7 @@
 
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
+#include <QtGui/QMessageBox>
 
 #include "ui/controls/TPushButton.h"
 #include "ui/windows/modewindow.h"
@@ -56,7 +57,7 @@ ModeWindow::ModeWindow(QWidget * parent)
 
     // Master button
 
-    TPushButton * btnMaster = new TPushButton("Master");
+    btnMaster = new TPushButton("Master");
     btnMaster->setFixedSize(170, 50);
     btnMaster->setStyleSheet("font: 18px bold;");
     layout->addWidget(btnMaster, 0, Qt::AlignHCenter);
@@ -64,7 +65,7 @@ ModeWindow::ModeWindow(QWidget * parent)
 
     // Slave button
 
-    TPushButton * btnSlave = new TPushButton("Slave");
+    btnSlave = new TPushButton("Slave");
     btnSlave->setFixedSize(170, 50);
     btnSlave->setStyleSheet("font: 18px bold;");
     layout->addWidget(btnSlave, 0, Qt::AlignHCenter);
@@ -78,5 +79,27 @@ void ModeWindow::masterClicked()
 
 void ModeWindow::slaveClicked()
 {
+    netSlave = new NetSlave(this);
+
+    connect(netSlave, SIGNAL(receivedInitialPackets()), this, SLOT(netSlaveReady()));
+    connect(netSlave, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(netSlaveError(QAbstractSocket::SocketError)));
+
+    netSlave->begin();
+    btnSlave->setEnabled(false);
+}
+
+void ModeWindow::netSlaveReady()
+{
+    emit launchSlave(netSlave);
     done(SlaveMode);
+}
+
+void ModeWindow::netSlaveError(QAbstractSocket::SocketError error)
+{
+    QMessageBox msg;
+    QString errorName;
+    QDebug(&errorName) << error;
+    msg.critical(this, "Error", QString("Failed to connect:\n%1").arg(errorName));
+    msg.setFixedSize(450, 200);
+    btnSlave->setEnabled(true);
 }

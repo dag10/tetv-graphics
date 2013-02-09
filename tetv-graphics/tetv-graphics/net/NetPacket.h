@@ -32,33 +32,51 @@
 #include <QtCore/QVariant>
 #include <QtCore/QIODevice>
 #include <QtCore/QDataStream>
+#include <QtCore/QDebug>
 
 class NetPacket : public QObject {
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName)
 
 public:
-    NetPacket(const QString & name) { m_name = name; }
+    NetPacket(const QString & name, const QVariant firstPayload = QVariant()) {
+        m_name = name;
+
+        if (firstPayload.isValid())
+            m_args.append(firstPayload);
+    }
+
     NetPacket(QIODevice * io)
     {
         QDataStream in(io);
+        in.setVersion(QDataStream::Qt_4_8);
         quint8 numArgs;
-        in >> m_name >> numArgs;
+        in >> m_name;
+        in >> m_args;
         for (int i = 0; i < numArgs; i++)
             addArg(QVariant(in));
     }
 
     void writeOut(QIODevice * io)
     {
-        QDataStream out(io);
-        out << m_name << (quint8)args();
+        QByteArray packetData;
+        QDataStream dataBuilder(&packetData, QIODevice::ReadWrite);
+        dataBuilder << m_name << (quint8)args();
+
         for (int i = 0; i < args(); i++)
-            out << m_args.at(i);
+            dataBuilder << m_args.at(i);
+
+        QDataStream out(io);
+        out.setVersion(QDataStream::Qt_4_8);
+        out << (quint16)packetData.size();
+        out.writeBytes(packetData.constData(), packetData.size());
+
+        qDebug() << "Wrote packet with size:" << packetData.size();
     }
 
     int args() const { return m_args.count(); }
     QString name() const { return m_name; }
-    const QVariant & operator [](int i) { return m_args.at(i); }
+    const QVariant & arg(int i) const { return m_args.at(i); }
 
     void setName(const QString & name) { m_name = name; }
     void addArg(const QVariant & arg) { m_args.append(arg); }

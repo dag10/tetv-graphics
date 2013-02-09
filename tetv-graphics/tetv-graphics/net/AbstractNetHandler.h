@@ -32,7 +32,7 @@
 class AbstractNetHandler {
 public:
     // Returns true if -- as a master -- this packet should be forwarded to all other slaves.
-    virtual bool Handle(const NetPacket & packet) = NULL;
+    virtual bool handle(const NetPacket & packet) = NULL;
 };
 
 #endif // ABSTRACTNETHANDLER_H
