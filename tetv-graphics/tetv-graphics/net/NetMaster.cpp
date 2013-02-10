@@ -28,6 +28,7 @@
 #include <QtNetwork/QTcpSocket>
 #include <QtCore/QDebug>
 #include "consts.h"
+#include "net/AbstractNetHandler.h"
 #include "net/NetMaster.h"
 
 NetMaster::NetMaster(QObject * parent)
@@ -36,29 +37,45 @@ NetMaster::NetMaster(QObject * parent)
     m_server = new QTcpServer(this);
 
     connect(m_server, SIGNAL(newConnection()), this, SLOT(handleConnection()));
-
-    m_server->listen(QHostAddress::Any, DEFAULT_PORT);
-
-    qDebug() << "LISTENTING ON PORT" << DEFAULT_PORT;
 }
 
-void NetMaster::sendToAll(NetPacket * packet, QTcpSocket * exclude)
+const QString & NetMaster::begin()
 {
-    foreach(QTcpSocket *socket, m_sockets)
-        if (socket != exclude)
-            packet->writeOut(socket);
+    bool listening = m_server->listen(QHostAddress::Any, DEFAULT_PORT);
+
+    if (listening)
+    {
+        qDebug() << "Listening on port" << DEFAULT_PORT;
+        return QString();
+    }
+    else
+    {
+        qCritical() << "Failed to listen on port" << m_server->serverPort() << ":" << m_server->errorString();
+        return m_server->errorString();
+    }
+}
+
+void NetMaster::broadcastPacket(NetPacket * packet)
+{
+    for (int i = 0; i < m_sockets.count(); i++)
+        packet->writeOut(m_sockets.at(i));
 }
 
 void NetMaster::handleConnection()
 {
     QTcpSocket * socket = m_server->nextPendingConnection();
     connect(socket, SIGNAL(disconnected()), this, SLOT(handleDisconnection()));
+    connect(socket, SIGNAL(readyRead()), this, SLOT(dataReady()));
     m_sockets.append(socket);
+
+    qDebug() << "New connection from" << socket->peerAddress().toString()
+        << "(" << socket->peerName() << ")";
+
+    // Send initial packets:
     
     NetPacket("PRINT", "Hello, client!").writeOut(socket);
+    NetPacket("PING").writeOut(socket);
     NetPacket("INIT_DONE").writeOut(socket);
-
-    qDebug() << "CONNECTION";
 }
 
 void NetMaster::handleDisconnection()
@@ -66,5 +83,33 @@ void NetMaster::handleDisconnection()
     QTcpSocket * socket = (QTcpSocket*)sender();
     m_sockets.removeAll(socket);
 
-    qDebug() << "DISCONNECTION";
+    qDebug() << "Slave disconnected from" << socket->peerAddress().toString();
+}
+
+void NetMaster::dataReady()
+{
+    QTcpSocket * socket = (QTcpSocket*)sender();
+
+    while (socket->bytesAvailable())
+        sendToHandlers(&NetPacket(socket));
+}
+
+void NetMaster::sendToHandlers(NetPacket * packet)
+{
+    qDebug().nospace() << "[" << packet->receivedFrom()->peerAddress().toString() << "]"
+        << " Processing packet: " << packet->name();
+
+    if (!handlerExists(packet->name()))
+        return;
+
+    QList<AbstractNetHandler*> * handlers = m_netHandlers.value(packet->name());
+
+    bool forward = false;
+
+    for (int i = 0; i < handlers->count(); i++)
+        if (handlers->at(i)->handle(*packet))
+            forward = true;
+
+    if (forward)
+        broadcastPacket(packet);
 }

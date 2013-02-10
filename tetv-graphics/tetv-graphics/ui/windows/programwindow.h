@@ -27,21 +27,19 @@
 #ifndef PROGRAMWINDOW_H
 #define PROGRAMWINDOW_H
 
+#include <QtNetwork/QAbstractSocket>
 #include <QtGui/QMainWindow>
 
 class QVBoxLayout;
 class NetAbstract;
-class NetSlave;
 
 class ProgramWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    ProgramWindow(bool isMaster = true, NetSlave * slave = NULL, QWidget * parent = NULL);
+    ProgramWindow(bool isMaster = true, NetAbstract * netManager = NULL, QWidget * parent = NULL);
 
 private:
-    void initNet();
-
     bool m_isMaster;
     QMainWindow * middle;
     QVBoxLayout * leftColumn;
@@ -49,6 +47,9 @@ private:
     QVBoxLayout * rightColumn;
 
     NetAbstract * netManager;
+
+private slots:
+    void slaveSocketError(QAbstractSocket::SocketError);
 };
 
 #endif // PROGRAMWINDOW_H

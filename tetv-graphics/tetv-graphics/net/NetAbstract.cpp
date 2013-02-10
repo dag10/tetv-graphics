@@ -24,6 +24,7 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <QtCore/QDebug>
 #include "net/AbstractNetHandler.h"
 #include "net/NetAbstract.h"
 
@@ -37,14 +38,14 @@ void NetAbstract::registerHandler(const QString & packetName, AbstractNetHandler
 {
     if (handlerExists(packetName, handler)) return;
 
-    if (!handlers.contains(packetName))
-        handlers.insert(packetName, QList<AbstractNetHandler*>());
+    if (!m_netHandlers.contains(packetName))
+        m_netHandlers.insert(packetName, new QList<AbstractNetHandler*>());
 
-    handlers.values(packetName).first().append(handler);
+    m_netHandlers.value(packetName)->append(handler);
 }
 
 bool NetAbstract::handlerExists(const QString & packetName, AbstractNetHandler * handler)
 {
-    return handlers.contains(packetName) &&
-        handlers.value(packetName).contains(handler);
+    return m_netHandlers.contains(packetName) &&
+        (handler == NULL || m_netHandlers.value(packetName)->contains(handler));
 }

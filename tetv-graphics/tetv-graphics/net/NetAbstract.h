@@ -31,6 +31,7 @@
 #include <QtCore/QObject>
 
 class AbstractNetHandler;
+class NetPacket;
 
 class NetAbstract : public QObject {
     Q_OBJECT
@@ -38,10 +39,11 @@ class NetAbstract : public QObject {
 public:
     NetAbstract(QObject * parent = NULL);
     void registerHandler(const QString & packetName, AbstractNetHandler * handler);
-    bool handlerExists(const QString & packetName, AbstractNetHandler * handler);
+    bool handlerExists(const QString & packetName, AbstractNetHandler * handler = NULL);
 
-private:
-    QHash<QString, QList<AbstractNetHandler*>> handlers;
+protected:
+    virtual void sendToHandlers(NetPacket * packet) = NULL;
+    QHash<QString, QList<AbstractNetHandler*>*> m_netHandlers;
 };
 
 #endif // NETABSTRACT_H

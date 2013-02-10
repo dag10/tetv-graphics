@@ -52,13 +52,20 @@ NetSlave::NetSlave(QObject * parent)
         this,
         SIGNAL(error(QAbstractSocket::SocketError)));
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(dataReady()));
+    
+    registerHandler("PRINT", this);
+    registerHandler("PING", this);
 }
 
 void NetSlave::begin()
 {
-    m_socket->connectToHost(QHostAddress::LocalHost, DEFAULT_PORT);
+    QHostAddress address = QHostAddress::LocalHost;
+    address = QHostAddress("192.168.1.42");
+    quint16 port = DEFAULT_PORT;
 
-    qDebug() << "CONNECTING ON PORT" << DEFAULT_PORT;
+    m_socket->connectToHost(address, port);
+
+    qDebug() << "Connecting to" << address.toString() << ":" << port;
 }
 
 void NetSlave::send(NetPacket * packet)
@@ -68,17 +75,17 @@ void NetSlave::send(NetPacket * packet)
 
 void NetSlave::handleConnection()
 {
-    qDebug() << "CONNECTED";
+    qDebug() << "Connected!";
 }
 
 void NetSlave::handleDisconnection()
 {
-    qDebug() << "DISCONNECTED";
+    qDebug() << "Disconnected.";
 }
 
 void NetSlave::handleError(QAbstractSocket::SocketError error)
 {
-    qDebug() << "ERROR:" << error;
+    qCritical() << "ERROR:" << error;
 }
 
 void NetSlave::processInitialPackets()
@@ -94,8 +101,6 @@ void NetSlave::processInitialPackets()
 
 void NetSlave::processPacket(NetPacket * packet)
 {
-    qDebug() << "Received:" << packet->name();
-
     if (receivingInitialPackets)
     {
         if (packet->name() == "INIT_DONE")
@@ -105,38 +110,15 @@ void NetSlave::processPacket(NetPacket * packet)
     }
     else
     {
-        // TODO: Process packet properly, here.
-
-        qDebug() << "Processing:" << packet->name();
+        sendToHandlers(packet);
+        delete packet;
     }
 }
 
 void NetSlave::dataReady()
 {
-    qDebug() << "Data is ready.";
-
-    if (nextPacketSize == 0) // We're going to receive the packet size
-    {
-        qDebug() << "Bytes available:" << m_socket->bytesAvailable();
-
-        if (m_socket->bytesAvailable() < sizeof(nextPacketSize))
-            return;
-
-        QDataStream in((QIODevice*)m_socket);
-        in.setVersion(QDataStream::Qt_4_8);
-        in >> nextPacketSize;
-
-        qDebug() << "Next packet size:" << nextPacketSize;
-    }
-    
-    if (nextPacketSize > 0) // We know what this packet size will be
-    {
-        if (m_socket->bytesAvailable() >= nextPacketSize)
-        {
-            processPacket(new NetPacket((QIODevice*)this));
-            nextPacketSize = 0;
-        }
-    }
+    while (m_socket->bytesAvailable())
+        processPacket(new NetPacket(m_socket));
 }
 
 bool NetSlave::handle(const NetPacket & packet)
@@ -145,8 +127,26 @@ bool NetSlave::handle(const NetPacket & packet)
 
     if (name == "PRINT")
     {
-        qDebug() << "SERVER SAYS:" << packet.arg(0).toString();
+        qDebug() << "[PRINT]" << packet.arg(0).toString();
+    }
+
+    if (name == "PING")
+    {
+        send(&NetPacket("PONG"));
     }
 
     return false;
+}
+
+void NetSlave::sendToHandlers(NetPacket * packet)
+{
+    qDebug() << "Processing packet:" << packet->name();
+
+    if (!handlerExists(packet->name()))
+        return;
+
+    QList<AbstractNetHandler*> * handlers = m_netHandlers.value(packet->name());
+
+    for (int i = 0; i < handlers->count(); i++)
+        handlers->at(i)->handle(*packet);
 }

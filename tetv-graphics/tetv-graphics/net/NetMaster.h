@@ -38,15 +38,18 @@ class NetMaster : public NetAbstract {
 
 public:
     NetMaster(QObject * parent = NULL);
+    const QString & begin();
 
 private:
-    void sendToAll(NetPacket * packet, QTcpSocket * exclude = NULL);
+    void sendToHandlers(NetPacket * packet);
+    void broadcastPacket(NetPacket * packet);
     QList<QTcpSocket*> m_sockets;
     QTcpServer * m_server;
 
 private slots:
     void handleConnection();
     void handleDisconnection();
+    void dataReady();
 };
 
 #endif // NETMASTER_H

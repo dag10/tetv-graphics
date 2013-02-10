@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
     // Program window
 
-    ProgramWindow pgmWindow(mode == ModeWindow::MasterMode);
+    ProgramWindow pgmWindow(mode == ModeWindow::MasterMode, modePrompt.netManager());
     pgmWindow.show();
 
     return app.exec();

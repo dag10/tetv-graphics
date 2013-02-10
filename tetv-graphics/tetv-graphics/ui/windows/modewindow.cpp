@@ -74,23 +74,37 @@ ModeWindow::ModeWindow(QWidget * parent)
 
 void ModeWindow::masterClicked()
 {
+    NetMaster * netMaster = new NetMaster(this);
+    
+    QString error = ((NetMaster*)netMaster)->begin();
+    if (!error.isEmpty())
+    {
+        QMessageBox msg;
+        msg.critical(this, "Error", QString("Failed to launch server:\n%1").arg(error));
+        msg.setFixedSize(450, 200);
+        return;
+    }
+
+    m_netManager = netMaster;
     done(MasterMode);
 }
 
 void ModeWindow::slaveClicked()
 {
-    netSlave = new NetSlave(this);
+    NetSlave * netSlave = new NetSlave(this);
 
     connect(netSlave, SIGNAL(receivedInitialPackets()), this, SLOT(netSlaveReady()));
     connect(netSlave, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(netSlaveError(QAbstractSocket::SocketError)));
 
     netSlave->begin();
     btnSlave->setEnabled(false);
+
+    m_netManager = netSlave;
 }
 
 void ModeWindow::netSlaveReady()
 {
-    emit launchSlave(netSlave);
+    ((NetSlave*)m_netManager)->disconnect(this);
     done(SlaveMode);
 }
 
@@ -102,4 +116,9 @@ void ModeWindow::netSlaveError(QAbstractSocket::SocketError error)
     msg.critical(this, "Error", QString("Failed to connect:\n%1").arg(errorName));
     msg.setFixedSize(450, 200);
     btnSlave->setEnabled(true);
+}
+
+NetAbstract * ModeWindow::netManager()
+{
+    return m_netManager;
 }

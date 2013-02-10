@@ -27,20 +27,25 @@
 #ifndef MODEWINDOW_H
 #define MODEWINDOW_H
 
+#include "net/NetAbstract.h"
 #include "net/NetSlave.h"
+#include "net/NetMaster.h"
 #include <QtGui/QDialog>
 
 class TPushButton;
+class NetMaster;
+class NetSlave;
 
 class ModeWindow : public QDialog {
     Q_OBJECT
 
 public:
-    ModeWindow(QWidget * parent = NULL);
     enum ModeCode { MasterMode = 2, SlaveMode };
+    ModeWindow(QWidget * parent = NULL);
+    NetAbstract * netManager();
 
 private:
-    NetSlave * netSlave;
+    NetAbstract * m_netManager;
     TPushButton * btnMaster;
     TPushButton * btnSlave;
 
@@ -50,9 +55,6 @@ private slots:
 
     void netSlaveReady();
     void netSlaveError(QAbstractSocket::SocketError);
-
-signals:
-    void launchSlave(NetSlave * netSlave);
 };
 
 #endif // MODEWINDOW_H

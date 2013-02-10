@@ -34,49 +34,54 @@
 #include <QtCore/QDataStream>
 #include <QtCore/QDebug>
 
+class QTcpSocket;
+
 class NetPacket : public QObject {
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName)
 
 public:
     NetPacket(const QString & name, const QVariant firstPayload = QVariant()) {
+        m_sender = NULL;
         m_name = name;
 
         if (firstPayload.isValid())
             m_args.append(firstPayload);
     }
 
-    NetPacket(QIODevice * io)
+    NetPacket(QTcpSocket * socket)
     {
-        QDataStream in(io);
-        in.setVersion(QDataStream::Qt_4_8);
+        m_sender = socket;
         quint8 numArgs;
+
+        QDataStream in((QIODevice*)socket);
+        in.setVersion(QDataStream::Qt_4_8);
+
         in >> m_name;
-        in >> m_args;
+        in >> numArgs;
+
         for (int i = 0; i < numArgs; i++)
             addArg(QVariant(in));
     }
 
-    void writeOut(QIODevice * io)
+    void writeOut(QTcpSocket * socket)
     {
-        QByteArray packetData;
-        QDataStream dataBuilder(&packetData, QIODevice::ReadWrite);
-        dataBuilder << m_name << (quint8)args();
+        if (socket == m_sender) return;
+
+        QDataStream out((QIODevice*)socket);
+        out.setVersion(QDataStream::Qt_4_8);
+
+        out << m_name;
+        out << (quint8)args();
 
         for (int i = 0; i < args(); i++)
-            dataBuilder << m_args.at(i);
-
-        QDataStream out(io);
-        out.setVersion(QDataStream::Qt_4_8);
-        out << (quint16)packetData.size();
-        out.writeBytes(packetData.constData(), packetData.size());
-
-        qDebug() << "Wrote packet with size:" << packetData.size();
+            out << m_args.at(i);
     }
 
     int args() const { return m_args.count(); }
     QString name() const { return m_name; }
     const QVariant & arg(int i) const { return m_args.at(i); }
+    QTcpSocket * receivedFrom() const { return m_sender; }
 
     void setName(const QString & name) { m_name = name; }
     void addArg(const QVariant & arg) { m_args.append(arg); }
@@ -84,6 +89,7 @@ public:
 private:
     QString m_name;
     QList<QVariant> m_args;
+    QTcpSocket * m_sender;
 };
 
 #endif // NETPACKET_H

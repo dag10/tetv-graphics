@@ -42,6 +42,7 @@ public:
     void begin();
 
 private:
+    void sendToHandlers(NetPacket * packet);
     void send(NetPacket * packet);
     void processPacket(NetPacket * packet);
     bool receivingInitialPackets;

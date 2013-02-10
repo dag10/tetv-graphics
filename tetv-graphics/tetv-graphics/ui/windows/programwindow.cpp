@@ -29,6 +29,7 @@
 #include <QtGui/QPushButton>
 #include <QtGui/QDockWidget>
 #include <QtGui/QMainWindow>
+#include <QtGui/QMessageBox>
 #include <QtCore/QDebug>
 
 #include "net/NetMaster.h"
@@ -39,23 +40,26 @@
 
 // Preferred inner resolution: 1280 x 744
 
-ProgramWindow::ProgramWindow(bool isMaster, NetSlave * slave, QWidget * parent)
+ProgramWindow::ProgramWindow(bool isMaster, NetAbstract * netManager, QWidget * parent)
     : QMainWindow(parent)
 {
     m_isMaster = isMaster;
+    this->netManager = netManager;
+    netManager->setParent(this);
+
     setWindowTitle(QString("TETV Graphics - %1").arg(isMaster ? "Master" : "Slave"));
     setMinimumSize(1024, 700);
     resize(1280, 744);
 
-    // Init Net
+    // Network
 
-    if (m_isMaster)
+    if (!isMaster)
     {
-        netManager = new NetMaster(this);
-    }
-    else
-    {
-        netManager = slave;
+        connect(
+            (NetSlave*)netManager,
+            SIGNAL(error(QAbstractSocket::SocketError)),
+            this,
+            SLOT(slaveSocketError(QAbstractSocket::SocketError)));
     }
 
     // Create columns
@@ -89,14 +93,12 @@ ProgramWindow::ProgramWindow(bool isMaster, NetSlave * slave, QWidget * parent)
     }
 }
 
-void ProgramWindow::initNet()
+void ProgramWindow::slaveSocketError(QAbstractSocket::SocketError error)
 {
-    if (m_isMaster)
-    {
-        netManager = new NetMaster(this);
-    }
-    else
-    {
-        // TODO 
-    }
+    QMessageBox msg;
+    QString errorName;
+    QDebug(&errorName) << error;
+    msg.critical(this, "Error", QString("Connection error:\n%1").arg(errorName));
+    msg.setFixedSize(450, 200);
+    close();
 }
