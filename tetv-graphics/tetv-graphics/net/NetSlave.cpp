@@ -54,7 +54,6 @@ NetSlave::NetSlave(QObject * parent)
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(dataReady()));
     
     registerHandler("PRINT", this);
-    registerHandler("PING", this);
 }
 
 void NetSlave::begin()
@@ -128,11 +127,6 @@ bool NetSlave::handle(const NetPacket & packet)
     if (name == "PRINT")
     {
         qDebug() << "[PRINT]" << packet.arg(0).toString();
-    }
-
-    if (name == "PING")
-    {
-        send(&NetPacket("PONG"));
     }
 
     return false;

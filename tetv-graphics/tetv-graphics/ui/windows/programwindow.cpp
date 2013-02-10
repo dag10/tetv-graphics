@@ -30,11 +30,12 @@
 #include <QtGui/QDockWidget>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMessageBox>
+#include <QtNetwork/QNetworkInterface>
 #include <QtCore/QDebug>
 
 #include "net/NetMaster.h"
 #include "net/NetSlave.h"
-#include "ui/panels/TestPanel.h"
+#include "ui/panels/NetMasterPanel.h"
 #include "ui/controls/TPushButton.h"
 #include "ui/windows/programwindow.h"
 
@@ -83,7 +84,29 @@ ProgramWindow::ProgramWindow(bool isMaster, NetAbstract * netManager, QWidget * 
     rightColumnLayout->addStretch(1);
     columns->addLayout(rightColumnLayout, 0);
 
-    // TODO: Set up panels
+    // Set up panels
+
+    if (isMaster)
+    {
+        // Find LAN IP
+        QString address;
+        QList<QHostAddress> addresses = QNetworkInterface::allAddresses();
+        for (int i = 0; i < addresses.count(); i++)
+        {
+            QHostAddress addr = addresses.at(i);
+            if (addr.toIPv4Address() && !addr.toString().startsWith("172."))
+            {
+                address = addr.toString();
+                break;
+            }
+        }
+
+        panelNetMaster = new NetMasterPanel(
+            address,
+            &((NetMaster*)netManager)->connectedClients(),
+            this);
+        leftColumn->addWidget(panelNetMaster);
+    }
 
     // If slave, process queued received packets
 

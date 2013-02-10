@@ -66,7 +66,8 @@ public:
 
     void writeOut(QTcpSocket * socket)
     {
-        if (socket == m_sender) return;
+        if (socket == m_sender)
+            return; // Don't send to where it came from
 
         QDataStream out((QIODevice*)socket);
         out.setVersion(QDataStream::Qt_4_8);

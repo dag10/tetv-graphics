@@ -25,7 +25,6 @@
  */
 
 #include <QtGui/QVBoxLayout>
-#include <QtGui/QGridLayout>
 #include <QtGui/QLabel>
 #include <QtCore/QDebug>
 #include "ui/panels/AbstractPanel.h"
@@ -48,9 +47,8 @@ AbstractPanel::AbstractPanel(QWidget * parent)
 
     // Body widget
 
-    m_grid = new QGridLayout();
-    m_grid->setMargin(4);
-    m_grid->setSpacing(2);
+    m_grid = new QVBoxLayout();
+    m_grid->setMargin(6);
     mainLayout->addLayout(m_grid, 1);
 }
 
@@ -64,7 +62,18 @@ QString AbstractPanel::title() const
     return lblTitle->text();
 }
 
-QGridLayout * AbstractPanel::grid()
+QVBoxLayout * AbstractPanel::grid()
 {
     return m_grid;
+}
+
+void AbstractPanel::addDivider()
+{
+    QFrame * hr = new QFrame();
+    hr->setContentsMargins(0, 2, 0, 2);
+    hr->setFrameShape(QFrame::HLine);
+    hr->setFrameShadow(QFrame::Sunken);
+    hr->setFixedHeight(1);
+    hr->setObjectName("hr");
+    grid()->addWidget(hr);
 }

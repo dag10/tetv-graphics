@@ -24,16 +24,29 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef TESTPANEL_H
-#define TESTPANEL_H
+#include <QtGui/QGridLayout>
+#include <QtGui/QListView>
+#include <QtGui/QLabel>
+#include <QtGui/QStandardItemModel>
+#include <QtCore/QDebug>
+#include "ui/controls/TPushButton.h"
+#include "ui/panels/NetMasterPanel.h"
 
-#include "ui/panels/AbstractPanel.h"
+NetMasterPanel::NetMasterPanel(const QString & IP, QStandardItemModel * clients, QWidget * parent)
+    : AbstractPanel(parent)
+{
+    this->clients = clients;
+    setTitle("Remote clients");
 
-class TestPanel : public AbstractPanel {
-    Q_OBJECT
+    grid()->addWidget(new QLabel("Connect new clients to: " + IP));
+    addDivider();
+    grid()->addWidget(new QLabel("Connected clients:"));
 
-public:
-    TestPanel(const QString & title = QString(), QWidget * parent = NULL);
-};
-
-#endif // TESTPANEL_H
+    clientList = new QListView(this);
+    clientList->setFixedHeight(60);
+    clientList->setModel(clients);
+    clientList->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    clientList->setFocusPolicy(Qt::NoFocus);
+    clientList->setSelectionMode(QAbstractItemView::NoSelection);
+    grid()->addWidget(clientList);
+}

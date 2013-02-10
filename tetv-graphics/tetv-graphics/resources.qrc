@@ -8,5 +8,6 @@
         <file>res/img/button-border-selected-pressed.png</file>
         <file>res/img/panel-border.png</file>
         <file>res/img/panel-header.png</file>
+        <file>res/img/inset-border.png</file>
     </qresource>
 </RCC>

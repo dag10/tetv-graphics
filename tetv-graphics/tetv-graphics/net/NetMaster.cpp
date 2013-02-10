@@ -67,14 +67,12 @@ void NetMaster::handleConnection()
     connect(socket, SIGNAL(disconnected()), this, SLOT(handleDisconnection()));
     connect(socket, SIGNAL(readyRead()), this, SLOT(dataReady()));
     m_sockets.append(socket);
+    m_connectedClients.appendRow(new QStandardItem(socket->peerAddress().toString()));
 
-    qDebug() << "New connection from" << socket->peerAddress().toString()
-        << "(" << socket->peerName() << ")";
+    qDebug() << "New connection from" << socket->peerAddress().toString();
 
     // Send initial packets:
     
-    NetPacket("PRINT", "Hello, client!").writeOut(socket);
-    NetPacket("PING").writeOut(socket);
     NetPacket("INIT_DONE").writeOut(socket);
 }
 
@@ -82,6 +80,10 @@ void NetMaster::handleDisconnection()
 {
     QTcpSocket * socket = (QTcpSocket*)sender();
     m_sockets.removeAll(socket);
+    m_connectedClients.removeRow(m_connectedClients.match(
+        m_connectedClients.index(0, 0),
+        Qt::DisplayRole,
+        socket->peerAddress().toString()).at(0).row());
 
     qDebug() << "Slave disconnected from" << socket->peerAddress().toString();
 }
@@ -112,4 +114,9 @@ void NetMaster::sendToHandlers(NetPacket * packet)
 
     if (forward)
         broadcastPacket(packet);
+}
+
+QStandardItemModel & NetMaster::connectedClients()
+{
+    return m_connectedClients;
 }

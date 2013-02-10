@@ -31,24 +31,26 @@
 
 class PanelTitleWidget;
 class QLabel;
-class QGridLayout;
+class QVBoxLayout;
 
 class AbstractPanel : public QFrame {
     Q_OBJECT
     Q_PROPERTY(QString title READ title WRITE setTitle)
-    Q_PROPERTY(QGridLayout * grid READ grid)
 
 public:
     AbstractPanel(QWidget * parent = NULL);
     QString title() const;
-    QGridLayout * grid();
+    QVBoxLayout * grid();
 
 public slots:
     void setTitle(const QString & title);
 
+protected:
+    void addDivider();
+
 private:
     QLabel * lblTitle;
-    QGridLayout * m_grid;
+    QVBoxLayout * m_grid;
 };
 
 #endif // ABSTRACTPANEL_H

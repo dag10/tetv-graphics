@@ -56,3 +56,29 @@ AbstractPanel > #title
     padding: auto 1px;
     background-image: url(:/res/img/panel-header.png);
 }
+
+/* List view */
+
+QListView, QListView:focus
+{
+    border-image: url(:/res/img/inset-border.png) 3 stretch stretch;
+    border-width: 3px;
+    color: rgb(226, 226, 226);
+}
+
+QListView::item:selected
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 rgb(140, 140, 140), stop: 0.8 rgb(140, 140, 140), stop:1 rgb(255,255,255,0));
+}
+
+/* Horizontal divider */
+
+AbstractPanel QFrame#hr 
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                 stop:0 rgba(0,0,0,0), stop: 0.2 rgb(50, 50, 50), stop: 0.8 rgb(50, 50, 50), stop:1 rgb(0,0,0,0));
+    border-width: 0px;
+    border-style: none;
+    height: 1px;
+}

@@ -27,6 +27,7 @@
 #ifndef NETMASTER_H
 #define NETMASTER_H
 
+#include <QtGui/QStandardItemModel>
 #include "net/NetPacket.h"
 #include "net/NetAbstract.h"
 
@@ -39,10 +40,13 @@ class NetMaster : public NetAbstract {
 public:
     NetMaster(QObject * parent = NULL);
     const QString & begin();
+    QStandardItemModel & connectedClients();
 
 private:
     void sendToHandlers(NetPacket * packet);
     void broadcastPacket(NetPacket * packet);
+
+    QStandardItemModel m_connectedClients;
     QList<QTcpSocket*> m_sockets;
     QTcpServer * m_server;
 

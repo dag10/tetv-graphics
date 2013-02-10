@@ -32,6 +32,7 @@
 
 class QVBoxLayout;
 class NetAbstract;
+class NetMasterPanel;
 
 class ProgramWindow : public QMainWindow {
     Q_OBJECT
@@ -47,6 +48,8 @@ private:
     QVBoxLayout * rightColumn;
 
     NetAbstract * netManager;
+
+    NetMasterPanel * panelNetMaster;
 
 private slots:
     void slaveSocketError(QAbstractSocket::SocketError);

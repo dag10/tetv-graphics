@@ -24,17 +24,23 @@
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <QtGui/QGridLayout>
-#include <QtCore/QDebug>
-#include "ui/controls/TPushButton.h"
-#include "ui/panels/TestPanel.h"
+#ifndef NETMASTERPANEL_H
+#define NETMASTERPANEL_H
 
-TestPanel::TestPanel(const QString & title, QWidget * parent)
-    : AbstractPanel(parent)
-{
-    setTitle(title.isEmpty() ? "Test panel" : title);
+#include "ui/panels/AbstractPanel.h"
 
-    grid()->addWidget(new TPushButton("First..."), 0, 0, 1, 2);
-    grid()->addWidget(new TPushButton("Secondary"), 1, 0);
-    grid()->addWidget(new TPushButton("Third!"), 1, 1);
-}
+class QListView;
+class QStandardItemModel;
+
+class NetMasterPanel : public AbstractPanel {
+    Q_OBJECT
+
+public:
+    NetMasterPanel(const QString & IP, QStandardItemModel * clients, QWidget * parent = NULL);
+
+private:
+    QListView * clientList;
+    QStandardItemModel * clients;
+};
+
+#endif // NETMASTERPANEL_H
