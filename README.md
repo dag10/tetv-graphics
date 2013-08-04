@@ -12,13 +12,14 @@ The old project project page for this software can be found at [here](http://pro
 
 If you have any questions, email me at gottlieb.drew@gmail.com.
 
-== Building under Windows ==
+Building under Windows
+---
 
 - You must use Visual Studio 2010 (not Express)
 - Download Qt 4.8.4 for WIndows (VS 2010) here: http://releases.qt-project.org/qt4/source/qt-win-opensource-4.8.4-vs2010.exe
 - Download Qt4 VS add-in here: http://releases.qt-project.org/vsaddin/qt-vs-addin-1.1.11-opensource.exe
 
-= Building with Installer = 
+### Building with Installer
 
 1. First you must build the project tetv-graphics under Release mode.
 2. Run the project tetv-graphics.
